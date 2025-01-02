@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pragmatic Play Slots - Jogos</title>
+    <style>
+        /* Estilo Geral */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #1a1a1a; /* Fundo escuro */
+            color: white;
+        }
+
+        /* Cabeçalho */
+        header {
+            background-color: #000;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 4px solid #800080;
+        }
+
+        header .logo {
+            font-size: 32px;
+            font-weight: bold;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 5px; /* Espaço entre "H2" e "BET" */
+        }
+
+        header .logo span {
+            color: #800080; /* Cor roxa para "BET" */
+            font-weight: bold;
+        }
+
+        .back-home {
+            text-decoration: none;
+            color: #ffffff;
+            font-size: 14px;
+            font-weight: bold;
+            background-color: #800080;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            margin-right: 20px;
+        }
+
+        .back-home:hover {
+            background-color: #5a005a;
+        }
+
+        /* Conteúdo */
+        .content {
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            color: #ffcc00; /* Cor amarela */
+        }
+
+        /* Lista de Jogos */
+        #game-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 auto;
+            max-width: 800px; /* Limita a largura da lista */
+            text-align: left;
+        }
+
+        .game-item {
+            font-size: 18px;
+            color: #ffffff;
+            padding: 10px 15px;
+            margin: 5px 0;
+            background-color: #333333;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .game-item:hover {
+            background-color: #800080;
+            color: #ffcc00;
+            transform: scale(1.02);
+        }
+
+        .view-links-btn {
+            background-color: #800080;
+            color: #fff;
+            padding: 8px 15px;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .view-links-btn:hover {
+            background-color: #5a005a;
+        }
+
+        /* Pop-up */
+        .popup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .popup-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+        }
+
+        .popup-content {
+            position: relative;
+            background: #fff;
+            color: #000;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            z-index: 1010;
+            max-width: 400px;
+            width: 90%;
+        }
+
+        .popup-content h2 {
+            margin-bottom: 15px;
+            font-size: 20px;
+            color: #800080;
+        }
+
+        .popup-link {
+            margin: 10px 5px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #800080;
+            color: #fff;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .popup-link:hover {
+            background-color: #5a005a;
+        }
+
+        .close-popup {
+            margin-top: 20px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #ff0000;
+            color: #fff;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .close-popup:hover {
+            background-color: #cc0000;
+        }
+    </style>
+</head>
+<body>
+    <header id="topo">
+        <div class="logo">
+            <a href="home.html" class="back-home">⬅ Voltar ao Home</a>
+            H2<span>BET</span>
+        </div>
+    </header>
+
+    <main class="content">
+        <h1>Jogos da Pragmatic Play Slots</h1>
+        <ul id="game-list">
+            <!-- Lista de jogos será carregada dinamicamente -->
+        </ul>
+    </main>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const games = [
+    { name: "Big Bass Bonanza 3 Reeler", links: ["https://link1.com", "https://link2.com"] },
+    { name: "3 Buzzing Wilds", links: ["https://link3.com"] },
+    { name: "5 Lions Megaways", links: ["https://link4.com", "https://link5.com"] },
+    { name: "888 Dragons", links: ["https://link6.com"] },
+    { name: "888 Gold", links: ["https://link7.com"] },
+    { name: "Aztec Gems", links: ["https://link8.com", "https://link9.com"] },
+    { name: "Aztec Gems Deluxe", links: ["https://link10.com"] },
+    { name: "Barn Festival", links: ["https://link11.com", "https://link12.com"] },
+    { name: "Betano Bonanza", links: ["https://link13.com"] },
+    { name: "Big Bass - Gold & Spinner", links: ["https://link14.com", "https://link15.com"] },
+    { name: "Big Bass - Hold & Spinner", links: ["https://link16.com"] },
+    { name: "Big Bass - Secrets of the Golden Lake", links: ["https://link17.com", "https://link18.com"] },
+    { name: "Big Bass Amazon Xtreme", links: ["https://link19.com"] },
+    { name: "Big Bass Bonanza", links: ["https://link20.com", "https://link21.com"] },
+    { name: "Big Bass Bonanza - Keeping it Reel", links: ["https://link22.com"] },
+    { name: "Big Bass Bonanza 3", links: ["https://link23.com", "https://link24.com"] },
+    { name: "Big Bass Bonanza Megaways", links: ["https://link25.com"] },
+    { name: "Big Bass Christmas Bash", links: ["https://link26.com", "https://link27.com"] },
+    { name: "Big Bass Day at the Races", links: ["https://link28.com"] },
+    { name: "Big Bass Floats my Boat", links: ["https://link29.com", "https://link30.com"] },
+    { name: "Big Bass Halloween", links: ["https://link31.com"] },
+    { name: "Big Bass Mission Fishin'", links: ["https://link32.com", "https://link33.com"] },
+    { name: "Big Bass Splash", links: ["https://link34.com"] },
+    { name: "Bigger Bass Blizzard - Christmas Catch", links: ["https://link35.com", "https://link36.com"] },
+    { name: "Bigger Bass Bonanza", links: ["https://link37.com"] },
+    { name: "Black Bull", links: ["https://link38.com", "https://link39.com"] },
+    { name: "Blaze of Olympus", links: ["https://link40.com"] },
+    { name: "Buffalo King Megaways", links: ["https://link41.com", "https://link42.com"] },
+    { name: "Candy Blitz", links: ["https://link43.com"] },
+    { name: "Cash Patrol", links: ["https://link44.com", "https://link45.com"] },
+    { name: "Christmas Big Bass Bonanza", links: ["https://link46.com", "https://link47.com"] },
+    { name: "Cleo Catra", links: ["https://link48.com"] },
+    { name: "Cleopatra", links: ["https://link49.com", "https://link50.com"] },
+    { name: "Clover Gold", links: ["https://link51.com"] },
+    { name: "Club Tropicana", links: ["https://link52.com", "https://link53.com"] },
+    { name: "Cosmic Cash", links: ["https://link54.com"] },
+    { name: "Diamond Strike", links: ["https://link55.com", "https://link56.com"] },
+    { name: "Dragon Hero", links: ["https://link57.com"] },
+    { name: "Dragon King Hot Pots", links: ["https://link58.com", "https://link59.com"] },
+    { name: "Elemental Gems Megaways", links: ["https://link60.com"] },
+    { name: "Fire 88", links: ["https://link61.com", "https://link62.com"] },
+    { name: "Fire Portals", links: ["https://link63.com"] },
+    { name: "Fire Stampede", links: ["https://link64.com", "https://link65.com"] },
+    { name: "Fire Strike", links: ["https://link66.com"] },
+    { name: "Fire Strike 2", links: ["https://link67.com", "https://link68.com"] },
+    { name: "Firebird Spirit - Connect & Collect", links: ["https://link69.com"] },
+    { name: "Floating Dragon", links: ["https://link70.com", "https://link71.com"] },
+    { name: "Forge of Olympus", links: ["https://link72.com"] },
+    { name: "Fruit Party", links: ["https://link73.com", "https://link74.com"] },
+    { name: "Fruit Party 2", links: ["https://link75.com"] },
+    { name: "Gates of FTN", links: ["https://link76.com", "https://link77.com"] },
+    { name: "Gates of Novibet", links: ["https://link78.com"] },
+    { name: "Gates of Olympus", links: ["https://link79.com", "https://link80.com"] },
+    { name: "Gates of Olympus 1000", links: ["https://link81.com"] },
+    { name: "Gates of Olympus Xmas", links: ["https://link82.com", "https://link83.com"] },
+    { name: "Gems Bonanza", links: ["https://link84.com"] },
+    { name: "Gold Party", links: ["https://link85.com", "https://link86.com"] },
+    { name: "Great Rhino Megaways", links: ["https://link87.com"] },
+    { name: "Hot Fiesta", links: ["https://link88.com", "https://link89.com"] },
+    { name: "Jeitinho Brasileiro", links: ["https://link90.com"] },
+    { name: "Joker's Jewels", links: ["https://link91.com", "https://link92.com"] },
+    { name: "Juicy Fruits", links: ["https://link93.com"] },
+    { name: "Lucky Lightning", links: ["https://link94.com", "https://link95.com"] },
+    { name: "Madame Destiny Megaways", links: ["https://link96.com"] },
+    { name: "Master Chen's Fortune", links: ["https://link97.com", "https://link98.com"] },
+    { name: "Master Joker", links: ["https://link99.com"] },
+    { name: "Mining Rush", links: ["https://link100.com", "https://link101.com"] },
+    { name: "Money Mouse", links: ["https://link102.com"] },
+    { name: "Monster Superlanche", links: ["https://link103.com", "https://link104.com"] },
+    { name: "Muertos Multiplier Megaways", links: ["https://link105.com"] },
+    { name: "Mustang Gold", links: ["https://link106.com", "https://link107.com"] },
+    { name: "O Vira-lata Caramelo", links: ["https://link108.com"] },
+    { name: "Octobeer Fortunes", links: ["https://link109.com", "https://link110.com"] },
+    { name: "PIZZA! PIZZA? PIZZA!", links: ["https://link111.com"] },
+    { name: "Pompeii Megareels Megaways", links: ["https://link112.com", "https://link113.com"] },
+    { name: "Power of Thor Megaways", links: ["https://link114.com"] },
+    { name: "Queenie", links: ["https://link115.com", "https://link116.com"] },
+    { name: "Rabbit Garden", links: ["https://link117.com"] },
+    { name: "Rainbow Gold", links: ["https://link118.com", "https://link119.com"] },
+    { name: "Release the Kraken", links: ["https://link120.com"] },
+    { name: "Release the Kraken 2", links: ["https://link121.com", "https://link122.com"] },
+    { name: "Santa's Great Gifts", links: ["https://link123.com"] },
+    { name: "Santa's Xmas Rush", links: ["https://link124.com", "https://link125.com"] },
+    { name: "Spirit of Adventure", links: ["https://link126.com"] },
+    { name: "Starlight Christmas", links: ["https://link127.com", "https://link128.com"] },
+    { name: "Starlight Princess", links: ["https://link129.com"] },
+    { name: "Starlight Princess 1000", links: ["https://link130.com", "https://link131.com"] },
+    { name: "Sugar Rush", links: ["https://link132.com"] },
+    { name: "Sugar Rush 1000", links: ["https://link133.com", "https://link134.com"] },
+    { name: "Sugar Rush Xmas", links: ["https://link135.com"] },
+    { name: "Sugar Supreme Powernudge", links: ["https://link136.com", "https://link137.com"] },
+    { name: "Super 7s", links: ["https://link138.com"] },
+    { name: "Sweet Bonanza", links: ["https://link139.com", "https://link140.com"] },
+    { name: "Sweet Bonanza 1000", links: ["https://link141.com"] },
+    { name: "Sweet Bonanza Xmas", links: ["https://link142.com", "https://link143.com"] },
+    { name: "The Dog House", links: ["https://link144.com"] },
+    { name: "The Dog House Megaways", links: ["https://link145.com", "https://link146.com"] },
+    { name: "The Dog House Multihold", links: ["https://link147.com"] },
+    { name: "The Hand of Midas", links: ["https://link148.com", "https://link149.com"] },
+    { name: "Tiny Toads", links: ["https://link150.com"] },
+    { name: "Wheel O'Gold", links: ["https://link151.com", "https://link152.com"] },
+    { name: "Wild West Duels", links: ["https://link153.com"] },
+    { name: "Wild West Gold", links: ["https://link154.com", "https://link155.com"] },
+    { name: "Wild West Gold Megaways", links: ["https://link156.com"] },
+    { name: "Wild Wild Riches", links: ["https://link157.com", "https://link158.com"] },
+    { name: "Wild Wild Riches Megaways", links: ["https://link159.com"] },
+    { name: "Wisdom of Athena", links: ["https://link160.com", "https://link161.com"] },
+    { name: "Wolf Gold", links: ["https://link162.com"] },
+    { name: "Zeus vs Hades - Gods of War", links: ["https://link163.com", "https://link164.com"] }
+            ];
+
+            const gameList = document.getElementById("game-list");
+
+            games.forEach(game => {
+                const listItem = document.createElement("li");
+                listItem.className = "game-item";
+                listItem.innerHTML = `
+                    <span class="game-name">${game.name}</span>
+                    <button class="view-links-btn">Ver Links</button>
+                `;
+
+                listItem.querySelector(".view-links-btn").addEventListener("click", () => {
+                    const popup = document.createElement("div");
+                    popup.className = "popup";
+                    popup.innerHTML = `
+                        <div class="popup-overlay" onclick="closePopup()"></div>
+                        <div class="popup-content">
+                            <h2>${game.name}</h2>
+                            ${game.links.map((link, i) => `<button class="popup-link" onclick="window.open('${link}', '_blank')">Link ${i + 1}</button>`).join("")}
+                            <button class="close-popup" onclick="closePopup()">Fechar</button>
+                        </div>
+                    `;
+                    document.body.appendChild(popup);
+                });
+
+                gameList.appendChild(listItem);
+            });
+        });
+
+        function closePopup() {
+            const popup = document.querySelector(".popup");
+            if (popup) popup.remove();
+        }
+    </script>
+</body>
+</html>
