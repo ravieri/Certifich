@@ -5,95 +5,212 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>H2BET - Provedores</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Estilo Geral */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #1a1a1a;
+            color: white;
+        }
+
+        /* Estilo do Cabeçalho */
+        header {
+            background-color: #000;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 4px solid #800080;
+        }
+
+        header .logo {
+            font-size: 32px;
+            font-weight: bold;
+            color: white;
+        }
+
+        header .logo span {
+            color: #800080;
+        }
+
+        /* Estilo do Contêiner da Senha */
+        .password-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+
+        .password-container input[type="password"] {
+            width: 300px;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            border: none;
+            font-size: 16px;
+        }
+
+        .password-container button {
+            background-color: #800080;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .password-container button:hover {
+            background-color: #5a005a;
+        }
+
+        .error-message {
+            color: red;
+            font-size: 14px;
+            display: none;
+        }
+
+        /* Estilo do Conteúdo */
+        .content {
+            display: none;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .providers-grid {
+            text-align: center;
+        }
+
+        .providers-grid h2 {
+            color: #ffcc00;
+            margin-bottom: 20px;
+        }
+
+        .providers {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .provider {
+            background-color: #ffffff;
+            color: #000;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .provider img {
+            width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+            border-radius: 10px;
+        }
+
+        .provider:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+            background-color: #800080;
+            color: white;
+        }
+    </style>
 </head>
 <body>
     <header id="topo">
         <div class="logo">H2<span>BET</span></div>
     </header>
 
-    <main class="content">
+    <!-- Contêiner para a Senha -->
+    <div class="password-container" id="password-container">
+        <input type="password" id="password" placeholder="Digite a senha">
+        <button onclick="checkPassword()">Entrar</button>
+        <p class="error-message" id="error-message">Senha incorreta. Tente novamente.</p>
+    </div>
+
+    <!-- Conteúdo Principal -->
+    <main class="content" id="main-content">
         <section class="providers-grid">
             <h2>Provedores de jogos Certificados</h2>
             <div class="providers">
-                <!-- Provedor PGSoft -->
+                <!-- Lista de provedores -->
                 <a href="pgsoft.html" class="provider">
                     <img src="provedores/pg soft.jpg" alt="Logo PGSoft">
                     PGSoft
                 </a>
-
-                <!-- Provedor Spribe -->
                 <a href="spribe.html" class="provider">
                     <img src="provedores/spribe.jpg" alt="Logo Spribe">
                     Spribe
                 </a>
-                
-                <!-- Provedor Pragmatic Play Slots -->
                 <a href="pragmatic_play_slots.html" class="provider">
                     <img src="provedores/pragmaticslots.png" alt="Logo Pragmatic Play Slots">
                     Pragmatic Play Slots
                 </a>
-
-                <!-- Provedor Pragmatic Play Live -->
                 <a href="pragmatic_play_live.html" class="provider">
                     <img src="provedores/Pragmatic-Play-Logo-.jpeg" alt="Logo Pragmatic Play Live">
                     Pragmatic Play Live
                 </a>
-
-                <!-- Provedor Pragmatic Play Bingo -->
                 <a href="pragmatic_play_bingo.html" class="provider">
                     <img src="provedores/pragmaticplay.png" alt="Logo Pragmatic Play Bingo">
                     Pragmatic Play Bingo
                 </a>
-
-                <!-- Provedor Evolution -->
                 <a href="evolution.html" class="provider">
                     <img src="provedores/Evolution.png" alt="Logo Evolution">
                     Evolution
                 </a>
-
-                
-                <!-- Provedor No Limit City -->
                 <a href="no_limit_city.html" class="provider">
                     <img src="provedores/no limit.jpg" alt="Logo Limit City">
                     No Limit City
                 </a>
-                
-                <!-- Provedor Red Tiger -->
                 <a href="red_tiger.html" class="provider">
                     <img src="provedores/red tiger.jpg" alt="Logo Red Tiger">
                     Red Tiger
                 </a>
-
-
-                <!-- Provedor PlayTech -->
                 <a href="playtech.html" class="provider">
                     <img src="provedores/playtech.png" alt="Logo PlayTech">
                     PlayTech
                 </a>
-                
-                <!-- Provedor NET ENT -->
                 <a href="net_ent.html" class="provider">
                     <img src="provedores/net ent.jpg" alt="Logo NET ENT">
                     NET ENT
                 </a>
-
-                
-                
-                <!-- Provedor Playson -->
                 <a href="playson.html" class="provider">
                     <img src="provedores/playson.png" alt="Logo Playson">
                     Playson
                 </a>
-                
-                <!-- Provedor RubyPlay -->
                 <a href="rubyplay.html" class="provider">
                     <img src="provedores/rubyplay.webp" alt="Logo RubyPlay">
                     RubyPlay
                 </a>
-                
-                
             </div>
         </section>
     </main>
+
+    <script>
+        // Define a senha correta
+        const correctPassword = "EusouH2";
+
+        function checkPassword() {
+            const input = document.getElementById("password").value;
+            const errorMessage = document.getElementById("error-message");
+            const passwordContainer = document.getElementById("password-container");
+            const mainContent = document.getElementById("main-content");
+
+            if (input === correctPassword) {
+                // Exibe o conteúdo e oculta o contêiner da senha
+                passwordContainer.style.display = "none";
+                mainContent.style.display = "block";
+            } else {
+                // Exibe mensagem de erro
+                errorMessage.style.display = "block";
+            }
+        }
+    </script>
 </body>
 </html>
