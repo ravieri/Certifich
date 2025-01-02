@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pragmatic Play Live - Jogos</title>
+    <style>
+        /* Estilo Geral */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #1a1a1a; /* Fundo escuro */
+            color: white;
+        }
+
+        /* Cabeçalho */
+        header {
+            background-color: #000;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 4px solid #800080;
+        }
+
+        header .logo {
+            font-size: 32px;
+            font-weight: bold;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 5px; /* Espaço entre "H2" e "BET" */
+        }
+
+        header .logo span {
+            color: #800080; /* Cor roxa para "BET" */
+            font-weight: bold;
+        }
+
+        .back-home {
+            text-decoration: none;
+            color: #ffffff;
+            font-size: 14px;
+            font-weight: bold;
+            background-color: #800080;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            margin-right: 20px;
+        }
+
+        .back-home:hover {
+            background-color: #5a005a;
+        }
+
+        /* Conteúdo */
+        .content {
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            color: #ffcc00; /* Cor amarela */
+        }
+
+        /* Lista de Jogos */
+        #game-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 auto;
+            max-width: 800px; /* Limita a largura da lista */
+            text-align: left;
+        }
+
+        .game-item {
+            font-size: 18px;
+            color: #ffffff;
+            padding: 10px 15px;
+            margin: 5px 0;
+            background-color: #333333;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .game-item:hover {
+            background-color: #800080;
+            color: #ffcc00;
+            transform: scale(1.02);
+        }
+
+        .view-links-btn {
+            background-color: #800080;
+            color: #fff;
+            padding: 8px 15px;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .view-links-btn:hover {
+            background-color: #5a005a;
+        }
+    </style>
+</head>
+<body>
+    <header id="topo">
+        <div class="logo">
+            <a href="home.html" class="back-home">⬅ Voltar ao Home</a>
+            H2<span>BET</span>
+        </div>
+    </header>
+
+    <main class="content">
+        <h1>Jogos da Pragmatic Play Live</h1>
+        <ul id="game-list">
+            <!-- Lista de jogos -->
+            <li class="game-item"><span>American Roulette</span><button class="view-links-btn" onclick="openGamePopup('American Roulette')">Ver Links</button></li>
+            <li class="game-item"><span>Auto Mega Roulette</span><button class="view-links-btn" onclick="openGamePopup('Auto Mega Roulette')">Ver Links</button></li>
+            <li class="game-item"><span>Auto Roulette</span><button class="view-links-btn" onclick="openGamePopup('Auto Roulette')">Ver Links</button></li>
+            <li class="game-item"><span>Baccarat</span><button class="view-links-btn" onclick="openGamePopup('Baccarat')">Ver Links</button></li>
+            <li class="game-item"><span>Betano Big Bass Crash</span><button class="view-links-btn" onclick="openGamePopup('Betano Big Bass Crash')">Ver Links</button></li>
+            <li class="game-item"><span>Big Bass Crash</span><button class="view-links-btn" onclick="openGamePopup('Big Bass Crash')">Ver Links</button></li>
+            <li class="game-item"><span>Blackjack X</span><button class="view-links-btn" onclick="openGamePopup('Blackjack X')">Ver Links</button></li>
+            <li class="game-item"><span>Football Blitz Top Card</span><button class="view-links-btn" onclick="openGamePopup('Football Blitz Top Card')">Ver Links</button></li>
+            <li class="game-item"><span>Fortune Roulette</span><button class="view-links-btn" onclick="openGamePopup('Fortune Roulette')">Ver Links</button></li>
+            <li class="game-item"><span>High Flyer</span><button class="view-links-btn" onclick="openGamePopup('High Flyer')">Ver Links</button></li>
+            <li class="game-item"><span>Live Blackjack</span><button class="view-links-btn" onclick="openGamePopup('Live Blackjack')">Ver Links</button></li>
+            <li class="game-item"><span>Live Boom City</span><button class="view-links-btn" onclick="openGamePopup('Live Boom City')">Ver Links</button></li>
+            <li class="game-item"><span>Live Dragon Tiger</span><button class="view-links-btn" onclick="openGamePopup('Live Dragon Tiger')">Ver Links</button></li>
+            <li class="game-item"><span>Live Fortune 6 Baccarat</span><button class="view-links-btn" onclick="openGamePopup('Live Fortune 6 Baccarat')">Ver Links</button></li>
+            <li class="game-item"><span>Live Mega Sic Bo</span><button class="view-links-btn" onclick="openGamePopup('Live Mega Sic Bo')">Ver Links</button></li>
+            <li class="game-item"><span>Live Mega Wheel</span><button class="view-links-btn" onclick="openGamePopup('Live Mega Wheel')">Ver Links</button></li>
+            <li class="game-item"><span>Live One Blackjack</span><button class="view-links-btn" onclick="openGamePopup('Live One Blackjack')">Ver Links</button></li>
+            <li class="game-item"><span>Live Speed Blackjack</span><button class="view-links-btn" onclick="openGamePopup('Live Speed Blackjack')">Ver Links</button></li>
+            <li class="game-item"><span>Live Sweet Bonanza Candyland</span><button class="view-links-btn" onclick="openGamePopup('Live Sweet Bonanza Candyland')">Ver Links</button></li>
+            <li class="game-item"><span>Lucky 6 Roulette</span><button class="view-links-btn" onclick="openGamePopup('Lucky 6 Roulette')">Ver Links</button></li>
+            <li class="game-item"><span>Mega Baccarat</span><button class="view-links-btn" onclick="openGamePopup('Mega Baccarat')">Ver Links</button></li>
+            <li class="game-item"><span>Mega Roulette</span><button class="view-links-btn" onclick="openGamePopup('Mega Roulette')">Ver Links</button></li>
+            <li class="game-item"><span>No Commission Baccarat</span><button class="view-links-btn" onclick="openGamePopup('No Commission Baccarat')">Ver Links</button></li>
+            <li class="game-item"><span>No Commission Speed Baccarat</span><button class="view-links-btn" onclick="openGamePopup('No Commission Speed Baccarat')">Ver Links</button></li>
+            <li class="game-item"><span>PowerUP Roulette</span><button class="view-links-btn" onclick="openGamePopup('PowerUP Roulette')">Ver Links</button></li>
+            <li class="game-item"><span>Roulette</span><button class="view-links-btn" onclick="openGamePopup('Roulette')">Ver Links</button></li>
+            <li class="game-item"><span>Snakes & Ladders Live</span><button class="view-links-btn" onclick="openGamePopup('Snakes & Ladders Live')">Ver Links</button></li>
+            <li class="game-item"><span>Spaceman</span><button class="view-links-btn" onclick="openGamePopup('Spaceman')">Ver Links</button></li>
+            <li class="game-item"><span>Speed Auto Roulette</span><button class="view-links-btn" onclick="openGamePopup('Speed Auto Roulette')">Ver Links</button></li>
+            <li class="game-item"><span>Speed Baccarat</span><button class="view-links-btn" onclick="openGamePopup('Speed Baccarat')">Ver Links</button></li>
+            <li class="game-item"><span>Speed Roulette</span><button class="view-links-btn" onclick="openGamePopup('Speed Roulette')">Ver Links</button></li>
+            <li class="game-item"><span>Super 8 Baccarat</span><button class="view-links-btn" onclick="openGamePopup('Super 8 Baccarat')">Ver Links</button></li>
+            <li class="game-item"><span>Treasure Island</span><button class="view-links-btn" onclick="openGamePopup('Treasure Island')">Ver Links</button></li>
+            <li class="game-item"><span>Vegas Ball Bonanza</span><button class="view-links-btn" onclick="openGamePopup('Vegas Ball Bonanza')">Ver Links</button></li>
+        </ul>
+    </main>
+
+    <script>
+        function openGamePopup(gameName) {
+            closePopup();
+
+            const popup = document.createElement("div");
+            popup.classList.add("popup");
+            popup.innerHTML = `
+                <div class="popup-overlay" onclick="closePopup()"></div>
+                <div class="popup-content">
+                    <h2>${gameName}</h2>
+                    <button class="popup-link" onclick="window.open('https://example-link1.com', '_blank')">Link 1</button>
+                    <button class="popup-link" onclick="window.open('https://example-link2.com', '_blank')">Link 2</button>
+                    <button class="close-popup" onclick="closePopup()">Fechar</button>
+                </div>
+            `;
+            document.body.appendChild(popup);
+
+            applyPopupStyles();
+        }
+
+        function closePopup() {
+            const popup = document.querySelector(".popup");
+            if (popup) popup.remove();
+        }
+
+        function applyPopupStyles() {
+            const style = document.createElement("style");
+            style.textContent = `
+                .popup {
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    z-index: 1000;
+                }
+                .popup-overlay {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: rgba(0, 0, 0, 0.7);
+                }
+                .popup-content {
+                    position: relative;
+                    background: #fff;
+                    color: #000;
+                    padding: 20px;
+                    border-radius: 10px;
+                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+                    text-align: center;
+                    z-index: 1010;
+                    max-width: 400px;
+                    width: 90%;
+                }
+                .popup-content h2 {
+                    margin-bottom: 15px;
+                    font-size: 20px;
+                    color: #800080;
+                }
+                .popup-link {
+                    margin: 10px 5px;
+                    padding: 10px 20px;
+                    border: none;
+                    border-radius: 5px;
+                    background-color: #800080;
+                    color: #fff;
+                    cursor: pointer;
+                    font-weight: bold;
+                    transition: background-color 0.2s;
+                }
+                .popup-link:hover {
+                    background-color: #5a005a;
+                }
+                .close-popup {
+                    margin-top: 20px;
+                    padding: 10px 20px;
+                    border: none;
+                    border-radius: 5px;
+                    background-color: #ff0000;
+                    color: #fff;
+                    cursor: pointer;
+                    font-weight: bold;
+                    transition: background-color 0.2s;
+                }
+                .close-popup:hover {
+                    background-color: #cc0000;
+                }
+            `;
+            document.head.appendChild(style);
+        }
+    </script>
+</body>
+</html>
