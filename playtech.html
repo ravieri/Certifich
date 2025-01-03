@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PlayTech - Jogos</title>
+    <style>
+        /* Estilo Geral */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #1a1a1a; /* Fundo escuro */
+            color: white;
+        }
+
+        /* Cabeçalho */
+        header {
+            background-color: #000;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 4px solid #800080;
+        }
+
+        header .logo {
+            font-size: 32px;
+            font-weight: bold;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 5px; /* Espaço entre "H2" e "BET" */
+        }
+
+        header .logo span {
+            color: #800080; /* Cor roxa para "BET" */
+            font-weight: bold;
+        }
+
+        .back-home {
+            text-decoration: none;
+            color: #ffffff;
+            font-size: 14px;
+            font-weight: bold;
+            background-color: #800080;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            margin-right: 20px;
+        }
+
+        .back-home:hover {
+            background-color: #5a005a;
+        }
+
+        /* Conteúdo */
+        .content {
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            color: #ffcc00; /* Cor amarela */
+        }
+
+        /* Lista de Jogos */
+        #game-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 auto;
+            max-width: 800px; /* Limita a largura da lista */
+            text-align: left;
+        }
+
+        .game-item {
+            font-size: 18px;
+            color: #ffffff;
+            padding: 10px 15px;
+            margin: 5px 0;
+            background-color: #333333;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .game-item:hover {
+            background-color: #800080;
+            color: #ffcc00;
+            transform: scale(1.02);
+        }
+
+        .view-links-btn {
+            background-color: #800080;
+            color: #fff;
+            padding: 8px 15px;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .view-links-btn:hover {
+            background-color: #5a005a;
+        }
+
+        /* Pop-up */
+        .popup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .popup-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+        }
+
+        .popup-content {
+            position: relative;
+            background: #fff;
+            color: #000;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            z-index: 1010;
+            max-width: 400px;
+            width: 90%;
+        }
+
+        .popup-content h2 {
+            margin-bottom: 15px;
+            font-size: 20px;
+            color: #800080;
+        }
+
+        .popup-link {
+            margin: 10px 5px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #800080;
+            color: #fff;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .popup-link:hover {
+            background-color: #5a005a;
+        }
+
+        .close-popup {
+            margin-top: 20px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #ff0000;
+            color: #fff;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .close-popup:hover {
+            background-color: #cc0000;
+        }
+    </style>
+</head>
+<body>
+    <header id="topo">
+        <div class="logo">
+            <a href="home.html" class="back-home">⬅ Voltar ao Home</a>
+            H2<span>BET</span>
+        </div>
+    </header>
+
+    <main class="content">
+        <h1>Jogos da PlayTech</h1>
+        <ul id="game-list">
+            <!-- Lista de jogos será carregada dinamicamente -->
+        </ul>
+    </main>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const games = [
+                { name: "Adventures Beyond Wonderland Live", links: ["https://link1.com", "https://link2.com"] },
+                { name: "Age of the Gods Bonus Roulette  Live", links: ["https://link3.com", "https://link4.com"] },
+                { name: "Age of the Gods God of Storms 3", links: ["https://link1.com", "https://link2.com"] },
+                { name: "Age of the Gods: Cash Collect1", links: ["https://link3.com", "https://link4.com"] },
+                { name: "Age of the Gods: King of Olympus Megaways", links: ["https://link1.com", "https://link2.com"] },
+                { name: "Age of the Gods™ God of Storms 2M", links: ["https://link3.com", "https://link4.com"] },
+                { name: "Age of the Gods™: Wheels of Olympus", links: ["https://link1.com", "https://link2.com"] },
+                { name: "All Bets Blackjack Live", links: ["https://link3.com", "https://link4.com"] },
+                { name: "Alohawaii: Cash Collect™", links: ["https://link1.com", "https://link2.com"] },
+                { name: "American Roulette", links: ["https://link3.com", "https://link4.com"] },
+                { name: "Andar Bahar Live", links: ["https://link1.com", "https://link2.com"] },
+                { name: "Azteca: Bonus Lines1", links: ["https://link3.com", "https://link4.com"] },
+                { name: "Azteca: Cash Collect™", links: ["https://link1.com", "https://link2.com"] },
+                { name: "Azteca: Cash Collect™ FB", links: ["https://link3.com", "https://link4.com"] },
+                { name: "Baccarat Live", links: ["https://link1.com", "https://link2.com"] },
+                { name: "Baccarat Live - 7 Seat Baccarat - No Commission", links: ["https://link3.com", "https://link4.com"] },
+                { name: "Baccarat Live - 7Seat Baccarat", links: ["https://link1.com", "https://link2.com"] },
+                { name: "Baccarat Live – Multi Table Baccara", links: ["https://link3.com", "https://link4.com"] },
+                { name: "Baccarat Live – Multi Table Baccarat -No Commission", links: ["https://link1.com", "https://link2.com"] },
+                { name: "Baccarat Live – Multi Table Baccarat -Punto Banco", links: ["https://link3.com", "https://link4.com"] },
+                { name: "Baccarat Live - No Commission", links: ["https://link1.com", "https://link2.com"] },
+                { name: "Baccarat Punto Banco", links: ["https://link3.com", "https://link4.com"] },
+                { name: "Big Bad Wolf Live", links: ["https://link1.com", "https://link2.com"] },
+                { name: "Blackjack VZN", links: ["https://link3.com", "https://link4.com"] },
+                { name: "Blue Wizard", links: ["https://link1.com", "https://link2.com"] },
+                { name: "Buffalo Blitz", links: ["https://link3.com", "https://link4.com"] },
+                { name: "Buffalo Blitz II", links: ["https://link1.com", "https://link2.com"] },
+                { name: "Buffalo Blitz Live", links: ["https://link3.com", "https://link4.com"] },
+                { name: "Candy Rol|™", links: ["https://link1.com", "https://link2.com"] },
+                { name: "Candy Roll™ BF", links: ["https://link3.com", "https://link4.com"] },
+                { name: "Cash Collect Roulette Live", links: ["https://link1.com", "https://link2.com"] },
+                { name: "Cash It™ Multiplayer", links: ["https://link3.com", "https://link4.com"] },
+                { name: "Cashback Blackjack", links: ["https://link1.com", "https://link2.com"] },
+                { name: "Cashback Blackjack Live", links: ["https://link3.com", "https://link4.com"] },
+                { name: "Cashback Blackjack Live -3seat", links: ["https://link1.com", "https://link2.com"] },
+                { name: "Casino Hold'em", links: ["https://link3.com", "https://link4.com"] },
+                { name: "Classic Roulette", links: ["https://link1.com", "https://link2.com"] },
+                { name: "Deadliest Catch™", links: ["https://link3.com", "https://link4.com"] },
+                { name: "Deal or No Deal:The Big Draw Live", links: ["https://link1.com", "https://link2.com"] },
+                { name: "Diamond Bet Roulette", links: ["https://link3.com", "https://link4.com"] },
+                { name: "Diamond Rise", links: ["https://link1.com", "https://link2.com"] },
+                { name: "Double Digger", links: ["https://link3.com", "https://link4.com"] },
+                { name: "Dragon Tiger", links: ["https://link1.com", "https://link2.com"] },
+                { name: "Eternal Lady", links: ["https://link3.com", "https://link4.com"] },
+                { name: "Fashion TV Mega Party Live", links: ["https://link1.com", "https://link2.com"] },
+                { name: "Fire Blaze Golden: Amazing Factory™", links: ["https://link3.com", "https://link4.com"] },
+                { name: "Fire Blaze: Adventure Trail", links: ["https://link1.com", "https://link2.com"] },
+                { name: "Fire Blaze: Blue Wizard Megaways", links: ["https://link3.com", "https://link4.com"] },
+                { name: "Fire Blaze: Jinns Moon", links: ["https://link1.com", "https://link2.com"] },
+                { name: "Fire Blaze: Red Wizard", links: ["https://link3.com", "https://link4.com"] },
+                { name: "Fire Blaze™: Tundra Wolf™", links: ["https://link1.com", "https://link2.com"] },
+                { name: "Football Roulette", links: ["https://link3.com", "https://link4.com"] },
+                { name: "Frankie Dettori's Magic Seven Blackjack", links: ["https://link1.com", "https://link2.com"] },
+                { name: "French Roulette ", links: ["https://link3.com", "https://link4.com"] },
+                { name: "Gates of Camelot™", links: ["https://link1.com", "https://link2.com"] },
+                { name: "Gladiator: Mega Cash Collect™", links: ["https://link3.com", "https://link4.com"] },
+                { name: "Gold Hit & Link: JP Bacon & Co", links: ["https://link1.com", "https://link2.com"] },
+                { name: "Gold Hit & Link: Tiger Jones", links: ["https://link3.com", "https://link4.com"] },
+                { name: "Gold Hit: Dragon Bonanza", links: ["https://link1.com", "https://link2.com"] },
+                { name: "Gold Hit: Lil Demon", links: ["https://link3.com", "https://link4.com"] },
+                { name: "Gold Hit: Lil Demon", links: ["https://link1.com", "https://link2.com"] },
+                { name: "Gold Rush™: Cash Collect™", links: ["https://link3.com", "https://link4.com"] },
+                { name: "Gold Trio", links: ["https://link1.com", "https://link2.com"] },
+                { name: "Gold Trio", links: ["https://link3.com", "https://link4.com"] },
+                { name: "Gold Trio: Sinbad’s Riches", links: ["https://link1.com", "https://link2.com"] },
+                { name: "Golden Macaque™", links: ["https://link3.com", "https://link4.com"] },
+                { name: "Halloween Fortune", links: ["https://link1.com", "https://link2.com"] },
+                { name: "Heads-Up Hold'Em", links: ["https://link3.com", "https://link4.com"] },
+                { name: "Hit Bar", links: ["https://link1.com", "https://link2.com"] },
+                { name: "Hit Bar: Gold", links: ["https://link3.com", "https://link4.com"] },
+                { name: "Joker Rush: Cash Collect™", links: ["https://link1.com", "https://link2.com"] },
+                { name: "Jumanji: The Bonus Level Live", links: ["https://link3.com", "https://link4.com"] },
+                { name: "Kick It™ Multiplayer", links: ["https://link1.com", "https://link2.com"] },
+                { name: "King Blitz", links: ["https://link3.com", "https://link4.com"] },
+                { name: "K-Pop Roulette Live", links: ["https://link1.com", "https://link2.com"] },
+                { name: "Landbased Roulette ", links: ["https://link3.com", "https://link4.com"] },
+                { name: "Leprechaun’s Luck: Cash Collec", links: ["https://link1.com", "https://link2.com"] },
+                { name: "Leprechaun’s Luck: Cash Collect: MegaWays", links: ["https://link3.com", "https://link4.com"] },
+                { name: "Lil Demon: Mega Cash Collect™", links: ["https://link1.com", "https://link2.com"] },
+                { name: "Lil Demon: Mega Cash ollect™ B1", links: ["https://link3.com", "https://link4.com"] },
+                { name: "Live 3 Card Brag", links: ["https://link1.com", "https://link2.com"] },
+                { name: "Live Blackjack", links: ["https://link3.com", "https://link4.com"] },
+                { name: "Live Football French Roulette", links: ["https://link1.com", "https://link2.com"] },
+                { name: "Live Hi-Lo", links: ["https://link3.com", "https://link4.com"] },
+                { name: "Live Roulette", links: ["https://link3.com", "https://link4.com"] },
+                { name: "Live SicBo Deluxe", links: ["https://link1.com", "https://link2.com"] },
+                { name: "Live Spin a Win", links: ["https://link3.com", "https://link4.com"] },
+                { name: "Live Spread-Bet Roulette", links: ["https://link1.com", "https://link2.com"] },
+                { name: "Live Unlimited Blackjack", links: ["https://link3.com", "https://link4.com"] },
+                { name: "Lucky Ball Roulette Live", links: ["https://link1.com", "https://link2.com"] },
+                { name: "Lucky Bass: Mega Cash ollect™", links: ["https://link3.com", "https://link4.com"] },
+                { name: "Majority Rules Speed Blackjack Live", links: ["https://link1.com", "https://link2.com"] },
+                { name: "Mega Fire Blaze Blackjack Live", links: ["https://link3.com", "https://link4.com"] },
+                { name: "Mega Fire Blaze Lucky Ball Live", links: ["https://link1.com", "https://link2.com"] },
+                { name: "Mega Fire Blaze Roulette Live", links: ["https://link3.com", "https://link4.com"] },
+                { name: "Mega Fire Blaze Roulette Live +", links: ["https://link1.com", "https://link2.com"] },
+                { name: "Mega Fire Blaze: Big Circus", links: ["https://link3.com", "https://link4.com"] },
+                { name: "Mega Fire Blaze: Breaking bad™", links: ["https://link3.com", "https://link4.com"] },
+                { name: "Mega Fire Blaze: Dwarves and Goblins™", links: ["https://link1.com", "https://link2.com"] },
+                { name: "Mega Fire Blaze: Khonsu God of Moon", links: ["https://link3.com", "https://link4.com"] },
+                { name: "Mega Fire Blaze: Legacy of the Tiger", links: ["https://link1.com", "https://link2.com"] },
+                { name: "Mega Fire Blaze: Piggies and the Bank™", links: ["https://link3.com", "https://link4.com"] },
+                { name: "Mega Fire Blaze: Wild Pistolero", links: ["https://link1.com", "https://link2.com"] },
+                { name: "Mini Roulette", links: ["https://link3.com", "https://link4.com"] },
+                { name: "Mobile Blackjack", links: ["https://link1.com", "https://link2.com"] },
+                { name: "Money Drop Live", links: ["https://link3.com", "https://link4.com"] },
+                { name: "Penny Roulette", links: ["https://link1.com", "https://link2.com"] },
+                { name: "Pharaoh’s Daughter", links: ["https://link3.com", "https://link4.com"] },
+                { name: "Pig Champions", links: ["https://link1.com", "https://link2.com"] },
+                { name: "Premium American Roulette", links: ["https://link3.com", "https://link4.com"] },
+                { name: "Premium Blackjack", links: ["https://link3.com", "https://link4.com"] },
+                { name: "Premium Blackjack Single Hand™", links: ["https://link1.com", "https://link2.com"] },
+                { name: "Premium European Roulette", links: ["https://link3.com", "https://link4.com"] },
+                { name: "Pyramid Linx™", links: ["https://link1.com", "https://link2.com"] },
+                { name: "Quantum American Roulette Live", links: ["https://link3.com", "https://link4.com"] },
+                { name: "Quantum Blackjack+ Live", links: ["https://link1.com", "https://link2.com"] },
+                { name: "Quantum Roulette", links: ["https://link3.com", "https://link4.com"] },
+                { name: "Quantum™ Blackjack Plus Instant", links: ["https://link1.com", "https://link2.com"] },
+                { name: "Queen of the Pyramids: Mega Cash Collect", links: ["https://link3.com", "https://link4.com"] },
+                { name: "Queen’s Mystery", links: ["https://link1.com", "https://link2.com"] },
+                { name: "Sahara Riches MegaWays: Cash Collect", links: ["https://link3.com", "https://link4.com"] },
+                { name: "Sahara Riches: Cash Collect", links: ["https://link1.com", "https://link2.com"] },
+                { name: "Sette e Mezzo", links: ["https://link3.com", "https://link4.com"] },
+                { name: "Silent Samurai: Mega Cash Collect", links: ["https://link3.com", "https://link4.com"] },
+                { name: "Silver Bullet Bandit: Cash Collec", links: ["https://link1.com", "https://link2.com"] },
+                { name: "Sky Queen", links: ["https://link3.com", "https://link4.com"] },
+                { name: "Slingshot Roulette", links: ["https://link1.com", "https://link2.com"] },
+                { name: "Speed Blackjack Live", links: ["https://link3.com", "https://link4.com"] },
+                { name: "Spin & Win Roulette", links: ["https://link3.com", "https://link4.com"] },
+                { name: "Spin ‘Em Round!", links: ["https://link1.com", "https://link2.com"] },
+                { name: "Spin a Win Wild", links: ["https://link3.com", "https://link4.com"] },
+                { name: "Sticky Bandits Roulette Live", links: ["https://link1.com", "https://link2.com"] },
+                { name: "Super Mega Ultra Live", links: ["https://link3.com", "https://link4.com"] },
+                { name: "Super Spin Roulette Live", links: ["https://link3.com", "https://link4.com"] },
+                { name: "The Chase Live", links: ["https://link1.com", "https://link2.com"] },
+                { name: "The Greatest Cards Show Live", links: ["https://link3.com", "https://link4.com"] },
+                { name: "The Walking Dead", links: ["https://link1.com", "https://link2.com"] },
+                { name: "The Walking Dead™ Cash Collect™", links: ["https://link3.com", "https://link4.com"] },
+                { name: "Triple Money Jackpot™", links: ["https://link3.com", "https://link4.com"] },
+                { name: "Tsai Shen’s Gift", links: ["https://link1.com", "https://link2.com"] },
+                { name: "Well Well Well Live", links: ["https://link3.com", "https://link4.com"] },
+                { name: "Who Wants to Be a Millionaire Roulette Live", links: ["https://link1.com", "https://link2.com"] },
+                { name: "Who Wants To Be A Millionaire Video Poker Live", links: ["https://link3.com", "https://link4.com"] },
+                { name: "Witches: Cash Collect™", links: ["https://link1.com", "https://link2.com"] },
+                { name: "Wolves! Cash Collect & Link", links: ["https://link3.com", "https://link4.com"] },
+            ];
+
+            const gameList = document.getElementById("game-list");
+
+            games.forEach(game => {
+                const listItem = document.createElement("li");
+                listItem.className = "game-item";
+                listItem.innerHTML = `
+                    <span class="game-name">${game.name}</span>
+                    <button class="view-links-btn">Ver Links</button>
+                `;
+
+                listItem.querySelector(".view-links-btn").addEventListener("click", () => {
+                    const popup = document.createElement("div");
+                    popup.className = "popup";
+                    popup.innerHTML = `
+                        <div class="popup-overlay" onclick="closePopup()"></div>
+                        <div class="popup-content">
+                            <h2>${game.name}</h2>
+                            ${game.links.map((link, i) => `<button class="popup-link" onclick="window.open('${link}', '_blank')">Link ${i + 1}</button>`).join("")}
+                            <button class="close-popup" onclick="closePopup()">Fechar</button>
+                        </div>
+                    `;
+                    document.body.appendChild(popup);
+                });
+
+                gameList.appendChild(listItem);
+            });
+        });
+
+        function closePopup() {
+            const popup = document.querySelector(".popup");
+            if (popup) popup.remove();
+        }
+    </script>
+</body>
+</html>

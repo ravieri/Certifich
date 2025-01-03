@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NetEnt - Jogos</title>
+    <style>
+        /* Estilo Geral */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #1a1a1a; /* Fundo escuro */
+            color: white;
+        }
+
+        /* Cabeçalho */
+        header {
+            background-color: #000;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 4px solid #800080;
+        }
+
+        header .logo {
+            font-size: 32px;
+            font-weight: bold;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 5px; /* Espaço entre "H2" e "BET" */
+        }
+
+        header .logo span {
+            color: #800080; /* Cor roxa para "BET" */
+            font-weight: bold;
+        }
+
+        .back-home {
+            text-decoration: none;
+            color: #ffffff;
+            font-size: 14px;
+            font-weight: bold;
+            background-color: #800080;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            margin-right: 20px;
+        }
+
+        .back-home:hover {
+            background-color: #5a005a;
+        }
+
+        /* Conteúdo */
+        .content {
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            color: #ffcc00; /* Cor amarela */
+        }
+
+        /* Lista de Jogos */
+        #game-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 auto;
+            max-width: 800px; /* Limita a largura da lista */
+            text-align: left;
+        }
+
+        .game-item {
+            font-size: 18px;
+            color: #ffffff;
+            padding: 10px 15px;
+            margin: 5px 0;
+            background-color: #333333;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .game-item:hover {
+            background-color: #800080;
+            color: #ffcc00;
+            transform: scale(1.02);
+        }
+
+        .view-links-btn {
+            background-color: #800080;
+            color: #fff;
+            padding: 8px 15px;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .view-links-btn:hover {
+            background-color: #5a005a;
+        }
+
+        /* Pop-up */
+        .popup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .popup-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+        }
+
+        .popup-content {
+            position: relative;
+            background: #fff;
+            color: #000;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            z-index: 1010;
+            max-width: 400px;
+            width: 90%;
+        }
+
+        .popup-content h2 {
+            margin-bottom: 15px;
+            font-size: 20px;
+            color: #800080;
+        }
+
+        .popup-link {
+            margin: 10px 5px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #800080;
+            color: #fff;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .popup-link:hover {
+            background-color: #5a005a;
+        }
+
+        .close-popup {
+            margin-top: 20px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #ff0000;
+            color: #fff;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .close-popup:hover {
+            background-color: #cc0000;
+        }
+    </style>
+</head>
+<body>
+    <header id="topo">
+        <div class="logo">
+            <a href="home.html" class="back-home">⬅ Voltar ao Home</a>
+            H2<span>BET</span>
+        </div>
+    </header>
+
+    <main class="content">
+        <h1>Jogos da NetEnt</h1>
+        <ul id="game-list">
+            <!-- Lista de jogos será carregada dinamicamente -->
+        </ul>
+    </main>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const games = [
+        { name: "101 Candies", links: ["https://link1.com", "https://link2.com"] },
+        { name: "58: Golden", links: ["https://link3.com", "https://link4.com"] },
+        { name: "Aloha!Christmas Touch™", links: ["https://link1.com", "https://link2.com"] },
+        { name: "Aloha!Christmas Touch™", links: ["https://link3.com", "https://link4.com"] },
+        { name: "American Roulette Touch™", links: ["https://link1.com", "https://link2.com"] },
+        { name: "American Roulette™", links: ["https://link3.com", "https://link4.com"] },
+        { name: "Arabian Nights", links: ["https://link1.com", "https://link2.com"] },
+        { name: "Arabian Nights Touch™", links: ["https://link3.com", "https://link4.com"] },
+        { name: "Arcane: Reel Chaos™", links: ["https://link1.com", "https://link2.com"] },
+        { name: "Arcane: Reel Chaos™ Touch", links: ["https://link3.com", "https://link4.com"] },
+        { name: "Archangels: Salvation Touch™", links: ["https://link1.com", "https://link2.com"] },
+        { name: "Archangels: Salvation™", links: ["https://link3.com", "https://link4.com"] },
+        { name: "Asgardian Stones Touch™", links: ["https://link1.com", "https://link2.com"] },
+        { name: "Asgardian Stones™", links: ["https://link3.com", "https://link4.com"] },
+        { name: "Baccarat", links: ["https://link1.com", "https://link2.com"] },
+        { name: "Baccarat Touch", links: ["https://link3.com", "https://link4.com"] },
+        { name: "Beach Invaders", links: ["https://link1.com", "https://link2.com"] },
+        { name: "Bee Hive Bonanza™", links: ["https://link3.com", "https://link4.com"] },
+        { name: "Blackjack Classic", links: ["https://link1.com", "https://link2.com"] },
+        { name: "Blackjack Classic Touch", links: ["https://link3.com", "https://link4.com"] },
+        { name: "Blackjack Touch- Single Deck", links: ["https://link1.com", "https://link2.com"] },
+        { name: "Blackjack™", links: ["https://link3.com", "https://link4.com"] },
+        { name: "Blood Suckers II Touch™", links: ["https://link1.com", "https://link2.com"] },
+        { name: "Blood Suckers IITM", links: ["https://link3.com", "https://link4.com"] },
+        { name: "Blood Suckers Touch™", links: ["https://link1.com", "https://link2.com"] },
+        { name: "Blood Suckers™", links: ["https://link3.com", "https://link4.com"] },
+        { name: "Buster's Bones™", links: ["https://link1.com", "https://link2.com"] },
+        { name: "Butterfly Staxx 2 Touch™", links: ["https://link3.com", "https://link4.com"] },
+        { name: "Butterfly Staxx 2TM", links: ["https://link1.com", "https://link2.com"] },
+        { name: "Butterfly Staxx Touch™", links: ["https://link3.com", "https://link4.com"] },
+        { name: "Butterfly Staxx™", links: ["https://link1.com", "https://link2.com"] },
+        { name: "Cash Noire Touch™", links: ["https://link3.com", "https://link4.com"] },
+        { name: "Cash Noire™", links: ["https://link1.com", "https://link2.com"] },
+        { name: "Cash-o-Matic Touch™", links: ["https://link3.com", "https://link4.com"] },
+        { name: "Cash-o-Matic™", links: ["https://link1.com", "https://link2.com"] },
+        { name: "Casino Hold'em", links: ["https://link3.com", "https://link4.com"] },
+        { name: "Casino Hold'em Touch", links: ["https://link1.com", "https://link2.com"] },
+        { name: "Casino Night", links: ["https://link3.com", "https://link4.com"] },
+        { name: "Codex of Fortune Touch™", links: ["https://link1.com", "https://link2.com"] },
+        { name: "Codex of Fortune™", links: ["https://link3.com", "https://link4.com"] },
+        { name: "Cornelius™", links: ["https://link1.com", "https://link2.com"] },
+        { name: "Creature from the Black Lagoon", links: ["https://link3.com", "https://link4.com"] },
+        { name: "Creature from the Black Lagoon Touch", links: ["https://link1.com", "https://link2.com"] },
+        { name: "Cupcakes™", links: ["https://link3.com", "https://link4.com"] },
+        { name: "Cursed Treasure", links: ["https://link1.com", "https://link2.com"] },
+        { name: "Dark King:", links: ["https://link3.com", "https://link4.com"] },
+        { name: "Dark King:Forbidden Riches™", links: ["https://link1.com", "https://link2.com"] },
+        { name: "Dazzle Me Touch™", links: ["https://link3.com", "https://link4.com"] },
+        { name: "Dazzle Me™", links: ["https://link1.com", "https://link2.com"] },
+        { name: "Dazzle Me™ Megaways™", links: ["https://link3.com", "https://link4.com"] },
+        { name: "Dazzle Me™ Megaways™ Touch", links: ["https://link1.com", "https://link2.com"] },
+        { name: "Dead Or Alive", links: ["https://link3.com", "https://link4.com"] },
+        { name: "Dead Or Alive 2 Touch™", links: ["https://link1.com", "https://link2.com"] },
+        { name: "Dead or Alive 2™ Feature Buy", links: ["https://link3.com", "https://link4.com"] },
+        { name: "Dead or Alive Touch™", links: ["https://link1.com", "https://link2.com"] },
+        { name: "Dead or Alive2 Touch™ Feature Buy", links: ["https://link3.com", "https://link4.com"] },
+        { name: "Dead or AliveT", links: ["https://link1.com", "https://link2.com"] },
+        { name: "Disco Danny TouchTM", links: ["https://link3.com", "https://link4.com"] },
+        { name: "Disco Danny™", links: ["https://link1.com", "https://link2.com"] },
+        { name: "Divine Fortune Touch™", links: ["https://link3.com", "https://link4.com"] },
+        { name: "Divine FortuneT Megaways™", links: ["https://link1.com", "https://link2.com"] },
+        { name: "Divine Fortune™", links: ["https://link3.com", "https://link4.com"] },
+        { name: "Divine ortune™ Megaways™ Touch", links: ["https://link1.com", "https://link2.com"] },
+        { name: "Double Stacks", links: ["https://link3.com", "https://link4.com"] },
+        { name: "Double Stacks Touch", links: ["https://link1.com", "https://link2.com"] },
+        { name: "Drive: Multiplier Mayhem Touch™", links: ["https://link3.com", "https://link4.com"] },
+        { name: "Drive: Multiplier Mayhem™", links: ["https://link1.com", "https://link2.com"] },
+        { name: "Druids' Dream Touch™", links: ["https://link3.com", "https://link4.com"] },
+        { name: "Druids'Dream™", links: ["https://link1.com", "https://link2.com"] },
+        { name: "EggOMatic Touch™", links: ["https://link3.com", "https://link4.com"] },
+        { name: "EggOMatic™", links: ["https://link1.com", "https://link2.com"] },
+        { name: "Elements Touch™: The Awakening", links: ["https://link3.com", "https://link4.com"] },
+        { name: "Elements: The Awakening™", links: ["https://link1.com", "https://link2.com"] },
+        { name: "European Roulette Touch™", links: ["https://link3.com", "https://link4.com"] },
+        { name: "European Roulette™", links: ["https://link1.com", "https://link2.com"] },
+        { name: "Fairytale Legends: Hansel and Gretel™", links: ["https://link3.com", "https://link4.com"] },
+        { name: "Fairytale Legends: Mirror Mirror Touch™", links: ["https://link1.com", "https://link2.com"] },
+        { name: "Fairytale Legends: Mirror Mirror™", links: ["https://link3.com", "https://link4.com"] },
+        { name: "Fairytale Legends: Red Riding Hood Touch™", links: ["https://link1.com", "https://link2.com"] },
+        { name: "Fairytale Legends: Red Riding Hood™", links: ["https://link3.com", "https://link4.com"] },
+        { name: "FairytaleLegends: Hansel and Gretel Touch™", links: ["https://link1.com", "https://link2.com"] },
+        { name: "Finn and the Candy  Spin ", links: ["https://link3.com", "https://link4.com"] },
+        { name: "Finn and the Swirly Spin Touch™", links: ["https://link1.com", "https://link2.com"] },
+        { name: "Finn and the Swirly Spin™", links: ["https://link3.com", "https://link4.com"] },
+        { name: "Finn's Golden Tavern Touch™", links: ["https://link1.com", "https://link2.com"] },
+        { name: "Finn's Golden Tavern™", links: ["https://link3.com", "https://link4.com"] },
+        { name: "Flowers Christmas Edition Touch™", links: ["https://link1.com", "https://link2.com"] },
+        { name: "Flowers Christmas Edition™", links: ["https://link3.com", "https://link4.com"] },
+        { name: "Flowers Touch™", links: ["https://link1.com", "https://link2.com"] },
+        { name: "Flowers™", links: ["https://link3.com", "https://link4.com"] },
+        { name: "Football:Champions Cup Touch™", links: ["https://link1.com", "https://link2.com"] },
+        { name: "Football:Champions Cup™", links: ["https://link3.com", "https://link4.com"] },
+        { name: "Forbidden Riches Touch™", links: ["https://link1.com", "https://link2.com"] },
+        { name: "Fortune Rangers Touch™", links: ["https://link3.com", "https://link4.com"] },
+        { name: "Fortune Rangers™", links: ["https://link1.com", "https://link2.com"] },
+        { name: "French Roulette Touch™", links: ["https://link3.com", "https://link4.com"] },
+        { name: "French Roulette™", links: ["https://link1.com", "https://link2.com"] },
+        { name: "Fruit Blaze Touch™", links: ["https://link3.com", "https://link4.com"] },
+        { name: "Fruit Blaze™", links: ["https://link1.com", "https://link2.com"] },
+        { name: "Fruit Shop Christmas Edition Touch™", links: ["https://link3.com", "https://link4.com"] },
+        { name: "Fruit Shop Christmas Edition™", links: ["https://link1.com", "https://link2.com"] },
+        { name: "Fruit Shop Touch™", links: ["https://link3.com", "https://link4.com"] },
+        { name: "Fruit Shop™", links: ["https://link1.com", "https://link2.com"] },
+        { name: "Fruit Shop™ Megaways™", links: ["https://link3.com", "https://link4.com"] },
+        { name: "Fruit Shop™ Megaways™ Touch", links: ["https://link1.com", "https://link2.com"] },
+        { name: "Fruit Spin Touch™", links: ["https://link3.com", "https://link4.com"] },
+        { name: "Fruit Spin™", links: ["https://link1.com", "https://link2.com"] },
+        { name: "Funk Master Touch™", links: ["https://link3.com", "https://link4.com"] },
+        { name: "Funk Master™", links: ["https://link1.com", "https://link2.com"] },
+        { name: "Ghost Pirates Touch™", links: ["https://link3.com", "https://link4.com"] },
+        { name: "Ghost Pirates™", links: ["https://link1.com", "https://link2.com"] },
+        { name: "Gods of Gold Infinireels Touch™", links: ["https://link3.com", "https://link4.com"] },
+        { name: "Gods of Gold Infinireels™", links: ["https://link1.com", "https://link2.com"] },
+        { name: "Golden Grimoire Touch™", links: ["https://link3.com", "https://link4.com"] },
+        { name: "Gonzo's Gold Touch™", links: ["https://link1.com", "https://link2.com"] },
+        { name: "Gonzo's Gold™", links: ["https://link3.com", "https://link4.com"] },
+        { name: "Gonzo's Quest Touch™", links: ["https://link1.com", "https://link2.com"] },
+        { name: "Gonzo's Quest™", links: ["https://link3.com", "https://link4.com"] },
+        { name: "Gordon Ramsay Hell's Kitchen Touch™ ", links: ["https://link1.com", "https://link2.com"] },
+        { name: "Gordon Ramsay Hellʼs Kitchen™", links: ["https://link3.com", "https://link4.com"] },
+        { name: "Gorilla Kingdom Touch™", links: ["https://link1.com", "https://link2.com"] },
+        { name: "Gorilla Kingdom™", links: ["https://link3.com", "https://link4.com"] },
+        { name: "Grand Spinn'", links: ["https://link1.com", "https://link2.com"] },
+        { name: "Grand Spinn Superpot Touch", links: ["https://link3.com", "https://link4.com"] },
+        { name: "Grand Spinn Superpot™", links: ["https://link1.com", "https://link2.com"] },
+        { name: "Grand Spinn Touch™", links: ["https://link3.com", "https://link4.com"] },
+        { name: "Grimoire™", links: ["https://link1.com", "https://link2.com"] },
+        { name: "Guns N'Roses Video Slots Touch™", links: ["https://link3.com", "https://link4.com"] },
+        { name: "Guns N'Roses Video Slots™", links: ["https://link1.com", "https://link2.com"] },
+        { name: "Hall of Gods Touch™", links: ["https://link3.com", "https://link4.com"] },
+        { name: "Hall of Gods™", links: ["https://link1.com", "https://link2.com"] },
+        { name: "Halloween Jack Touch™", links: ["https://link3.com", "https://link4.com"] },
+        { name: "Halloween Jack™", links: ["https://link1.com", "https://link2.com"] },
+        { name: "Hotline 2 Touch™", links: ["https://link3.com", "https://link4.com"] },
+        { name: "Hotline 2™", links: ["https://link1.com", "https://link2.com"] },
+        { name: "Hotline Touch™ ", links: ["https://link3.com", "https://link4.com"] },
+        { name: "Hotline™", links: ["https://link1.com", "https://link2.com"] },
+        { name: "Irish Pot Luck Touch™", links: ["https://link3.com", "https://link4.com"] },
+        { name: "Irish Pot Luck™", links: ["https://link1.com", "https://link2.com"] },
+        { name: "Jack and the Beanstalk TouchTM", links: ["https://link3.com", "https://link4.com"] },
+        { name: "Jack and the Beanstalk™", links: ["https://link1.com", "https://link2.com"] },
+        { name: "Jack Hammer 3 ", links: ["https://link3.com", "https://link4.com"] },
+        { name: "Jack Hammer Touch™", links: ["https://link1.com", "https://link2.com"] },
+        { name: "Jack Hammer™", links: ["https://link3.com", "https://link4.com"] },
+        { name: "Jackpot 6000", links: ["https://link1.com", "https://link2.com"] },
+        { name: "Jackpot 6000 Touch™", links: ["https://link3.com", "https://link4.com"] },
+        { name: "Jacks or Better Double Up Touch", links: ["https://link1.com", "https://link2.com"] },
+        { name: "Jacks or Better Double Up ™", links: ["https://link3.com", "https://link4.com"] },
+        { name: "Jimi Hendrix Online Slot Touch™", links: ["https://link1.com", "https://link2.com"] },
+        { name: "Jimi Hendrix Online Slot™", links: ["https://link3.com", "https://link4.com"] },
+        { name: "Jingle Spin™", links: ["https://link1.com", "https://link2.com"] },
+        { name: "Jingle Spin™Touch", links: ["https://link3.com", "https://link4.com"] },
+        { name: "Joker Pro Touch™", links: ["https://link1.com", "https://link2.com"] },
+        { name: "Joker Pro™", links: ["https://link3.com", "https://link4.com"] },
+        { name: "Jumanji Touch®", links: ["https://link1.com", "https://link2.com"] },
+        { name: "Jumanji®", links: ["https://link3.com", "https://link4.com"] },
+        { name: "Jungle Spirit: Call of the Wild Touch™", links: ["https://link1.com", "https://link2.com"] },
+        { name: "Jungle Spirit: Call of the Wild™", links: ["https://link3.com", "https://link4.com"] },
+        { name: "King of Slots Touch™", links: ["https://link1.com", "https://link2.com"] },
+        { name: "King of Slots™", links: ["https://link3.com", "https://link4.com"] },
+        { name: "Knight Rider Video Slot", links: ["https://link1.com", "https://link2.com"] },
+        { name: "Knight Rider Video Slot Touch", links: ["https://link3.com", "https://link4.com"] },
+        { name: "Koi Princess Touch™", links: ["https://link1.com", "https://link2.com"] },
+        { name: "Koi Princess™", links: ["https://link3.com", "https://link4.com"] },
+        { name: "Let It Burn Touch™", links: ["https://link1.com", "https://link2.com"] },
+        { name: "Let It Burn™", links: ["https://link3.com", "https://link4.com"] },
+        { name: "Lights, Camera, Cash", links: ["https://link1.com", "https://link2.com"] },
+        { name: "Lost Relics Touch™", links: ["https://link3.com", "https://link4.com"] },
+        { name: "Lost Relics™", links: ["https://link1.com", "https://link2.com"] },
+        { name: "Magic Maid Café Touch™", links: ["https://link3.com", "https://link4.com"] },
+        { name: "Magic Maid Cafe™", links: ["https://link1.com", "https://link2.com"] },
+        { name: "Mega Fortune Dreams Touch™", links: ["https://link3.com", "https://link4.com"] },
+        { name: "Mega Fortune Dreams™", links: ["https://link1.com", "https://link2.com"] },
+        { name: "Mega Fortune Touch™", links: ["https://link3.com", "https://link4.com"] },
+        { name: "Mega Fortune™", links: ["https://link1.com", "https://link2.com"] },
+        { name: "Mega Joker Touch™", links: ["https://link3.com", "https://link4.com"] },
+        { name: "Mega Joker™", links: ["https://link1.com", "https://link2.com"] },
+        { name: "Mercy of the Gods Touch™", links: ["https://link3.com", "https://link4.com"] },
+        { name: "Mercy of the Gods™", links: ["https://link1.com", "https://link2.com"] },
+        { name: "Milkshake™ XXXtreme", links: ["https://link3.com", "https://link4.com"] },
+        { name: "Motörhead Video Slot Touch™", links: ["https://link1.com", "https://link2.com"] },
+        { name: "Motörhead Video Slot™", links: ["https://link3.com", "https://link4.com"] },
+        { name: "Narcos", links: ["https://link1.com", "https://link2.com"] },
+        { name: "Narcos Touch", links: ["https://link3.com", "https://link4.com"] },
+        { name: "Ocean's Treasure Touch™", links: ["https://link1.com", "https://link2.com"] },
+        { name: "Ocean's Treasure™", links: ["https://link3.com", "https://link4.com"] },
+        { name: "Ozzy Osbourne Video Slots Touch™", links: ["https://link1.com", "https://link2.com"] },
+        { name: "Ozzy Osbourne Video SlotsM", links: ["https://link3.com", "https://link4.com"] },
+        { name: "Parthenon: Quest for Immortality Touch™", links: ["https://link1.com", "https://link2.com"] },
+        { name: "Parthenon:Quest for Immortality™", links: ["https://link3.com", "https://link4.com"] },
+        { name: "Piggy Riches Touch™", links: ["https://link1.com", "https://link2.com"] },
+        { name: "Piggy Riches™", links: ["https://link3.com", "https://link4.com"] },
+        { name: "Pirate From The East Touch™", links: ["https://link1.com", "https://link2.com"] },
+        { name: "Pirate from the East™", links: ["https://link3.com", "https://link4.com"] },
+        { name: "Pyramid:Quest for Immortality Touch™", links: ["https://link1.com", "https://link2.com"] },
+        { name: "Pyramid:Quest for Immortality™", links: ["https://link3.com", "https://link4.com"] },
+        { name: "Rage of the Seas Touch™", links: ["https://link3.com", "https://link4.com"] },
+        { name: "Rage of the Seas™", links: ["https://link1.com", "https://link2.com"] },
+        { name: "Reef Raider Touch™", links: ["https://link3.com", "https://link4.com"] },
+        { name: "Reef Raider™", links: ["https://link1.com", "https://link2.com"] },
+        { name: "Reel Rush 2 Touch™", links: ["https://link3.com", "https://link4.com"] },
+        { name: "Reel Rush 2™", links: ["https://link1.com", "https://link2.com"] },
+        { name: "Reel Rush Touch™", links: ["https://link3.com", "https://link4.com"] },
+        { name: "Reel Rush™", links: ["https://link1.com", "https://link2.com"] },
+        { name: "Reel Steal Touch™", links: ["https://link3.com", "https://link4.com"] },
+        { name: "Reel Steal™", links: ["https://link1.com", "https://link2.com"] },
+        { name: "Riches of Midgard: Land and Expand Touch™", links: ["https://link3.com", "https://link4.com"] },
+        { name: "Riches of Midgard: Land and Expand™", links: ["https://link3.com", "https://link4.com"] },
+        { name: "Rise of Maya™", links: ["https://link1.com", "https://link2.com"] },
+        { name: "Rise of Maya™ Touch", links: ["https://link3.com", "https://link4.com"] },
+        { name: "Roulette Advanced™", links: ["https://link1.com", "https://link2.com"] },
+        { name: "Roulette Touch™", links: ["https://link3.com", "https://link4.com"] },
+        { name: "Scruffy Duck Touch™", links: ["https://link1.com", "https://link2.com"] },
+        { name: "Scruffy Duck™", links: ["https://link3.com", "https://link4.com"] },
+        { name: "Scudamore's Super Stakes", links: ["https://link1.com", "https://link2.com"] },
+        { name: "Scudamore's Super Stakes Touch", links: ["https://link3.com", "https://link4.com"] },
+        { name: "Secrets of Atlantis Touch™", links: ["https://link1.com", "https://link2.com"] },
+        { name: "Secrets of Atlantis™", links: ["https://link3.com", "https://link4.com"] },
+        { name: "Secrets of Christmas Touch™", links: ["https://link1.com", "https://link2.com"] },
+        { name: "Secrets of Christmas™", links: ["https://link3.com", "https://link4.com"] },
+        { name: "Silverback Gold Touch™", links: ["https://link1.com", "https://link2.com"] },
+        { name: "Silverback Gold™", links: ["https://link3.com", "https://link4.com"] },
+        { name: "Space Wars 2™ Powerpoints™", links: ["https://link1.com", "https://link2.com"] },
+        { name: "Space Wars 2™ Powerpoints™ Touch", links: ["https://link3.com", "https://link4.com"] },
+        { name: "Space Wars Touch™", links: ["https://link1.com", "https://link2.com"] },
+        { name: "Space Wars Touch™ Pyramid:Quest for imortality™", links: ["https://link3.com", "https://link4.com"] },
+        { name: "Space Wars™", links: ["https://link1.com", "https://link2.com"] },
+        { name: "Spiñata Grande Touch™", links: ["https://link3.com", "https://link4.com"] },
+        { name: "Spiñata Grande™", links: ["https://link1.com", "https://link2.com"] },
+        { name: "Spinsane Touch™", links: ["https://link3.com", "https://link4.com"] },
+        { name: "Spinsane™", links: ["https://link1.com", "https://link2.com"] },
+        { name: "Starburst Touch™", links: ["https://link3.com", "https://link4.com"] },
+        { name: "Starburst Xxxtreme Touch™", links: ["https://link1.com", "https://link2.com"] },
+        { name: "Starburst Xxxtreme™", links: ["https://link3.com", "https://link4.com"] },
+        { name: "Starburst™", links: ["https://link1.com", "https://link2.com"] },
+        { name: "Steam Tower Touch™", links: ["https://link3.com", "https://link4.com"] },
+        { name: "Steam Tower™", links: ["https://link1.com", "https://link2.com"] },
+        { name: "Street Fighter™ II: The World Warrior Slot", links: ["https://link3.com", "https://link4.com"] },
+        { name: "Street Fighter™ II: The World Warrior Slot Touch", links: ["https://link1.com", "https://link2.com"] },
+        { name: "Super Striker Touch™", links: ["https://link3.com", "https://link4.com"] },
+        { name: "Super Striker™", links: ["https://link1.com", "https://link2.com"] },
+        { name: "Superstars™", links: ["https://link3.com", "https://link4.com"] },
+        { name: "Taco Fury™ XXXtreme", links: ["https://link1.com", "https://link2.com"] },
+        { name: "Temple of Nudges Touch™", links: ["https://link3.com", "https://link4.com"] },
+        { name: "Temple of Nudges ™", links: ["https://link1.com", "https://link2.com"] },
+        { name: "The Wolf's Bane Touch™", links: ["https://link3.com", "https://link4.com"] },
+        { name: "The Wolf's Bane™", links: ["https://link1.com", "https://link2.com"] },
+        { name: "Trollpot 5000 Touch™", links: ["https://link3.com", "https://link4.com"] },
+        { name: "Trollpot 5000TM", links: ["https://link1.com", "https://link2.com"] },
+        { name: "Turn Your Fortune Touch™", links: ["https://link3.com", "https://link4.com"] },
+        { name: "Turn Your Fortune™", links: ["https://link1.com", "https://link2.com"] },
+        { name: "Twin Spin Deluxe Touch™", links: ["https://link3.com", "https://link4.com"] },
+        { name: "Twin Spin Deluxe™", links: ["https://link1.com", "https://link2.com"] },
+        { name: "Twin Spin Touch™", links: ["https://link3.com", "https://link4.com"] },
+        { name: "Twin Spin™", links: ["https://link1.com", "https://link2.com"] },
+        { name: "Twin Spin™ Megaways™", links: ["https://link3.com", "https://link4.com"] },
+        { name: "Twin Spin™ Megaways™ Touch", links: ["https://link1.com", "https://link2.com"] },
+        { name: "Universal Monsters™ The Phantom's Curse Video Slot", links: ["https://link3.com", "https://link4.com"] },
+        { name: "Universal Monsters™ The Phantom's Curse Video Slot Touch", links: ["https://link1.com", "https://link2.com"] },
+        { name: "Vegas Night Life Touch™", links: ["https://link3.com", "https://link4.com"] },
+        { name: "Vegas Night Life™", links: ["https://link1.com", "https://link2.com"] },
+        { name: "Victorious Touch™", links: ["https://link3.com", "https://link4.com"] },
+        { name: "Victorious™", links: ["https://link1.com", "https://link2.com"] },
+        { name: "Warlords - Crystals of Power™ Touch", links: ["https://link3.com", "https://link4.com"] },
+        { name: "Warlords Crystals of Power™", links: ["https://link1.com", "https://link2.com"] },
+        { name: "Wild Bazaar Touch™", links: ["https://link3.com", "https://link4.com"] },
+        { name: "Wild Bazaar™", links: ["https://link1.com", "https://link2.com"] },
+        { name: "Wild Turkey Touch™", links: ["https://link3.com", "https://link4.com"] },
+        { name: "Wild Turkey™", links: ["https://link1.com", "https://link2.com"] },
+        { name: "Wild Water Touch™", links: ["https://link3.com", "https://link4.com"] },
+        { name: "Wild WaterT", links: ["https://link1.com", "https://link2.com"] },
+        { name: "Wild Wild West: The Great Train Heist Touch™", links: ["https://link3.com", "https://link4.com"] },
+        { name: "Wild Wild West: The Great Train Heist™", links: ["https://link1.com", "https://link2.com"] },
+        { name: "Wild Worlds Touch™", links: ["https://link3.com", "https://link4.com"] },
+        { name: "Wild Worlds™", links: ["https://link1.com", "https://link2.com"] },
+        { name: "Wilderland Touch™", links: ["https://link3.com", "https://link4.com"] },
+        { name: "Wilderland™", links: ["https://link3.com", "https://link4.com"] },
+        { name: "Willy's Hot Chillies Touch™", links: ["https://link1.com", "https://link2.com"] },
+        { name: "Willy's Hot Chillies™", links: ["https://link3.com", "https://link4.com"] },
+        { name: "Wings of Riches Touch™", links: ["https://link1.com", "https://link2.com"] },
+        { name: "Wings of Riches™", links: ["https://link3.com", "https://link4.com"] },
+        { name: "Witchcraft Academy Touch™", links: ["https://link1.com", "https://link2.com"] },
+        { name: "Witchcraft Academy™", links: ["https://link3.com", "https://link4.com"] },
+        { name: "Wolf Cub Touch™", links: ["https://link1.com", "https://link2.com"] },
+        { name: "Wolf Cub™", links: ["https://link3.com", "https://link4.com"] },
+        { name: "Wonderland Protector Touch™", links: ["https://link3.com", "https://link4.com"] },
+        { name: "Wonderland Protector™", links: ["https://link3.com", "https://link4.com"] },
+        
+       
+       
+        
+       
+    ];
+
+            const gameList = document.getElementById("game-list");
+
+            games.forEach(game => {
+                const listItem = document.createElement("li");
+                listItem.className = "game-item";
+                listItem.innerHTML = `
+                    <span class="game-name">${game.name}</span>
+                    <button class="view-links-btn">Ver Links</button>
+                `;
+
+                listItem.querySelector(".view-links-btn").addEventListener("click", () => {
+                    const popup = document.createElement("div");
+                    popup.className = "popup";
+                    popup.innerHTML = `
+                        <div class="popup-overlay" onclick="closePopup()"></div>
+                        <div class="popup-content">
+                            <h2>${game.name}</h2>
+                            ${game.links.map((link, i) => `<button class="popup-link" onclick="window.open('${link}', '_blank')">Link ${i + 1}</button>`).join("")}
+                            <button class="close-popup" onclick="closePopup()">Fechar</button>
+                        </div>
+                    `;
+                    document.body.appendChild(popup);
+                });
+
+                gameList.appendChild(listItem);
+            });
+        });
+
+        function closePopup() {
+            const popup = document.querySelector(".popup");
+            if (popup) popup.remove();
+        }
+    </script>
+</body>
+</html>
