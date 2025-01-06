@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NoLimit City - Jogos</title>
+    <title>No Limity City - Jogos</title>
     <style>
         /* Estilo Geral */
         body {
@@ -69,7 +69,7 @@
             list-style: none;
             padding: 0;
             margin: 0 auto;
-            max-width: 400px; /* Limita a largura da lista */
+            max-width: 800px; /* Limita a largura da lista */
             text-align: left;
         }
 
@@ -117,33 +117,62 @@
     </header>
 
     <main class="content">
-        <h1>Jogos da NoLimit City</h1>
+        <h1>Jogos da No limit city</h1>
         <ul id="game-list">
-            <!-- Lista de jogos -->
-            <li class="game-item">
-                <span class="game-name">Blood & Shadow 2</span>
-                <button class="view-links-btn" onclick="openGamePopup()">Ver Links</button>
-            </li>
+            <!-- Jogos serão carregados dinamicamente -->
         </ul>
     </main>
 
     <script>
-        function openGamePopup() {
+        document.addEventListener("DOMContentLoaded", () => {
+            // Lista de jogos da PGSoft
+            const games = [
+    { name: "Blood & Shadow 2", links: ['https://h2grupo-my.sharepoint.com/personal/diego_macedo_h2grupo_com/_layouts/15/onedrive.aspx?sortField=FileLeafRef&isAscending=true&id=%2Fpersonal%2Fdiego%5Fmacedo%5Fh2grupo%5Fcom%2FDocuments%2F%C3%81rea%20de%20Trabalho%2Fprovedores%20certificados%2FNo%20Limit%20City%2FBR%5FNLC005TRA%2E21%5F56%2E303%2E755%5FREV%2E1%2Epdf&parent=%2Fpersonal%2Fdiego%5Fmacedo%5Fh2grupo%5Fcom%2FDocuments%2F%C3%81rea%20de%20Trabalho%2Fprovedores%20certificados%2FNo%20Limit%20City','https://h2grupo-my.sharepoint.com/personal/diego_macedo_h2grupo_com/_layouts/15/onedrive.aspx?sortField=FileLeafRef&isAscending=true&id=%2Fpersonal%2Fdiego%5Fmacedo%5Fh2grupo%5Fcom%2FDocuments%2F%C3%81rea%20de%20Trabalho%2Fprovedores%20certificados%2FNo%20Limit%20City%2FBR%5FNLC005TRA%2E21%5F56%2E303%2E755%5FREV%2E1%2Epdf&parent=%2Fpersonal%2Fdiego%5Fmacedo%5Fh2grupo%5Fcom%2FDocuments%2F%C3%81rea%20de%20Trabalho%2Fprovedores%20certificados%2FNo%20Limit%20City','https://h2grupo-my.sharepoint.com/personal/diego_macedo_h2grupo_com/_layouts/15/onedrive.aspx?sortField=FileLeafRef&isAscending=true&id=%2Fpersonal%2Fdiego%5Fmacedo%5Fh2grupo%5Fcom%2FDocuments%2F%C3%81rea%20de%20Trabalho%2Fprovedores%20certificados%2FNo%20Limit%20City%2FBR%5FNLC005TRA%2E21%5F56%2E303%2E755%5FREV%2E1%2Epdf&parent=%2Fpersonal%2Fdiego%5Fmacedo%5Fh2grupo%5Fcom%2FDocuments%2F%C3%81rea%20de%20Trabalho%2Fprovedores%20certificados%2FNo%20Limit%20City'] },
+    
+];
+
+            const gameList = document.getElementById("game-list");
+
+            // Adiciona cada jogo como um item estilizado na lista
+            games.forEach(game => {
+                const listItem = document.createElement("li");
+                listItem.className = "game-item";
+                listItem.innerHTML = `
+                    <span class="game-name">${game.name}</span>
+                    <button class="view-links-btn">Ver Links</button>
+                `;
+
+                // Evento para abrir o pop-up com os links
+                listItem.querySelector(".view-links-btn").addEventListener("click", () => {
+                    createPopup(game);
+                });
+
+                gameList.appendChild(listItem);
+            });
+        });
+
+        function createPopup(game) {
+            // Remove qualquer pop-up existente
             closePopup();
+
+            const options = game.links.map(
+                (link, index) =>
+                    `<button class="popup-link" onclick="window.open('${link}', '_blank')">Link ${index + 1}</button>`
+            ).join("");
 
             const popup = document.createElement("div");
             popup.classList.add("popup");
             popup.innerHTML = `
                 <div class="popup-overlay" onclick="closePopup()"></div>
                 <div class="popup-content">
-                    <h2>Blood & Shadow 2</h2>
-                    <button class="popup-link" onclick="window.open('https://example-link1.com', '_blank')">Link 1</button>
-                    <button class="popup-link" onclick="window.open('https://example-link2.com', '_blank')">Link 2</button>
+                    <h2>${game.name}</h2>
+                    ${options}
                     <button class="close-popup" onclick="closePopup()">Fechar</button>
                 </div>
             `;
             document.body.appendChild(popup);
 
+            // Aplica estilos ao pop-up dinamicamente
             applyPopupStyles();
         }
 
