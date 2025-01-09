@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>No Limity City - Jogos</title>
+    <title>NoLimitCity - Jogos</title>
     <style>
         /* Estilo Geral */
         body {
@@ -106,7 +106,23 @@
         .view-links-btn:hover {
             background-color: #5a005a;
         }
-        
+
+        /* Estilo para a nova caixa "Enviado ao governo" */
+        .gov-info {
+            margin-left: 10px;
+            padding: 5px 10px;
+            border-radius: 5px;
+            background-color: #d3d3d3;
+            color: #000;
+            font-size: 12px;
+        }
+
+        .link-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
     </style>
 </head>
 <body>
@@ -118,7 +134,7 @@
     </header>
 
     <main class="content">
-        <h1>Jogos da No limit city</h1>
+        <h1>Jogos da NoLimitCity</h1>
         <ul id="game-list">
             <!-- Jogos serão carregados dinamicamente -->
         </ul>
@@ -128,47 +144,47 @@
         document.addEventListener("DOMContentLoaded", () => {
             // Lista de jogos da PGSoft
             const games = [
-   { name: "Apocalypse Super xNudge", links: [] },
-    { name: "Beheaded", links: [] },
-    { name: "Blood & Shadow 2", links: ['https://h2grupo-my.sharepoint.com/personal/diego_macedo_h2grupo_com/_layouts/15/onedrive.aspx?sortField=FileLeafRef&isAscending=true&id=%2Fpersonal%2Fdiego%5Fmacedo%5Fh2grupo%5Fcom%2FDocuments%2F%C3%81rea%20de%20Trabalho%2Fprovedores%20certificados%2FNo%20Limit%20City%2FBR%5FNLC005TRA%2E21%5F56%2E303%2E755%5FREV%2E1%2Epdf&parent=%2Fpersonal%2Fdiego%5Fmacedo%5Fh2grupo%5Fcom%2FDocuments%2F%C3%81rea%20de%20Trabalho%2Fprovedores%20certificados%2FNo%20Limit%20City','https://h2grupo-my.sharepoint.com/personal/diego_macedo_h2grupo_com/_layouts/15/onedrive.aspx?sortField=FileLeafRef&isAscending=true&id=%2Fpersonal%2Fdiego%5Fmacedo%5Fh2grupo%5Fcom%2FDocuments%2F%C3%81rea%20de%20Trabalho%2Fprovedores%20certificados%2FNo%20Limit%20City%2FBR%5FNLC005TRA%2E21%5F56%2E303%2E755%5FREV%2E1%2Epdf&parent=%2Fpersonal%2Fdiego%5Fmacedo%5Fh2grupo%5Fcom%2FDocuments%2F%C3%81rea%20de%20Trabalho%2Fprovedores%20certificados%2FNo%20Limit%20City','https://h2grupo-my.sharepoint.com/personal/diego_macedo_h2grupo_com/_layouts/15/onedrive.aspx?sortField=FileLeafRef&isAscending=true&id=%2Fpersonal%2Fdiego%5Fmacedo%5Fh2grupo%5Fcom%2FDocuments%2F%C3%81rea%20de%20Trabalho%2Fprovedores%20certificados%2FNo%20Limit%20City%2FBR%5FNLC005TRA%2E21%5F56%2E303%2E755%5FREV%2E1%2Epdf&parent=%2Fpersonal%2Fdiego%5Fmacedo%5Fh2grupo%5Fcom%2FDocuments%2F%C3%81rea%20de%20Trabalho%2Fprovedores%20certificados%2FNo%20Limit%20City'] },
-    { name: "Book of Shadows", links: [] },
-    { name: "Bounty Hunters xNudge", links: [] },
-    { name: "Brick Snake 2000", links: [] },
-    { name: "Brute Force", links: [] },
-    { name: "D-Day", links: [] },
-    { name: "Deadwood R.I.P", links: [] },
-    { name: "Devil's Crossroad", links: [] },
-    { name: "Disturbed", links: [] },
-    { name: "Fire In The Hole 2", links: [] },
-    { name: "Gluttony", links: [] },
-    { name: "Jingle Balls", links: [] },
-    { name: "Kenneth Must Die", links: [] },
-    { name: "Land Of The Free", links: [] },
-    { name: "Loner", links: [] },
-    { name: "Mental", links: [] },
-    { name: "Nine To Five", links: [] },
-    { name: "Outsourced", links: [] },
-    { name: "Possessed", links: [] },
-    { name: "Punk Rocker 2", links: [] },
-    { name: "Road Kill", links: [] },
-    { name: "San Quentin 2: Death Row", links: [] },
-    { name: "San Quentin xWays", links: [] },
-    { name: "Skate Or Die", links: [] },
-    { name: "Space Donkey", links: [] },
-    { name: "Stockholm Syndrome", links: [] },
-    { name: "The Cage", links: [] },
-    { name: "The Crypt", links: [] },
-    { name: "Tombstone No Mercy", links: [] },
-    { name: "Tombstone R.I.P", links: [] },
-    { name: "True Grit Redemption", links: [] },
-    { name: "True Kult", links: [] },
-    { name: "Ugliest Catch", links: [] },
-    { name: "Walk of Shame", links: [] },
-    { name: "Whacked", links: [] },
-    { name: "xWays Hoarder xSplit", links: [] },
-    
-
-];
+    { name: "Apocalypse Super xNudge", links: [''] },
+     { name: "Beheaded", links: [] },
+     { name: "Blood & Shadow 2", links: ['https://h2grupo-my.sharepoint.com/personal/diego_macedo_h2grupo_com/_layouts/15/onedrive.aspx?sortField=FileLeafRef&isAscending=true&id=%2Fpersonal%2Fdiego%5Fmacedo%5Fh2grupo%5Fcom%2FDocuments%2F%C3%81rea%20de%20Trabalho%2Fprovedores%20certificados%2FNo%20Limit%20City%2FBR%5FNLC005TRA%2E21%5F56%2E303%2E755%5FREV%2E1%2Epdf&parent=%2Fpersonal%2Fdiego%5Fmacedo%5Fh2grupo%5Fcom%2FDocuments%2F%C3%81rea%20de%20Trabalho%2Fprovedores%20certificados%2FNo%20Limit%20City','https://h2grupo-my.sharepoint.com/personal/diego_macedo_h2grupo_com/_layouts/15/onedrive.aspx?sortField=FileLeafRef&isAscending=true&id=%2Fpersonal%2Fdiego%5Fmacedo%5Fh2grupo%5Fcom%2FDocuments%2F%C3%81rea%20de%20Trabalho%2Fprovedores%20certificados%2FNo%20Limit%20City%2FBR%5FNLC005TRA%2E21%5F56%2E303%2E755%5FREV%2E1%2Epdf&parent=%2Fpersonal%2Fdiego%5Fmacedo%5Fh2grupo%5Fcom%2FDocuments%2F%C3%81rea%20de%20Trabalho%2Fprovedores%20certificados%2FNo%20Limit%20City','https://h2grupo-my.sharepoint.com/personal/diego_macedo_h2grupo_com/_layouts/15/onedrive.aspx?sortField=FileLeafRef&isAscending=true&id=%2Fpersonal%2Fdiego%5Fmacedo%5Fh2grupo%5Fcom%2FDocuments%2F%C3%81rea%20de%20Trabalho%2Fprovedores%20certificados%2FNo%20Limit%20City%2FBR%5FNLC005TRA%2E21%5F56%2E303%2E755%5FREV%2E1%2Epdf&parent=%2Fpersonal%2Fdiego%5Fmacedo%5Fh2grupo%5Fcom%2FDocuments%2F%C3%81rea%20de%20Trabalho%2Fprovedores%20certificados%2FNo%20Limit%20City'] },
+     { name: "Book of Shadows", links: [] },
+     { name: "Bounty Hunters xNudge", links: [] },
+     { name: "Brick Snake 2000", links: [] },
+     { name: "Brute Force", links: [] },
+     { name: "D-Day", links: [] },
+     { name: "Deadwood R.I.P", links: [] },
+     { name: "Devil's Crossroad", links: [] },
+     { name: "Disturbed", links: [] },
+     { name: "Fire In The Hole 2", links: [] },
+     { name: "Gluttony", links: [] },
+     { name: "Jingle Balls", links: [] },
+     { name: "Kenneth Must Die", links: [] },
+     { name: "Land Of The Free", links: [] },
+     { name: "Loner", links: [] },
+     { name: "Mental", links: [] },
+     { name: "Nine To Five", links: [] },
+     { name: "Outsourced", links: [] },
+     { name: "Possessed", links: [] },
+     { name: "Punk Rocker 2", links: [] },
+     { name: "Road Kill", links: [] },
+     { name: "San Quentin 2: Death Row", links: [] },
+     { name: "San Quentin xWays", links: [] },
+     { name: "Skate Or Die", links: [] },
+     { name: "Space Donkey", links: [] },
+     { name: "Stockholm Syndrome", links: [] },
+     { name: "The Cage", links: [] },
+     { name: "The Crypt", links: [] },
+     { name: "Tombstone No Mercy", links: [] },
+     { name: "Tombstone R.I.P", links: [] },
+     { name: "True Grit Redemption", links: [] },
+     { name: "True Kult", links: [] },
+     { name: "Ugliest Catch", links: [] },
+     { name: "Walk of Shame", links: [] },
+     { name: "Whacked", links: [] },
+     { name: "xWays Hoarder xSplit", links: [] },
+     
+ 
+ ];
 
             const gameList = document.getElementById("game-list");
 
@@ -196,7 +212,10 @@
 
             const options = game.links.map(
                 (link, index) =>
-                    `<button class="popup-link" onclick="window.open('${link}', '_blank')">Link ${index + 1}</button>`
+                    `<div class="link-container">
+                        <button class="popup-link" onclick="window.open('${link}', '_blank')">Link ${index + 1}</button>
+                        <span class="gov-info">Enviado ao governo</span>
+                    </div>`
             ).join("");
 
             const popup = document.createElement("div");
