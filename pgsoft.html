@@ -106,6 +106,23 @@
         .view-links-btn:hover {
             background-color: #5a005a;
         }
+
+        /* Estilo para a nova caixa "Enviado ao governo" */
+        .gov-info {
+            margin-left: 10px;
+            padding: 5px 10px;
+            border-radius: 5px;
+            background-color: #d3d3d3;
+            color: #000;
+            font-size: 12px;
+        }
+
+        .link-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
     </style>
 </head>
 <body>
@@ -127,7 +144,7 @@
         document.addEventListener("DOMContentLoaded", () => {
             // Lista de jogos da PGSoft
             const games = [
-    { name: "Bikini Paradise", links: ["https://h2grupo-my.sharepoint.com/personal/diego_macedo_h2grupo_com/_layouts/15/onedrive.aspx?sortField=FileLeafRef&isAscending=true&id=%2Fpersonal%2Fdiego%5Fmacedo%5Fh2grupo%5Fcom%2FDocuments%2F%C3%81rea%20de%20Trabalho%2Fprovedores%20certificados%2FPG%20SOFT%2F56%2DH2%20LICENSED%20LTDA%2FGames%2FBR%2EOCC%2E1024%2E01%2E01%5FTranslation%5FeSigned%2Epdf&parent=%2Fpersonal%2Fdiego%5Fmacedo%5Fh2grupo%5Fcom%2FDocuments%2F%C3%81rea%20de%20Trabalho%2Fprovedores%20certificados%2FPG%20SOFT%2F56%2DH2%20LICENSED%20LTDA%2FGames",] },
+    { name: "Bikini Paradise ", links: ["https://h2grupo-my.sharepoint.com/personal/diego_macedo_h2grupo_com/_layouts/15/onedrive.aspx?sortField=FileLeafRef&isAscending=true&id=%2Fpersonal%2Fdiego%5Fmacedo%5Fh2grupo%5Fcom%2FDocuments%2F%C3%81rea%20de%20Trabalho%2Fprovedores%20certificados%2FPG%20SOFT%2F56%2DH2%20LICENSED%20LTDA%2FGames%2FBR%2EOCC%2E1024%2E01%2E01%5FTranslation%5FeSigned%2Epdf&parent=%2Fpersonal%2Fdiego%5Fmacedo%5Fh2grupo%5Fcom%2FDocuments%2F%C3%81rea%20de%20Trabalho%2Fprovedores%20certificados%2FPG%20SOFT%2F56%2DH2%20LICENSED%20LTDA%2FGames",]  },
     { name: "Captain's Bounty", links: ["https://h2grupo-my.sharepoint.com/personal/diego_macedo_h2grupo_com/_layouts/15/onedrive.aspx?sortField=FileLeafRef&isAscending=true&id=%2Fpersonal%2Fdiego%5Fmacedo%5Fh2grupo%5Fcom%2FDocuments%2F%C3%81rea%20de%20Trabalho%2Fprovedores%20certificados%2FPG%20SOFT%2F56%2DH2%20LICENSED%20LTDA%2FGames%2FBR%2EOCC%2E1024%2E02%2E01%5FTranslation%5FeSigned%2Epdf&parent=%2Fpersonal%2Fdiego%5Fmacedo%5Fh2grupo%5Fcom%2FDocuments%2F%C3%81rea%20de%20Trabalho%2Fprovedores%20certificados%2FPG%20SOFT%2F56%2DH2%20LICENSED%20LTDA%2FGames", ] },
     { name: "Double Fortune", links: ["https://h2grupo-my.sharepoint.com/personal/diego_macedo_h2grupo_com/_layouts/15/onedrive.aspx?sortField=FileLeafRef&isAscending=true&id=%2Fpersonal%2Fdiego%5Fmacedo%5Fh2grupo%5Fcom%2FDocuments%2F%C3%81rea%20de%20Trabalho%2Fprovedores%20certificados%2FPG%20SOFT%2F56%2DH2%20LICENSED%20LTDA%2FGames%2FBR%2EOCC%2E1024%2E03%2E01%5FTranslation%5FeSigned%2Epdf&parent=%2Fpersonal%2Fdiego%5Fmacedo%5Fh2grupo%5Fcom%2FDocuments%2F%C3%81rea%20de%20Trabalho%2Fprovedores%20certificados%2FPG%20SOFT%2F56%2DH2%20LICENSED%20LTDA%2FGames", ] },
     { name: "Dragon Tiger Luck", links: ["https://h2grupo-my.sharepoint.com/personal/diego_macedo_h2grupo_com/_layouts/15/onedrive.aspx?sortField=FileLeafRef&isAscending=true&id=%2Fpersonal%2Fdiego%5Fmacedo%5Fh2grupo%5Fcom%2FDocuments%2F%C3%81rea%20de%20Trabalho%2Fprovedores%20certificados%2FPG%20SOFT%2F56%2DH2%20LICENSED%20LTDA%2FGames%2FBR%2EOCC%2E1024%2E03%2E01%5FTranslation%5FeSigned%2Epdf&parent=%2Fpersonal%2Fdiego%5Fmacedo%5Fh2grupo%5Fcom%2FDocuments%2F%C3%81rea%20de%20Trabalho%2Fprovedores%20certificados%2FPG%20SOFT%2F56%2DH2%20LICENSED%20LTDA%2FGames", ] },
@@ -173,7 +190,10 @@
 
             const options = game.links.map(
                 (link, index) =>
-                    `<button class="popup-link" onclick="window.open('${link}', '_blank')">Link ${index + 1}</button>`
+                    `<div class="link-container">
+                        <button class="popup-link" onclick="window.open('${link}', '_blank')">Link ${index + 1}</button>
+                        <span class="gov-info">Enviado ao governo</span>
+                    </div>`
             ).join("");
 
             const popup = document.createElement("div");

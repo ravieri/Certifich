@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const links = JSON.parse(gameElement.dataset.links);
             const options = links.map(
                 (link, index) =>
-                    `<button class="popup-link" onclick="window.open('${link}', '_blank')">Link ${index + 1}</button>`
+                    `<button class="popup-link" onclick="window.open('${link}', '_blank')">Link ${index + 1} (Enviado ao governo)</button>`
             ).join("");
 
             const popup = document.createElement("div");
