@@ -123,6 +123,18 @@
             justify-content: center;
             margin-bottom: 10px;
         }
+        .neon-text {
+    color: #39ff14;
+    font-weight: bold;
+    font-size: 12px; /* Tamanho menor */
+    text-shadow: 0 0 5px #39ff14, 0 0 10px #39ff14, 0 0 20px #39ff14;
+}
+.neon2-text {
+    color: #e60c0c;
+    font-weight: bold;
+    font-size: 12px; /* Tamanho menor */
+    text-shadow: 0 0 5px #e60c0c, 0 0 10px #e60c0c, 0 0 20px #e60c0c;
+}
     </style>
 </head>
 <body>
@@ -144,13 +156,13 @@
         document.addEventListener("DOMContentLoaded", () => {
             // Lista de jogos da PGSoft
             const games = [
-    { name: "Bingo 30 ball ", links: ['711BR-711-PPD-24-113_H2 LICENSED LTDA_English.pdf', '711BR-711-PPD-24-113_H2 LICENSED LTDA_Portuguese.pdf'] },
-    { name: "Bingo 50 ball", links: ['711BR-711-PPD-24-113_H2 LICENSED LTDA_English.pdf', '711BR-711-PPD-24-113_H2 LICENSED LTDA_Portuguese.pdf']},
-    { name: "Bingo 75 ball", links: ['711BR-711-PPD-24-113_H2 LICENSED LTDA_English.pdf', '711BR-711-PPD-24-113_H2 LICENSED LTDA_Portuguese.pdf'] },
-    { name: "Bingo 80 ball", links: ['711BR-711-PPD-24-113_H2 LICENSED LTDA_English.pdf', '711BR-711-PPD-24-113_H2 LICENSED LTDA_Portuguese.pdf'] },
-    { name: "Bingo 90 ball", links: ['711BR-711-PPD-24-113_H2 LICENSED LTDA_English.pdf', '711BR-711-PPD-24-113_H2 LICENSED LTDA_Portuguese.pdf'] },
-    { name: "Diamond Dazzle", links: ['711BR-711-PPD-24-113_H2 LICENSED LTDA_English.pdf', '711BR-711-PPD-24-113_H2 LICENSED LTDA_Portuguese.pdf'] },
-    { name: "Reels Room", links: ["711BR-711-PPD-24-113_H2 LICENSED LTDA_English.pdf", "711BR-711-PPD-24-113_H2 LICENSED LTDA_Portuguese.pdf"] },
+    { name: '<span class="neon-text">ON-LINE</span> Bingo 30 ball', links: ['711BR-711-PPD-24-113_H2 LICENSED LTDA_English.pdf', '711BR-711-PPD-24-113_H2 LICENSED LTDA_Portuguese.pdf'] },
+    { name: '<span class="neon-text">ON-LINE</span> Bingo 50 ball', links: ['711BR-711-PPD-24-113_H2 LICENSED LTDA_English.pdf', '711BR-711-PPD-24-113_H2 LICENSED LTDA_Portuguese.pdf']},
+    { name: '<span class="neon-text">ON-LINE</span> Bingo 75 ball', links: ['711BR-711-PPD-24-113_H2 LICENSED LTDA_English.pdf', '711BR-711-PPD-24-113_H2 LICENSED LTDA_Portuguese.pdf'] },
+    { name: '<span class="neon-text">ON-LINE</span> Bingo 80 ball', links: ['711BR-711-PPD-24-113_H2 LICENSED LTDA_English.pdf', '711BR-711-PPD-24-113_H2 LICENSED LTDA_Portuguese.pdf'] },
+    { name: '<span class="neon-text">ON-LINE</span> Bingo 90 ball', links: ['711BR-711-PPD-24-113_H2 LICENSED LTDA_English.pdf', '711BR-711-PPD-24-113_H2 LICENSED LTDA_Portuguese.pdf'] },
+    { name: '<span class="neon2-text">OFF</span> Diamond Dazzle', links: ['711BR-711-PPD-24-113_H2 LICENSED LTDA_English.pdf', '711BR-711-PPD-24-113_H2 LICENSED LTDA_Portuguese.pdf'] },
+    { name: '<span class="neon2-text">OFF</span> Reels Room', links: ["711BR-711-PPD-24-113_H2 LICENSED LTDA_English.pdf", "711BR-711-PPD-24-113_H2 LICENSED LTDA_Portuguese.pdf"] },
     
     
     
