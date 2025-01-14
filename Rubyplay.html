@@ -107,78 +107,34 @@
             background-color: #5a005a;
         }
 
-        /* Pop-up */
-        .popup {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-        }
-
-        .popup-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.7);
-        }
-
-        .popup-content {
-            position: relative;
-            background: #fff;
+        /* Estilo para a nova caixa "Enviado ao governo" */
+        .gov-info {
+            margin-left: 10px;
+            padding: 5px 10px;
+            border-radius: 5px;
+            background-color: #d3d3d3;
             color: #000;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            text-align: center;
-            z-index: 1010;
-            max-width: 400px;
-            width: 90%;
+            font-size: 12px;
         }
 
-        .popup-content h2 {
-            margin-bottom: 15px;
-            font-size: 20px;
-            color: #800080;
+        .link-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 10px;
         }
-
-        .popup-link {
-            margin: 10px 5px;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            background-color: #800080;
-            color: #fff;
-            cursor: pointer;
-            font-weight: bold;
-            transition: background-color 0.3s ease;
-        }
-
-        .popup-link:hover {
-            background-color: #5a005a;
-        }
-
-        .close-popup {
-            margin-top: 20px;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            background-color: #ff0000;
-            color: #fff;
-            cursor: pointer;
-            font-weight: bold;
-            transition: background-color 0.3s ease;
-        }
-
-        .close-popup:hover {
-            background-color: #cc0000;
-        }
+        .neon-text {
+    color: #39ff14;
+    font-weight: bold;
+    font-size: 12px; /* Tamanho menor */
+    text-shadow: 0 0 5px #39ff14, 0 0 10px #39ff14, 0 0 20px #39ff14;
+}
+.neon2-text {
+    color: #e60c0c;
+    font-weight: bold;
+    font-size: 12px; /* Tamanho menor */
+    text-shadow: 0 0 5px #e60c0c, 0 0 10px #e60c0c, 0 0 20px #e60c0c;
+}
     </style>
 </head>
 <body>
@@ -192,40 +148,46 @@
     <main class="content">
         <h1>Jogos da RubyPlay</h1>
         <ul id="game-list">
-            <!-- Lista de jogos será carregada dinamicamente -->
+            <!-- Jogos serão carregados dinamicamente -->
         </ul>
     </main>
 
     <script>
         document.addEventListener("DOMContentLoaded", () => {
+            // Lista de jogos da PGSoft
             const games = [
-        { name: "Diamond Explosion 7s SE ", links: ["https://link1.com", "https://link2.com"] },
-        { name: "Diamond Explosion Christmas Tango", links: ["https://link1.com", "https://link2.com"] },
-        { name: "Diamond Explosion Patriots ", links: ["https://link1.com", "https://link2.com"] },
-        { name: "Diamond Explosion Sweet Love", links: ["https://link1.com", "https://link2.com"] },
-        { name: "Giga Match Fruits", links: ["https://link1.com", "https://link2.com"] },
-        { name: "Giga Match North Pole ", links: ["https://link1.com", "https://link2.com"] },
-        { name: "Go High Fruit", links: ["https://link1.com", "https://link2.com"] },
-        { name: "Go High OlympuS", links: ["https://link1.com", "https://link2.com"] },
-        { name: "Go High Panda", links: ["https://link1.com", "https://link2.com"] },
-        { name: "Gummy Giga Match", links: ["https://link1.com", "https://link2.com"] },
-        { name: "He He Yan", links: ["https://link1.com", "https://link2.com"] },
-        { name: "Immortal Ways Spooktacular", links: ["https://link1.com", "https://link2.com"] },
-        { name: "Immortal Ways Spooktacular", links: ["https://link1.com", "https://link2.com"] },
-        { name: "Immortal Ways Buffalo SE ", links: ["https://link1.com", "https://link2.com"] },
-        { name: "Immortal Ways Champions", links: ["https://link1.com", "https://link2.com"] },
-        { name: "Immortal Ways Cleopatra ", links: ["https://link1.com", "https://link2.com"] },
-        { name: "Immortal Ways Diamonds SE ", links: ["https://link1.com", "https://link2.com"] },
-        { name: "Immortal Ways Sweet Coin ", links: ["https://link1.com", "https://link2.com"] },
-        { name: "J Mania Diamond", links: ["https://link1.com", "https://link2.com"] },
-        { name: "Mad Hit Hidden Cities", links: ["https://link1.com", "https://link2.com"] },
-        { name: "Mad Hit Marlin Bonanza ", links: ["https://link1.com", "https://link2.com"] },
-        { name: "Mad Hit Wild Alice", links: ["https://link1.com", "https://link2.com"] },
-        { name: "Marlin ", links: ["https://link1.com", "https://link2.com"] },
-        { name: "Shake Shake Money Tree", links: ["https://link1.com", "https://link2.com"] },
-        { name: "Stampede Rush Speedy Santa", links: ["https://link1.com", "https://link2.com"] },
-        { name: "Sugar Rush Fever", links: ["https://link1.com", "https://link2.com"] },
-        { name: "Ten Ton Ways Goldfish ", links: ["https://link1.com", "https://link2.com"] },
+            { name: '<span class="neon2-text">OFF</span> Diamond Explosion 7s SE ', links: ["https://link1.com", "https://link2.com"] },
+{ name: '<span class="neon2-text">OFF</span> Diamond Explosion Christmas Tango', links: ["https://link1.com", "https://link2.com"] },
+{ name: '<span class="neon2-text">OFF</span> Diamond Explosion Patriots ', links: ["https://link1.com", "https://link2.com"] },
+{ name: '<span class="neon2-text">OFF</span> Diamond Explosion Sweet Love', links: ["https://link1.com", "https://link2.com"] },
+{ name: '<span class="neon2-text">OFF</span> Giga Match Fruits', links: ["https://link1.com", "https://link2.com"] },
+{ name: '<span class="neon2-text">OFF</span> Giga Match North Pole ', links: ["https://link1.com", "https://link2.com"] },
+{ name: '<span class="neon-text">ON-LINE</span> Go High Fruit', links: ["https://link1.com", "https://link2.com"] },
+{ name: '<span class="neon-text">ON-LINE</span> Go High OlympuS', links: ["https://link1.com", "https://link2.com"] },
+{ name: '<span class="neon-text">ON-LINE</span> Go High Panda', links: ["https://link1.com", "https://link2.com"] },
+{ name: '<span class="neon2-text">OFF</span> Gummy Giga Match', links: ["https://link1.com", "https://link2.com"] },
+{ name: '<span class="neon-text">ON-LINE</span> Gummy Puppy Love', links: ["https://link1.com", "https://link2.com"] },
+{ name: '<span class="neon2-text">OFF</span> He He Yan', links: ["https://link1.com", "https://link2.com"] },
+{ name: '<span class="neon2-text">OFF</span> Immortal Ways Spooktacular', links: ["https://link1.com", "https://link2.com"] },
+{ name: '<span class="neon2-text">OFF</span> Immortal Ways Spooktacular', links: ["https://link1.com", "https://link2.com"] },
+{ name: '<span class="neon-text">ON-LINE</span> Immortal Ways Luva Buy Bonus ', links: ["https://link1.com", "https://link2.com"] },
+{ name: '<span class="neon-text">ON-LINE</span> Immortal Ways Buffalo ', links: ["https://link1.com", "https://link2.com"] },
+{ name: '<span class="neon2-text">OFF</span> Immortal Ways Buffalo SE ', links: ["https://link1.com", "https://link2.com"] },
+{ name: '<span class="neon-text">ON-LINE</span> Immortal Ways Champions', links: ["https://link1.com", "https://link2.com"] },
+{ name: '<span class="neon2-text">OFF</span> Immortal Ways Cleopatra ', links: ["https://link1.com", "https://link2.com"] },
+{ name: '<span class="neon2-text">OFF</span> Immortal Ways Diamonds SE ', links: ["https://link1.com", "https://link2.com"] },
+{ name: '<span class="neon2-text">OFF</span> Immortal Ways Sweet Coin ', links: ["https://link1.com", "https://link2.com"] },
+{ name: '<span class="neon-text">ON-LINE</span> Immortal Ways Spooktacular ', links: ["https://link1.com", "https://link2.com"] },
+{ name: '<span class="neon2-text">OFF</span> J Mania Diamond', links: ["https://link1.com", "https://link2.com"] },
+{ name: '<span class="neon2-text">OFF</span> Mad Hit Hidden Cities', links: ["https://link1.com", "https://link2.com"] },
+{ name: '<span class="neon2-text">OFF</span> Mad Hit Marlin Bonanza ', links: ["https://link1.com", "https://link2.com"] },
+{ name: '<span class="neon2-text">OFF</span> Mad Hit Wild Alice', links: ["https://link1.com", "https://link2.com"] },
+{ name: '<span class="neon2-text">OFF</span> Marlin ', links: ["https://link1.com", "https://link2.com"] },
+{ name: '<span class="neon-text">ON-LINE</span> Rush Fever Soda Pop ', links: ["https://link1.com", "https://link2.com"] },
+{ name: '<span class="neon2-text">OFF</span> Shake Shake Money Tree', links: ["https://link1.com", "https://link2.com"] },
+{ name: '<span class="neon2-text">OFF</span> Stampede Rush Speedy Santa', links: ["https://link1.com", "https://link2.com"] },
+{ name: '<span class="neon-text">ON-LINE</span> Sugar Rush Fever', links: ["https://link1.com", "https://link2.com"] },
+{ name: '<span class="neon-text">ON-LINE</span> Ten Ton Ways Goldfish ', links: ["https://link1.com", "https://link2.com"] },
         
  
        
@@ -237,6 +199,7 @@
 
             const gameList = document.getElementById("game-list");
 
+            // Adiciona cada jogo como um item estilizado na lista
             games.forEach(game => {
                 const listItem = document.createElement("li");
                 listItem.className = "game-item";
@@ -245,27 +208,117 @@
                     <button class="view-links-btn">Ver Links</button>
                 `;
 
+                // Evento para abrir o pop-up com os links
                 listItem.querySelector(".view-links-btn").addEventListener("click", () => {
-                    const popup = document.createElement("div");
-                    popup.className = "popup";
-                    popup.innerHTML = `
-                        <div class="popup-overlay" onclick="closePopup()"></div>
-                        <div class="popup-content">
-                            <h2>${game.name}</h2>
-                            ${game.links.map((link, i) => `<button class="popup-link" onclick="window.open('${link}', '_blank')">Link ${i + 1}</button>`).join("")}
-                            <button class="close-popup" onclick="closePopup()">Fechar</button>
-                        </div>
-                    `;
-                    document.body.appendChild(popup);
+                    createPopup(game);
                 });
 
                 gameList.appendChild(listItem);
             });
         });
 
+        function createPopup(game) {
+            // Remove qualquer pop-up existente
+            closePopup();
+
+            const options = game.links.map(
+                (link, index) =>
+                    `<div class="link-container">
+                        <button class="popup-link" onclick="window.open('${link}', '_blank')">Link ${index + 1}</button>
+                        <span class="gov-info">Enviado ao governo</span>
+                    </div>`
+            ).join("");
+
+            const popup = document.createElement("div");
+            popup.classList.add("popup");
+            popup.innerHTML = `
+                <div class="popup-overlay" onclick="closePopup()"></div>
+                <div class="popup-content">
+                    <h2>${game.name}</h2>
+                    ${options}
+                    <button class="close-popup" onclick="closePopup()">Fechar</button>
+                </div>
+            `;
+            document.body.appendChild(popup);
+
+            // Aplica estilos ao pop-up dinamicamente
+            applyPopupStyles();
+        }
+
         function closePopup() {
             const popup = document.querySelector(".popup");
             if (popup) popup.remove();
+        }
+
+        function applyPopupStyles() {
+            const style = document.createElement("style");
+            style.textContent = `
+                .popup {
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    z-index: 1000;
+                }
+                .popup-overlay {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: rgba(0, 0, 0, 0.7);
+                }
+                .popup-content {
+                    position: relative;
+                    background: #fff;
+                    color: #000;
+                    padding: 20px;
+                    border-radius: 10px;
+                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+                    text-align: center;
+                    z-index: 1010;
+                    max-width: 400px;
+                    width: 90%;
+                }
+                .popup-content h2 {
+                    margin-bottom: 15px;
+                    font-size: 20px;
+                    color: #800080;
+                }
+                .popup-link {
+                    margin: 10px 5px;
+                    padding: 10px 20px;
+                    border: none;
+                    border-radius: 5px;
+                    background-color: #800080;
+                    color: #fff;
+                    cursor: pointer;
+                    font-weight: bold;
+                    transition: background-color 0.2s;
+                }
+                .popup-link:hover {
+                    background-color: #5a005a;
+                }
+                .close-popup {
+                    margin-top: 20px;
+                    padding: 10px 20px;
+                    border: none;
+                    border-radius: 5px;
+                    background-color: #ff0000;
+                    color: #fff;
+                    cursor: pointer;
+                    font-weight: bold;
+                    transition: background-color 0.2s;
+                }
+                .close-popup:hover {
+                    background-color: #cc0000;
+                }
+            `;
+            document.head.appendChild(style);
         }
     </script>
 </body>
