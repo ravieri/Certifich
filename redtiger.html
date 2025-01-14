@@ -107,78 +107,34 @@
             background-color: #5a005a;
         }
 
-        /* Pop-up */
-        .popup {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-        }
-
-        .popup-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.7);
-        }
-
-        .popup-content {
-            position: relative;
-            background: #fff;
+        /* Estilo para a nova caixa "Enviado ao governo" */
+        .gov-info {
+            margin-left: 10px;
+            padding: 5px 10px;
+            border-radius: 5px;
+            background-color: #d3d3d3;
             color: #000;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            text-align: center;
-            z-index: 1010;
-            max-width: 400px;
-            width: 90%;
+            font-size: 12px;
         }
 
-        .popup-content h2 {
-            margin-bottom: 15px;
-            font-size: 20px;
-            color: #800080;
+        .link-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 10px;
         }
-
-        .popup-link {
-            margin: 10px 5px;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            background-color: #800080;
-            color: #fff;
-            cursor: pointer;
-            font-weight: bold;
-            transition: background-color 0.3s ease;
-        }
-
-        .popup-link:hover {
-            background-color: #5a005a;
-        }
-
-        .close-popup {
-            margin-top: 20px;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            background-color: #ff0000;
-            color: #fff;
-            cursor: pointer;
-            font-weight: bold;
-            transition: background-color 0.3s ease;
-        }
-
-        .close-popup:hover {
-            background-color: #cc0000;
-        }
+        .neon-text {
+    color: #39ff14;
+    font-weight: bold;
+    font-size: 12px; /* Tamanho menor */
+    text-shadow: 0 0 5px #39ff14, 0 0 10px #39ff14, 0 0 20px #39ff14;
+}
+.neon2-text {
+    color: #e60c0c;
+    font-weight: bold;
+    font-size: 12px; /* Tamanho menor */
+    text-shadow: 0 0 5px #e60c0c, 0 0 10px #e60c0c, 0 0 20px #e60c0c;
+}
     </style>
 </head>
 <body>
@@ -192,218 +148,220 @@
     <main class="content">
         <h1>Jogos da Red Tiger</h1>
         <ul id="game-list">
-            <!-- Lista de jogos será carregada dinamicamente -->
+            <!-- Jogos serão carregados dinamicamente -->
         </ul>
     </main>
 
     <script>
         document.addEventListener("DOMContentLoaded", () => {
+            // Lista de jogos da PGSoft
             const games = [
-        { name: "10,001 Nights", links: ["https://link1.com", "https://link2.com"] },
-        { name: "10,001 Nights Megaways", links: ["https://link3.com", "https://link4.com"] },
-        { name: "1942 Sky Warrior", links: ["https://link5.com", "https://link6.com"] },
-        { name: "24 Hour Grand Prix", links: ["https://link7.com", "https://link8.com"] },
-        { name: "4 Squad", links: ["https://link9.com", "https://link10.com"] },
-        { name: "5 Families", links: ["https://link11.com", "https://link12.com"] },
-        { name: "777 Strike", links: ["https://link13.com", "https://link14.com"] },
-        { name: "777 Strike Slo", links: ["https://link15.com", "https://link16.com"] },
-        { name: "777 Super Strike", links: ["https://link17.com", "https://link18.com"] },
-        { name: "Age of Akkadia", links: ["https://link19.com", "https://link20.com"] },
-        { name: "Agent Royale", links: ["https://link21.com", "https://link22.com"] },
-        { name: "Alexander the Great World Conqueror", links: ["https://link23.com", "https://link24.com"] },
-        { name: "Ancient Disco", links: ["https://link25.com", "https://link26.com"] },
-        { name: "Ancient Script", links: ["https://link27.com", "https://link28.com"] },
-        { name: "Ancient's Blessing", links: ["https://link29.com", "https://link30.com"] },
-        { name: "Apache Way", links: ["https://link31.com", "https://link32.com"] },
-        { name: "Arcade Bomb", links: ["https://link33.com", "https://link34.com"] },
-        { name: "Astronaut", links: ["https://link35.com", "https://link36.com"] },
-        { name: "Astros", links: ["https://link37.com", "https://link38.com"] },
-        { name: "Athens Megaways", links: ["https://link39.com", "https://link40.com"] },
-        { name: "Atlantis", links: ["https://link41.com", "https://link42.com"] },
-        { name: "Aurum Codex", links: ["https://link43.com", "https://link44.com"] },
-        { name: "Aztec Spins", links: ["https://link45.com", "https://link46.com"] },
-        { name: "Bass Boss", links: ["https://link47.com", "https://link48.com"] },
-        { name: "Beriched", links: ["https://link49.com", "https://link50.com"] },
-        { name: "Betty, Boris and Boo", links: ["https://link51.com", "https://link52.com"] },
-        { name: "Big Cat Rescue Megaways", links: ["https://link53.com", "https://link54.com"] },
-        { name: "Blazing Clusters", links: ["https://link55.com", "https://link56.com"] },
-        { name: "Blobsters Clusterbuster", links: ["https://link57.com", "https://link58.com"] },
-        { name: "Blood Suckers Megaways", links: ["https://link59.com", "https://link60.com"] },
-        { name: "Blue Diamond", links: ["https://link61.com", "https://link62.com"] },
-        { name: "Bounty Raid", links: ["https://link63.com", "https://link64.com"] },
-        { name: "Bounty Raid 2", links: ["https://link65.com", "https://link66.com"] },
-        { name: "Buffalo Collector", links: ["https://link67.com", "https://link68.com"] },
-        { name: "Buffalo Mania Megaways", links: ["https://link69.com", "https://link70.com"] },
-        { name: "Bulls Run Wild", links: ["https://link71.com", "https://link72.com"] },
-        { name: "Cai Shen 168", links: ["https://link73.com", "https://link74.com"] },
-        { name: "Cake And Ice Cream", links: ["https://link75.com", "https://link76.com"] },
-        { name: "Case Closed", links: ["https://link77.com", "https://link78.com"] },
-        { name: "Cash Or Nothing", links: ["https://link79.com", "https://link80.com"] },
-        { name: "Cash Ultimate", links: ["https://link81.com", "https://link82.com"] },
-        { name: "Cash Volt", links: ["https://link83.com", "https://link84.com"] },
-        { name: "Chinese Treasures", links: ["https://link85.com", "https://link86.com"] },
-        { name: "Christmas Morning", links: ["https://link87.com", "https://link88.com"] },
-        { name: "Cinderella's Ball", links: ["https://link89.com", "https://link90.com"] },
-        { name: "Clash Of The Beasts", links: ["https://link91.com", "https://link92.com"] },
-        { name: "Classic Blackjack", links: ["https://link93.com", "https://link94.com"] },
-        { name: "Clover Craze", links: ["https://link95.com", "https://link96.com"] },
-        { name: "Clusterbuster", links: ["https://link97.com", "https://link98.com"] },
-        { name: "Crazy Genie", links: ["https://link99.com", "https://link100.com"] },
-        { name: "Crystal Mirror", links: ["https://link99.com", "https://link100.com"] },
-        { name: "Cyber Attack", links: ["https://link99.com", "https://link100.com"] },
-        { name: "Dear Santa", links: ["https://link99.com", "https://link100.com"] },
-        { name: "Diamond Blitz", links: ["https://link99.com", "https://link100.com"] },
-        { name: "Diamond Blitz 2", links: ["https://link99.com", "https://link100.com"] },
-        { name: "Diamond Doggies", links: ["https://link99.com", "https://link100.com"] },
-        { name: "Diamond Royale", links: ["https://link99.com", "https://link100.com"] },
-        { name: "Doggy Riches Megaways", links: ["https://link99.com", "https://link100.com"] },
-        { name: "Dracula Awakening", links: ["https://link99.com", "https://link100.com"] },
-        { name: "Dragon´s Mirror", links: ["https://link99.com", "https://link100.com"] },
-        { name: "Dragon's Clusterbuster", links: ["https://link99.com", "https://link100.com"] },
-        { name: "Dragon's Fire", links: ["https://link99.com", "https://link100.com"] },
-        { name: "Dragon's Fire Infinireels", links: ["https://link99.com", "https://link100.com"] },
-        { name: "Dragon's Fire Megaways", links: ["https://link99.com", "https://link100.com"] },
-        { name: "Dragon's Luck Deluxe", links: ["https://link99.com", "https://link100.com"] },
-        { name: "Dragon's Luck Megaways", links: ["https://link99.com", "https://link100.com"] },
-        { name: "Dynamite Riches", links: ["https://link99.com", "https://link100.com"] },
-        { name: "Dynamite Riches Megaways", links: ["https://link99.com", "https://link100.com"] },
-        { name: "Egypt Clusterbuster", links: ["https://link99.com", "https://link100.com"] },
-        { name: "Egypt Megaways", links: ["https://link99.com", "https://link100.com"] },
-        { name: "Emerald Diamond", links: ["https://link99.com", "https://link100.com"] },
-        { name: "Emperor of India", links: ["https://link99.com", "https://link100.com"] },
-        { name: "Esqueleto Mariachi", links: ["https://link99.com", "https://link100.com"] },
-        { name: "European Roulette", links: ["https://link99.com", "https://link100.com"] },
-        { name: "Fa Fa Babies", links: ["https://link99.com", "https://link100.com"] },
-        { name: "Fa Fa Babies 2", links: ["https://link99.com", "https://link100.com"] },
-        { name: "Fishtastic", links: ["https://link99.com", "https://link100.com"] },
-        { name: "Five Star", links: ["https://link99.com", "https://link100.com"] },
-        { name: "Five Star Power Reels", links: ["https://link99.com", "https://link100.com"] },
-        { name: "Flaming Fox", links: ["https://link99.com", "https://link100.com"] },
-        { name: "Flodder", links: ["https://link99.com", "https://link100.com"] },
-        { name: "Fortune Charm", links: ["https://link99.com", "https://link100.com"] },
-        { name: "Fortune Fest", links: ["https://link99.com", "https://link100.com"] },
-        { name: "Fortune House", links: ["https://link99.com", "https://link100.com"] },
-        { name: "Fortune House Power Reels", links: ["https://link99.com", "https://link100.com"] },
-        { name: "Fruit Flash", links: ["https://link99.com", "https://link100.com"] },
-        { name: "Gems Gone Wild", links: ["https://link99.com", "https://link100.com"] },
-        { name: "Gems Inferno", links: ["https://link99.com", "https://link100.com"] },
-        { name: "Gems Inferno Megaways", links: ["https://link99.com", "https://link100.com"] },
-        { name: "Gemtastic", links: ["https://link99.com", "https://link100.com"] },
-        { name: "Genie Nights", links: ["https://link99.com", "https://link100.com"] },
-        { name: "Get The Gold InfiniReels", links: ["https://link99.com", "https://link100.com"] },
-        { name: "Giga Blast", links: ["https://link99.com", "https://link100.com"] },
-        { name: "Gladiator Ways", links: ["https://link99.com", "https://link100.com"] },
-        { name: "Gold Mine Mistress", links: ["https://link99.com", "https://link100.com"] },
-        { name: "Gold Star", links: ["https://link99.com", "https://link100.com"] },
-        { name: "Golden Leprechaun Megaways", links: ["https://link99.com", "https://link100.com"] },
-        { name: "Golden Lotus", links: ["https://link99.com", "https://link100.com"] },
-        { name: "Golden Offer", links: ["https://link99.com", "https://link100.com"] },
-        { name: "Golden Temple", links: ["https://link99.com", "https://link100.com"] },
-        { name: "Golden Tsar", links: ["https://link99.com", "https://link100.com"] },
-        { name: "Gonzita's Quest", links: ["https://link99.com", "https://link100.com"] },
-        { name: "Gonzo's Quest Megaways", links: ["https://link99.com", "https://link100.com"] },
-        { name: "Gonzo's Quest Megaways", links: ["https://link1.com", "https://link2.com"] },
-        { name: "Good Luck Clusterbuster", links: ["https://link3.com", "https://link4.com"] },
-        { name: "Grand Wheel", links: ["https://link5.com", "https://link6.com"] },
-        { name: "Great Gold", links: ["https://link7.com", "https://link8.com"] },
-        { name: "Hammer Gods", links: ["https://link9.com", "https://link10.com"] },
-        { name: "Hansel & Gretel Candyhouse", links: ["https://link11.com", "https://link12.com"] },
-        { name: "Happy Apples", links: ["https://link13.com", "https://link14.com"] },
-        { name: "Here Kitty Kitty", links: ["https://link15.com", "https://link16.com"] },
-        { name: "Hoard of Poseidon", links: ["https://link17.com", "https://link18.com"] },
-        { name: "Hot Hot Chilli Pot", links: ["https://link19.com", "https://link20.com"] },
-        { name: "Hustling", links: ["https://link21.com", "https://link22.com"] },
-        { name: "Imperial Palace", links: ["https://link23.com", "https://link24.com"] },
-        { name: "In The Rabbit Hole", links: ["https://link25.com", "https://link26.com"] },
-        { name: "Jack in a Pot", links: ["https://link27.com", "https://link28.com"] },
-        { name: "Jade Charms", links: ["https://link29.com", "https://link30.com"] },
-        { name: "Jester Spins", links: ["https://link31.com", "https://link32.com"] },
-        { name: "Jewel Scarabs", links: ["https://link33.com", "https://link34.com"] },
-        { name: "Jingle Bells", links: ["https://link35.com", "https://link36.com"] },
-        { name: "Jingle Bells Power Reels", links: ["https://link37.com", "https://link38.com"] },
-        { name: "Jingle Ways Megaways", links: ["https://link39.com", "https://link40.com"] },
-        { name: "Judgement Day Megaways", links: ["https://link41.com", "https://link42.com"] },
-        { name: "Knights Of Avalon", links: ["https://link43.com", "https://link44.com"] },
-        { name: "Laser Fruit", links: ["https://link45.com", "https://link46.com"] },
-        { name: "Last Chance Saloon", links: ["https://link47.com", "https://link48.com"] },
-        { name: "Legend of Athena", links: ["https://link49.com", "https://link50.com"] },
-        { name: "Legendary Excalibur", links: ["https://link51.com", "https://link52.com"] },
-        { name: "Lion Dance", links: ["https://link53.com", "https://link54.com"] },
-        { name: "London Tube", links: ["https://link55.com", "https://link56.com"] },
-        { name: "Lucky Easter", links: ["https://link57.com", "https://link58.com"] },
-        { name: "Lucky Fortune Cat", links: ["https://link59.com", "https://link60.com"] },
-        { name: "Lucky Halloween", links: ["https://link61.com", "https://link62.com"] },
-        { name: "Lucky Little Devil", links: ["https://link63.com", "https://link64.com"] },
-        { name: "Lucky Valentine", links: ["https://link65.com", "https://link66.com"] },
-        { name: "Lucky Wizard", links: ["https://link67.com", "https://link68.com"] },
-        { name: "Magic Powers Megaways", links: ["https://link69.com", "https://link70.com"] },
-        { name: "Magic Tricks", links: ["https://link71.com", "https://link72.com"] },
-        { name: "Majestic Mysteries Power Reels", links: ["https://link73.com", "https://link74.com"] },
-        { name: "Masquerade", links: ["https://link75.com", "https://link76.com"] },
-        { name: "Mayan Gods", links: ["https://link77.com", "https://link78.com"] },
-        { name: "Mayhem", links: ["https://link79.com", "https://link80.com"] },
-        { name: "Mega Dragon", links: ["https://link81.com", "https://link82.com"] },
-        { name: "Mega Jade", links: ["https://link83.com", "https://link84.com"] },
-        { name: "Mega Pyramid", links: ["https://link85.com", "https://link86.com"] },
-        { name: "Midas Gold", links: ["https://link87.com", "https://link88.com"] },
-        { name: "Midnight Romance", links: ["https://link89.com", "https://link90.com"] },
-        { name: "Monsters Unchained", links: ["https://link91.com", "https://link92.com"] },
-        { name: "Moon Spell", links: ["https://link93.com", "https://link94.com"] },
-        { name: "Mystery Reels", links: ["https://link95.com", "https://link96.com"] },
-        { name: "Mystery Reels Deluxe", links: ["https://link97.com", "https://link98.com"] },
-        { name: "Mystery Reels Megaways", links: ["https://link99.com", "https://link100.com"] },
-        { name: "Mystic Staxx", links: ["https://link101.com", "https://link102.com"] },
-        { name: "Mystic Wheel", links: ["https://link103.com", "https://link104.com"] },
-        { name: "Narcos Mexico", links: ["https://link105.com", "https://link106.com"] },
-        { name: "Neon Links", links: ["https://link107.com", "https://link108.com"] },
-        { name: "NFT Megaways", links: ["https://link109.com", "https://link110.com"] },
-        { name: "Ninja Ways", links: ["https://link111.com", "https://link112.com"] },
-        { name: "Path of Destiny", links: ["https://link113.com", "https://link114.com"] },
-        { name: "Peggy Sweets", links: ["https://link115.com", "https://link116.com"] },
-        { name: "Persian Fortune", links: ["https://link117.com", "https://link118.com"] },
-        { name: "Phoenix Fire Power Reels", links: ["https://link119.com", "https://link120.com"] },
-        { name: "Piggy Pirates", links: ["https://link121.com", "https://link122.com"] },
-        { name: "Piggy Riches Megaways", links: ["https://link123.com", "https://link124.com"] },
-        { name: "Pinatas and Ponies", links: ["https://link125.com", "https://link126.com"] },
-        { name: "Pirates' Plenty", links: ["https://link127.com", "https://link128.com"] },
-        { name: "Play with the Devil", links: ["https://link129.com", "https://link130.com"] },
-        { name: "Primate King", links: ["https://link131.com", "https://link132.com"] },
-        { name: "Punto Banco", links: ["https://link133.com", "https://link134.com"] },
-        { name: "Rainbow Jackpots", links: ["https://link135.com", "https://link136.com"] },
-        { name: "Ra's Legend", links: ["https://link137.com", "https://link138.com"] },
-        { name: "Reactor", links: ["https://link139.com", "https://link140.com"] },
-        { name: "Red Diamond", links: ["https://link141.com", "https://link142.com"] },
-        { name: "Regal Beasts", links: ["https://link143.com", "https://link144.com"] },
-        { name: "Riddle Of The Sphinx", links: ["https://link145.com", "https://link146.com"] },
-        { name: "Rio Stars", links: ["https://link147.com", "https://link148.com"] },
-        { name: "Rock ‘n’ Lock", links: ["https://link149.com", "https://link150.com"] },
-        { name: "Robin Hood's Wild Forest", links: ["https://link151.com", "https://link152.com"] },
-        { name: "Royal Gems", links: ["https://link153.com", "https://link154.com"] },
-        { name: "Sakura Masks", links: ["https://link155.com", "https://link156.com"] },
-        { name: "Santa Spins", links: ["https://link157.com", "https://link158.com"] },
-        { name: "Shah Mat", links: ["https://link159.com", "https://link160.com"] },
-        { name: "Sheep Gone Wild", links: ["https://link161.com", "https://link162.com"] },
-        { name: "Spin Town", links: ["https://link163.com", "https://link164.com"] },
-        { name: "Spooky Carnival", links: ["https://link165.com", "https://link166.com"] },
-        { name: "Steam Squad", links: ["https://link167.com", "https://link168.com"] },
-        { name: "Sugar Monster", links: ["https://link169.com", "https://link170.com"] },
-        { name: "Sumo Spins", links: ["https://link171.com", "https://link172.com"] },
-        { name: "The Equalizer", links: ["https://link173.com", "https://link174.com"] },
-        { name: "The Good The Bad And The Rich", links: ["https://link175.com", "https://link176.com"] },
-        { name: "Thor's Lightning", links: ["https://link177.com", "https://link178.com"] },
-        { name: "Tiki Fruits", links: ["https://link179.com", "https://link180.com"] },
-        { name: "Totem Lightning", links: ["https://link181.com", "https://link182.com"] },
-        { name: "Treasure Mine", links: ["https://link183.com", "https://link184.com"] },
-        { name: "Well of Wilds Megaways", links: ["https://link185.com", "https://link186.com"] },
-        { name: "Wild Cats Multiline", links: ["https://link187.com", "https://link188.com"] },
-        { name: "Wolfkin", links: ["https://link189.com", "https://link190.com"] },
-        { name: "Yucatan's Mystery", links: ["https://link191.com", "https://link192.com"] },
-        { name: "Zaida's Fortune", links: ["https://link193.com", "https://link194.com"] },
-        { name: "Zeus Lightning Megaways", links: ["https://link195.com", "https://link196.com"] }
+            { name: '<span class="neon2-text">OFF</span> 10,001 Nights', links: ["https://link1.com", "https://link2.com"] },
+{ name: '<span class="neon2-text">OFF</span> 10,001 Nights Megaways', links: ["https://link3.com", "https://link4.com"] },
+{ name: '<span class="neon2-text">OFF</span> 1942 Sky Warrior', links: ["https://link5.com", "https://link6.com"] },
+{ name: '<span class="neon2-text">OFF</span> 24 Hour Grand Prix', links: ["https://link7.com", "https://link8.com"] },
+{ name: '<span class="neon2-text">OFF</span> 4 Squad', links: ["https://link9.com", "https://link10.com"] },
+{ name: '<span class="neon2-text">OFF</span> 5 Families', links: ["https://link11.com", "https://link12.com"] },
+{ name: '<span class="neon2-text">OFF</span> 777 Strike', links: ["https://link13.com", "https://link14.com"] },
+{ name: '<span class="neon2-text">OFF</span> 777 Strike Slo', links: ["https://link15.com", "https://link16.com"] },
+{ name: '<span class="neon2-text">OFF</span> 777 Super Strike', links: ["https://link17.com", "https://link18.com"] },
+{ name: '<span class="neon2-text">OFF</span> Age of Akkadia', links: ["https://link19.com", "https://link20.com"] },
+{ name: '<span class="neon2-text">OFF</span> Agent Royale', links: ["https://link21.com", "https://link22.com"] },
+{ name: '<span class="neon2-text">OFF</span> Alexander the Great World Conqueror', links: ["https://link23.com", "https://link24.com"] },
+{ name: '<span class="neon2-text">OFF</span> Ancient Disco', links: ["https://link25.com", "https://link26.com"] },
+{ name: '<span class="neon2-text">OFF</span> Ancient Script', links: ["https://link27.com", "https://link28.com"] },
+{ name: '<span class="neon2-text">OFF</span> Ancient s Blessing', links: ["https://link29.com", "https://link30.com"] },
+{ name: '<span class="neon2-text">OFF</span> Apache Way', links: ["https://link31.com", "https://link32.com"] },
+{ name: '<span class="neon2-text">OFF</span> Arcade Bomb', links: ["https://link33.com", "https://link34.com"] },
+{ name: '<span class="neon2-text">OFF</span> Astronaut', links: ["https://link35.com", "https://link36.com"] },
+{ name: '<span class="neon2-text">OFF</span> Astros', links: ["https://link37.com", "https://link38.com"] },
+{ name: '<span class="neon2-text">OFF</span> Athens Megaways', links: ["https://link39.com", "https://link40.com"] },
+{ name: '<span class="neon2-text">OFF</span> Atlantis', links: ["https://link41.com", "https://link42.com"] },
+{ name: '<span class="neon2-text">OFF</span> Aurum Codex', links: ["https://link43.com", "https://link44.com"] },
+{ name: '<span class="neon2-text">OFF</span> Aztec Spins', links: ["https://link45.com", "https://link46.com"] },
+{ name: '<span class="neon2-text">OFF</span> Bass Boss', links: ["https://link47.com", "https://link48.com"] },
+{ name: '<span class="neon2-text">OFF</span> Beriched', links: ["https://link49.com", "https://link50.com"] },
+{ name: '<span class="neon2-text">OFF</span> Betty, Boris and Boo', links: ["https://link51.com", "https://link52.com"] },
+{ name: '<span class="neon2-text">OFF</span> Big Cat Rescue Megaways', links: ["https://link53.com", "https://link54.com"] },
+{ name: '<span class="neon2-text">OFF</span> Blazing Clusters', links: ["https://link55.com", "https://link56.com"] },
+{ name: '<span class="neon2-text">OFF</span> Blobsters Clusterbuster', links: ["https://link57.com", "https://link58.com"] },
+{ name: '<span class="neon2-text">OFF</span> Blood Suckers Megaways', links: ["https://link59.com", "https://link60.com"] },
+{ name: '<span class="neon2-text">OFF</span> Blue Diamond', links: ["https://link61.com", "https://link62.com"] },
+{ name: '<span class="neon2-text">OFF</span> Bounty Raid', links: ["https://link63.com", "https://link64.com"] },
+{ name: '<span class="neon2-text">OFF</span> Bounty Raid 2', links: ["https://link65.com", "https://link66.com"] },
+{ name: '<span class="neon2-text">OFF</span> Buffalo Collector', links: ["https://link67.com", "https://link68.com"] },
+{ name: '<span class="neon2-text">OFF</span> Buffalo Mania Megaways', links: ["https://link69.com", "https://link70.com"] },
+{ name: '<span class="neon2-text">OFF</span> Bulls Run Wild', links: ["https://link71.com", "https://link72.com"] },
+{ name: '<span class="neon2-text">OFF</span> Cai Shen 168', links: ["https://link73.com", "https://link74.com"] },
+{ name: '<span class="neon2-text">OFF</span> Cake And Ice Cream', links: ["https://link75.com", "https://link76.com"] },
+{ name: '<span class="neon2-text">OFF</span> Case Closed', links: ["https://link77.com", "https://link78.com"] },
+{ name: '<span class="neon2-text">OFF</span> Cash Or Nothing', links: ["https://link79.com", "https://link80.com"] },
+{ name: '<span class="neon2-text">OFF</span> Cash Ultimate', links: ["https://link81.com", "https://link82.com"] },
+{ name: '<span class="neon2-text">OFF</span> Cash Volt', links: ["https://link83.com", "https://link84.com"] },
+{ name: '<span class="neon2-text">OFF</span> Chinese Treasures', links: ["https://link85.com", "https://link86.com"] },
+{ name: '<span class="neon2-text">OFF</span> Christmas Morning', links: ["https://link87.com", "https://link88.com"] },
+{ name: '<span class="neon2-text">OFF</span> Cinderella s Ball', links: ["https://link89.com", "https://link90.com"] },
+{ name: '<span class="neon2-text">OFF</span> Clash Of The Beasts', links: ["https://link91.com", "https://link92.com"] },
+{ name: '<span class="neon2-text">OFF</span> Classic Blackjack', links: ["https://link93.com", "https://link94.com"] },
+{ name: '<span class="neon2-text">OFF</span> Clover Craze', links: ["https://link95.com", "https://link96.com"] },
+{ name: '<span class="neon2-text">OFF</span> Clusterbuster', links: ["https://link97.com", "https://link98.com"] },
+{ name: '<span class="neon2-text">OFF</span> Crazy Genie', links: ["https://link99.com", "https://link100.com"] },
+{ name: '<span class="neon2-text">OFF</span> Crystal Mirror', links: ["https://link99.com", "https://link100.com"] },
+{ name: '<span class="neon2-text">OFF</span> Cyber Attack', links: ["https://link99.com", "https://link100.com"] },
+{ name: '<span class="neon2-text">OFF</span> Dear Santa', links: ["https://link99.com", "https://link100.com"] },
+{ name: '<span class="neon2-text">OFF</span> Diamond Blitz', links: ["https://link99.com", "https://link100.com"] },
+{ name: '<span class="neon2-text">OFF</span> Diamond Blitz 2', links: ["https://link99.com", "https://link100.com"] },
+{ name: '<span class="neon2-text">OFF</span> Diamond Doggies', links: ["https://link99.com", "https://link100.com"] },
+{ name: '<span class="neon2-text">OFF</span> Diamond Royale', links: ["https://link99.com", "https://link100.com"] },
+{ name: '<span class="neon2-text">OFF</span> Doggy Riches Megaways', links: ["https://link99.com", "https://link100.com"] },
+{ name: '<span class="neon2-text">OFF</span> Dracula Awakening', links: ["https://link99.com", "https://link100.com"] },
+{ name: '<span class="neon2-text">OFF</span> Dragon s Mirror', links: ["https://link99.com", "https://link100.com"] },
+{ name: '<span class="neon2-text">OFF</span> Dragon s Clusterbuster', links: ["https://link99.com", "https://link100.com"] },
+{ name: '<span class="neon2-text">OFF</span> Dragon s Fire', links: ["https://link99.com", "https://link100.com"] },
+{ name: '<span class="neon2-text">OFF</span> Dragon s Fire Infinireels', links: ["https://link99.com", "https://link100.com"] },
+{ name: '<span class="neon2-text">OFF</span> Dragon s Fire Megaways', links: ["https://link99.com", "https://link100.com"] },
+{ name: '<span class="neon2-text">OFF</span> Dragon s Luck Deluxe', links: ["https://link99.com", "https://link100.com"] },
+{ name: '<span class="neon2-text">OFF</span> Dragon s Luck Megaways', links: ["https://link99.com", "https://link100.com"] },
+{ name: '<span class="neon2-text">OFF</span> Dynamite Riches', links: ["https://link99.com", "https://link100.com"] },
+{ name: '<span class="neon2-text">OFF</span> Dynamite Riches Megaways', links: ["https://link99.com", "https://link100.com"] },
+{ name: '<span class="neon2-text">OFF</span> Egypt Clusterbuster', links: ["https://link99.com", "https://link100.com"] },
+{ name: '<span class="neon2-text">OFF</span> Egypt Megaways', links: ["https://link99.com", "https://link100.com"] },
+{ name: '<span class="neon2-text">OFF</span> Emerald Diamond', links: ["https://link99.com", "https://link100.com"] },
+{ name: '<span class="neon2-text">OFF</span> Emperor of India', links: ["https://link99.com", "https://link100.com"] },
+{ name: '<span class="neon2-text">OFF</span> Esqueleto Mariachi', links: ["https://link99.com", "https://link100.com"] },
+{ name: '<span class="neon2-text">OFF</span> European Roulette', links: ["https://link99.com", "https://link100.com"] },
+{ name: '<span class="neon2-text">OFF</span> Fa Fa Babies', links: ["https://link99.com", "https://link100.com"] },
+{ name: '<span class="neon2-text">OFF</span> Fa Fa Babies 2', links: ["https://link99.com", "https://link100.com"] },
+{ name: '<span class="neon2-text">OFF</span> Fishtastic', links: ["https://link99.com", "https://link100.com"] },
+{ name: '<span class="neon2-text">OFF</span> Five Star', links: ["https://link99.com", "https://link100.com"] },
+{ name: '<span class="neon2-text">OFF</span> Five Star Power Reels', links: ["https://link99.com", "https://link100.com"] },
+{ name: '<span class="neon2-text">OFF</span> Flaming Fox', links: ["https://link99.com", "https://link100.com"] },
+{ name: '<span class="neon2-text">OFF</span> Flodder', links: ["https://link99.com", "https://link100.com"] },
+{ name: '<span class="neon2-text">OFF</span> Fortune Charm', links: ["https://link99.com", "https://link100.com"] },
+{ name: '<span class="neon2-text">OFF</span> Fortune Fest', links: ["https://link99.com", "https://link100.com"] },
+{ name: '<span class="neon2-text">OFF</span> Fortune House', links: ["https://link99.com", "https://link100.com"] },
+{ name: '<span class="neon2-text">OFF</span> Fortune House Power Reels', links: ["https://link99.com", "https://link100.com"] },
+{ name: '<span class="neon2-text">OFF</span> Fruit Flash', links: ["https://link99.com", "https://link100.com"] },
+{ name: '<span class="neon2-text">OFF</span> Gems Gone Wild', links: ["https://link99.com", "https://link100.com"] },
+{ name: '<span class="neon2-text">OFF</span> Gems Inferno', links: ["https://link99.com", "https://link100.com"] },
+{ name: '<span class="neon2-text">OFF</span> Gems Inferno Megaways', links: ["https://link99.com", "https://link100.com"] },
+{ name: '<span class="neon2-text">OFF</span> Gemtastic', links: ["https://link99.com", "https://link100.com"] },
+{ name: '<span class="neon2-text">OFF</span> Genie Nights', links: ["https://link99.com", "https://link100.com"] },
+{ name: '<span class="neon2-text">OFF</span> Get The Gold InfiniReels', links: ["https://link99.com", "https://link100.com"] },
+{ name: '<span class="neon2-text">OFF</span> Giga Blast', links: ["https://link99.com", "https://link100.com"] },
+{ name: '<span class="neon2-text">OFF</span> Gladiator Ways', links: ["https://link99.com", "https://link100.com"] },
+{ name: '<span class="neon2-text">OFF</span> Gold Mine Mistress', links: ["https://link99.com", "https://link100.com"] },
+{ name: '<span class="neon2-text">OFF</span> Gold Star', links: ["https://link99.com", "https://link100.com"] },
+{ name: '<span class="neon2-text">OFF</span> Golden Leprechaun Megaways', links: ["https://link99.com", "https://link100.com"] },
+{ name: '<span class="neon2-text">OFF</span> Golden Lotus', links: ["https://link99.com", "https://link100.com"] },
+{ name: '<span class="neon2-text">OFF</span> Golden Offer', links: ["https://link99.com", "https://link100.com"] },
+{ name: '<span class="neon2-text">OFF</span> Golden Temple', links: ["https://link99.com", "https://link100.com"] },
+{ name: '<span class="neon2-text">OFF</span> Golden Tsar', links: ["https://link99.com", "https://link100.com"] },
+{ name: '<span class="neon2-text">OFF</span> Gonzita s Quest', links: ["https://link99.com", "https://link100.com"] },
+{ name: '<span class="neon2-text">OFF</span> Gonzo s Quest Megaways', links: ["https://link99.com", "https://link100.com"] },
+{ name: '<span class="neon2-text">OFF</span> Gonzo s Quest Megaways', links: ["https://link1.com", "https://link2.com"] },
+{ name: '<span class="neon2-text">OFF</span> Good Luck Clusterbuster', links: ["https://link3.com", "https://link4.com"] },
+{ name: '<span class="neon2-text">OFF</span> Grand Wheel', links: ["https://link5.com", "https://link6.com"] },
+{ name: '<span class="neon2-text">OFF</span> Great Gold', links: ["https://link7.com", "https://link8.com"] },
+{ name: '<span class="neon2-text">OFF</span> Hammer Gods', links: ["https://link9.com", "https://link10.com"] },
+{ name: '<span class="neon2-text">OFF</span> Hansel & Gretel Candyhouse', links: ["https://link11.com", "https://link12.com"] },
+{ name: '<span class="neon2-text">OFF</span> Happy Apples', links: ["https://link13.com", "https://link14.com"] },
+{ name: '<span class="neon2-text">OFF</span> Here Kitty Kitty', links: ["https://link15.com", "https://link16.com"] },
+{ name: '<span class="neon2-text">OFF</span> Hoard of Poseidon', links: ["https://link17.com", "https://link18.com"] },
+{ name: '<span class="neon2-text">OFF</span> Hot Hot Chilli Pot', links: ["https://link19.com", "https://link20.com"] },
+{ name: '<span class="neon2-text">OFF</span> Hustling', links: ["https://link21.com", "https://link22.com"] },
+{ name: '<span class="neon2-text">OFF</span> Imperial Palace', links: ["https://link23.com", "https://link24.com"] },
+{ name: '<span class="neon2-text">OFF</span> In The Rabbit Hole', links: ["https://link25.com", "https://link26.com"] },
+{ name: '<span class="neon2-text">OFF</span> Jack in a Pot', links: ["https://link27.com", "https://link28.com"] },
+{ name: '<span class="neon2-text">OFF</span> Jade Charms', links: ["https://link29.com", "https://link30.com"] },
+{ name: '<span class="neon2-text">OFF</span> Jester Spins', links: ["https://link31.com", "https://link32.com"] },
+{ name: '<span class="neon2-text">OFF</span> Jewel Scarabs', links: ["https://link33.com", "https://link34.com"] },
+{ name: '<span class="neon2-text">OFF</span> Jingle Bells', links: ["https://link35.com", "https://link36.com"] },
+{ name: '<span class="neon2-text">OFF</span> Jingle Bells Power Reels', links: ["https://link37.com", "https://link38.com"] },
+{ name: '<span class="neon2-text">OFF</span> Jingle Ways Megaways', links: ["https://link39.com", "https://link40.com"] },
+{ name: '<span class="neon2-text">OFF</span> Judgement Day Megaways', links: ["https://link41.com", "https://link42.com"] },
+{ name: '<span class="neon2-text">OFF</span> Knights Of Avalon', links: ["https://link43.com", "https://link44.com"] },
+{ name: '<span class="neon2-text">OFF</span> Laser Fruit', links: ["https://link45.com", "https://link46.com"] },
+{ name: '<span class="neon2-text">OFF</span> Last Chance Saloon', links: ["https://link47.com", "https://link48.com"] },
+{ name: '<span class="neon2-text">OFF</span> Legend of Athena', links: ["https://link49.com", "https://link50.com"] },
+{ name: '<span class="neon2-text">OFF</span> Legendary Excalibur', links: ["https://link51.com", "https://link52.com"] },
+{ name: '<span class="neon2-text">OFF</span> Lion Dance', links: ["https://link53.com", "https://link54.com"] },
+{ name: '<span class="neon2-text">OFF</span> London Tube', links: ["https://link55.com", "https://link56.com"] },
+{ name: '<span class="neon2-text">OFF</span> Lucky Easter', links: ["https://link57.com", "https://link58.com"] },
+{ name: '<span class="neon2-text">OFF</span> Lucky Fortune Cat', links: ["https://link59.com", "https://link60.com"] },
+{ name: '<span class="neon2-text">OFF</span> Lucky Halloween', links: ["https://link61.com", "https://link62.com"] },
+{ name: '<span class="neon2-text">OFF</span> Lucky Little Devil', links: ["https://link63.com", "https://link64.com"] },
+{ name: '<span class="neon2-text">OFF</span> Lucky Valentine', links: ["https://link65.com", "https://link66.com"] },
+{ name: '<span class="neon2-text">OFF</span> Lucky Wizard', links: ["https://link67.com", "https://link68.com"] },
+{ name: '<span class="neon2-text">OFF</span> Magic Powers Megaways', links: ["https://link69.com", "https://link70.com"] },
+{ name: '<span class="neon2-text">OFF</span> Magic Tricks', links: ["https://link71.com", "https://link72.com"] },
+{ name: '<span class="neon2-text">OFF</span> Majestic Mysteries Power Reels', links: ["https://link73.com", "https://link74.com"] },
+{ name: '<span class="neon2-text">OFF</span> Masquerade', links: ["https://link75.com", "https://link76.com"] },
+{ name: '<span class="neon2-text">OFF</span> Mayan Gods', links: ["https://link77.com", "https://link78.com"] },
+{ name: '<span class="neon2-text">OFF</span> Mayhem', links: ["https://link79.com", "https://link80.com"] },
+{ name: '<span class="neon2-text">OFF</span> Mega Dragon', links: ["https://link81.com", "https://link82.com"] },
+{ name: '<span class="neon2-text">OFF</span> Mega Jade', links: ["https://link83.com", "https://link84.com"] },
+{ name: '<span class="neon2-text">OFF</span> Mega Pyramid', links: ["https://link85.com", "https://link86.com"] },
+{ name: '<span class="neon2-text">OFF</span> Midas Gold', links: ["https://link87.com", "https://link88.com"] },
+{ name: '<span class="neon2-text">OFF</span> Midnight Romance', links: ["https://link89.com", "https://link90.com"] },
+{ name: '<span class="neon2-text">OFF</span> Monsters Unchained', links: ["https://link91.com", "https://link92.com"] },
+{ name: '<span class="neon2-text">OFF</span> Moon Spell', links: ["https://link93.com", "https://link94.com"] },
+{ name: '<span class="neon2-text">OFF</span> Mystery Reels', links: ["https://link95.com", "https://link96.com"] },
+{ name: '<span class="neon2-text">OFF</span> Mystery Reels Deluxe', links: ["https://link97.com", "https://link98.com"] },
+{ name: '<span class="neon2-text">OFF</span> Mystery Reels Megaways', links: ["https://link99.com", "https://link100.com"] },
+{ name: '<span class="neon2-text">OFF</span> Mystic Staxx', links: ["https://link101.com", "https://link102.com"] },
+{ name: '<span class="neon2-text">OFF</span> Mystic Wheel', links: ["https://link103.com", "https://link104.com"] },
+{ name: '<span class="neon2-text">OFF</span> Narcos Mexico', links: ["https://link105.com", "https://link106.com"] },
+{ name: '<span class="neon2-text">OFF</span> Neon Links', links: ["https://link107.com", "https://link108.com"] },
+{ name: '<span class="neon2-text">OFF</span> NFT Megaways', links: ["https://link109.com", "https://link110.com"] },
+{ name: '<span class="neon2-text">OFF</span> Ninja Ways', links: ["https://link111.com", "https://link112.com"] },
+{ name: '<span class="neon2-text">OFF</span> Path of Destiny', links: ["https://link113.com", "https://link114.com"] },
+{ name: '<span class="neon2-text">OFF</span> Peggy Sweets', links: ["https://link115.com", "https://link116.com"] },
+{ name: '<span class="neon2-text">OFF</span> Persian Fortune', links: ["https://link117.com", "https://link118.com"] },
+{ name: '<span class="neon2-text">OFF</span> Phoenix Fire Power Reels', links: ["https://link119.com", "https://link120.com"] },
+{ name: '<span class="neon2-text">OFF</span> Piggy Pirates', links: ["https://link121.com", "https://link122.com"] },
+{ name: '<span class="neon2-text">OFF</span> Piggy Riches Megaways', links: ["https://link123.com", "https://link124.com"] },
+{ name: '<span class="neon2-text">OFF</span> Pinatas and Ponies', links: ["https://link125.com", "https://link126.com"] },
+{ name: '<span class="neon2-text">OFF</span> Pirates  Plenty', links: ["https://link127.com", "https://link128.com"] },
+{ name: '<span class="neon2-text">OFF</span> Play with the Devil', links: ["https://link129.com", "https://link130.com"] },
+{ name: '<span class="neon2-text">OFF</span> Primate King', links: ["https://link131.com", "https://link132.com"] },
+{ name: '<span class="neon2-text">OFF</span> Punto Banco', links: ["https://link133.com", "https://link134.com"] },
+{ name: '<span class="neon2-text">OFF</span> Rainbow Jackpots', links: ["https://link135.com", "https://link136.com"] },
+{ name: '<span class="neon2-text">OFF</span> Ra s Legend', links: ["https://link137.com", "https://link138.com"] },
+{ name: '<span class="neon2-text">OFF</span> Reactor', links: ["https://link139.com", "https://link140.com"] },
+{ name: '<span class="neon2-text">OFF</span> Red Diamond', links: ["https://link141.com", "https://link142.com"] },
+{ name: '<span class="neon2-text">OFF</span> Regal Beasts', links: ["https://link143.com", "https://link144.com"] },
+{ name: '<span class="neon2-text">OFF</span> Riddle Of The Sphinx', links: ["https://link145.com", "https://link146.com"] },
+{ name: '<span class="neon2-text">OFF</span> Rio Stars', links: ["https://link147.com", "https://link148.com"] },
+{ name: '<span class="neon2-text">OFF</span> Rock  n  Lock', links: ["https://link149.com", "https://link150.com"] },
+{ name: '<span class="neon2-text">OFF</span> Robin Hood s Wild Forest', links: ["https://link151.com", "https://link152.com"] },
+{ name: '<span class="neon2-text">OFF</span> Royal Gems', links: ["https://link153.com", "https://link154.com"] },
+{ name: '<span class="neon2-text">OFF</span> Sakura Masks', links: ["https://link155.com", "https://link156.com"] },
+{ name: '<span class="neon2-text">OFF</span> Santa Spins', links: ["https://link157.com", "https://link158.com"] },
+{ name: '<span class="neon2-text">OFF</span> Shah Mat', links: ["https://link159.com", "https://link160.com"] },
+{ name: '<span class="neon2-text">OFF</span> Sheep Gone Wild', links: ["https://link161.com", "https://link162.com"] },
+{ name: '<span class="neon2-text">OFF</span> Spin Town', links: ["https://link163.com", "https://link164.com"] },
+{ name: '<span class="neon2-text">OFF</span> Spooky Carnival', links: ["https://link165.com", "https://link166.com"] },
+{ name: '<span class="neon2-text">OFF</span> Steam Squad', links: ["https://link167.com", "https://link168.com"] },
+{ name: '<span class="neon2-text">OFF</span> Sugar Monster', links: ["https://link169.com", "https://link170.com"] },
+{ name: '<span class="neon2-text">OFF</span> Sumo Spins', links: ["https://link171.com", "https://link172.com"] },
+{ name: '<span class="neon2-text">OFF</span> The Equalizer', links: ["https://link173.com", "https://link174.com"] },
+{ name: '<span class="neon2-text">OFF</span> The Good The Bad And The Rich', links: ["https://link175.com", "https://link176.com"] },
+{ name: '<span class="neon2-text">OFF</span> Thor s Lightning', links: ["https://link177.com", "https://link178.com"] },
+{ name: '<span class="neon2-text">OFF</span> Tiki Fruits', links: ["https://link179.com", "https://link180.com"] },
+{ name: '<span class="neon2-text">OFF</span> Totem Lightning', links: ["https://link181.com", "https://link182.com"] },
+{ name: '<span class="neon2-text">OFF</span> Treasure Mine', links: ["https://link183.com", "https://link184.com"] },
+{ name: '<span class="neon2-text">OFF</span> Well of Wilds Megaways', links: ["https://link185.com", "https://link186.com"] },
+{ name: '<span class="neon2-text">OFF</span> Wild Cats Multiline', links: ["https://link187.com", "https://link188.com"] },
+{ name: '<span class="neon2-text">OFF</span> Wolfkin', links: ["https://link189.com", "https://link190.com"] },
+{ name: '<span class="neon2-text">OFF</span> Yucatan s Mystery', links: ["https://link191.com", "https://link192.com"] },
+{ name: '<span class="neon2-text">OFF</span> Zaida s Fortune', links: ["https://link193.com", "https://link194.com"] },
+{ name: '<span class="neon2-text">OFF</span> Zeus Lightning Megaways', links: ["https://link195.com", "https://link196.com"] }
     ];
 
             const gameList = document.getElementById("game-list");
 
+            // Adiciona cada jogo como um item estilizado na lista
             games.forEach(game => {
                 const listItem = document.createElement("li");
                 listItem.className = "game-item";
@@ -412,27 +370,117 @@
                     <button class="view-links-btn">Ver Links</button>
                 `;
 
+                // Evento para abrir o pop-up com os links
                 listItem.querySelector(".view-links-btn").addEventListener("click", () => {
-                    const popup = document.createElement("div");
-                    popup.className = "popup";
-                    popup.innerHTML = `
-                        <div class="popup-overlay" onclick="closePopup()"></div>
-                        <div class="popup-content">
-                            <h2>${game.name}</h2>
-                            ${game.links.map((link, i) => `<button class="popup-link" onclick="window.open('${link}', '_blank')">Link ${i + 1}</button>`).join("")}
-                            <button class="close-popup" onclick="closePopup()">Fechar</button>
-                        </div>
-                    `;
-                    document.body.appendChild(popup);
+                    createPopup(game);
                 });
 
                 gameList.appendChild(listItem);
             });
         });
 
+        function createPopup(game) {
+            // Remove qualquer pop-up existente
+            closePopup();
+
+            const options = game.links.map(
+                (link, index) =>
+                    `<div class="link-container">
+                        <button class="popup-link" onclick="window.open('${link}', '_blank')">Link ${index + 1}</button>
+                        <span class="gov-info">Enviado ao governo</span>
+                    </div>`
+            ).join("");
+
+            const popup = document.createElement("div");
+            popup.classList.add("popup");
+            popup.innerHTML = `
+                <div class="popup-overlay" onclick="closePopup()"></div>
+                <div class="popup-content">
+                    <h2>${game.name}</h2>
+                    ${options}
+                    <button class="close-popup" onclick="closePopup()">Fechar</button>
+                </div>
+            `;
+            document.body.appendChild(popup);
+
+            // Aplica estilos ao pop-up dinamicamente
+            applyPopupStyles();
+        }
+
         function closePopup() {
             const popup = document.querySelector(".popup");
             if (popup) popup.remove();
+        }
+
+        function applyPopupStyles() {
+            const style = document.createElement("style");
+            style.textContent = `
+                .popup {
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    z-index: 1000;
+                }
+                .popup-overlay {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: rgba(0, 0, 0, 0.7);
+                }
+                .popup-content {
+                    position: relative;
+                    background: #fff;
+                    color: #000;
+                    padding: 20px;
+                    border-radius: 10px;
+                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+                    text-align: center;
+                    z-index: 1010;
+                    max-width: 400px;
+                    width: 90%;
+                }
+                .popup-content h2 {
+                    margin-bottom: 15px;
+                    font-size: 20px;
+                    color: #800080;
+                }
+                .popup-link {
+                    margin: 10px 5px;
+                    padding: 10px 20px;
+                    border: none;
+                    border-radius: 5px;
+                    background-color: #800080;
+                    color: #fff;
+                    cursor: pointer;
+                    font-weight: bold;
+                    transition: background-color 0.2s;
+                }
+                .popup-link:hover {
+                    background-color: #5a005a;
+                }
+                .close-popup {
+                    margin-top: 20px;
+                    padding: 10px 20px;
+                    border: none;
+                    border-radius: 5px;
+                    background-color: #ff0000;
+                    color: #fff;
+                    cursor: pointer;
+                    font-weight: bold;
+                    transition: background-color 0.2s;
+                }
+                .close-popup:hover {
+                    background-color: #cc0000;
+                }
+            `;
+            document.head.appendChild(style);
         }
     </script>
 </body>
