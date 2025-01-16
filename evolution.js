@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
     
     
     
-     ];
+;
     const gameList = document.getElementById("game-list");
 
     // Adiciona cada jogo como um item estilizado na lista
