@@ -107,34 +107,25 @@
             background-color: #5a005a;
         }
 
-        /* Estilo para a nova caixa "Enviado ao governo" */
-        .gov-info {
-            margin-left: 10px;
-            padding: 5px 10px;
-            border-radius: 5px;
-            background-color: #d3d3d3;
-            color: #000;
-            font-size: 12px;
+        .game-number {
+            font-weight: bold;
+            color: #ffcc00;
+            margin-right: 10px;
         }
 
-        .link-container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 10px;
-        }
         .neon-text {
-    color: #39ff14;
-    font-weight: bold;
-    font-size: 12px; /* Tamanho menor */
-    text-shadow: 0 0 5px #39ff14, 0 0 10px #39ff14, 0 0 20px #39ff14;
-}
-.neon2-text {
-    color: #e60c0c;
-    font-weight: bold;
-    font-size: 12px; /* Tamanho menor */
-    text-shadow: 0 0 5px #e60c0c, 0 0 10px #e60c0c, 0 0 20px #e60c0c;
-}
+            color: #39ff14;
+            font-weight: bold;
+            font-size: 12px;
+            text-shadow: 0 0 5px #39ff14, 0 0 10px #39ff14, 0 0 20px #39ff14;
+        }
+
+        .neon2-text {
+            color: #e60c0c;
+            font-weight: bold;
+            font-size: 12px;
+            text-shadow: 0 0 5px #e60c0c, 0 0 10px #e60c0c, 0 0 20px #e60c0c;
+        }
     </style>
 </head>
 <body>
@@ -156,54 +147,48 @@
         document.addEventListener("DOMContentLoaded", () => {
             // Lista de jogos da PGSoft
             const games = [
-            { name: '<span class="neon2-text">OFF</span> Diamond Explosion 7s SE ', links: ["https://link1.com", "https://link2.com"] },
-{ name: '<span class="neon2-text">OFF</span> Diamond Explosion Christmas Tango', links: ["https://link1.com", "https://link2.com"] },
-{ name: '<span class="neon2-text">OFF</span> Diamond Explosion Patriots ', links: ["https://link1.com", "https://link2.com"] },
-{ name: '<span class="neon2-text">OFF</span> Diamond Explosion Sweet Love', links: ["https://link1.com", "https://link2.com"] },
-{ name: '<span class="neon2-text">OFF</span> Giga Match Fruits', links: ["https://link1.com", "https://link2.com"] },
-{ name: '<span class="neon2-text">OFF</span> Giga Match North Pole ', links: ["https://link1.com", "https://link2.com"] },
-{ name: '<span class="neon-text">ON-LINE</span> Go High Fruit', links: ["https://link1.com", "https://link2.com"] },
-{ name: '<span class="neon-text">ON-LINE</span> Go High OlympuS', links: ["https://link1.com", "https://link2.com"] },
-{ name: '<span class="neon-text">ON-LINE</span> Go High Panda', links: ["https://link1.com", "https://link2.com"] },
-{ name: '<span class="neon2-text">OFF</span> Gummy Giga Match', links: ["https://link1.com", "https://link2.com"] },
-{ name: '<span class="neon-text">ON-LINE</span> Gummy Puppy Love', links: ["https://link1.com", "https://link2.com"] },
-{ name: '<span class="neon2-text">OFF</span> He He Yan', links: ["https://link1.com", "https://link2.com"] },
-{ name: '<span class="neon2-text">OFF</span> Immortal Ways Spooktacular', links: ["https://link1.com", "https://link2.com"] },
-{ name: '<span class="neon2-text">OFF</span> Immortal Ways Spooktacular', links: ["https://link1.com", "https://link2.com"] },
-{ name: '<span class="neon-text">ON-LINE</span> Immortal Ways Luva Buy Bonus ', links: ["https://link1.com", "https://link2.com"] },
-{ name: '<span class="neon-text">ON-LINE</span> Immortal Ways Buffalo ', links: ["https://link1.com", "https://link2.com"] },
-{ name: '<span class="neon2-text">OFF</span> Immortal Ways Buffalo SE ', links: ["https://link1.com", "https://link2.com"] },
-{ name: '<span class="neon-text">ON-LINE</span> Immortal Ways Champions', links: ["https://link1.com", "https://link2.com"] },
-{ name: '<span class="neon2-text">OFF</span> Immortal Ways Cleopatra ', links: ["https://link1.com", "https://link2.com"] },
-{ name: '<span class="neon2-text">OFF</span> Immortal Ways Diamonds SE ', links: ["https://link1.com", "https://link2.com"] },
-{ name: '<span class="neon2-text">OFF</span> Immortal Ways Sweet Coin ', links: ["https://link1.com", "https://link2.com"] },
-{ name: '<span class="neon-text">ON-LINE</span> Immortal Ways Spooktacular ', links: ["https://link1.com", "https://link2.com"] },
-{ name: '<span class="neon2-text">OFF</span> J Mania Diamond', links: ["https://link1.com", "https://link2.com"] },
-{ name: '<span class="neon2-text">OFF</span> Mad Hit Hidden Cities', links: ["https://link1.com", "https://link2.com"] },
-{ name: '<span class="neon2-text">OFF</span> Mad Hit Marlin Bonanza ', links: ["https://link1.com", "https://link2.com"] },
-{ name: '<span class="neon2-text">OFF</span> Mad Hit Wild Alice', links: ["https://link1.com", "https://link2.com"] },
-{ name: '<span class="neon2-text">OFF</span> Marlin ', links: ["https://link1.com", "https://link2.com"] },
-{ name: '<span class="neon-text">ON-LINE</span> Rush Fever Soda Pop ', links: ["https://link1.com", "https://link2.com"] },
-{ name: '<span class="neon2-text">OFF</span> Shake Shake Money Tree', links: ["https://link1.com", "https://link2.com"] },
-{ name: '<span class="neon2-text">OFF</span> Stampede Rush Speedy Santa', links: ["https://link1.com", "https://link2.com"] },
-{ name: '<span class="neon-text">ON-LINE</span> Sugar Rush Fever', links: ["https://link1.com", "https://link2.com"] },
-{ name: '<span class="neon-text">ON-LINE</span> Ten Ton Ways Goldfish ', links: ["https://link1.com", "https://link2.com"] },
-        
- 
-       
-       
-       
-        
-       
-    ];
-
+                { name: '<span class="neon2-text">OFF</span> Diamond Explosion 7s SE ', links: ["https://link1.com", "https://link2.com"] },
+                { name: '<span class="neon2-text">OFF</span> Diamond Explosion Christmas Tango', links: ["https://link1.com", "https://link2.com"] },
+    { name: '<span class="neon2-text">OFF</span> Diamond Explosion Patriots ', links: ["https://link1.com", "https://link2.com"] },
+    { name: '<span class="neon2-text">OFF</span> Diamond Explosion Sweet Love', links: ["https://link1.com", "https://link2.com"] },
+    { name: '<span class="neon2-text">OFF</span> Giga Match Fruits', links: ["https://link1.com", "https://link2.com"] },
+    { name: '<span class="neon2-text">OFF</span> Giga Match North Pole ', links: ["https://link1.com", "https://link2.com"] },
+    { name: '<span class="neon-text">ON-LINE</span> Go High Fruit', links: ["https://link1.com", "https://link2.com"] },
+    { name: '<span class="neon-text">ON-LINE</span> Go High OlympuS', links: ["https://link1.com", "https://link2.com"] },
+    { name: '<span class="neon-text">ON-LINE</span> Go High Panda', links: ["https://link1.com", "https://link2.com"] },
+    { name: '<span class="neon2-text">OFF</span> Gummy Giga Match', links: ["https://link1.com", "https://link2.com"] },
+    { name: '<span class="neon-text">ON-LINE</span> Gummy Puppy Love', links: ["https://link1.com", "https://link2.com"] },
+    { name: '<span class="neon2-text">OFF</span> He He Yan', links: ["https://link1.com", "https://link2.com"] },
+    { name: '<span class="neon2-text">OFF</span> Immortal Ways Spooktacular', links: ["https://link1.com", "https://link2.com"] },
+    { name: '<span class="neon2-text">OFF</span> Immortal Ways Spooktacular', links: ["https://link1.com", "https://link2.com"] },
+    { name: '<span class="neon-text">ON-LINE</span> Immortal Ways Luva Buy Bonus ', links: ["https://link1.com", "https://link2.com"] },
+    { name: '<span class="neon-text">ON-LINE</span> Immortal Ways Buffalo ', links: ["https://link1.com", "https://link2.com"] },
+    { name: '<span class="neon2-text">OFF</span> Immortal Ways Buffalo SE ', links: ["https://link1.com", "https://link2.com"] },
+    { name: '<span class="neon-text">ON-LINE</span> Immortal Ways Champions', links: ["https://link1.com", "https://link2.com"] },
+    { name: '<span class="neon2-text">OFF</span> Immortal Ways Cleopatra ', links: ["https://link1.com", "https://link2.com"] },
+    { name: '<span class="neon2-text">OFF</span> Immortal Ways Diamonds SE ', links: ["https://link1.com", "https://link2.com"] },
+    { name: '<span class="neon2-text">OFF</span> Immortal Ways Sweet Coin ', links: ["https://link1.com", "https://link2.com"] },
+    { name: '<span class="neon-text">ON-LINE</span> Immortal Ways Spooktacular ', links: ["https://link1.com", "https://link2.com"] },
+    { name: '<span class="neon2-text">OFF</span> J Mania Diamond', links: ["https://link1.com", "https://link2.com"] }, 
+    { name: '<span class="neon2-text">OFF</span> Mad Hit Hidden Cities', links: ["https://link1.com", "https://link2.com"] },
+    { name: '<span class="neon2-text">OFF</span> Mad Hit Marlin Bonanza ', links: ["https://link1.com", "https://link2.com"] },
+    { name: '<span class="neon2-text">OFF</span> Mad Hit Wild Alice', links: ["https://link1.com", "https://link2.com"] },
+    { name: '<span class="neon2-text">OFF</span> Marlin ', links: ["https://link1.com", "https://link2.com"] },
+    { name: '<span class="neon-text">ON-LINE</span> Rush Fever Soda Pop ', links: ["https://link1.com", "https://link2.com"] },
+    { name: '<span class="neon2-text">OFF</span> Shake Shake Money Tree', links: ["https://link1.com", "https://link2.com"] },
+    { name: '<span class="neon2-text">OFF</span> Stampede Rush Speedy Santa', links: ["https://link1.com", "https://link2.com"] },
+    { name: '<span class="neon-text">ON-LINE</span> Sugar Rush Fever', links: ["https://link1.com", "https://link2.com"] },
+    { name: '<span class="neon-text">ON-LINE</span> Ten Ton Ways Goldfish ', links: ["https://link1.com", "https://link2.com"] },
+            ];
+            
             const gameList = document.getElementById("game-list");
 
-            // Adiciona cada jogo como um item estilizado na lista
-            games.forEach(game => {
+            // Adiciona cada jogo como um item numerado na lista
+            games.forEach((game, index) => {
                 const listItem = document.createElement("li");
                 listItem.className = "game-item";
                 listItem.innerHTML = `
+                    <span class="game-number">${index + 1}. </span>
                     <span class="game-name">${game.name}</span>
                     <button class="view-links-btn">Ver Links</button>
                 `;
