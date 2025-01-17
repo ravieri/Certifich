@@ -19,7 +19,9 @@
         header {
             background-color: #000;
             padding: 20px;
-            text-align: center;
+            display: flex;
+            justify-content: space-between; /* Distribui os itens no cabeçalho */
+            align-items: center; /* Centraliza verticalmente */
             border-bottom: 4px solid #800080;
         }
 
@@ -31,6 +33,35 @@
 
         header .logo span {
             color: #800080;
+        }
+
+        /* Link de Pendência */
+        .notification-link {
+            font-size: 16px;
+            color: #ffcc00;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 10px 20px;
+            border: 2px solid #ffcc00;
+            border-radius: 8px;
+            animation: blink 1s infinite;
+        }
+
+        .notification-link:hover {
+            background-color: #ffcc00;
+            color: #1a1a1a;
+        }
+
+        /* Animação de "piscando" */
+        @keyframes blink {
+            0%, 100% {
+                background-color: transparent;
+                color: #ffcc00;
+            }
+            50% {
+                background-color: #ffcc00;
+                color: #1a1a1a;
+            }
         }
 
         /* Estilo do Contêiner da Senha */
@@ -70,6 +101,67 @@
             color: red;
             font-size: 14px;
             display: none;
+        }
+        /* Estilo do Popup */
+        #popup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            display: none; /* Começa oculto */
+        }
+
+        #popup .popup-content {
+            background-color: white;
+            color: #1a1a1a;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            width: 90%;
+            max-width: 400px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        #popup .popup-content h2 {
+            margin-top: 0;
+            color: #800080;
+        }
+
+        #popup .popup-content p {
+            margin: 15px 0;
+        }
+
+        #popup .popup-content a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #800080;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: background-color 0.3s;
+        }
+
+        #popup .popup-content a:hover {
+            background-color: #5a005a;
+        }
+
+        #popup .popup-content button {
+            margin-top: 10px;
+            background-color: transparent;
+            border: none;
+            color: #800080;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        #popup .popup-content button:hover {
+            text-decoration: underline;
         }
 
         /* Estilo do Conteúdo */
@@ -125,6 +217,7 @@
 <body>
     <header id="topo">
         <div class="logo">H2<span>BET</span></div>
+        <a href="https://h2grupo-my.sharepoint.com/:x:/r/personal/raul_bispo_h2grupo_com/_layouts/15/Doc.aspx?sourcedoc=%7B0B5319B4-5D21-42F6-8C12-2C018B4CBFF3%7D&file=Pasta%202.xlsx&action=editnew&mobileredirect=true&wdNewAndOpenCt=1737131120736&ct=1737131121132&wdOrigin=OFFICECOM-WEB.START.NEW&wdPreviousSessionSrc=HarmonyWeb&wdPreviousSession=9d87faa6-7e00-418e-bd83-c04aca1b53ca&cid=d085dbee-046d-4553-ad86-e4c4211a3ae3" class="notification-link">🔔 Verificar Pendências</a>
     </header>
 
     <!-- Contêiner para a Senha -->
@@ -132,6 +225,15 @@
         <input type="password" id="password" placeholder="Digite a senha">
         <button onclick="checkPassword()">Entrar</button>
         <p class="error-message" id="error-message">Senha incorreta. Tente novamente.</p>
+    </div>
+    <!-- Popup (se necessário) -->
+    <div id="popup">
+        <div class="popup-content">
+            <h2>Atenção!</h2>
+            <p>Você possui pendências. Clique no botão abaixo para resolvê-las:</p>
+            <a href="https://h2grupo-my.sharepoint.com/:x:/r/personal/raul_bispo_h2grupo_com/_layouts/15/Doc.aspx?sourcedoc=%7B0B5319B4-5D21-42F6-8C12-2C018B4CBFF3%7D&file=Pasta%202.xlsx&action=editnew&mobileredirect=true&wdNewAndOpenCt=1737131120736&ct=1737131121132&wdOrigin=OFFICECOM-WEB.START.NEW&wdPreviousSessionSrc=HarmonyWeb&wdPreviousSession=9d87faa6-7e00-418e-bd83-c04aca1b53ca&cid=d085dbee-046d-4553-ad86-e4c4211a3ae3">Verificar Pendências</a>
+            <button onclick="closePopup()">Fechar</button>
+        </div>
     </div>
 
     <!-- Conteúdo Principal -->
@@ -195,26 +297,48 @@
             </div>
         </section>
     </main>
+<!-- Popup -->
+<div id="popup">
+    <div class="popup-content">
+        <h2>Certificados Pendentes</h2>
+        <p>Existem certificados que precisam ser enviados. Clique no botão abaixo para acessá-los.</p>
+        <a href="link_do_excel_com_certificados.xlsx" target="_blank">Ver Certificados</a>
+        <button onclick="closePopup()">Fechar</button>
+    </div>
+</div>
 
-    <script>
-        // Define a senha correta
-        const correctPassword = "EusouH2";
+<script>
+    // Define a senha correta
+    const correctPassword = "EusouH2";
 
-        function checkPassword() {
-            const input = document.getElementById("password").value;
-            const errorMessage = document.getElementById("error-message");
-            const passwordContainer = document.getElementById("password-container");
-            const mainContent = document.getElementById("main-content");
+    function checkPassword() {
+        const input = document.getElementById("password").value;
+        const errorMessage = document.getElementById("error-message");
+        const passwordContainer = document.getElementById("password-container");
+        const mainContent = document.getElementById("main-content");
 
-            if (input === correctPassword) {
-                // Exibe o conteúdo e oculta o contêiner da senha
-                passwordContainer.style.display = "none";
-                mainContent.style.display = "block";
-            } else {
-                // Exibe mensagem de erro
-                errorMessage.style.display = "block";
-            }
+        if (input === correctPassword) {
+            // Exibe o conteúdo e oculta o contêiner da senha
+            passwordContainer.style.display = "none";
+            mainContent.style.display = "block";
+
+            // Exibe o popup após 1 segundo
+            setTimeout(() => {
+                const popup = document.getElementById('popup');
+                popup.style.display = 'flex';
+            }, 1000);
+        } else {
+            // Exibe mensagem de erro
+            errorMessage.style.display = "block";
         }
-    </script>
+    }
+
+    // Fecha o popup
+    function closePopup() {
+        const popup = document.getElementById('popup');
+        popup.style.display = 'none';
+    }
+    
+</script>
 </body>
 </html>
