@@ -135,6 +135,27 @@
     font-size: 12px; /* Tamanho menor */
     text-shadow: 0 0 5px #e60c0c, 0 0 10px #e60c0c, 0 0 20px #e60c0c;
 }
+/* Estilo para a tabela de links */
+.link-table {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.link-table button {
+    margin: 5px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #800080;
+    color: #fff;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+.link-table button:hover {
+    background-color: #5a005a;
+}
 
     </style>
 </head>
@@ -147,6 +168,10 @@
     </header>
 
     <main class="content">
+        <div class="link-table">
+            <button onclick="window.open('https://link1.com', '_blank')">RNG</button>
+            <button onclick="window.open('https://link2.com', '_blank')">RGS</button>
+        </div>
         <h1>Jogos da Evolution</h1>
         <button id="show-online" class="view-links-btn"><span class="neon-text">ON-LINE</span> </button>
         <button id="show-all" class="view-links-btn"> TODOS</button>
