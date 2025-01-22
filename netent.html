@@ -505,7 +505,7 @@ const renderGames = (filteredGames) => {
         listItem.innerHTML = `
             <span class="game-number">${index + 1}. </span>
             <span class="game-name">${game.name}</span>
-            <button class="view-links-btn">Ver Links</button>
+            <button class="view-links-btn">GLI</button>
         `;
         listItem.querySelector(".view-links-btn").addEventListener("click", () => {
             createPopup(game);
