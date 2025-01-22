@@ -135,6 +135,7 @@
     font-size: 12px; /* Tamanho menor */
     text-shadow: 0 0 5px #e60c0c, 0 0 10px #e60c0c, 0 0 20px #e60c0c;
 }
+
     </style>
 </head>
 <body>
@@ -147,191 +148,245 @@
 
     <main class="content">
         <h1>Jogos da Endorphina</h1>
+        <button id="show-online" class="view-links-btn"><span class="neon-text">ON-LINE</span> </button>
+        <button id="show-all" class="view-links-btn"> TODOS</button>
+        <button id="show-off" class="view-links-btn"><span class="neon2-text">OFF</span></button>
+        
         <ul id="game-list">
+            
             <!-- Jogos serão carregados dinamicamente -->
         </ul>
     </main>
-
+    <div>
+        
+        
+    </div>
+    <ul id="game-list"></ul>
+</div>
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             // Lista de jogos da Endorphina
             const games = [
-            { name: '<span class="neon-text">ON-LINE</span> 100 Zombies', links: [] },
-{ name: '<span class="neon2-text">OFF</span> 2020 Hit Slot', links: [] },
-{ name: '<span class="neon2-text">OFF</span> 2021 Hit Slot', links: [] },
-{ name: '<span class="neon2-text">OFF</span> 2022 Hit Slot', links: [] },
-{ name: '<span class="neon2-text">OFF</span> 2023 Hit Slot', links: [] },
-{ name: '<span class="neon2-text">OFF</span> 2024 Hit Slot', links: [] },
-{ name: '<span class="neon-text">ON-LINE</span> Hell HOT 100', links: [] },
-{ name: '<span class="neon2-text">OFF</span> 81 Burning Ways', links: [] },
-{ name: '<span class="neon2-text">OFF</span> Almighty Sparta', links: [] },
-{ name: '<span class="neon2-text">OFF</span> Ancient Troy', links: [] },
-{ name: '<span class="neon-text">ON-LINE</span> Asgardians', links: [] },
-{ name: '<span class="neon2-text">OFF</span> Blue Slot', links: [] },
-{ name: '<span class="neon2-text">OFF</span> Book of Santa', links: [] },
-{ name: '<span class="neon2-text">OFF</span> Book of Vlad', links: [] },
-{ name: '<span class="neon2-text">OFF</span> Buffalo 50', links: [] },
-{ name: '<span class="neon2-text">OFF</span> Chance Machine 100', links: [] },
-{ name: '<span class="neon2-text">OFF</span> Chance Machine 20', links: [] },
-{ name: '<span class="neon2-text">OFF</span> Chance Machine 40', links: [] },
-{ name: '<span class="neon2-text">OFF</span> Chance Machine 5', links: [] },
-{ name: '<span class="neon2-text">OFF</span> Crown Coins', links: [] },
-{ name: '<span class="neon2-text">OFF</span> Crystal Skull', links: [] },
-{ name: '<span class="neon2-text">OFF</span> Cyber Wolf', links: [] },
-{ name: '<span class="neon2-text">OFF</span> Dazzling Crown', links: [] },
-{ name: '<span class="neon2-text">OFF</span> Dia de Los Muertos 2', links: [] },
-{ name: '<span class="neon2-text">OFF</span> Dynamite Miner', links: [] },
-{ name: '<span class="neon2-text">OFF</span> Wild Love', links: [] },
-{ name: '<span class="neon2-text">OFF</span> Water Tiger', links: [] },
-{ name: '<span class="neon2-text">OFF</span> Voodoo', links: [] },
-{ name: '<span class="neon-text">ON-LINE</span> Vikings Way', links: [] },
-{ name: '<span class="neon2-text">OFF</span> Valentine s Heart', links: [] },
-{ name: '<span class="neon-text">ON-LINE</span> Ultra Fresh', links: [] },
-{ name: '<span class="neon2-text">OFF</span> Twerk', links: [] },
-{ name: '<span class="neon2-text">OFF</span> The Vampires II', links: [] },
-{ name: '<span class="neon-text">ON-LINE</span> Joker Stoker', links: [] },
-{ name: '<span class="neon-text">ON-LINE</span> The Emirate II', links: [] },
-{ name: '<span class="neon-text">ON-LINE</span> The Emirate', links: [] },
-{ name: '<span class="neon2-text">OFF</span> Temple of Ra', links: [] },
-{ name: '<span class="neon2-text">OFF</span> Taboo', links: [] },
-{ name: '<span class="neon2-text">OFF</span> Silk Road', links: [] },
-{ name: '<span class="neon2-text">OFF</span> Santa s Puzzle', links: [] },
-{ name: '<span class="neon2-text">OFF</span> Royal Xmass II', links: [] },
-{ name: '<span class="neon2-text">OFF</span> Royal XMass', links: [] },
-{ name: '<span class="neon2-text">OFF</span> Rooster Fury', links: [] },
-{ name: '<span class="neon2-text">OFF</span> Raging Wings', links: [] },
-{ name: '<span class="neon2-text">OFF</span> Oriental Dragon', links: [] },
-{ name: '<span class="neon2-text">OFF</span> Moon Tiger', links: [] },
-{ name: '<span class="neon-text">ON-LINE</span> Minotauros', links: [] },
-{ name: '<span class="neon2-text">OFF</span> Lucky Streak X', links: [] },
-{ name: '<span class="neon2-text">OFF</span> Lucky Streak 27', links: [] },
-{ name: '<span class="neon2-text">OFF</span> Lucky Streak', links: [] },
-    ];
+    { name: '<span class="neon-text">ON-LINE</span> 100 Zombies', links: [] },
+    { name: '<span class="neon2-text">OFF</span> 2020 Hit Slot', links: [] },
+    { name: '<span class="neon2-text">OFF</span> 2021 Hit Slot', links: [] },
+    { name: '<span class="neon2-text">OFF</span> 2022 Hit Slot', links: [] },
+    { name: '<span class="neon2-text">OFF</span> 2023 Hit Slot', links: [] },
+    { name: '<span class="neon2-text">OFF</span> 2024 Hit Slot', links: [] },
+    { name: '<span class="neon-text">ON-LINE</span> Hell HOT 100', links: [] },
+    { name: '<span class="neon2-text">OFF</span> 81 Burning Ways', links: [] },
+    { name: '<span class="neon2-text">OFF</span> Almighty Sparta', links: [] },
+    { name: '<span class="neon2-text">OFF</span> Ancient Troy', links: [] },
+    { name: '<span class="neon-text">ON-LINE</span> Asgardians', links: [] },
+    { name: '<span class="neon2-text">OFF</span> Blue Slot', links: [] },
+    { name: '<span class="neon2-text">OFF</span> Book of Santa', links: [] },
+    { name: '<span class="neon2-text">OFF</span> Book of Vlad', links: [] },
+    { name: '<span class="neon2-text">OFF</span> Buffalo 50', links: [] },
+    { name: '<span class="neon2-text">OFF</span> Chance Machine 100', links: [] },
+    { name: '<span class="neon2-text">OFF</span> Chance Machine 20', links: [] },
+    { name: '<span class="neon2-text">OFF</span> Chance Machine 40', links: [] },
+    { name: '<span class="neon2-text">OFF</span> Chance Machine 5', links: [] },
+    { name: '<span class="neon2-text">OFF</span> Crown Coins', links: [] },
+    { name: '<span class="neon2-text">OFF</span> Crystal Skull', links: [] },
+    { name: '<span class="neon2-text">OFF</span> Cyber Wolf', links: [] },
+    { name: '<span class="neon2-text">OFF</span> Dazzling Crown', links: [] },
+    { name: '<span class="neon2-text">OFF</span> Dia de Los Muertos 2', links: [] },
+    { name: '<span class="neon2-text">OFF</span> Dynamite Miner', links: [] },
+    { name: '<span class="neon2-text">OFF</span> Wild Love', links: [] },
+    { name: '<span class="neon2-text">OFF</span> Water Tiger', links: [] },
+    { name: '<span class="neon2-text">OFF</span> Voodoo', links: [] },
+    { name: '<span class="neon-text">ON-LINE</span> Vikings Way', links: [] },
+    { name: '<span class="neon2-text">OFF</span> Valentine s Heart', links: [] },
+    { name: '<span class="neon-text">ON-LINE</span> Ultra Fresh', links: [] },
+    { name: '<span class="neon2-text">OFF</span> Twerk', links: [] },
+    { name: '<span class="neon2-text">OFF</span> The Vampires II', links: [] },
+    { name: '<span class="neon-text">ON-LINE</span> Joker Stoker', links: [] },
+    { name: '<span class="neon-text">ON-LINE</span> The Emirate II', links: [] },
+    { name: '<span class="neon-text">ON-LINE</span> The Emirate', links: [] },
+    { name: '<span class="neon2-text">OFF</span> Temple of Ra', links: [] },
+    { name: '<span class="neon2-text">OFF</span> Taboo', links: [] },
+    { name: '<span class="neon2-text">OFF</span> Silk Road', links: [] },
+    { name: '<span class="neon2-text">OFF</span> Santa s Puzzle', links: [] },
+    { name: '<span class="neon2-text">OFF</span> Royal Xmass II', links: [] },
+    { name: '<span class="neon2-text">OFF</span> Royal XMass', links: [] },
+    { name: '<span class="neon2-text">OFF</span> Rooster Fury', links: [] },
+    { name: '<span class="neon2-text">OFF</span> Raging Wings', links: [] },
+    { name: '<span class="neon2-text">OFF</span> Oriental Dragon', links: [] },
+    { name: '<span class="neon2-text">OFF</span> Moon Tiger', links: [] },
+    { name: '<span class="neon-text">ON-LINE</span> Minotauros', links: [] },
+    { name: '<span class="neon2-text">OFF</span> Lucky Streak X', links: [] },
+    { name: '<span class="neon2-text">OFF</span> Lucky Streak 27', links: [] },
+    { name: '<span class="neon2-text">OFF</span> Lucky Streak', links: [] },
+];
 
+// Filtrando jogos com "ON-LINE"
+
+const gameList = document.getElementById("game-list");
+        // Adicionando eventos aos botões para filtrar os jogos
+const showOnlineBtn = document.getElementById("show-online");
+const showAllBtn = document.getElementById("show-all"); // Botão para exibir todos os jogos
+const showOffBtn = document.getElementById("show-off");
+
+
+// Função para renderizar jogos na lista
+const renderGames = (filteredGames) => {
     const gameList = document.getElementById("game-list");
+    gameList.innerHTML = ""; // Limpa a lista atual
+    filteredGames.forEach((game, index) => {
+        const listItem = document.createElement("li");
+        listItem.className = "game-item";
+        listItem.innerHTML = `
+            <span class="game-number">${index + 1}. </span>
+            <span class="game-name">${game.name}</span>
+            <button class="view-links-btn">Ver Links</button>
+        `;
+        listItem.querySelector(".view-links-btn").addEventListener("click", () => {
+            createPopup(game);
+        });
+        gameList.appendChild(listItem);
+    });
+};
 
-// Adiciona cada jogo como um item numerado na lista
-games.forEach((game, index) => {
-    const listItem = document.createElement("li");
-    listItem.className = "game-item";
-    listItem.innerHTML = `
-        <span class="game-number">${index + 1}. </span>
-        <span class="game-name">${game.name}</span>
-        <button class="view-links-btn">Ver Links</button>
-    `;
+// Evento para exibir jogos OFF
+showOffBtn.addEventListener("click", () => {
+    const offGames = games.filter(game => game.name.includes("OFF"));
+    renderGames(offGames);
+});
 
-    // Evento para abrir o pop-up com os links
-    listItem.querySelector(".view-links-btn").addEventListener("click", () => {
-        createPopup(game);
+// Evento para exibir jogos ON-LINE
+showOnlineBtn.addEventListener("click", () => {
+    const onlineGames = games.filter(game => game.name.includes("ON-LINE"));
+    renderGames(onlineGames);
+});
+
+// Evento para exibir todos os jogos
+showAllBtn.addEventListener("click", () => {
+    renderGames(games); // Exibe todos os jogos
+});
+
+// Exibe todos os jogos inicialmente
+renderGames(games);
+
+          
+
+        // Eventos para filtrar e exibir jogos
+        showOnlineBtn.addEventListener("click", () => {
+            const onlineGames = games.filter(game => game.name.includes("ON-LINE"));
+            renderGames(onlineGames);
+        });
+
+        showOffBtn.addEventListener("click", () => {
+            const offGames = games.filter(game => game.name.includes("OFF"));
+            renderGames(offGames);
+        });
+
+        // Exibe todos os jogos inicialmente
+        renderGames(games);
     });
 
-    gameList.appendChild(listItem);
-});
-});
+    function createPopup(game) {
+    // Remove qualquer pop-up existente
+    closePopup();
 
-function createPopup(game) {
-// Remove qualquer pop-up existente
-closePopup();
+    const options = game.links.map(
+        (link, index) =>
+            `<div class="link-container">
+                <button class="popup-link" onclick="window.open('${link}', '_blank')">Link ${index + 1}</button>
+                <span class="gov-info">Enviado ao governo</span>
+            </div>`
+    ).join("");
 
-const options = game.links.map(
-    (link, index) =>
-        `<div class="link-container">
-            <button class="popup-link" onclick="window.open('${link}', '_blank')">Link ${index + 1}</button>
-            <span class="gov-info">Enviado ao governo</span>
-        </div>`
-).join("");
+    const popup = document.createElement("div");
+    popup.classList.add("popup");
+    popup.innerHTML = `
+        <div class="popup-overlay" onclick="closePopup()"></div>
+        <div class="popup-content">
+            <h2>${game.name}</h2>
+            ${options}
+            <button class="close-popup" onclick="closePopup()">Fechar</button>
+        </div>
+    `;
+    document.body.appendChild(popup);
 
-const popup = document.createElement("div");
-popup.classList.add("popup");
-popup.innerHTML = `
-    <div class="popup-overlay" onclick="closePopup()"></div>
-    <div class="popup-content">
-        <h2>${game.name}</h2>
-        ${options}
-        <button class="close-popup" onclick="closePopup()">Fechar</button>
-    </div>
-`;
-document.body.appendChild(popup);
+    // Aplica estilos ao pop-up dinamicamente
+    applyPopupStyles();
+    }
 
-// Aplica estilos ao pop-up dinamicamente
-applyPopupStyles();
-}
+    function closePopup() {
+    const popup = document.querySelector(".popup");
+    if (popup) popup.remove();
+    }
 
-function closePopup() {
-const popup = document.querySelector(".popup");
-if (popup) popup.remove();
-}
-
-function applyPopupStyles() {
-const style = document.createElement("style");
-style.textContent = `
-    .popup {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        z-index: 1000;
+    function applyPopupStyles() {
+    const style = document.createElement("style");
+    style.textContent = `
+        .popup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        .popup-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+        }
+        .popup-content {
+            position: relative;
+            background: #fff;
+            color: #000;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            z-index: 1010;
+            max-width: 400px;
+            width: 90%;
+        }
+        .popup-content h2 {
+            margin-bottom: 15px;
+            font-size: 20px;
+            color: #800080;
+        }
+        .popup-link {
+            margin: 10px 5px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #800080;
+            color: #fff;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.2s;
+        }
+        .popup-link:hover {
+            background-color: #5a005a;
+        }
+        .close-popup {
+            margin-top: 20px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #ff0000;
+            color: #fff;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.2s;
+        }
+        .close-popup:hover {
+            background-color: #cc0000;
+        }
+    `;
+    document.head.appendChild(style);
     }
-    .popup-overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.7);
-    }
-    .popup-content {
-        position: relative;
-        background: #fff;
-        color: #000;
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        text-align: center;
-        z-index: 1010;
-        max-width: 400px;
-        width: 90%;
-    }
-    .popup-content h2 {
-        margin-bottom: 15px;
-        font-size: 20px;
-        color: #800080;
-    }
-    .popup-link {
-        margin: 10px 5px;
-        padding: 10px 20px;
-        border: none;
-        border-radius: 5px;
-        background-color: #800080;
-        color: #fff;
-        cursor: pointer;
-        font-weight: bold;
-        transition: background-color 0.2s;
-    }
-    .popup-link:hover {
-        background-color: #5a005a;
-    }
-    .close-popup {
-        margin-top: 20px;
-        padding: 10px 20px;
-        border: none;
-        border-radius: 5px;
-        background-color: #ff0000;
-        color: #fff;
-        cursor: pointer;
-        font-weight: bold;
-        transition: background-color 0.2s;
-    }
-    .close-popup:hover {
-        background-color: #cc0000;
-    }
-`;
-document.head.appendChild(style);
-}
 </script>
 </body>
 </html>

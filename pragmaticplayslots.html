@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pragmaticslots - Jogos</title>
+    <title>Pragmatic Play Slots - Jogos</title>
     <style>
         /* Estilo Geral */
         body {
@@ -147,15 +147,25 @@
     </header>
 
     <main class="content">
-        <h1>Jogos da Pragmaticslots</h1>
+        <h1>Jogos da Pragmatic Play Slots</h1>
+        <button id="show-online" class="view-links-btn"><span class="neon-text">ON-LINE</span> </button>
+        <button id="show-all" class="view-links-btn"> TODOS</button>
+        <button id="show-off" class="view-links-btn"><span class="neon2-text">OFF</span></button>
+        
         <ul id="game-list">
+            
             <!-- Jogos serão carregados dinamicamente -->
         </ul>
     </main>
-
+    <div>
+        
+        
+    </div>
+    <ul id="game-list"></ul>
+</div>
     <script>
         document.addEventListener("DOMContentLoaded", () => {
-            // Lista de jogos da pragmaticplayslots
+            // Lista de jogos da Pragmatic Play Slots
             const games = [
     { name: '<span class="neon-text">ON-LINE</span> Big Bass Bonanza 3 Reeler', links: ["https://link1.com", "https://link2.com"] },
     { name: '<span class="neon-text">ON-LINE</span> 3 Buzzing Wilds', links: ["https://h2grupo-my.sharepoint.com/personal/diego_macedo_h2grupo_com/_layouts/15/onedrive.aspx?sortField=FileLeafRef&isAscending=true&id=%2Fpersonal%2Fdiego%5Fmacedo%5Fh2grupo%5Fcom%2FDocuments%2F%C3%81rea%20de%20Trabalho%2Fprovedores%20certificados%2FPragmaticPlay%20Slots%2F711BR%2D711%2DPPL%2D24%2D22%5FPortuguese%2Epdf&parent=%2Fpersonal%2Fdiego%5Fmacedo%5Fh2grupo%5Fcom%2FDocuments%2F%C3%81rea%20de%20Trabalho%2Fprovedores%20certificados%2FPragmaticPlay%20Slots", "https://h2grupo-my.sharepoint.com/personal/diego_macedo_h2grupo_com/_layouts/15/onedrive.aspx?sortField=FileLeafRef&isAscending=true&id=%2Fpersonal%2Fdiego%5Fmacedo%5Fh2grupo%5Fcom%2FDocuments%2F%C3%81rea%20de%20Trabalho%2Fprovedores%20certificados%2FPragmaticPlay%20Slots%2FPragmatic%20Play%20Games%20SLOT%20ALL%20Certificates%20BRAZIL%2F3%20Buzzing%20Wilds%E2%84%A2%20Certificate%20BRAZIL%2F3%20Buzzing%20Wilds%5FBR%2Epdf&parent=%2Fpersonal%2Fdiego%5Fmacedo%5Fh2grupo%5Fcom%2FDocuments%2F%C3%81rea%20de%20Trabalho%2Fprovedores%20certificados%2FPragmaticPlay%20Slots%2FPragmatic%20Play%20Games%20SLOT%20ALL%20Certificates%20BRAZIL%2F3%20Buzzing%20Wilds%E2%84%A2%20Certificate%20BRAZIL" , "https://h2grupo-my.sharepoint.com/personal/diego_macedo_h2grupo_com/_layouts/15/onedrive.aspx?sortField=FileLeafRef&isAscending=true&id=%2Fpersonal%2Fdiego%5Fmacedo%5Fh2grupo%5Fcom%2FDocuments%2F%C3%81rea%20de%20Trabalho%2Fprovedores%20certificados%2FPragmaticPlay%20Slots%2FPragmatic%20Play%20Games%20SLOT%20ALL%20Certificates%20BRAZIL%2F3%20Buzzing%20Wilds%E2%84%A2%20Certificate%20BRAZIL%2F711MO%2D711%2DPPL%2D24%2D08%2D711%2Epdf&parent=%2Fpersonal%2Fdiego%5Fmacedo%5Fh2grupo%5Fcom%2FDocuments%2F%C3%81rea%20de%20Trabalho%2Fprovedores%20certificados%2FPragmaticPlay%20Slots%2FPragmatic%20Play%20Games%20SLOT%20ALL%20Certificates%20BRAZIL%2F3%20Buzzing%20Wilds%E2%84%A2%20Certificate%20BRAZIL", "https://h2grupo-my.sharepoint.com/personal/diego_macedo_h2grupo_com/_layouts/15/onedrive.aspx?sortField=FileLeafRef&isAscending=true&id=%2Fpersonal%2Fdiego%5Fmacedo%5Fh2grupo%5Fcom%2FDocuments%2F%C3%81rea%20de%20Trabalho%2Fprovedores%20certificados%2FPragmaticPlay%20Slots%2FPragmatic%20Play%20Games%20SLOT%20ALL%20Certificates%20BRAZIL%2FBig%20Bass%20%26%238211%3B%20Hold%20%26%23038%3B%20Spinner%E2%84%A2%20Certificate%20BRAZIL%2F711MO%2D711%2DPPL%2D24%2D08%2D711%2Epdf&parent=%2Fpersonal%2Fdiego%5Fmacedo%5Fh2grupo%5Fcom%2FDocuments%2F%C3%81rea%20de%20Trabalho%2Fprovedores%20certificados%2FPragmaticPlay%20Slots%2FPragmatic%20Play%20Games%20SLOT%20ALL%20Certificates%20BRAZIL%2FBig%20Bass%20%26%238211%3B%20Hold%20%26%23038%3B%20Spinner%E2%84%A2%20Certificate%20BRAZIL", "https://h2grupo-my.sharepoint.com/personal/diego_macedo_h2grupo_com/_layouts/15/onedrive.aspx?sortField=FileLeafRef&isAscending=true&id=%2Fpersonal%2Fdiego%5Fmacedo%5Fh2grupo%5Fcom%2FDocuments%2F%C3%81rea%20de%20Trabalho%2Fprovedores%20certificados%2FPragmaticPlay%20Slots%2FPragmatic%20Play%20Games%20SLOT%20ALL%20Certificates%20BRAZIL%2FBig%20Bass%20Amazon%20Xtreme%E2%84%A2%20Certificate%20BRAZIL%2F711MO%2D711%2DPPL%2D24%2D08%2D711%5FPortuguese%2Epdf&parent=%2Fpersonal%2Fdiego%5Fmacedo%5Fh2grupo%5Fcom%2FDocuments%2F%C3%81rea%20de%20Trabalho%2Fprovedores%20certificados%2FPragmaticPlay%20Slots%2FPragmatic%20Play%20Games%20SLOT%20ALL%20Certificates%20BRAZIL%2FBig%20Bass%20Amazon%20Xtreme%E2%84%A2%20Certificate%20BRAZIL", "https://h2grupo-my.sharepoint.com/personal/diego_macedo_h2grupo_com/_layouts/15/onedrive.aspx?sortField=FileLeafRef&isAscending=true&id=%2Fpersonal%2Fdiego%5Fmacedo%5Fh2grupo%5Fcom%2FDocuments%2F%C3%81rea%20de%20Trabalho%2Fprovedores%20certificados%2FPragmaticPlay%20Slots%2FPragmatic%20Play%20Games%20SLOT%20ALL%20Certificates%20BRAZIL%2FBig%20Bass%20Bonanza%E2%84%A2%20Certificate%20BRAZIL%2F711MO%2D711%2DPPL%2D24%2D08%2D711%5FPortuguese%2Epdf&parent=%2Fpersonal%2Fdiego%5Fmacedo%5Fh2grupo%5Fcom%2FDocuments%2F%C3%81rea%20de%20Trabalho%2Fprovedores%20certificados%2FPragmaticPlay%20Slots%2FPragmatic%20Play%20Games%20SLOT%20ALL%20Certificates%20BRAZIL%2FBig%20Bass%20Bonanza%E2%84%A2%20Certificate%20BRAZIL", "https://h2grupo-my.sharepoint.com/personal/diego_macedo_h2grupo_com/_layouts/15/onedrive.aspx?sortField=FileLeafRef&isAscending=true&id=%2Fpersonal%2Fdiego%5Fmacedo%5Fh2grupo%5Fcom%2FDocuments%2F%C3%81rea%20de%20Trabalho%2Fprovedores%20certificados%2FPragmaticPlay%20Slots%2FPragmatic%20Play%20Games%20SLOT%20ALL%20Certificates%20BRAZIL%2FChristmas%20Big%20Bass%20Bonanza%E2%84%A2%20Certificate%20BRAZIL%2F711MO%2D711%2DPPL%2D24%2D08%2D711%5FPortuguese%2Epdf&parent=%2Fpersonal%2Fdiego%5Fmacedo%5Fh2grupo%5Fcom%2FDocuments%2F%C3%81rea%20de%20Trabalho%2Fprovedores%20certificados%2FPragmaticPlay%20Slots%2FPragmatic%20Play%20Games%20SLOT%20ALL%20Certificates%20BRAZIL%2FChristmas%20Big%20Bass%20Bonanza%E2%84%A2%20Certificate%20BRAZIL", "https://h2grupo-my.sharepoint.com/personal/diego_macedo_h2grupo_com/_layouts/15/onedrive.aspx?sortField=FileLeafRef&isAscending=true&id=%2Fpersonal%2Fdiego%5Fmacedo%5Fh2grupo%5Fcom%2FDocuments%2F%C3%81rea%20de%20Trabalho%2Fprovedores%20certificados%2FPragmaticPlay%20Slots%2FPragmatic%20Play%20Games%20SLOT%20ALL%20Certificates%20BRAZIL%2FGates%20of%20Olympus%201000%20Certificate%20BRAZIL%2F711MO%2D711%2DPPL%2D24%2D08%2D711%5FPortuguese%2Epdf&parent=%2Fpersonal%2Fdiego%5Fmacedo%5Fh2grupo%5Fcom%2FDocuments%2F%C3%81rea%20de%20Trabalho%2Fprovedores%20certificados%2FPragmaticPlay%20Slots%2FPragmatic%20Play%20Games%20SLOT%20ALL%20Certificates%20BRAZIL%2FGates%20of%20Olympus%201000%20Certificate%20BRAZIL", "https://h2grupo-my.sharepoint.com/personal/diego_macedo_h2grupo_com/_layouts/15/onedrive.aspx?sortField=FileLeafRef&isAscending=true&id=%2Fpersonal%2Fdiego%5Fmacedo%5Fh2grupo%5Fcom%2FDocuments%2F%C3%81rea%20de%20Trabalho%2Fprovedores%20certificados%2FPragmaticPlay%20Slots%2FPragmatic%20Play%20Games%20SLOT%20ALL%20Certificates%20BRAZIL%2FGates%20of%20Olympus%E2%84%A2%20Certificate%20BRAZIL%2F711MO%2D711%2DPPL%2D24%2D08%2D711%5FPortuguese%2Epdf&parent=%2Fpersonal%2Fdiego%5Fmacedo%5Fh2grupo%5Fcom%2FDocuments%2F%C3%81rea%20de%20Trabalho%2Fprovedores%20certificados%2FPragmaticPlay%20Slots%2FPragmatic%20Play%20Games%20SLOT%20ALL%20Certificates%20BRAZIL%2FGates%20of%20Olympus%E2%84%A2%20Certificate%20BRAZIL", "https://h2grupo-my.sharepoint.com/personal/diego_macedo_h2grupo_com/_layouts/15/onedrive.aspx?sortField=FileLeafRef&isAscending=true&id=%2Fpersonal%2Fdiego%5Fmacedo%5Fh2grupo%5Fcom%2FDocuments%2F%C3%81rea%20de%20Trabalho%2Fprovedores%20certificados%2FPragmaticPlay%20Slots%2FPragmatic%20Play%20Games%20SLOT%20ALL%20Certificates%20BRAZIL%2FGems%20Bonanza%E2%84%A2%20Certificate%20BRAZIL%2F711MO%2D711%2DPPL%2D24%2D08%2D711%5FPortuguese%2Epdf&parent=%2Fpersonal%2Fdiego%5Fmacedo%5Fh2grupo%5Fcom%2FDocuments%2F%C3%81rea%20de%20Trabalho%2Fprovedores%20certificados%2FPragmaticPlay%20Slots%2FPragmatic%20Play%20Games%20SLOT%20ALL%20Certificates%20BRAZIL%2FGems%20Bonanza%E2%84%A2%20Certificate%20BRAZIL", "https://h2grupo-my.sharepoint.com/personal/diego_macedo_h2grupo_com/_layouts/15/onedrive.aspx?sortField=FileLeafRef&isAscending=true&id=%2Fpersonal%2Fdiego%5Fmacedo%5Fh2grupo%5Fcom%2FDocuments%2F%C3%81rea%20de%20Trabalho%2Fprovedores%20certificados%2FPragmaticPlay%20Slots%2FPragmatic%20Play%20Games%20SLOT%20ALL%20Certificates%20BRAZIL%2FGold%20Party%C2%AE%20Certificate%20BRAZIL%2F711MO%2D711%2DPPL%2D24%2D08%2D711%5FPortuguese%2Epdf&parent=%2Fpersonal%2Fdiego%5Fmacedo%5Fh2grupo%5Fcom%2FDocuments%2F%C3%81rea%20de%20Trabalho%2Fprovedores%20certificados%2FPragmaticPlay%20Slots%2FPragmatic%20Play%20Games%20SLOT%20ALL%20Certificates%20BRAZIL%2FGold%20Party%C2%AE%20Certificate%20BRAZIL", "https://h2grupo-my.sharepoint.com/personal/diego_macedo_h2grupo_com/_layouts/15/onedrive.aspx?sortField=FileLeafRef&isAscending=true&id=%2Fpersonal%2Fdiego%5Fmacedo%5Fh2grupo%5Fcom%2FDocuments%2F%C3%81rea%20de%20Trabalho%2Fprovedores%20certificados%2FPragmaticPlay%20Slots%2FPragmatic%20Play%20Games%20SLOT%20ALL%20Certificates%20BRAZIL%2FJoker%26%238217%3Bs%20Jewels%E2%84%A2%20Certificate%20BRAZIL%2F711MO%2D711%2DPPL%2D24%2D08%2D711%5FPortuguese%2Epdf&parent=%2Fpersonal%2Fdiego%5Fmacedo%5Fh2grupo%5Fcom%2FDocuments%2F%C3%81rea%20de%20Trabalho%2Fprovedores%20certificados%2FPragmaticPlay%20Slots%2FPragmatic%20Play%20Games%20SLOT%20ALL%20Certificates%20BRAZIL%2FJoker%26%238217%3Bs%20Jewels%E2%84%A2%20Certificate%20BRAZIL", "https://h2grupo-my.sharepoint.com/personal/diego_macedo_h2grupo_com/_layouts/15/onedrive.aspx?sortField=FileLeafRef&isAscending=true&id=%2Fpersonal%2Fdiego%5Fmacedo%5Fh2grupo%5Fcom%2FDocuments%2F%C3%81rea%20de%20Trabalho%2Fprovedores%20certificados%2FPragmaticPlay%20Slots%2FPragmatic%20Play%20Games%20SLOT%20ALL%20Certificates%20BRAZIL%2FStarlight%20Princess%E2%84%A2%20Certificate%20BRAZIL%2F711MO%2D711%2DPPL%2D24%2D08%2D711%5FPortuguese%2Epdf&parent=%2Fpersonal%2Fdiego%5Fmacedo%5Fh2grupo%5Fcom%2FDocuments%2F%C3%81rea%20de%20Trabalho%2Fprovedores%20certificados%2FPragmaticPlay%20Slots%2FPragmatic%20Play%20Games%20SLOT%20ALL%20Certificates%20BRAZIL%2FStarlight%20Princess%E2%84%A2%20Certificate%20BRAZIL", "https://h2grupo-my.sharepoint.com/personal/diego_macedo_h2grupo_com/_layouts/15/onedrive.aspx?sortField=FileLeafRef&isAscending=true&id=%2Fpersonal%2Fdiego%5Fmacedo%5Fh2grupo%5Fcom%2FDocuments%2F%C3%81rea%20de%20Trabalho%2Fprovedores%20certificados%2FPragmaticPlay%20Slots%2FPragmatic%20Play%20Games%20SLOT%20ALL%20Certificates%20BRAZIL%2FSugar%20Rush%201000%20Certificate%20BRAZIL%2F711MO%2D711%2DPPL%2D24%2D08%2D711%5FPortuguese%2Epdf&parent=%2Fpersonal%2Fdiego%5Fmacedo%5Fh2grupo%5Fcom%2FDocuments%2F%C3%81rea%20de%20Trabalho%2Fprovedores%20certificados%2FPragmaticPlay%20Slots%2FPragmatic%20Play%20Games%20SLOT%20ALL%20Certificates%20BRAZIL%2FSugar%20Rush%201000%20Certificate%20BRAZIL", "https://h2grupo-my.sharepoint.com/personal/diego_macedo_h2grupo_com/_layouts/15/onedrive.aspx?sortField=FileLeafRef&isAscending=true&id=%2Fpersonal%2Fdiego%5Fmacedo%5Fh2grupo%5Fcom%2FDocuments%2F%C3%81rea%20de%20Trabalho%2Fprovedores%20certificados%2FPragmaticPlay%20Slots%2FPragmatic%20Play%20Games%20SLOT%20ALL%20Certificates%20BRAZIL%2FSugar%20Rush%20Certificate%20BRAZIL%2F711MO%2D711%2DPPL%2D24%2D08%2D711%5FPortuguese%2Epdf&parent=%2Fpersonal%2Fdiego%5Fmacedo%5Fh2grupo%5Fcom%2FDocuments%2F%C3%81rea%20de%20Trabalho%2Fprovedores%20certificados%2FPragmaticPlay%20Slots%2FPragmatic%20Play%20Games%20SLOT%20ALL%20Certificates%20BRAZIL%2FSugar%20Rush%20Certificate%20BRAZIL", "https://h2grupo-my.sharepoint.com/personal/diego_macedo_h2grupo_com/_layouts/15/onedrive.aspx?sortField=FileLeafRef&isAscending=true&id=%2Fpersonal%2Fdiego%5Fmacedo%5Fh2grupo%5Fcom%2FDocuments%2F%C3%81rea%20de%20Trabalho%2Fprovedores%20certificados%2FPragmaticPlay%20Slots%2FPragmatic%20Play%20Games%20SLOT%20ALL%20Certificates%20BRAZIL%2FSweet%20Bonanza%201000%20Certificate%20BRAZIL%2F711MO%2D711%2DPPL%2D24%2D08%2D711%5FPortuguese%2Epdf&parent=%2Fpersonal%2Fdiego%5Fmacedo%5Fh2grupo%5Fcom%2FDocuments%2F%C3%81rea%20de%20Trabalho%2Fprovedores%20certificados%2FPragmaticPlay%20Slots%2FPragmatic%20Play%20Games%20SLOT%20ALL%20Certificates%20BRAZIL%2FSweet%20Bonanza%201000%20Certificate%20BRAZIL", "https://h2grupo-my.sharepoint.com/personal/diego_macedo_h2grupo_com/_layouts/15/onedrive.aspx?sortField=FileLeafRef&isAscending=true&id=%2Fpersonal%2Fdiego%5Fmacedo%5Fh2grupo%5Fcom%2FDocuments%2F%C3%81rea%20de%20Trabalho%2Fprovedores%20certificados%2FPragmaticPlay%20Slots%2FPragmatic%20Play%20Games%20SLOT%20ALL%20Certificates%20BRAZIL%2FSweet%20Bonanza%20Xmas%E2%84%A2%20Certificate%20BRAZIL%2F711MO%2D711%2DPPL%2D24%2D08%2D711%5FPortuguese%2Epdf&parent=%2Fpersonal%2Fdiego%5Fmacedo%5Fh2grupo%5Fcom%2FDocuments%2F%C3%81rea%20de%20Trabalho%2Fprovedores%20certificados%2FPragmaticPlay%20Slots%2FPragmatic%20Play%20Games%20SLOT%20ALL%20Certificates%20BRAZIL%2FSweet%20Bonanza%20Xmas%E2%84%A2%20Certificate%20BRAZIL", "https://h2grupo-my.sharepoint.com/personal/diego_macedo_h2grupo_com/_layouts/15/onedrive.aspx?sortField=FileLeafRef&isAscending=true&id=%2Fpersonal%2Fdiego%5Fmacedo%5Fh2grupo%5Fcom%2FDocuments%2F%C3%81rea%20de%20Trabalho%2Fprovedores%20certificados%2FPragmaticPlay%20Slots%2FPragmatic%20Play%20Games%20SLOT%20ALL%20Certificates%20BRAZIL%2FSweet%20Bonanza%E2%84%A2%20Certificate%20BRAZIL%2F711MO%2D711%2DPPL%2D24%2D08%2D711%5FPortuguese%2Epdf&parent=%2Fpersonal%2Fdiego%5Fmacedo%5Fh2grupo%5Fcom%2FDocuments%2F%C3%81rea%20de%20Trabalho%2Fprovedores%20certificados%2FPragmaticPlay%20Slots%2FPragmatic%20Play%20Games%20SLOT%20ALL%20Certificates%20BRAZIL%2FSweet%20Bonanza%E2%84%A2%20Certificate%20BRAZIL", "https://h2grupo-my.sharepoint.com/personal/diego_macedo_h2grupo_com/_layouts/15/onedrive.aspx?sortField=FileLeafRef&isAscending=true&id=%2Fpersonal%2Fdiego%5Fmacedo%5Fh2grupo%5Fcom%2FDocuments%2F%C3%81rea%20de%20Trabalho%2Fprovedores%20certificados%2FPragmaticPlay%20Slots%2FPragmatic%20Play%20Games%20SLOT%20ALL%20Certificates%20BRAZIL%2FWild%20West%20Duels%E2%84%A2%20Certificate%20BRAZIL%2F711MO%2D711%2DPPL%2D24%2D08%2D711%5FPortuguese%2Epdf&parent=%2Fpersonal%2Fdiego%5Fmacedo%5Fh2grupo%5Fcom%2FDocuments%2F%C3%81rea%20de%20Trabalho%2Fprovedores%20certificados%2FPragmaticPlay%20Slots%2FPragmatic%20Play%20Games%20SLOT%20ALL%20Certificates%20BRAZIL%2FWild%20West%20Duels%E2%84%A2%20Certificate%20BRAZIL", "https://h2grupo-my.sharepoint.com/personal/diego_macedo_h2grupo_com/_layouts/15/onedrive.aspx?sortField=FileLeafRef&isAscending=true&id=%2Fpersonal%2Fdiego%5Fmacedo%5Fh2grupo%5Fcom%2FDocuments%2F%C3%81rea%20de%20Trabalho%2Fprovedores%20certificados%2FPragmaticPlay%20Slots%2FPragmatic%20Play%20Games%20SLOT%20ALL%20Certificates%20BRAZIL%2FZeus%20vs%20Hades%20%26%238211%3B%20Gods%20of%20War%E2%84%A2%20Certificate%20BRAZIL%2F711MO%2D711%2DPPL%2D24%2D08%2D711%5FPortuguese%2Epdf&parent=%2Fpersonal%2Fdiego%5Fmacedo%5Fh2grupo%5Fcom%2FDocuments%2F%C3%81rea%20de%20Trabalho%2Fprovedores%20certificados%2FPragmaticPlay%20Slots%2FPragmatic%20Play%20Games%20SLOT%20ALL%20Certificates%20BRAZIL%2FZeus%20vs%20Hades%20%26%238211%3B%20Gods%20of%20War%E2%84%A2%20Certificate%20BRAZIL"] },
@@ -271,129 +281,173 @@
     { name: '<span class="neon-text">ON-LINE</span> Zeus vs Hades - Gods of War', links: ['https://h2grupo-my.sharepoint.com/personal/diego_macedo_h2grupo_com/_layouts/15/onedrive.aspx?sortField=FileLeafRef&isAscending=true&id=%2Fpersonal%2Fdiego%5Fmacedo%5Fh2grupo%5Fcom%2FDocuments%2F%C3%81rea%20de%20Trabalho%2Fprovedores%20certificados%2FPragmaticPlay%20Slots%2FPragmatic%20Play%20Games%20SLOT%20ALL%20Certificates%20BRAZIL%2FZeus%20vs%20Hades%20%26%238211%3B%20Gods%20of%20War%E2%84%A2%20Certificate%20BRAZIL%2FZeus%20vs%20Hades%20%2D%20Gods%20of%20War%5FBR%2Epdf&parent=%2Fpersonal%2Fdiego%5Fmacedo%5Fh2grupo%5Fcom%2FDocuments%2F%C3%81rea%20de%20Trabalho%2Fprovedores%20certificados%2FPragmaticPlay%20Slots%2FPragmatic%20Play%20Games%20SLOT%20ALL%20Certificates%20BRAZIL%2FZeus%20vs%20Hades%20%26%238211%3B%20Gods%20of%20War%E2%84%A2%20Certificate%20BRAZIL', 'https://h2grupo-my.sharepoint.com/personal/diego_macedo_h2grupo_com/_layouts/15/onedrive.aspx?sortField=FileLeafRef&isAscending=true&id=%2Fpersonal%2Fdiego%5Fmacedo%5Fh2grupo%5Fcom%2FDocuments%2F%C3%81rea%20de%20Trabalho%2Fprovedores%20certificados%2FPragmaticPlay%20Slots%2F711BR%2D711%2DPPL%2D24%2D22%5FPortuguese%2Epdf&parent=%2Fpersonal%2Fdiego%5Fmacedo%5Fh2grupo%5Fcom%2FDocuments%2F%C3%81rea%20de%20Trabalho%2Fprovedores%20certificados%2FPragmaticPlay%20Slots', 'https://h2grupo-my.sharepoint.com/personal/diego_macedo_h2grupo_com/_layouts/15/onedrive.aspx?sortField=FileLeafRef&isAscending=true&id=%2Fpersonal%2Fdiego%5Fmacedo%5Fh2grupo%5Fcom%2FDocuments%2F%C3%81rea%20de%20Trabalho%2Fprovedores%20certificados%2FPragmaticPlay%20Slots%2FPragmatic%20Play%20Games%20SLOT%20ALL%20Certificates%20BRAZIL%2FGates%20of%20Olympus%E2%84%A2%20Certificate%20BRAZIL%2F711MO%2D711%2DPPL%2D24%2D08%2D711%5FPortuguese%2Epdf&parent=%2Fpersonal%2Fdiego%5Fmacedo%5Fh2grupo%5Fcom%2FDocuments%2F%C3%81rea%20de%20Trabalho%2Fprovedores%20certificados%2FPragmaticPlay%20Slots%2FPragmatic%20Play%20Games%20SLOT%20ALL%20Certificates%20BRAZIL%2FGates%20of%20Olympus%E2%84%A2%20Certificate%20BRAZIL', 'https://h2grupo-my.sharepoint.com/personal/diego_macedo_h2grupo_com/_layouts/15/onedrive.aspx?sortField=FileLeafRef&isAscending=true&id=%2Fpersonal%2Fdiego%5Fmacedo%5Fh2grupo%5Fcom%2FDocuments%2F%C3%81rea%20de%20Trabalho%2Fprovedores%20certificados%2FPragmaticPlay%20Slots%2FPragmatic%20Play%20Games%20SLOT%20ALL%20Certificates%20BRAZIL%2FGems%20Bonanza%E2%84%A2%20Certificate%20BRAZIL%2F711MO%2D711%2DPPL%2D24%2D08%2D711%5FPortuguese%2Epdf&parent=%2Fpersonal%2Fdiego%5Fmacedo%5Fh2grupo%5Fcom%2FDocuments%2F%C3%81rea%20de%20Trabalho%2Fprovedores%20certificados%2FPragmaticPlay%20Slots%2FPragmatic%20Play%20Games%20SLOT%20ALL%20Certificates%20BRAZIL%2FGems%20Bonanza%E2%84%A2%20Certificate%20BRAZIL', 'https://h2grupo-my.sharepoint.com/personal/diego_macedo_h2grupo_com/_layouts/15/onedrive.aspx?sortField=FileLeafRef&isAscending=true&id=%2Fpersonal%2Fdiego%5Fmacedo%5Fh2grupo%5Fcom%2FDocuments%2F%C3%81rea%20de%20Trabalho%2Fprovedores%20certificados%2FPragmaticPlay%20Slots%2FPragmatic%20Play%20Games%20SLOT%20ALL%20Certificates%20BRAZIL%2FGold%20Party%C2%AE%20Certificate%20BRAZIL%2F711MO%2D711%2DPPL%2D24%2D08%2D711%5FPortuguese%2Epdf&parent=%2Fpersonal%2Fdiego%5Fmacedo%5Fh2grupo%5Fcom%2FDocuments%2F%C3%81rea%20de%20Trabalho%2Fprovedores%20certificados%2FPragmaticPlay%20Slots%2FPragmatic%20Play%20Games%20SLOT%20ALL%20Certificates%20BRAZIL%2FGold%20Party%C2%AE%20Certificate%20BRAZIL', 'https://h2grupo-my.sharepoint.com/personal/diego_macedo_h2grupo_com/_layouts/15/onedrive.aspx?sortField=FileLeafRef&isAscending=true&id=%2Fpersonal%2Fdiego%5Fmacedo%5Fh2grupo%5Fcom%2FDocuments%2F%C3%81rea%20de%20Trabalho%2Fprovedores%20certificados%2FPragmaticPlay%20Slots%2FPragmatic%20Play%20Games%20SLOT%20ALL%20Certificates%20BRAZIL%2FJoker%26%238217%3Bs%20Jewels%E2%84%A2%20Certificate%20BRAZIL%2F711MO%2D711%2DPPL%2D24%2D08%2D711%5FPortuguese%2Epdf&parent=%2Fpersonal%2Fdiego%5Fmacedo%5Fh2grupo%5Fcom%2FDocuments%2F%C3%81rea%20de%20Trabalho%2Fprovedores%20certificados%2FPragmaticPlay%20Slots%2FPragmatic%20Play%20Games%20SLOT%20ALL%20Certificates%20BRAZIL%2FJoker%26%238217%3Bs%20Jewels%E2%84%A2%20Certificate%20BRAZIL', 'https://h2grupo-my.sharepoint.com/personal/diego_macedo_h2grupo_com/_layouts/15/onedrive.aspx?sortField=FileLeafRef&isAscending=true&id=%2Fpersonal%2Fdiego%5Fmacedo%5Fh2grupo%5Fcom%2FDocuments%2F%C3%81rea%20de%20Trabalho%2Fprovedores%20certificados%2FPragmaticPlay%20Slots%2FPragmatic%20Play%20Games%20SLOT%20ALL%20Certificates%20BRAZIL%2FStarlight%20Princess%E2%84%A2%20Certificate%20BRAZIL%2F711MO%2D711%2DPPL%2D24%2D08%2D711%5FPortuguese%2Epdf&parent=%2Fpersonal%2Fdiego%5Fmacedo%5Fh2grupo%5Fcom%2FDocuments%2F%C3%81rea%20de%20Trabalho%2Fprovedores%20certificados%2FPragmaticPlay%20Slots%2FPragmatic%20Play%20Games%20SLOT%20ALL%20Certificates%20BRAZIL%2FStarlight%20Princess%E2%84%A2%20Certificate%20BRAZIL', 'https://h2grupo-my.sharepoint.com/personal/diego_macedo_h2grupo_com/_layouts/15/onedrive.aspx?sortField=FileLeafRef&isAscending=true&id=%2Fpersonal%2Fdiego%5Fmacedo%5Fh2grupo%5Fcom%2FDocuments%2F%C3%81rea%20de%20Trabalho%2Fprovedores%20certificados%2FPragmaticPlay%20Slots%2FPragmatic%20Play%20Games%20SLOT%20ALL%20Certificates%20BRAZIL%2FSugar%20Rush%201000%20Certificate%20BRAZIL%2F711MO%2D711%2DPPL%2D24%2D08%2D711%5FPortuguese%2Epdf&parent=%2Fpersonal%2Fdiego%5Fmacedo%5Fh2grupo%5Fcom%2FDocuments%2F%C3%81rea%20de%20Trabalho%2Fprovedores%20certificados%2FPragmaticPlay%20Slots%2FPragmatic%20Play%20Games%20SLOT%20ALL%20Certificates%20BRAZIL%2FSugar%20Rush%201000%20Certificate%20BRAZIL', 'https://h2grupo-my.sharepoint.com/personal/diego_macedo_h2grupo_com/_layouts/15/onedrive.aspx?sortField=FileLeafRef&isAscending=true&id=%2Fpersonal%2Fdiego%5Fmacedo%5Fh2grupo%5Fcom%2FDocuments%2F%C3%81rea%20de%20Trabalho%2Fprovedores%20certificados%2FPragmaticPlay%20Slots%2FPragmatic%20Play%20Games%20SLOT%20ALL%20Certificates%20BRAZIL%2FSweet%20Bonanza%201000%20Certificate%20BRAZIL%2F711MO%2D711%2DPPL%2D24%2D08%2D711%5FPortuguese%2Epdf&parent=%2Fpersonal%2Fdiego%5Fmacedo%5Fh2grupo%5Fcom%2FDocuments%2F%C3%81rea%20de%20Trabalho%2Fprovedores%20certificados%2FPragmaticPlay%20Slots%2FPragmatic%20Play%20Games%20SLOT%20ALL%20Certificates%20BRAZIL%2FSweet%20Bonanza%201000%20Certificate%20BRAZIL', 'https://h2grupo-my.sharepoint.com/personal/diego_macedo_h2grupo_com/_layouts/15/onedrive.aspx?sortField=FileLeafRef&isAscending=true&id=%2Fpersonal%2Fdiego%5Fmacedo%5Fh2grupo%5Fcom%2FDocuments%2F%C3%81rea%20de%20Trabalho%2Fprovedores%20certificados%2FPragmaticPlay%20Slots%2FPragmatic%20Play%20Games%20SLOT%20ALL%20Certificates%20BRAZIL%2FSweet%20Bonanza%20Xmas%E2%84%A2%20Certificate%20BRAZIL%2F711MO%2D711%2DPPL%2D24%2D08%2D711%5FPortuguese%2Epdf&parent=%2Fpersonal%2Fdiego%5Fmacedo%5Fh2grupo%5Fcom%2FDocuments%2F%C3%81rea%20de%20Trabalho%2Fprovedores%20certificados%2FPragmaticPlay%20Slots%2FPragmatic%20Play%20Games%20SLOT%20ALL%20Certificates%20BRAZIL%2FSweet%20Bonanza%20Xmas%E2%84%A2%20Certificate%20BRAZIL', 'https://h2grupo-my.sharepoint.com/personal/diego_macedo_h2grupo_com/_layouts/15/onedrive.aspx?sortField=FileLeafRef&isAscending=true&id=%2Fpersonal%2Fdiego%5Fmacedo%5Fh2grupo%5Fcom%2FDocuments%2F%C3%81rea%20de%20Trabalho%2Fprovedores%20certificados%2FPragmaticPlay%20Slots%2FPragmatic%20Play%20Games%20SLOT%20ALL%20Certificates%20BRAZIL%2FSweet%20Bonanza%E2%84%A2%20Certificate%20BRAZIL%2F711MO%2D711%2DPPL%2D24%2D08%2D711%5FPortuguese%2Epdf&parent=%2Fpersonal%2Fdiego%5Fmacedo%5Fh2grupo%5Fcom%2FDocuments%2F%C3%81rea%20de%20Trabalho%2Fprovedores%20certificados%2FPragmaticPlay%20Slots%2FPragmatic%20Play%20Games%20SLOT%20ALL%20Certificates%20BRAZIL%2FSweet%20Bonanza%E2%84%A2%20Certificate%20BRAZIL', 'https://h2grupo-my.sharepoint.com/personal/diego_macedo_h2grupo_com/_layouts/15/onedrive.aspx?sortField=FileLeafRef&isAscending=true&id=%2Fpersonal%2Fdiego%5Fmacedo%5Fh2grupo%5Fcom%2FDocuments%2F%C3%81rea%20de%20Trabalho%2Fprovedores%20certificados%2FPragmaticPlay%20Slots%2FPragmatic%20Play%20Games%20SLOT%20ALL%20Certificates%20BRAZIL%2FWild%20West%20Duels%E2%84%A2%20Certificate%20BRAZIL%2F711MO%2D711%2DPPL%2D24%2D08%2D711%5FPortuguese%2Epdf&parent=%2Fpersonal%2Fdiego%5Fmacedo%5Fh2grupo%5Fcom%2FDocuments%2F%C3%81rea%20de%20Trabalho%2Fprovedores%20certificados%2FPragmaticPlay%20Slots%2FPragmatic%20Play%20Games%20SLOT%20ALL%20Certificates%20BRAZIL%2FWild%20West%20Duels%E2%84%A2%20Certificate%20BRAZIL', 'https://h2grupo-my.sharepoint.com/personal/diego_macedo_h2grupo_com/_layouts/15/onedrive.aspx?sortField=FileLeafRef&isAscending=true&id=%2Fpersonal%2Fdiego%5Fmacedo%5Fh2grupo%5Fcom%2FDocuments%2F%C3%81rea%20de%20Trabalho%2Fprovedores%20certificados%2FPragmaticPlay%20Slots%2FPragmatic%20Play%20Games%20SLOT%20ALL%20Certificates%20BRAZIL%2FZeus%20vs%20Hades%20%26%238211%3B%20Gods%20of%20War%E2%84%A2%20Certificate%20BRAZIL%2F711MO%2D711%2DPPL%2D24%2D08%2D711%5FPortuguese%2Epdf&parent=%2Fpersonal%2Fdiego%5Fmacedo%5Fh2grupo%5Fcom%2FDocuments%2F%C3%81rea%20de%20Trabalho%2Fprovedores%20certificados%2FPragmaticPlay%20Slots%2FPragmatic%20Play%20Games%20SLOT%20ALL%20Certificates%20BRAZIL%2FZeus%20vs%20Hades%20%26%238211%3B%20Gods%20of%20War%E2%84%A2%20Certificate%20BRAZIL', 'https://h2grupo-my.sharepoint.com/personal/diego_macedo_h2grupo_com/_layouts/15/onedrive.aspx?sortField=FileLeafRef&isAscending=true&id=%2Fpersonal%2Fdiego%5Fmacedo%5Fh2grupo%5Fcom%2FDocuments%2F%C3%81rea%20de%20Trabalho%2Fprovedores%20certificados%2FPragmaticPlay%20Slots%2FPragmatic%20Play%20Games%20SLOT%20ALL%20Certificates%20BRAZIL%2F3%20Buzzing%20Wilds%E2%84%A2%20Certificate%20BRAZIL%2F711MO%2D711%2DPPL%2D24%2D08%2D711%2Epdf&parent=%2Fpersonal%2Fdiego%5Fmacedo%5Fh2grupo%5Fcom%2FDocuments%2F%C3%81rea%20de%20Trabalho%2Fprovedores%20certificados%2FPragmaticPlay%20Slots%2FPragmatic%20Play%20Games%20SLOT%20ALL%20Certificates%20BRAZIL%2F3%20Buzzing%20Wilds%E2%84%A2%20Certificate%20BRAZIL', 'https://h2grupo-my.sharepoint.com/personal/diego_macedo_h2grupo_com/_layouts/15/onedrive.aspx?sortField=FileLeafRef&isAscending=true&id=%2Fpersonal%2Fdiego%5Fmacedo%5Fh2grupo%5Fcom%2FDocuments%2F%C3%81rea%20de%20Trabalho%2Fprovedores%20certificados%2FPragmaticPlay%20Slots%2FPragmatic%20Play%20Games%20SLOT%20ALL%20Certificates%20BRAZIL%2FBig%20Bass%20%26%238211%3B%20Hold%20%26%23038%3B%20Spinner%E2%84%A2%20Certificate%20BRAZIL%2F711MO%2D711%2DPPL%2D24%2D08%2D711%2Epdf&parent=%2Fpersonal%2Fdiego%5Fmacedo%5Fh2grupo%5Fcom%2FDocuments%2F%C3%81rea%20de%20Trabalho%2Fprovedores%20certificados%2FPragmaticPlay%20Slots%2FPragmatic%20Play%20Games%20SLOT%20ALL%20Certificates%20BRAZIL%2FBig%20Bass%20%26%238211%3B%20Hold%20%26%23038%3B%20Spinner%E2%84%A2%20Certificate%20BRAZIL', 'https://h2grupo-my.sharepoint.com/personal/diego_macedo_h2grupo_com/_layouts/15/onedrive.aspx?sortField=FileLeafRef&isAscending=true&id=%2Fpersonal%2Fdiego%5Fmacedo%5Fh2grupo%5Fcom%2FDocuments%2F%C3%81rea%20de%20Trabalho%2Fprovedores%20certificados%2FPragmaticPlay%20Slots%2FPragmatic%20Play%20Games%20SLOT%20ALL%20Certificates%20BRAZIL%2FBig%20Bass%20Amazon%20Xtreme%E2%84%A2%20Certificate%20BRAZIL%2F711MO%2D711%2DPPL%2D24%2D08%2D711%5FPortuguese%2Epdf&parent=%2Fpersonal%2Fdiego%5Fmacedo%5Fh2grupo%5Fcom%2FDocuments%2F%C3%81rea%20de%20Trabalho%2Fprovedores%20certificados%2FPragmaticPlay%20Slots%2FPragmatic%20Play%20Games%20SLOT%20ALL%20Certificates%20BRAZIL%2FBig%20Bass%20Amazon%20Xtreme%E2%84%A2%20Certificate%20BRAZIL', 'https://h2grupo-my.sharepoint.com/personal/diego_macedo_h2grupo_com/_layouts/15/onedrive.aspx?sortField=FileLeafRef&isAscending=true&id=%2Fpersonal%2Fdiego%5Fmacedo%5Fh2grupo%5Fcom%2FDocuments%2F%C3%81rea%20de%20Trabalho%2Fprovedores%20certificados%2FPragmaticPlay%20Slots%2FPragmatic%20Play%20Games%20SLOT%20ALL%20Certificates%20BRAZIL%2FBig%20Bass%20Bonanza%E2%84%A2%20Certificate%20BRAZIL%2F711MO%2D711%2DPPL%2D24%2D08%2D711%5FPortuguese%2Epdf&parent=%2Fpersonal%2Fdiego%5Fmacedo%5Fh2grupo%5Fcom%2FDocuments%2F%C3%81rea%20de%20Trabalho%2Fprovedores%20certificados%2FPragmaticPlay%20Slots%2FPragmatic%20Play%20Games%20SLOT%20ALL%20Certificates%20BRAZIL%2FBig%20Bass%20Bonanza%E2%84%A2%20Certificate%20BRAZIL', 'https://h2grupo-my.sharepoint.com/personal/diego_macedo_h2grupo_com/_layouts/15/onedrive.aspx?sortField=FileLeafRef&isAscending=true&id=%2Fpersonal%2Fdiego%5Fmacedo%5Fh2grupo%5Fcom%2FDocuments%2F%C3%81rea%20de%20Trabalho%2Fprovedores%20certificados%2FPragmaticPlay%20Slots%2FPragmatic%20Play%20Games%20SLOT%20ALL%20Certificates%20BRAZIL%2FChristmas%20Big%20Bass%20Bonanza%E2%84%A2%20Certificate%20BRAZIL%2F711MO%2D711%2DPPL%2D24%2D08%2D711%5FPortuguese%2Epdf&parent=%2Fpersonal%2Fdiego%5Fmacedo%5Fh2grupo%5Fcom%2FDocuments%2F%C3%81rea%20de%20Trabalho%2Fprovedores%20certificados%2FPragmaticPlay%20Slots%2FPragmatic%20Play%20Games%20SLOT%20ALL%20Certificates%20BRAZIL%2FChristmas%20Big%20Bass%20Bonanza%E2%84%A2%20Certificate%20BRAZIL', 'https://h2grupo-my.sharepoint.com/personal/diego_macedo_h2grupo_com/_layouts/15/onedrive.aspx?sortField=FileLeafRef&isAscending=true&id=%2Fpersonal%2Fdiego%5Fmacedo%5Fh2grupo%5Fcom%2FDocuments%2F%C3%81rea%20de%20Trabalho%2Fprovedores%20certificados%2FPragmaticPlay%20Slots%2FPragmatic%20Play%20Games%20SLOT%20ALL%20Certificates%20BRAZIL%2FGates%20of%20Olympus%201000%20Certificate%20BRAZIL%2F711MO%2D711%2DPPL%2D24%2D08%2D711%5FPortuguese%2Epdf&parent=%2Fpersonal%2Fdiego%5Fmacedo%5Fh2grupo%5Fcom%2FDocuments%2F%C3%81rea%20de%20Trabalho%2Fprovedores%20certificados%2FPragmaticPlay%20Slots%2FPragmatic%20Play%20Games%20SLOT%20ALL%20Certificates%20BRAZIL%2FGates%20of%20Olympus%201000%20Certificate%20BRAZIL'] }
             ];
 
-            const gameList = document.getElementById("game-list");
+// Filtrando jogos com "ON-LINE"
 
-        // Adiciona cada jogo como um item numerado na lista
-        games.forEach((game, index) => {
-            const listItem = document.createElement("li");
-            listItem.className = "game-item";
-            listItem.innerHTML = `
-                <span class="game-number">${index + 1}. </span>
-                <span class="game-name">${game.name}</span>
-                <button class="view-links-btn">Ver Links</button>
-            `;
+const gameList = document.getElementById("game-list");
+        // Adicionando eventos aos botões para filtrar os jogos
+const showOnlineBtn = document.getElementById("show-online");
+const showAllBtn = document.getElementById("show-all"); // Botão para exibir todos os jogos
+const showOffBtn = document.getElementById("show-off");
 
-            // Evento para abrir o pop-up com os links
-            listItem.querySelector(".view-links-btn").addEventListener("click", () => {
-                createPopup(game);
-            });
 
-            gameList.appendChild(listItem);
+// Função para renderizar jogos na lista
+const renderGames = (filteredGames) => {
+    const gameList = document.getElementById("game-list");
+    gameList.innerHTML = ""; // Limpa a lista atual
+    filteredGames.forEach((game, index) => {
+        const listItem = document.createElement("li");
+        listItem.className = "game-item";
+        listItem.innerHTML = `
+            <span class="game-number">${index + 1}. </span>
+            <span class="game-name">${game.name}</span>
+            <button class="view-links-btn">Ver Links</button>
+        `;
+        listItem.querySelector(".view-links-btn").addEventListener("click", () => {
+            createPopup(game);
         });
+        gameList.appendChild(listItem);
+    });
+};
+
+// Evento para exibir jogos OFF
+showOffBtn.addEventListener("click", () => {
+    const offGames = games.filter(game => game.name.includes("OFF"));
+    renderGames(offGames);
+});
+
+// Evento para exibir jogos ON-LINE
+showOnlineBtn.addEventListener("click", () => {
+    const onlineGames = games.filter(game => game.name.includes("ON-LINE"));
+    renderGames(onlineGames);
+});
+
+// Evento para exibir todos os jogos
+showAllBtn.addEventListener("click", () => {
+    renderGames(games); // Exibe todos os jogos
+});
+
+// Exibe todos os jogos inicialmente
+renderGames(games);
+
+          
+
+        // Eventos para filtrar e exibir jogos
+        showOnlineBtn.addEventListener("click", () => {
+            const onlineGames = games.filter(game => game.name.includes("ON-LINE"));
+            renderGames(onlineGames);
+        });
+
+        showOffBtn.addEventListener("click", () => {
+            const offGames = games.filter(game => game.name.includes("OFF"));
+            renderGames(offGames);
+        });
+
+        // Exibe todos os jogos inicialmente
+        renderGames(games);
     });
 
     function createPopup(game) {
-        // Remove qualquer pop-up existente
-        closePopup();
+    // Remove qualquer pop-up existente
+    closePopup();
 
-        const options = game.links.map(
-            (link, index) =>
-                `<div class="link-container">
-                    <button class="popup-link" onclick="window.open('${link}', '_blank')">Link ${index + 1}</button>
-                    <span class="gov-info">Enviado ao governo</span>
-                </div>`
-        ).join("");
+    const options = game.links.map(
+        (link, index) =>
+            `<div class="link-container">
+                <button class="popup-link" onclick="window.open('${link}', '_blank')">Link ${index + 1}</button>
+                <span class="gov-info">Enviado ao governo</span>
+            </div>`
+    ).join("");
 
-        const popup = document.createElement("div");
-        popup.classList.add("popup");
-        popup.innerHTML = `
-            <div class="popup-overlay" onclick="closePopup()"></div>
-            <div class="popup-content">
-                <h2>${game.name}</h2>
-                ${options}
-                <button class="close-popup" onclick="closePopup()">Fechar</button>
-            </div>
-        `;
-        document.body.appendChild(popup);
+    const popup = document.createElement("div");
+    popup.classList.add("popup");
+    popup.innerHTML = `
+        <div class="popup-overlay" onclick="closePopup()"></div>
+        <div class="popup-content">
+            <h2>${game.name}</h2>
+            ${options}
+            <button class="close-popup" onclick="closePopup()">Fechar</button>
+        </div>
+    `;
+    document.body.appendChild(popup);
 
-        // Aplica estilos ao pop-up dinamicamente
-        applyPopupStyles();
+    // Aplica estilos ao pop-up dinamicamente
+    applyPopupStyles();
     }
 
     function closePopup() {
-        const popup = document.querySelector(".popup");
-        if (popup) popup.remove();
+    const popup = document.querySelector(".popup");
+    if (popup) popup.remove();
     }
 
     function applyPopupStyles() {
-        const style = document.createElement("style");
-        style.textContent = `
-            .popup {
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                z-index: 1000;
-            }
-            .popup-overlay {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background: rgba(0, 0, 0, 0.7);
-            }
-            .popup-content {
-                position: relative;
-                background: #fff;
-                color: #000;
-                padding: 20px;
-                border-radius: 10px;
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-                text-align: center;
-                z-index: 1010;
-                max-width: 400px;
-                width: 90%;
-            }
-            .popup-content h2 {
-                margin-bottom: 15px;
-                font-size: 20px;
-                color: #800080;
-            }
-            .popup-link {
-                margin: 10px 5px;
-                padding: 10px 20px;
-                border: none;
-                border-radius: 5px;
-                background-color: #800080;
-                color: #fff;
-                cursor: pointer;
-                font-weight: bold;
-                transition: background-color 0.2s;
-            }
-            .popup-link:hover {
-                background-color: #5a005a;
-            }
-            .close-popup {
-                margin-top: 20px;
-                padding: 10px 20px;
-                border: none;
-                border-radius: 5px;
-                background-color: #ff0000;
-                color: #fff;
-                cursor: pointer;
-                font-weight: bold;
-                transition: background-color 0.2s;
-            }
-            .close-popup:hover {
-                background-color: #cc0000;
-            }
-        `;
-        document.head.appendChild(style);
+    const style = document.createElement("style");
+    style.textContent = `
+        .popup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        .popup-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+        }
+        .popup-content {
+            position: relative;
+            background: #fff;
+            color: #000;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            z-index: 1010;
+            max-width: 400px;
+            width: 90%;
+        }
+        .popup-content h2 {
+            margin-bottom: 15px;
+            font-size: 20px;
+            color: #800080;
+        }
+        .popup-link {
+            margin: 10px 5px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #800080;
+            color: #fff;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.2s;
+        }
+        .popup-link:hover {
+            background-color: #5a005a;
+        }
+        .close-popup {
+            margin-top: 20px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #ff0000;
+            color: #fff;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.2s;
+        }
+        .close-popup:hover {
+            background-color: #cc0000;
+        }
+    `;
+    document.head.appendChild(style);
     }
 </script>
 </body>
