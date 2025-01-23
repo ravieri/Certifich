@@ -191,10 +191,10 @@
         document.addEventListener("DOMContentLoaded", () => {
             // Lista de jogos da Boominggames
             const games = [
-            { name: '<span class="neon-text">ON-LINE</span> Ronaldinho Spins', links: [] },
-{ name: '<span class="neon-text">ON-LINE</span> Buffalo Hold and Win Extreme', links: [] },
-{ name: '<span class="neon-text">ON-LINE</span> Burning Classics', links: [] },
-{ name: '<span class="neon-text">ON-LINE</span> Ronaldinho Scores Shoot & Win', links: [] },
+            { name: '<span class="neon2-text">OFF</span> Ronaldinho Spins', links: [] },
+{ name: '<span class="neon2-text">OFF</span> Buffalo Hold and Win Extreme', links: [] },
+{ name: '<span class="neon2-text">OFF</span> Burning Classics', links: [] },
+{ name: '<span class="neon2-text">OFF</span> Ronaldinho Scores Shoot & Win', links: [] },
 { name: '<span class="neon2-text">OFF</span> Gold Gold Gold', links: [] },
 { name: '<span class="neon2-text">OFF</span> Cash Pig', links: [] },
 { name: '<span class="neon2-text">OFF</span> Diamond Hits', links: [] },
@@ -202,29 +202,29 @@
 { name: '<span class="neon2-text">OFF</span> Legendary Diamonds', links: [] },
 { name: '<span class="neon2-text">OFF</span> TNT Bonanza 2', links: [] },
 { name: '<span class="neon2-text">OFF</span> 64 Gold Coins Hold and Win', links: [] },
-{ name: '<span class="neon-text">ON-LINE</span> Burning Classics Royal Edition', links: [] },
+{ name: '<span class="neon2-text">OFF</span> Burning Classics Royal Edition', links: [] },
 { name: '<span class="neon2-text">OFF</span> Gold Gold Gold 5000', links: [] },
 { name: '<span class="neon2-text">OFF</span> Classic Coins', links: [] },
 { name: '<span class="neon2-text">OFF</span> Stampede Bonanza', links: [] },
 { name: '<span class="neon2-text">OFF</span> The Chillies', links: [] },
-{ name: '<span class="neon-text">ON-LINE</span> Howling for Gold', links: [] },
-{ name: '<span class="neon-text">ON-LINE</span> Holly Jolly Bonanza 2', links: [] },
+{ name: '<span class="neon2-text">OFF</span> Howling for Gold', links: [] },
+{ name: '<span class="neon2-text">OFF</span> Holly Jolly Bonanza 2', links: [] },
 { name: '<span class="neon2-text">OFF</span> Greek Legends', links: [] },
 { name: '<span class="neon2-text">OFF</span> Gamblelicious Hold and Win', links: [] },
-{ name: '<span class="neon-text">ON-LINE</span> Spooktacular Bonanza', links: [] },
+{ name: '<span class="neon2-text">OFF</span> Spooktacular Bonanza', links: [] },
 { name: '<span class="neon2-text">OFF</span> Holly Jolly Cash Pig', links: [] },
-{ name: '<span class="neon-text">ON-LINE</span> The Wild Wings of Phoenix', links: [] },
+{ name: '<span class="neon2-text">OFF</span> The Wild Wings of Phoenix', links: [] },
 { name: '<span class="neon2-text">OFF</span> Ultimate Hold N Win', links: [] },
 { name: '<span class="neon2-text">OFF</span> Space Sam Walk and Win', links: [] },
 { name: '<span class="neon2-text">OFF</span> Super Duper', links: [] },
 { name: '<span class="neon2-text">OFF</span> Classic Fantastic', links: [] },
 { name: '<span class="neon2-text">OFF</span> Holly Jolly Bonanza', links: [] },
-{ name: '<span class="neon-text">ON-LINE</span> TNT Bonanza', links: [] },
+{ name: '<span class="neon2-text">OFF</span> TNT Bonanza', links: [] },
 { name: '<span class="neon2-text">OFF</span> Chief Hawks Spirit Walk', links: [] },
 { name: '<span class="neon2-text">OFF</span> Jester s Riches', links: [] },
     ];
 
-// Filtrando jogos com "ON-LINE"
+// Filtrando jogos com "OFF"
 
 const gameList = document.getElementById("game-list");
         // Adicionando eventos aos botões para filtrar os jogos
@@ -258,9 +258,9 @@ showOffBtn.addEventListener("click", () => {
     renderGames(offGames);
 });
 
-// Evento para exibir jogos ON-LINE
+// Evento para exibir jogos OFF
 showOnlineBtn.addEventListener("click", () => {
-    const onlineGames = games.filter(game => game.name.includes("ON-LINE"));
+    const onlineGames = games.filter(game => game.name.includes("OFF"));
     renderGames(onlineGames);
 });
 
@@ -276,7 +276,7 @@ renderGames(games);
 
         // Eventos para filtrar e exibir jogos
         showOnlineBtn.addEventListener("click", () => {
-            const onlineGames = games.filter(game => game.name.includes("ON-LINE"));
+            const onlineGames = games.filter(game => game.name.includes("OFF"));
             renderGames(onlineGames);
         });
 
