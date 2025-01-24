@@ -73,13 +73,20 @@
             flex-direction: column;
         }
 
-        .password-container input[type="password"] {
+        .password-wrapper {
+            position: relative;
             width: 300px;
+        }
+
+        .password-container input[type="password"],
+        .password-container input[type="text"] {
+            width: 100%;
             padding: 10px;
             margin-bottom: 20px;
             border-radius: 8px;
             border: none;
             font-size: 16px;
+            box-sizing: border-box;
         }
 
         .password-container button {
@@ -102,6 +109,16 @@
             font-size: 14px;
             display: none;
         }
+
+        .toggle-password {
+            cursor: pointer;
+            color: #ffcc00;
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
         /* Estilo do Popup */
         #popup {
             position: fixed;
@@ -222,12 +239,15 @@
 
     <!-- Contêiner para a Senha -->
     <div class="password-container" id="password-container">
-        <input type="password" id="password" placeholder="Digite a senha">
+        <div class="password-wrapper">
+            <input type="password" id="password" placeholder="Digite a senha">
+            <span class="toggle-password" onclick="togglePassword()">👁️</span>
+        </div>
         <button onclick="checkPassword()">Entrar</button>
         <p class="error-message" id="error-message">Senha incorreta. Tente novamente.</p>
     </div>
     <!-- Popup (se necessário) -->
-    <div id="popup">
+    <div id="popup" onclick="closePopup(event)">
         <div class="popup-content">
             <h2>Atenção!</h2>
             <p>Você possui pendências. Clique no botão abaixo para resolvê-las:</p>
@@ -279,7 +299,7 @@
                     PlayTech
                 </a>
                 <a href="playtechlive.html" class="provider">
-                    <img src="provedores/playtechlive.png" alt="Logo PlayTech">
+                    <img src="provedores/playtechlive.png" alt="Logo PlayTech Live">
                     PlayTech Live
                 </a>
                 <a href="netent.html" class="provider">
@@ -309,48 +329,52 @@
             </div>
         </section>
     </main>
-<!-- Popup -->
-<div id="popup">
-    <div class="popup-content">
-        <h2>Certificados Pendentes</h2>
-        <p>Existem certificados que precisam ser enviados. Clique no botão abaixo para acessá-los.</p>
-        <a href="link_do_excel_com_certificados.xlsx" target="_blank">Ver Certificados</a>
-        <button onclick="closePopup()">Fechar</button>
-    </div>
-</div>
 
-<script>
-    // Define a senha correta
-    const correctPassword = "EusouH2";
+    <script>
+        // Define a senha correta
+        const correctPassword = "EusouH2";
 
-    function checkPassword() {
-        const input = document.getElementById("password").value;
-        const errorMessage = document.getElementById("error-message");
-        const passwordContainer = document.getElementById("password-container");
-        const mainContent = document.getElementById("main-content");
+        function checkPassword() {
+            const input = document.getElementById("password").value;
+            const errorMessage = document.getElementById("error-message");
+            const passwordContainer = document.getElementById("password-container");
+            const mainContent = document.getElementById("main-content");
 
-        if (input === correctPassword) {
-            // Exibe o conteúdo e oculta o contêiner da senha
-            passwordContainer.style.display = "none";
-            mainContent.style.display = "block";
+            if (input === correctPassword) {
+                // Exibe o conteúdo e oculta o contêiner da senha
+                passwordContainer.style.display = "none";
+                mainContent.style.display = "block";
 
-            // Exibe o popup após 1 segundo
-            setTimeout(() => {
-                const popup = document.getElementById('popup');
-                popup.style.display = 'flex';
-            }, 1000);
-        } else {
-            // Exibe mensagem de erro
-            errorMessage.style.display = "block";
+                // Exibe o popup após 1 segundo
+                setTimeout(() => {
+                    const popup = document.getElementById('popup');
+                    popup.style.display = 'flex';
+                }, 1000);
+            } else {
+                // Exibe mensagem de erro
+                errorMessage.style.display = "block";
+            }
         }
-    }
 
-    // Fecha o popup
-    function closePopup() {
-        const popup = document.getElementById('popup');
-        popup.style.display = 'none';
-    }
-    
-</script>
+        function togglePassword() {
+            const passwordField = document.getElementById("password");
+            const toggleIcon = document.querySelector(".toggle-password");
+            if (passwordField.type === "password") {
+                passwordField.type = "text";
+                toggleIcon.textContent = "🙈";
+            } else {
+                passwordField.type = "password";
+                toggleIcon.textContent = "👁️";
+            }
+        }
+
+        // Fecha o popup
+        function closePopup(event) {
+            const popup = document.getElementById('popup');
+            if (event.target === popup || event.target.tagName === 'BUTTON') {
+                popup.style.display = 'none';
+            }
+        }
+    </script>
 </body>
 </html>
