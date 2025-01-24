@@ -5,25 +5,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>H2BET - Provedores</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">  
+
     <style>
         /* Estilo Geral */
         body {
             margin: 0;
             padding: 0;
-            font-family: Arial, sans-serif;
+            font-family: 'Poppins', Arial, sans-serif;
             background-color: #1a1a1a;
             color: white;
+            animation: fadeIn 1s ease-in-out;
         }
+        @keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
         /* Estilo do Cabeçalho */
+        
         header {
+            
             background-color: #000;
             padding: 20px;
             display: flex;
             justify-content: space-between; /* Distribui os itens no cabeçalho */
             align-items: center; /* Centraliza verticalmente */
             border-bottom: 4px solid #800080;
+            position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: background-color 0.3s ease-in-out;
         }
+        header.scrolled {
+    background-color: #1a1a1a;
+    border-bottom-color: #5a005a;
+}
 
         header .logo {
             font-size: 32px;
@@ -37,11 +62,11 @@
 
         /* Link de Pendência */
         .notification-link {
-            font-size: 16px;
+            font-size: 14px;
             color: #ffcc00;
             text-decoration: none;
             font-weight: bold;
-            padding: 10px 20px;
+            padding: 8px 16px;
             border: 2px solid #ffcc00;
             border-radius: 8px;
             animation: blink 1s infinite;
@@ -97,11 +122,13 @@
             border-radius: 8px;
             font-size: 16px;
             cursor: pointer;
-            transition: background-color 0.3s;
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
         }
 
         .password-container button:hover {
             background-color: #5a005a;
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
         }
 
         .error-message {
@@ -121,65 +148,97 @@
 
         /* Estilo do Popup */
         #popup {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.8);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-            display: none; /* Começa oculto */
-        }
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Fundo com transparência */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    display: none; /* Começa oculto */
+    animation: fadeIn 0.5s ease-in-out; /* Adiciona uma animação */
+}
 
-        #popup .popup-content {
-            background-color: white;
-            color: #1a1a1a;
-            padding: 20px;
-            border-radius: 10px;
-            text-align: center;
-            width: 90%;
-            max-width: 400px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
+#popup .popup-content {
+    background-color: white;
+    color: #1a1a1a;
+    padding: 20px;
+    border-radius: 12px; /* Bordas mais arredondadas */
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Sombra mais pronunciada */
+    animation: slideUp 0.4s ease-in-out; /* Animação de subida */
+}
 
-        #popup .popup-content h2 {
-            margin-top: 0;
-            color: #800080;
-        }
+#popup .popup-content h2 {
+    margin-top: 0;
+    color: #800080;
+    font-size: 24px;
+    font-weight: bold;
+}
 
-        #popup .popup-content p {
-            margin: 15px 0;
-        }
+#popup .popup-content p {
+    margin: 15px 0;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+}
 
-        #popup .popup-content a {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #800080;
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
-            transition: background-color 0.3s;
-        }
+#popup .popup-content a {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #800080;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.3s, transform 0.2s;
+    font-size: 16px;
+    font-weight: bold;
+}
 
-        #popup .popup-content a:hover {
-            background-color: #5a005a;
-        }
+#popup .popup-content a:hover {
+    background-color: #5a005a;
+    transform: scale(1.05); /* Efeito de destaque */
+}
 
-        #popup .popup-content button {
-            margin-top: 10px;
-            background-color: transparent;
-            border: none;
-            color: #800080;
-            font-size: 16px;
-            cursor: pointer;
-        }
+#popup .popup-content button {
+    margin-top: 15px;
+    background-color: transparent;
+    border: none;
+    color: #800080;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s;
+}
 
-        #popup .popup-content button:hover {
-            text-decoration: underline;
-        }
+#popup .popup-content button:hover {
+    color: #5a005a;
+    text-decoration: underline;
+}
+
+/* Animações */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
 
         /* Estilo do Conteúdo */
         .content {
@@ -229,6 +288,7 @@
             background-color: #800080;
             color: white;
         }
+        
     </style>
 </head>
 <body>
@@ -240,7 +300,7 @@
     <!-- Contêiner para a Senha -->
     <div class="password-container" id="password-container">
         <div class="password-wrapper">
-            <input type="password" id="password" placeholder="Digite a senha">
+            <input type="password" id="password" placeholder="Digite sua senha">
             <span class="toggle-password" onclick="togglePassword()">👁️</span>
         </div>
         <button onclick="checkPassword()">Entrar</button>
@@ -331,6 +391,12 @@
     </main>
 
     <script>
+
+window.addEventListener('scroll', function() {
+    const header = document.querySelector('header');
+    header.classList.toggle('scrolled', window.scrollY > 50);
+});
+
         // Define a senha correta
         const correctPassword = "EusouH2";
 
