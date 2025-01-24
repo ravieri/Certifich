@@ -156,6 +156,37 @@
 .link-table button:hover {
     background-color: #5a005a;
 }
+/* Estilo da Barra de Pesquisa */
+.search-container {
+    margin-top: 60px;
+    padding: 20px;
+    text-align: center;
+}
+
+.search-bar {
+    width: 300px;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #800080;
+    font-size: 16px;
+    background-color: #333;
+    color: white;
+}
+
+.search-bar:focus {
+    outline: none;
+    border-color: #ffcc00;
+}
+
+.game-list {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.game-item {
+    font-size: 18px;
+    margin: 10px 0;
+}
 
     </style>
 </head>
@@ -168,6 +199,10 @@
     </header>
 
     <main class="content">
+        <!-- Barra de Pesquisa -->
+<div class="search-container">
+    <input type="text" id="searchBar" class="search-bar" placeholder="Pesquisar Jogo..." oninput="searchGames()">
+</div>
         <div class="link-table">
             <button onclick="window.open('https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/PragmaticPlay%20Live/711RN-400-PPL-22-02-711_Portuguese,%20Update.pdf?csf=1&web=1&e=wP3bih', '_blank')">RNG</button>
             <button onclick="window.open('https://link2.com', '_blank')">RGS</button>
@@ -189,6 +224,25 @@
     <ul id="game-list"></ul>
 </div>
     <script>
+document.addEventListener("DOMContentLoaded", () => {
+    // Função para filtrar os jogos
+    window.searchGames = function () {
+        const query = document.getElementById("searchBar").value.toLowerCase(); // Obtém a pesquisa em minúsculas
+        const gameListItems = document.querySelectorAll(".game-item"); // Seleciona todos os jogos na página
+
+        gameListItems.forEach(function (gameItem) {
+            const gameName = gameItem.textContent.toLowerCase(); // Obtém o nome do jogo em minúsculas
+
+            // Compara se o nome do jogo contém o que foi pesquisado
+            if (gameName.includes(query)) {
+                gameItem.style.display = "block";  // Exibe o jogo
+            } else {
+                gameItem.style.display = "none";  // Oculta o jogo
+            }
+        });
+    };
+});
+        
         document.addEventListener("DOMContentLoaded", () => {
             // Lista de jogos da Pragmatic Play Bingo
             const games = [

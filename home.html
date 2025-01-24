@@ -288,6 +288,37 @@
             background-color: #800080;
             color: white;
         }
+        /* Estilo da Barra de Pesquisa */
+.search-container {
+    margin-top: 10px;
+    padding: 10px;
+    text-align: center;
+}
+
+.search-bar {
+    width: 300px;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #800080;
+    font-size: 16px;
+    background-color: #333;
+    color: white;
+}
+
+.search-bar:focus {
+    outline: none;
+    border-color: #ffcc00;
+}
+
+.provider-list {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.provider-item {
+    font-size: 18px;
+    margin: 10px 0;
+}
         
     </style>
 </head>
@@ -320,7 +351,12 @@
     <main class="content" id="main-content">
         <section class="providers-grid">
             <h2>Provedores de jogos Certificados</h2>
+            <!-- Barra de Pesquisa -->
+<div class="search-container">
+    <input type="text" id="searchBar" class="search-bar" placeholder="Pesquisar Provedor..." oninput="searchProviders()">
+</div>
             <div class="providers">
+                
                 <!-- Lista de provedores -->
                 <a href="pgsoft.html" class="provider">
                     <img src="provedores/pg soft.jpg" alt="Logo PGSoft">
@@ -396,7 +432,22 @@ window.addEventListener('scroll', function() {
     const header = document.querySelector('header');
     header.classList.toggle('scrolled', window.scrollY > 50);
 });
+function searchProviders() {
+    const query = document.getElementById("searchBar").value.toLowerCase();
+    const providers = document.querySelectorAll(".provider");
 
+    providers.forEach(function(provider) {
+        // Verifica se o nome do provedor contém a pesquisa
+        const providerName = provider.textContent.toLowerCase();
+        
+        // Se o nome do provedor contiver o que está na pesquisa, exibe, caso contrário, oculta
+        if (providerName.includes(query)) {
+            provider.style.display = "block";  // Exibe o provedor
+        } else {
+            provider.style.display = "none";  // Oculta o provedor
+        }
+    });
+}
         // Define a senha correta
         const correctPassword = "EusouH2";
 
