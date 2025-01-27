@@ -319,6 +319,31 @@
     font-size: 18px;
     margin: 10px 0;
 }
+.search-results {
+    margin-top: 10px;
+    background-color: #1a1a1a;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #800080;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.search-result-item {
+    margin: 5px 0;
+    padding: 5px;
+    font-size: 16px;
+}
+
+.search-result-item a {
+    color: #ffcc00;
+    text-decoration: none;
+}
+
+.search-result-item a:hover {
+    color: white;
+}
+
         
     </style>
 </head>
@@ -350,7 +375,12 @@
     <!-- Conteúdo Principal -->
     <main class="content" id="main-content">
         <section class="providers-grid">
-            <h2>Provedores de jogos Certificados</h2>
+            <h2>.</h2>
+            <div class="search-container">
+                <input type="text" id="gameSearchBar" class="search-bar" placeholder="Pesquisar Jogo..." oninput="searchGames()">
+                <div id="searchResults" class="search-results"></div>
+            </div>
+            
             <!-- Barra de Pesquisa -->
 <div class="search-container">
     <input type="text" id="searchBar" class="search-bar" placeholder="Pesquisar Provedor..." oninput="searchProviders()">
@@ -427,6 +457,38 @@
     </main>
 
     <script>
+
+async function searchGames() {
+    const query = document.getElementById("gameSearchBar").value.toLowerCase();
+    const resultsContainer = document.getElementById("searchResults");
+
+    // Limpa os resultados anteriores
+    resultsContainer.innerHTML = "";
+
+    if (query.trim() === "") return;
+
+    // Faz o fetch do arquivo JSON
+    const response = await fetch("games.json");
+    const games = await response.json();
+
+    // Filtra os jogos com base na pesquisa
+    const filteredGames = games.filter(game =>
+        game.name.toLowerCase().includes(query)
+    );
+
+    // Exibe os jogos encontrados
+    filteredGames.forEach(game => {
+        const resultItem = document.createElement("div");
+        resultItem.className = "search-result-item";
+        resultItem.innerHTML = `<a href="${game.link}">${game.name} - <span>${game.provider}</span></a>`;
+        resultsContainer.appendChild(resultItem);
+    });
+
+    if (filteredGames.length === 0) {
+        resultsContainer.innerHTML = "<p>Nenhum jogo encontrado.</p>";
+    }
+}
+
 
 window.addEventListener('scroll', function() {
     const header = document.querySelector('header');
