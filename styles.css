@@ -11,7 +11,9 @@ body {
 header {
     background-color: #000;
     padding: 20px;
-    text-align: center;
+    display: flex;
+    justify-content: space-between; /* Distribui os itens no cabeçalho */
+    align-items: center; /* Centraliza verticalmente */
     border-bottom: 4px solid #800080;
 }
 
@@ -23,6 +25,8 @@ header .logo {
     font-size: 32px;
     font-weight: bold;
     color: white;
+    flex: 1; /* Permite que o logo ocupe o espaço necessário */
+    text-align: center; /* Centraliza o texto dentro do logo */
 }
 
 header .logo span {
@@ -30,21 +34,33 @@ header .logo span {
     font-weight: bold;
 }
 
-/* Link para voltar ao home */
-.back-home {
-    text-decoration: none;
-    color: #ffffff;
+/* Link de Pendência */
+.notification-link {
     font-size: 14px;
+    color: #ffcc00;
+    text-decoration: none;
     font-weight: bold;
-    background-color: #800080;
-    padding: 5px 10px;
-    border-radius: 5px;
-    transition: background-color 0.2s;
-    margin-right: 20px;
+    padding: 8px 16px;
+    border: 2px solid #ffcc00;
+    border-radius: 100px;
+    animation: blink 4s infinite;
 }
 
-.back-home:hover {
-    background-color: #5a005a;
+.notification-link:hover {
+    background-color: #ffcc00;
+    color: #1a1a1a;
+}
+
+/* Animação de "piscando" */
+@keyframes blink {
+    0%, 100% {
+        background-color: transparent;
+        color: #ffcc00;
+    }
+    50% {
+        background-color: #ffcc00;
+        color: #1a1a1a;
+    }
 }
 
 /* Conteúdo */
@@ -145,7 +161,7 @@ h1, h2 {
 
 .popup-content {
     position: relative;
-    background: #fff;
+    background: rgba(255, 255, 255, 0.7); /* Fundo branco com 70% de opacidade */
     color: #000;
     padding: 20px;
     border-radius: 10px;
