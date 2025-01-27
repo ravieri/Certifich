@@ -1,207 +1,280 @@
-:root {
-    --primary-color: #800080;
-    --secondary-color: #5a005a;
-    --highlight-color: #ffcc00;
-    --background-color: #1a1a1a;
-    --text-color: white;
-    --neon-green: #39ff14;
-    --neon-red: #e60c0c;
-}
 
-/* Estilo Geral */
-body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    background-color: var(--background-color);
-    color: var(--text-color);
-}
-
-/* Cabeçalho */
-header {
-    background-color: #000;
-    padding: 20px;
-    text-align: center;
-    border-bottom: 4px solid var(--primary-color);
-}
-
-header .logo {
-    font-size: 32px;
-    font-weight: bold;
-    color: var(--text-color);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 5px; /* Espaço entre "H2" e "BET" */
-}
-
-header .logo span {
-    color: var(--primary-color); /* Cor roxa para "BET" */
-    font-weight: bold;
-}
-
-.back-home {
-    text-decoration: none;
-    color: var(--text-color);
-    font-size: 14px;
-    font-weight: bold;
-    background-color: var(--primary-color);
-    padding: 5px 10px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-    margin-right: 20px;
-}
-
-.back-home:hover {
-    background-color: var(--secondary-color);
-}
-
-/* Conteúdo */
-.content {
-    padding: 20px;
-    text-align: center;
-}
-
-h1 {
-    margin-bottom: 20px;
-    color: var(--highlight-color); /* Cor amarela */
-}
-
-/* Lista de Jogos */
-#game-list {
-    list-style: none;
-    padding: 0;
-    margin: 0 auto;
-    max-width: 800px; /* Limita a largura da lista */
-    text-align: left;
-}
-
-.game-item {
-    font-size: 18px;
-    color: var(--text-color);
-    padding: 10px 15px;
-    margin: 5px 0;
-    background-color: #333333;
-    border-radius: 5px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.game-item:hover {
-    background-color: var(--primary-color);
-    color: var(--highlight-color);
-    transform: scale(1.02);
-}
-
-.view-links-btn {
-    background-color: var(--primary-color);
-    color: var(--text-color);
-    padding: 8px 15px;
-    border: none;
-    border-radius: 5px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.view-links-btn:hover {
-    background-color: var(--secondary-color);
-}
-
-/* Estilo para a nova caixa "Enviado ao governo" */
-.gov-info {
-    margin-left: 10px;
-    padding: 5px 10px;
-    border-radius: 5px;
-    background-color: #d3d3d3;
-    color: #000;
-    font-size: 12px;
-}
-
-.link-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 10px;
-}
-
-.neon-text {
-    color: var(--neon-green);
-    font-weight: bold;
-    font-size: 12px; /* Tamanho menor */
-    text-shadow: 0 0 5px var(--neon-green), 0 0 10px var(--neon-green), 0 0 20px var(--neon-green);
-}
-
-.neon2-text {
-    color: var(--neon-red);
-    font-weight: bold;
-    font-size: 12px; /* Tamanho menor */
-    text-shadow: 0 0 5px var(--neon-red), 0 0 10px var(--neon-red), 0 0 20px var(--neon-red);
-}
-
-/* Estilo para a tabela de links */
-.link-table {
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-.link-table button {
-    margin: 5px;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    background-color: var(--primary-color);
-    color: var(--text-color);
-    cursor: pointer;
-    font-weight: bold;
-    transition: background-color 0.2s;
-}
-
-.link-table button:hover {
-    background-color: var(--secondary-color);
-}
-
-/* Estilo da Barra de Pesquisa */
-.search-container {
-    margin-top: 60px;
-    padding: 20px;
-    text-align: center;
-}
-
-.search-bar {
-    width: 300px;
-    padding: 10px;
-    border-radius: 8px;
-    border: 1px solid var(--primary-color);
-    font-size: 16px;
-    background-color: #333;
-    color: var(--text-color);
-}
-
-.search-bar:focus {
-    outline: none;
-    border-color: var(--highlight-color);
-}
-
-.game-list {
-    margin-top: 20px;
-    text-align: center;
-}
-
-.game-item {
-    font-size: 18px;
-    margin: 10px 0;
-}
-
-/* Responsividade */
-@media (max-width: 600px) {
-    .search-bar {
-        width: 100%;
+    :root {
+        --primary-color: #800080;
+        --secondary-color: #5a005a;
+        --highlight-color: #ffcc00;
+        --background-color: #1a1a1a;
+        --text-color: white;
+        --neon-green: #39ff14;
+        --neon-red: #e60c0c;
+        --background-image: url('fundo.webp'); /* Adiciona a imagem de fundo */
     }
+
+    /* Estilo Geral */
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        background: var(--background-image) no-repeat center center fixed;
+        background-size: cover;
+        color: var(--text-color);
+        animation: fadeIn 1s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+        0% {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* Cabeçalho */
+    header {
+        background-color: #0000006c;
+        padding: 20px;
+        text-align: center;
+        border-bottom: 4px solid var(--primary-color);
+        animation: slideDown 0.5s ease-in-out;
+    }
+
+    @keyframes slideDown {
+        from {
+            transform: translateY(-100%);
+        }
+        to {
+            transform: translateY(0);
+        }
+    }
+
+    header .logo {
+        font-size: 32px;
+        font-weight: bold;
+        color: var(--text-color);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 5px; /* Espaço entre "H2" e "BET" */
+        animation: logoFadeIn 1s ease-in-out;
+    }
+
+    @keyframes logoFadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+
+    header .logo span {
+        color: var(--primary-color); /* Cor roxa para "BET" */
+        font-weight: bold;
+    }
+
+    .back-home {
+        text-decoration: none;
+        color: var(--text-color);
+        font-size: 14px;
+        font-weight: bold;
+        background-color: var(--primary-color);
+        padding: 5px 10px;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+        margin-right: 20px;
+        animation: buttonFadeIn 1s ease-in-out;
+    }
+
+    @keyframes buttonFadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+
+    .back-home:hover {
+        background-color: var(--secondary-color);
+        animation: buttonHover 0.3s ease-in-out;
+    }
+
+    @keyframes buttonHover {
+        from {
+            transform: scale(1);
+        }
+        to {
+            transform: scale(1.05);
+        }
+    }
+
+    /* Conteúdo */
+    .content {
+        padding: 20px;
+        text-align: center;
+        animation: fadeIn 1s ease-in-out;
+    }
+
+    h1 {
+        margin-bottom: 20px;
+        color: var(--highlight-color); /* Cor amarela */
+        animation: fadeIn 1s ease-in-out;
+    }
+
+    /* Lista de Jogos */
+    #game-list {
+        list-style: none;
+        padding: 0;
+        margin: 0 auto;
+        max-width: 800px; /* Limita a largura da lista */
+        text-align: left;
+        animation: fadeIn 1s ease-in-out;
+    }
+
     .game-item {
-        flex-direction: column;
-        align-items: flex-start;
+        font-size: 18px;
+        color: var(--text-color);
+        padding: 10px 15px;
+        margin: 5px 0;
+        background-color: #333333;
+        border-radius: 5px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+        animation: fadeIn 1s ease-in-out;
     }
-}
+
+    .game-item:hover {
+        background-color: var(--primary-color);
+        color: var(--highlight-color);
+        transform: scale(1.02);
+    }
+
+    .view-links-btn {
+        background-color: var(--primary-color);
+        color: var(--text-color);
+        padding: 8px 15px;
+        border: none;
+        border-radius: 5px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        animation: buttonFadeIn 1s ease-in-out;
+    }
+
+    .view-links-btn:hover {
+        background-color: var(--secondary-color);
+        animation: buttonHover 0.3s ease-in-out;
+    }
+
+    /* Estilo para a nova caixa "Enviado ao governo" */
+    .gov-info {
+        margin-left: 10px;
+        padding: 5px 10px;
+        border-radius: 5px;
+        background-color: #d3d3d3;
+        color: #000;
+        font-size: 12px;
+        animation: fadeIn 1s ease-in-out;
+    }
+
+    .link-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 10px;
+        animation: fadeIn 1s ease-in-out;
+    }
+
+    .neon-text {
+        color: var(--neon-green);
+        font-weight: bold;
+        font-size: 12px; /* Tamanho menor */
+        text-shadow: 0 0 5px var(--neon-green), 0 0 10px var(--neon-green), 0 0 20px var(--neon-green);
+        animation: fadeIn 1s ease-in-out;
+    }
+
+    .neon2-text {
+        color: var(--neon-red);
+        font-weight: bold;
+        font-size: 12px; /* Tamanho menor */
+        text-shadow: 0 0 5px var(--neon-red), 0 0 10px var(--neon-red), 0 0 20px var(--neon-red);
+        animation: fadeIn 1s ease-in-out;
+    }
+
+    /* Estilo para a tabela de links */
+    .link-table {
+        margin-bottom: 20px;
+        text-align: center;
+        animation: fadeIn 1s ease-in-out;
+    }
+
+    .link-table button {
+        margin: 5px;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        background-color: var(--primary-color);
+        color: var(--text-color);
+        cursor: pointer;
+        font-weight: bold;
+        transition: background-color 0.2s;
+        animation: buttonFadeIn 1s ease-in-out;
+    }
+
+    .link-table button:hover {
+        background-color: var(--secondary-color);
+        animation: buttonHover 0.3s ease-in-out;
+    }
+
+    /* Estilo da Barra de Pesquisa */
+    .search-container {
+        margin-top: 60px;
+        padding: 20px;
+        text-align: center;
+        animation: fadeIn 1s ease-in-out;
+    }
+
+    .search-bar {
+        width: 300px;
+        padding: 10px;
+        border-radius: 8px;
+        border: 1px solid var(--primary-color);
+        font-size: 16px;
+        background-color: #3333337b;
+        color: var(--text-color);
+        animation: fadeIn 1s ease-in-out;
+    }
+
+    .search-bar:focus {
+        outline: none;
+        border-color: var(--highlight-color);
+    }
+
+    .game-list {
+        margin-top: 20px;
+        text-align: center;
+        animation: fadeIn 1s ease-in-out;
+    }
+
+    .game-item {
+        font-size: 18px;
+        margin: 10px 0;
+        animation: fadeIn 1s ease-in-out;
+    }
+
+    /* Responsividade */
+    @media (max-width: 600px) {
+        .search-bar {
+            width: 100%;
+        }
+        .game-item {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    }
+
