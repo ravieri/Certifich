@@ -444,7 +444,7 @@
     <!-- Contêiner para a Senha -->
     <div class="password-container" id="password-container">
         <div class="password-wrapper">
-            <input type="password" id="password" placeholder="Digite sua senha">
+            <input type="password" id="password" placeholder="Digite sua senha" onkeydown="handleKeyDown(event)">
             <span class="toggle-password" onclick="togglePassword()">👁️</span>
         </div>
         <button onclick="checkPassword()">Entrar</button>
@@ -573,6 +573,12 @@
     </main>
 
     <script>
+
+function handleKeyDown(event) {
+    if (event.key === 'Enter') {
+      checkPassword();
+    }
+  }
 
 async function searchGames() {
     const query = document.getElementById("gameSearchBar").value.toLowerCase();

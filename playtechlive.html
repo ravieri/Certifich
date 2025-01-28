@@ -21,13 +21,13 @@
     <input type="text" id="searchBar" class="search-bar" placeholder="Pesquisar Jogo..." oninput="searchGames()">
 </div>
         <div class="link-table">
-            <button onclick="window.open('https://link1.com', '_blank')">RNG</button>
+            <button onclick="window.open('https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Playtech/additional%20Playtech%20Live/SW%20RNG/711RN-711-VST-24-04-711_Portuguese.pdf?csf=1&web=1&e=eWhcwu', '_blank')">RNG</button>
             <button onclick="window.open('https://link2.com', '_blank')">RGS</button>
         </div>
         <h1>Jogos da PlayTechlive</h1>
         <button id="show-online" class="view-links-btn"><span class="neon-text">ON-LINE</span> </button>
         <button id="show-all" class="view-links-btn"> TODOS</button>
-        <button id="show-off" class="view-links-btn"><span class="neon2-text">OFF</span></button>
+        <button id="show-off" class="view-links-btn"><span class="neon-text">OFF</span></button>
         
         <ul id="game-list">
             
@@ -44,56 +44,41 @@
     
             // Lista de jogos da PlayTechlive
             const games = [
-            { name: '<span class="neon2-text">OFF</span> Adventures Beyond Wonderland', links: ["https://link1.com", "https://link2.com"] },
-{ name: '<span class="neon2-text">OFF</span> Age of the Gods Bonus Roulette Live', links: ["https://link3.com", "https://link4.com"] },
-{ name: '<span class="neon2-text">OFF</span> All Bets Black  jack Live', links: ["https://link1.com", "https://link2.com"] },
-{ name: '<span class="neon2-text">OFF</span> Andar Bahar Live', links: ["https://link3.com", "https://link4.com"] },
-{ name: '<span class="neon2-text">OFF</span> Baccarat Live', links: ["https://link1.com", "https://link2.com"] },
-{ name: '<span class="neon2-text">OFF</span> Big Bad Wolf Live', links: ["https://link3.com", "https://link4.com"] },
-{ name: '<span class="neon2-text">OFF</span> Blackjack VZN', links: ["https://link1.com", "https://link2.com"] },
-{ name: '<span class="neon2-text">OFF</span> Buffalo Blitz Live', links: ["https://link3.com", "https://link4.com"] },
-{ name: '<span class="neon2-text">OFF</span> Cash Collect Roulette Live', links: ["https://link1.com", "https://link2.com"] },
-{ name: '<span class="neon2-text">OFF</span> Cashback Blackjack Live', links: ["https://link3.com", "https://link4.com"] },
-{ name: '<span class="neon2-text">OFF</span> Deal or no Deal: the Big Draw Line', links: ["https://link1.com", "https://link2.com"] },
-{ name: '<span class="neon2-text">OFF</span> Fashion TV Mega Party Live', links: ["https://link3.com", "https://link4.com"] },
-{ name: '<span class="neon2-text">OFF</span> Jumanji The Bonus Level Live', links: ["https://link1.com", "https://link2.com"] },
-{ name: '<span class="neon2-text">OFF</span> K-Pop Roulette Live', links: ["https://link3.com", "https://link4.com"] },
-{ name: '<span class="neon2-text">OFF</span> Live 3 Card Brag', links: ["https://link1.com", "https://link2.com"] },
-{ name: '<span class="neon2-text">OFF</span> Live American Roulette', links: ["https://link3.com", "https://link4.com"] },
-{ name: '<span class="neon2-text">OFF</span> Live Blackjack', links: ["https://link1.com", "https://link2.com"] },
-{ name: '<span class="neon2-text">OFF</span> Live Casino Hold em', links: ["https://link3.com", "https://link4.com"] },
-{ name: '<span class="neon2-text">OFF</span> Live Dragon Tiger', links: ["https://link1.com", "https://link2.com"] },
-{ name: '<span class="neon2-text">OFF</span> Live Football French Roulette', links: ["https://link3.com", "https://link4.com"] },
-{ name: '<span class="neon2-text">OFF</span> Live Football Roulette', links: ["https://link1.com", "https://link2.com"] },
-{ name: '<span class="neon2-text">OFF</span> Live French Roulette', links: ["https://link3.com", "https://link4.com"] },
-{ name: '<span class="neon2-text">OFF</span> Live Hi-Lo', links: ["https://link1.com", "https://link2.com"] },
-{ name: '<span class="neon2-text">OFF</span> Live Roulette', links: ["https://link3.com", "https://link4.com"] },
-{ name: '<span class="neon2-text">OFF</span> Live SicBo Deluxe', links: ["https://link1.com", "https://link2.com"] },
-{ name: '<span class="neon2-text">OFF</span> Live Spin a Win', links: ["https://link3.com", "https://link4.com"] },
-{ name: '<span class="neon2-text">OFF</span> Live Spin a Win Wild', links: ["https://link1.com", "https://link2.com"] },
-{ name: '<span class="neon2-text">OFF</span> Live Spread-Bet Roulette', links: ["https://link3.com", "https://link4.com"] },
-{ name: '<span class="neon2-text">OFF</span> Lucky Ball Roulette Live', links: ["https://link1.com", "https://link2.com"] },
-{ name: '<span class="neon2-text">OFF</span> Majority Rules Speed Blackjack Live', links: ["https://link3.com", "https://link4.com"] },
-{ name: '<span class="neon2-text">OFF</span> Mega Fire Blaze Blackjack Live', links: ["https://link1.com", "https://link2.com"] },
-{ name: '<span class="neon2-text">OFF</span> Mega Fire Blaze Lucky Ball Live', links: ["https://link3.com", "https://link4.com"] },
-{ name: '<span class="neon2-text">OFF</span> Mega Fire Blaze Roulette Live', links: ["https://link1.com", "https://link2.com"] },
-{ name: '<span class="neon2-text">OFF</span> Mega Fire Blaze Roulette Live +', links: ["https://link3.com", "https://link4.com"] },
-{ name: '<span class="neon2-text">OFF</span> Money Drop Live', links: ["https://link1.com", "https://link2.com"] },
-{ name: '<span class="neon2-text">OFF</span> Pig Champions ', links: ["https://link3.com", "https://link4.com"] },
-{ name: '<span class="neon2-text">OFF</span> Quantum American Roulette Live', links: ["https://link1.com", "https://link2.com"] },
-{ name: '<span class="neon2-text">OFF</span> Quantum Blackjack+ Live', links: ["https://link3.com", "https://link4.com"] },
-{ name: '<span class="neon2-text">OFF</span> Quantum Roulette Live', links: ["https://link1.com", "https://link2.com"] },
-{ name: '<span class="neon2-text">OFF</span> Sette e Mezzo', links: ["https://link3.com", "https://link4.com"] },
-{ name: '<span class="neon2-text">OFF</span> Speed Blackjack', links: ["https://link1.com", "https://link2.com"] },
-{ name: '<span class="neon2-text">OFF</span> Spin & Win Roulette Live', links: ["https://link3.com", "https://link4.com"] },
-{ name: '<span class="neon2-text">OFF</span> Sticky Bandits Roulette Live', links: ["https://link1.com", "https://link2.com"] },
-{ name: '<span class="neon2-text">OFF</span> Super Mega Ultra Live', links: ["https://link3.com", "https://link4.com"] },
-{ name: '<span class="neon2-text">OFF</span> Super Spin Roulette Live', links: ["https://link1.com", "https://link2.com"] },
-{ name: '<span class="neon2-text">OFF</span> The Chase Live', links: ["https://link3.com", "https://link4.com"] },
-{ name: '<span class="neon2-text">OFF</span> The Greatest Cards Show Live', links: ["https://link1.com", "https://link2.com"] },
-{ name: '<span class="neon2-text">OFF</span> Well Well Well Live', links: ["https://link3.com", "https://link4.com"] },
-{ name: '<span class="neon2-text">OFF</span> Who Wants to Be a Millionaire Roulette Live', links: ["https://link1.com", "https://link2.com"] },
-{ name: '<span class="neon2-text">OFF</span> Who Wants to Be a Millionaire Video Poker Live', links: ["https://link3.com", "https://link4.com"] },
+            { "name": "<span class=\"neon-text\">ON-LINE</span> Adventures Beyond Wonderland", "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Playtech/711BR-711-VST-24-113%20H2%20LICENSED%20LTDA.pdf?csf=1&web=1&e=RTqYG6'] },
+  { "name": "<span class=\"neon-text\">ON-LINE</span> Spin a Win Wild Live", "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Playtech/711BR-711-VST-24-113%20H2%20LICENSED%20LTDA.pdf?csf=1&web=1&e=RTqYG6'] },
+  { "name": "<span class=\"neon-text\">ON-LINE</span> Spin a Win", "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Playtech/711BR-711-VST-24-113%20H2%20LICENSED%20LTDA.pdf?csf=1&web=1&e=RTqYG6'] },
+  { "name": "<span class=\"neon-text\">ON-LINE</span> Big Bad Wolf", "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Playtech/additional%20Playtech%20Live/Games/Big%20Bad%20Wolf%20Live/3s.37.853_BR.C0%20Big%20Bad%20Wolf%20Live.pdf?csf=1&web=1&e=SSKade'] },
+  { "name": "<span class=\"neon-text\">ON-LINE</span> Buffalo Blitz Live Slots", "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Playtech/711BR-711-VST-24-113%20H2%20LICENSED%20LTDA.pdf?csf=1&web=1&e=RTqYG6'] },
+  { "name": "<span class=\"neon-text\">ON-LINE</span> Big Quiz", "links": [] },
+  { "name": "<span class=\"neon-text\">ON-LINE</span> Brazilian Mega Fire Blaze Lucky Ball Live", "links": [] },
+  { "name": "<span class=\"neon-text\">ON-LINE</span> Cash Collect Roulette Live", "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Playtech/711BR-711-VST-24-113%20H2%20LICENSED%20LTDA.pdf?csf=1&web=1&e=RTqYG6'] },
+  { "name": "<span class=\"neon-text\">ON-LINE</span> Quantum Roulette", "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Playtech/711BR-711-VST-24-113%20H2%20LICENSED%20LTDA.pdf?csf=1&web=1&e=RTqYG6'] },
+  { "name": "<span class=\"neon-text\">ON-LINE</span> Sticky Bandits Roulette", "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Playtech/711BR-711-VST-24-113%20H2%20LICENSED%20LTDA.pdf?csf=1&web=1&e=RTqYG6'] },
+  { "name": "<span class=\"neon-text\">ON-LINE</span> Türkçe Mega Fire Blaze Rulet", "links": [] },
+  { "name": "<span class=\"neon-text\">ON-LINE</span> Speed Roleta Brasileira", "links": [] },
+  { "name": "<span class=\"neon-text\">ON-LINE</span> Lucky Ball Roulette", "links": [] },
+  { "name": "<span class=\"neon-text\">ON-LINE</span> K-POP Roulette", "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Playtech/additional%20Playtech%20Live/Games/K-pop%20Roulette%20Live/3s.37.868_BR.R0%20Report%20K-Pop%20Roulette%20Live.pdf?csf=1&web=1&e=nc1hj5'] },
+  { "name": "<span class=\"neon-text\">ON-LINE</span> Mega Fire Blaze Roulette Italiana", "links": [] },
+  { "name": "<span class=\"neon-text\">ON-LINE</span> Football Roulette", "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Playtech/711BR-711-VST-24-113%20H2%20LICENSED%20LTDA.pdf?csf=1&web=1&e=RTqYG6'] },
+  { "name": "<span class=\"neon-text\">ON-LINE</span> American Roulette", "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Playtech/711BR-711-VST-24-113%20H2%20LICENSED%20LTDA.pdf?csf=1&web=1&e=RTqYG6'] },
+  { "name": "<span class=\"neon-text\">ON-LINE</span> French Roulette", "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Playtech/711BR-711-VST-24-113%20H2%20LICENSED%20LTDA.pdf?csf=1&web=1&e=RTqYG6'] },
+  { "name": "<span class=\"neon-text\">ON-LINE</span> Football French Roulette", "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Playtech/additional%20Playtech%20Live/Games/Live%20Football%20French%20Roulette/3s.37.861_BR.R0%20Report%20Live%20Football%20French%20Roulette.pdf?csf=1&web=1&e=uWEVg0'] },
+  { "name": "<span class=\"neon-text\">ON-LINE</span> Ruleta Rapida", "links": [] },
+  { "name": "<span class=\"neon-text\">ON-LINE</span> The Greatest Cards Show", "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Playtech/711BR-711-VST-24-113%20H2%20LICENSED%20LTDA.pdf?csf=1&web=1&e=RTqYG6'] },
+  { "name": "<span class=\"neon-text\">ON-LINE</span> Sic Bo Deluxe", "links": [] },
+  { "name": "<span class=\"neon-text\">ON-LINE</span> Sette e Mezzo", "links": [] },
+  { "name": "<span class=\"neon-text\">ON-LINE</span> Live Dragon Tiger", "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Playtech/711BR-711-VST-24-113%20H2%20LICENSED%20LTDA.pdf?csf=1&web=1&e=RTqYG6'] },
+  { "name": "<span class=\"neon-text\">ON-LINE</span> Roleta Brasileira", "links": [] },
+  { "name": "<span class=\"neon-text\">ON-LINE</span> Andar Bahar", "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Playtech/additional%20Playtech%20Live/Games/Andar%20Bahar%20Live/3s.37.860_BR.C0%20Andar%20Bahar%20Live.pdf?csf=1&web=1&e=D4vpmM'] },
+  { "name": "<span class=\"neon-text\">ON-LINE</span> All Bets Blackjack", "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Playtech/additional%20Playtech%20Live/Games/All%20Bets%20Blackjack/3s.38.106_BR.C0%20All%20Bets%20Blackjack%20Live.pdf?csf=1&web=1&e=Uo47F1'] },
+  { "name": "<span class=\"neon-text\">ON-LINE</span> Mega Fire Blaze Blackjack Live", "links": [] },
+  { "name": "<span class=\"neon-text\">ON-LINE</span> Quantum Blackjack Plus", "links": [] },
+  { "name": "<span class=\"neon-text\">ON-LINE</span> Unlimited Blackjack", "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Playtech/additional%20Playtech%20Live/Games/Live%20Unlimited%20Blackjack/3s.37.854_BR.R0%20Report%20Live%20Unlimited%20Blackjack.pdf?csf=1&web=1&e=vSG9db'] },
+  { "name": "<span class=\"neon-text\">ON-LINE</span> Italian Cashback Blackjack", "links": [] },
+  { "name": "<span class=\"neon-text\">ON-LINE</span> Majority Rules Speed Blackjack", "links": [] },
+  { "name": "<span class=\"neon-text\">ON-LINE</span> All Bets Blackjack Brasileiro", "links": [] },
+  { "name": "<span class=\"neon--text\">ON-LINE</span> Baccarat Brasileira", "links": [] },
+  { "name": "<span class=\"neon-text\">ON-LINE</span> Mega Fire Blaze Lucky Ball Live", "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Playtech/711BR-711-VST-24-113%20H2%20LICENSED%20LTDA.pdf?csf=1&web=1&e=RTqYG6'] }
          
               
           
