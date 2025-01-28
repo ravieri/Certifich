@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hacksaw Gaming - Jogos</title>
+    <link rel="stylesheet" href="styles2.css">
+  
+</head>
+<body>
+    <header id="topo">
+        <div class="logo">
+            <a href="home.html" class="back-home">⬅ Voltar ao Home</a>
+            H2<span>BET</span>
+        </div>
+    </header>
+
+    <main class="content">
+        <!-- Barra de Pesquisa -->
+<div class="search-container">
+    <input type="text" id="searchBar" class="search-bar" placeholder="Pesquisar Jogo..." oninput="searchGames()">
+</div>
+        <div class="link-table">
+            <button onclick="window.open('', '_blank')">RNG</button>
+            <button onclick="window.open('https://link2.com', '_blank')">RGS</button>
+        </div>
+        <h1>Jogos da Hacksaw Gaming</h1>
+        <button id="show-online" class="view-links-btn"><span class="neon-text">ON-LINE</span> </button>
+        <button id="show-all" class="view-links-btn"> TODOS</button>
+        <button id="show-off" class="view-links-btn"><span class="neon2-text">OFF</span></button>
+        
+        <ul id="game-list">
+            
+            <!-- Jogos serão carregados dinamicamente -->
+        </ul>
+    </main>
+    <div>
+        
+        
+    </div>
+    <ul id="game-list"></ul>
+</div>
+<script>
+    
+            // Lista de jogos da Red Tiger
+            const games = [
+            { name: '<span class="neon2-text">OFF</span> 2Wild 2Die', links: [] },
+  { name: '<span class="neon2-text">OFF</span> Baccarat', links: [] },
+  { name: '<span class="neon2-text">OFF</span> Beam Boys', links: [] },
+  { name: '<span class="neon2-text">OFF</span> Boxes', links: [] },
+  { name: '<span class="neon2-text">OFF</span> Cash Crew', links: [] },
+  { name: '<span class="neon2-text">OFF</span> Chaos Crew 2', links: [] },
+  { name: '<span class="neon2-text">OFF</span> Divine Drop', links: [] },
+  { name: '<span class="neon2-text">OFF</span> Dork Unit', links: [] },
+  { name: '<span class="neon2-text">OFF</span> Dragon s Domain™', links: [] },
+  { name: '<span class="neon2-text">OFF</span> Drop em', links: [] },
+  { name: '<span class="neon2-text">OFF</span> Fist of Destruction', links: [] },
+  { name: '<span class="neon2-text">OFF</span> Hand of Anubis', links: [] },
+  { name: '<span class="neon2-text">OFF</span> Le Bandit', links: [] },
+  { name: '<span class="neon2-text">OFF</span> Le Pharaoh™', links: [] },
+  { name: '<span class="neon2-text">OFF</span> Mines', links: [] },
+  { name: '<span class="neon2-text">OFF</span> Plinko', links: [] },
+  { name: '<span class="neon2-text">OFF</span> RIP City', links: [] },
+  { name: '<span class="neon2-text">OFF</span> Rotten', links: [] },
+  { name: '<span class="neon2-text">OFF</span> SixSixSix', links: [] },
+  { name: '<span class="neon2-text">OFF</span> Slayers Inc', links: [] },
+  { name: '<span class="neon2-text">OFF</span> Stack em Scratch', links: [] },
+  { name: '<span class="neon2-text">OFF</span> Stormforged', links: [] },
+  { name: '<span class="neon2-text">OFF</span> Wanted Dead or a Wild', links: [] },
+  { name: '<span class="neon2-text">OFF</span> Ze Zeus', links: [] }
+  
+    ];
+
+
+</script>
+<script src="scripts.js"></script> <!-- Inclui o arquivo JavaScript -->
+</body>
+</html>
