@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playson - Jogos</title>
+    <link rel="stylesheet" href="styles2.css">
+    
+</head>
+<body>
+    <header id="topo">
+        <div class="logo">
+            <a href="home.html" class="back-home">⬅ Voltar ao Home</a>
+            H2<span>BET</span>
+        </div>
+    </header>
+
+    <main class="content">
+        <!-- Barra de Pesquisa -->
+<div class="search-container">
+    <input type="text" id="searchBar" class="search-bar" placeholder="Pesquisar Jogo..." oninput="searchGames()">
+</div>
+
+        <div class="link-table">
+            <button onclick="window.open('https://link1.com', '_blank')">RNG</button>
+            <button onclick="window.open('https://link2.com', '_blank')">RGS</button>
+        </div>
+        <h1>Jogos da Playson</h1>
+        <button id="show-online" class="view-links-btn"><span class="neon-text">ON-LINE</span> </button>
+        <button id="show-all" class="view-links-btn"> TODOS</button>
+        <button id="show-off" class="view-links-btn"><span class="neon2-text">OFF</span></button>
+        
+        <ul id="game-list">
+            
+            <!-- Jogos serão carregados dinamicamente -->
+        </ul>
+    </main>
+    <div>
+        
+        
+    </div>
+    <ul id="game-list"></ul>
+</div>
+<script>
+    
+            // Lista de jogos da Playson
+            const games = [
+            { name: '<span class="neon2-text">OFF</span> Atom Roulette', links: [] },
+  { name: '<span class="neon2-text">OFF</span> Atom Roulette A03', links: [] },
+  { name: '<span class="neon2-text">OFF</span> Baccarat 01', links: [] },
+  { name: '<span class="neon2-text">OFF</span> Blackjack Max', links: [] },
+  { name: '<span class="neon2-text">OFF</span> Blue Atom Roulette', links: [] },
+  { name: '<span class="neon2-text">OFF</span> Blue Roulette', links: [] },
+  { name: '<span class="neon2-text">OFF</span> Green Atom Roulette', links: [] },
+  { name: '<span class="neon2-text">OFF</span> Green Roulette', links: [] },
+  { name: '<span class="neon2-text">OFF</span> Joker s Wheel', links: [] },
+  { name: '<span class="neon2-text">OFF</span> Live Speed Baccarat', links: [] },
+  { name: '<span class="neon2-text">OFF</span> Live Speed Baccarat No Commission', links: [] },
+  { name: '<span class="neon2-text">OFF</span> Red Atom Roulette', links: [] },
+  { name: '<span class="neon2-text">OFF</span> Red Roulette', links: [] },
+  { name: '<span class="neon2-text">OFF</span> Roulette A03', links: [] },
+  { name: '<span class="neon2-text">OFF</span> Yellow Atom Roulette', links: [] },
+  { name: '<span class="neon2-text">OFF</span> Yellow Roulette', links: [] }
+ 
+       
+       
+       
+        
+       
+    ];
+
+
+</script>
+<script src="scripts.js"></script> <!-- Inclui o arquivo JavaScript -->
+</body>
+</html>
