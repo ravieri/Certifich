@@ -19,9 +19,13 @@
             <input type="text" id="searchBar" class="search-bar" placeholder="Pesquisar Jogo..." oninput="searchGames()">
         </div>
         <div class="link-table">
-            <button onclick="window.open('https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Spribe/SPR-BR-241125-01-RC-R1%20-%20Certificado%20RNG%20-%20Spribe%20N.V..pdf?csf=1&web=1&e=QUbm8q', '_blank')">RNG</button>
-            <button onclick="window.open('https://link2.com', '_blank')">RGS</button>
-        </div>
+            <div class="rng-links">
+              <button onclick="createPopup('RNG', ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Spribe/SPR-BR-241125-01-RC-R1%20-%20RNG%20Certificate%20-%20Spribe%20N.V..pdf?csf=1&web=1&e=fDAAZY', 'https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Spribe/SPR-BR-241125-01-RC-R1%20-%20Certificado%20RNG%20-%20Spribe%20N.V..pdf?csf=1&web=1&e=QUbm8q','https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Spribe/SPR-BR-241129-01-GC-R1%20-%20Aviator%20(BR).pdf?csf=1&web=1&e=4E0y5s'])">RNG</button>
+            </div>
+            <div class="rgs-links">
+              <button onclick="createPopup('RGS', ['https://link3.com', 'https://link4.com'])">RGS</button>
+            </div>
+          </div>
         <h1>Jogos da Spribe</h1>
         <button id="show-online" class="view-links-btn"><span class="neon-text">ON-LINE</span></button>
         <button id="show-all" class="view-links-btn">TODOS</button>

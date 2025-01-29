@@ -19,10 +19,14 @@
 <div class="search-container">
     <input type="text" id="searchBar" class="search-bar" placeholder="Pesquisar Jogo..." oninput="searchGames()">
 </div>
-        <div class="link-table">
-            <button onclick="window.open('https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/RubyPlay/RubyPlay%20extraido%20100%20certo/Ruby%20Play%20-%20Brazil/RNG/e2414679RPLBRA%20-%20Rubyplay%20Limited%20BRA%20RNG%20Report%20Rubyplay%20RNG%20Certificate%20(10%202024).pdf?csf=1&web=1&e=8RkWcV', '_blank')">RNG</button>
-            <button onclick="window.open('https://link2.com', '_blank')">RGS</button>
-        </div>
+<div class="link-table">
+    <div class="rng-links">
+      <button onclick="createPopup('RNG', ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/RubyPlay/RubyPlay%20extraido%20100%20certo/Ruby%20Play%20-%20Brazil/RNG/e2414679RPLBRA%20-%20Rubyplay%20Limited%20BRA%20RNG%20Report%20Rubyplay%20RNG%20Certificate%20(10%202024).pdf?csf=1&web=1&e=8RkWcV', 'https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/RubyPlay/RubyPlay%20extraido%20100%20certo/Ruby%20Play%20-%20Brazil/RNG/e2414679RPLBRA_AR%20-%20Rubyplay%20Limited%20BRA%20RNG%20Report%20Rubyplay%20RNG%20Assessment%20Report%20(10%202024).pdf?csf=1&web=1&e=xhppAM'])">RNG</button>
+    </div>
+    <div class="rgs-links">
+      <button onclick="createPopup('RGS', ['https://link3.com', 'https://link4.com'])">RGS</button>
+    </div>
+  </div>
         <h1>Jogos da Ruby Play</h1>
         <button id="show-online" class="view-links-btn"><span class="neon-text">ON-LINE</span> </button>
         <button id="show-all" class="view-links-btn"> TODOS</button>

@@ -20,10 +20,14 @@
 <div class="search-container">
     <input type="text" id="searchBar" class="search-bar" placeholder="Pesquisar Jogo..." oninput="searchGames()">
 </div>
-        <div class="link-table">
-            <button onclick="window.open('https://h2grupo-my.sharepoint.com/personal/diego_macedo_h2grupo_com/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fdiego%5Fmacedo%5Fh2grupo%5Fcom%2FDocuments%2F%C3%81rea%20de%20Trabalho%2Fprovedores%20certificados%2FForam%20enviados%20pra%20receita%2FDesativado%20%2D%20BigTime%20Gaming%2FBR%5FEVL001RNG%2E1%5FREV%2E1%2Epdf&parent=%2Fpersonal%2Fdiego%5Fmacedo%5Fh2grupo%5Fcom%2FDocuments%2F%C3%81rea%20de%20Trabalho%2Fprovedores%20certificados%2FForam%20enviados%20pra%20receita%2FDesativado%20%2D%20BigTime%20Gaming', '_blank')">RNG</button>
-            <button onclick="window.open('https://link2.com', '_blank')">RGS</button>
-        </div>
+<div class="link-table">
+    <div class="rng-links">
+      <button onclick="createPopup('RNG', ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Desativado%20-%20BigTime%20Gaming/BR_EVL001RNG.1_REV.1.pdf?csf=1&web=1&e=ThqI4b', 'https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Evolution/BR.EVO-OL.1121.254.01.pdf?csf=1&web=1&e=FErqB3','https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Evolution/BR_EVL002RNG.1_REV.1.pdf?csf=1&web=1&e=FFUSzU'])">RNG</button>
+    </div>
+    <div class="rgs-links">
+      <button onclick="createPopup('RGS', ['https://link3.com', 'https://link4.com'])">RGS</button>
+    </div>
+  </div>
         <h1>Jogos da Evolution</h1>
         <button id="show-online" class="view-links-btn"><span class="neon-text">ON-LINE</span> </button>
         <button id="show-all" class="view-links-btn"> TODOS</button>

@@ -19,10 +19,14 @@
 <div class="search-container">
     <input type="text" id="searchBar" class="search-bar" placeholder="Pesquisar Jogo..." oninput="searchGames()">
 </div>
-        <div class="link-table">
-            <button onclick="window.open('https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/PragmaticPlay%20Live/711RN-400-PPL-22-02-711_Portuguese,%20Update.pdf?csf=1&web=1&e=wP3bih', '_blank')">RNG</button>
-            <button onclick="window.open('https://link2.com', '_blank')">RGS</button>
-        </div>
+<div class="link-table">
+    <div class="rng-links">
+      <button onclick="createPopup('RNG', ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/PragmaticPlay%20Live/711RN-400-PPL-22-02-711_Portuguese,%20Update.pdf?csf=1&web=1&e=wP3bih'])">RNG</button>
+    </div>
+    <div class="rgs-links">
+      <button onclick="createPopup('RGS', ['https://link3.com', 'https://link4.com'])">RGS</button>
+    </div>
+  </div>
         <h1>Jogos da Pragmatic Play Bingo</h1>
         <button id="show-online" class="view-links-btn"><span class="neon-text">ON-LINE</span> </button>
         <button id="show-all" class="view-links-btn"> TODOS</button>

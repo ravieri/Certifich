@@ -20,10 +20,14 @@
 <div class="search-container">
     <input type="text" id="searchBar" class="search-bar" placeholder="Pesquisar Jogo..." oninput="searchGames()">
 </div>
-        <div class="link-table">
-            <button onclick="window.open('https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/PG%20SOFT/56-H2%20LICENSED%20LTDA/RNG.BR.OCC.1024.56.01_Translation_eSigned.pdf?csf=1&web=1&e=JvDGzC', '_blank')">RNG</button>
-            <button onclick="window.open('https://link2.com', '_blank')">RGS</button>
-        </div>
+<div class="link-table">
+    <div class="rng-links">
+      <button onclick="createPopup('RNG', ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/PG%20SOFT/56-H2%20LICENSED%20LTDA/RNG.BR.OCC.1024.56.01_Translation_eSigned.pdf?csf=1&web=1&e=JvDGzC'])">RNG</button>
+    </div>
+    <div class="rgs-links">
+      <button onclick="createPopup('RGS', ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/PG%20SOFT/56-H2%20LICENSED%20LTDA/BR.OCC.1024.75.01_Translation_eSigned.pdf?csf=1&web=1&e=66hdtW'])">RGS</button>
+    </div>
+  </div>
         <h1>Jogos da PgSoft</h1>
         <button id="show-online" class="view-links-btn"><span class="neon-text">ON-LINE</span> </button>
         <button id="show-all" class="view-links-btn"> TODOS</button>
