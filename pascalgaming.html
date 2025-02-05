@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pascal Gaming - Jogos</title>
     <link rel="stylesheet" href="styles2.css">
-  
+
 </head>
+
 <body>
     <header id="topo">
         <div class="logo">
@@ -17,47 +19,49 @@
 
     <main class="content">
         <!-- Barra de Pesquisa -->
-<div class="search-container">
-    <input type="text" id="searchBar" class="search-bar" placeholder="Pesquisar Jogo..." oninput="searchGames()">
-</div>
-<div class="link-table">
-    <div class="rng-links">
-      <button onclick="createPopup('RNG', ['https://link1.com', 'https://link2.com'])">RNG</button>
-    </div>
-    <div class="rgs-links">
-      <button onclick="createPopup('RGS', ['https://link3.com', 'https://link4.com'])">RGS</button>
-    </div>
-  </div>
+        <div class="search-container">
+            <input type="text" id="searchBar" class="search-bar" placeholder="Pesquisar Jogo..."
+                oninput="searchGames()">
+        </div>
+        <div class="link-table">
+            <div class="rng-links">
+                <button onclick="createPopup('RNG', ['https://link1.com', 'https://link2.com'])">RNG</button>
+            </div>
+            <div class="rgs-links">
+                <button onclick="createPopup('RGS', ['https://link3.com', 'https://link4.com'])">RGS</button>
+            </div>
+        </div>
         <h1>Jogos da Pascal Gaming</h1>
         <button id="show-online" class="view-links-btn"><span class="neon-text">ON-LINE</span> </button>
         <button id="show-all" class="view-links-btn"> TODOS</button>
         <button id="show-off" class="view-links-btn"><span class="neon2-text">OFF</span></button>
-        
+
         <ul id="game-list">
-            
+
             <!-- Jogos serão carregados dinamicamente -->
         </ul>
     </main>
     <div>
-        
-        
+
+
     </div>
     <ul id="game-list"></ul>
-</div>
-<script>
-    
-            // Lista de jogos da Red Tiger
-            const games = [
+    </div>
+    <script>
+
+        // Lista de jogos da Red Tiger
+        const games = [
             { name: '<span class="neon-text">ON-LINE</span> Crash', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Pascal%20Game/711MO-711-BCO-24-21-711_Portuguese.pdf?csf=1&web=1&e=2XD5rb'] },
-  { name: '<span class="neon2-text">OFF</span> Honey-Money', links: [] },
-  { name: '<span class="neon2-text">OFF</span> Non-Stop Baccarat', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Pascal%20Game/711MO-711-BCO-24-21-711_Portuguese.pdf?csf=1&web=1&e=2XD5rb'] },
-  { name: '<span class="neon2-text">OFF</span> Non-Stop Roulette', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Pascal%20Game/711MO-711-BCO-24-21-711_Portuguese.pdf?csf=1&web=1&e=2XD5rb'] },
-  { name: '<span class="neon2-text">OFF</span> Tornado Roulette', links: [] }
-  
-    ];
+            { name: '<span class="neon2-text">OFF</span> Honey-Money', links: [] },
+            { name: '<span class="neon2-text">OFF</span> Non-Stop Baccarat', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Pascal%20Game/711MO-711-BCO-24-21-711_Portuguese.pdf?csf=1&web=1&e=2XD5rb'] },
+            { name: '<span class="neon2-text">OFF</span> Non-Stop Roulette', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Pascal%20Game/711MO-711-BCO-24-21-711_Portuguese.pdf?csf=1&web=1&e=2XD5rb'] },
+            { name: '<span class="neon2-text">OFF</span> Tornado Roulette', links: [] }
+
+        ];
 
 
-</script>
-<script src="scripts.js"></script> <!-- Inclui o arquivo JavaScript -->
+    </script>
+    <script src="scripts.js"></script> <!-- Inclui o arquivo JavaScript -->
 </body>
+
 </html>

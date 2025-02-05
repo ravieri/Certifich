@@ -1,342 +1,362 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>H2BET - Provedores</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">  
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
 
     <style>
-        /* Estilo Geral */
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Poppins', Arial, sans-serif;
-            background: url('fundo.webp') no-repeat center center fixed;
-            background-size: cover;
-            color: white;
-            animation: fadeIn 1s ease-in-out;
+      /* Estilo Geral */
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: "Poppins", Arial, sans-serif;
+        background: url("fundo.webp") no-repeat center center fixed;
+        background-size: cover;
+        color: white;
+        animation: fadeIn 1s ease-in-out;
+      }
+
+      @keyframes fadeIn {
+        0% {
+          opacity: 0;
+          transform: translateY(20px);
         }
-    
-        @keyframes fadeIn {
-            0% {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
+
+        100% {
+          opacity: 1;
+          transform: translateY(0);
         }
-    
-        /* Estilo do Cabeçalho */
-        header {
-            background-color: rgba(0, 0, 0, 0.496); /* Fundo semi-transparente */
-            padding: 10px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 4px solid #800080;
-            position: fixed;
-            top: 0;
-            width: 99.3%;
-            z-index: 1000;
-            transition: background-color 0.3s ease-in-out;
-            animation: slideDown 0.5s ease-in-out;
+      }
+
+      /* Estilo do Cabeçalho */
+      header {
+        background-color: rgba(0, 0, 0, 0.496);
+        /* Fundo semi-transparente */
+        padding: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 4px solid #800080;
+        position: fixed;
+        top: 0;
+        width: 99.3%;
+        z-index: 1000;
+        transition: background-color 0.3s ease-in-out;
+        animation: slideDown 0.5s ease-in-out;
+      }
+
+      @keyframes slideDown {
+        from {
+          transform: translateY(-100%);
         }
-    
-        @keyframes slideDown {
-            from {
-                transform: translateY(-100%);
-            }
-            to {
-                transform: translateY(0);
-            }
+
+        to {
+          transform: translateY(0);
         }
-    
-        header.scrolled {
-            background-color: rgba(26, 26, 26, 0.8); /* Fundo semi-transparente */
-            border-bottom-color: #5a005a;
+      }
+
+      header.scrolled {
+        background-color: rgba(26, 26, 26, 0.8);
+        /* Fundo semi-transparente */
+        border-bottom-color: #5a005a;
+      }
+
+      header .logo {
+        font-size: 32px;
+        font-weight: bold;
+        color: white;
+        animation: logoFadeIn 1s ease-in-out;
+      }
+
+      @keyframes logoFadeIn {
+        from {
+          opacity: 0;
         }
-    
-        header .logo {
-            font-size: 32px;
-            font-weight: bold;
-            color: white;
-            animation: logoFadeIn 1s ease-in-out;
+
+        to {
+          opacity: 1;
         }
-    
-        @keyframes logoFadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
+      }
+
+      header .logo span {
+        color: #800080;
+      }
+
+      /* Link de Pendência */
+      .notification-link {
+        font-size: 14px;
+        color: #ffcc00;
+        text-decoration: none;
+        font-weight: bold;
+        padding: 8px 16px;
+        border: 2px solid #ffcc00;
+        border-radius: 100px;
+        animation: blink 4s infinite;
+      }
+
+      .notification-link:hover {
+        background-color: #ffcc00;
+        color: #1a1a1a;
+        animation: pulse 0.5s infinite;
+      }
+
+      @keyframes blink {
+        0%,
+        100% {
+          background-color: transparent;
+          color: #ffcc00;
         }
-    
-        header .logo span {
-            color: #800080;
+
+        50% {
+          background-color: #ffcc00;
+          color: #1a1a1a;
         }
-    
-        /* Link de Pendência */
-        .notification-link {
-            font-size: 14px;
-            color: #ffcc00;
-            text-decoration: none;
-            font-weight: bold;
-            padding: 8px 16px;
-            border: 2px solid #ffcc00;
-            border-radius: 100px;
-            animation: blink 4s infinite;
+      }
+
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
         }
-    
-        .notification-link:hover {
-            background-color: #ffcc00;
-            color: #1a1a1a;
-            animation: pulse 0.5s infinite;
+
+        50% {
+          transform: scale(1.1);
         }
-    
-        @keyframes blink {
-            0%, 100% {
-                background-color: transparent;
-                color: #ffcc00;
-            }
-            50% {
-                background-color: #ffcc00;
-                color: #1a1a1a;
-            }
+
+        100% {
+          transform: scale(1);
         }
-    
-        @keyframes pulse {
-            0% {
-                transform: scale(1);
-            }
-            50% {
-                transform: scale(1.1);
-            }
-            100% {
-                transform: scale(1);
-            }
+      }
+
+      /* Estilo do Contêiner da Senha */
+      .password-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        flex-direction: column;
+        animation: fadeIn 1s ease-in-out;
+      }
+
+      .password-wrapper {
+        position: relative;
+        width: 300px;
+      }
+
+      .password-container input[type="password"],
+      .password-container input[type="text"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border-radius: 8px;
+        border: none;
+        font-size: 16px;
+        box-sizing: border-box;
+        animation: inputFadeIn 1s ease-in-out;
+      }
+
+      @keyframes inputFadeIn {
+        from {
+          opacity: 0;
         }
-    
-        /* Estilo do Contêiner da Senha */
-        .password-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            flex-direction: column;
-            animation: fadeIn 1s ease-in-out;
+
+        to {
+          opacity: 1;
         }
-    
-        .password-wrapper {
-            position: relative;
-            width: 300px;
+      }
+
+      .password-container button {
+        background-color: #800080;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 8px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        animation: buttonFadeIn 1s ease-in-out;
+      }
+
+      @keyframes buttonFadeIn {
+        from {
+          opacity: 0;
         }
-    
-        .password-container input[type="password"],
-        .password-container input[type="text"] {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 20px;
-            border-radius: 8px;
-            border: none;
-            font-size: 16px;
-            box-sizing: border-box;
-            animation: inputFadeIn 1s ease-in-out;
+
+        to {
+          opacity: 1;
         }
-    
-        @keyframes inputFadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
+      }
+
+      .password-container button:hover {
+        background-color: #5a005a;
+        box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+        animation: buttonHover 0.3s ease-in-out;
+      }
+
+      @keyframes buttonHover {
+        from {
+          transform: scale(1);
         }
-    
-        .password-container button {
-            background-color: #800080;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 8px;
-            font-size: 16px;
-            cursor: pointer;
-            transition: all 0.3s ease-in-out;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-            animation: buttonFadeIn 1s ease-in-out;
+
+        to {
+          transform: scale(1.05);
         }
-    
-        @keyframes buttonFadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
+      }
+
+      .error-message {
+        color: red;
+        font-size: 14px;
+        display: none;
+      }
+
+      .toggle-password {
+        cursor: pointer;
+        color: #ffcc00;
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        animation: toggleFadeIn 1s ease-in-out;
+      }
+
+      @keyframes toggleFadeIn {
+        from {
+          opacity: 0;
         }
-    
-        .password-container button:hover {
-            background-color: #5a005a;
-            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
-            animation: buttonHover 0.3s ease-in-out;
+
+        to {
+          opacity: 1;
         }
-    
-        @keyframes buttonHover {
-            from {
-                transform: scale(1);
-            }
-            to {
-                transform: scale(1.05);
-            }
+      }
+
+      /* Estilo do Popup */
+      #popup {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+        display: none;
+        animation: fadeIn 0.5s ease-in-out;
+      }
+
+      #popup .popup-content {
+        background-color: white;
+        color: #1a1a1a;
+        padding: 20px;
+        border-radius: 12px;
+        text-align: center;
+        width: 90%;
+        max-width: 400px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        animation: slideUp 0.4s ease-in-out;
+      }
+
+      #popup .popup-content h2 {
+        margin-top: 0;
+        color: #800080;
+        font-size: 24px;
+        font-weight: bold;
+        animation: fadeIn 1s ease-in-out;
+      }
+
+      #popup .popup-content p {
+        margin: 15px 0;
+        font-size: 16px;
+        line-height: 1.5;
+        color: #333;
+        animation: fadeIn 1s ease-in-out;
+      }
+
+      #popup .popup-content a {
+        display: inline-block;
+        padding: 12px 24px;
+        background-color: #800080;
+        color: white;
+        text-decoration: none;
+        border-radius: 8px;
+        transition: background-color 0.3s, transform 0.2s;
+        font-size: 16px;
+        font-weight: bold;
+        animation: fadeIn 1s ease-in-out;
+      }
+
+      #popup .popup-content a:hover {
+        background-color: #5a005a;
+        transform: scale(1.05);
+      }
+
+      #popup .popup-content button {
+        margin-top: 15px;
+        background-color: transparent;
+        border: none;
+        color: #800080;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: color 0.3s;
+        animation: fadeIn 1s ease-in-out;
+      }
+
+      #popup .popup-content button:hover {
+        color: #5a005a;
+        text-decoration: underline;
+      }
+
+      /* Animações */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
         }
-    
-        .error-message {
-            color: red;
-            font-size: 14px;
-            display: none;
+
+        to {
+          opacity: 1;
         }
-    
-        .toggle-password {
-            cursor: pointer;
-            color: #ffcc00;
-            position: absolute;
-            right: 10px;
-            top: 50%;
-            transform: translateY(-50%);
-            animation: toggleFadeIn 1s ease-in-out;
+      }
+
+      @keyframes slideUp {
+        from {
+          transform: translateY(20px);
         }
-    
-        @keyframes toggleFadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
+
+        to {
+          transform: translateY(0);
         }
-    
-        /* Estilo do Popup */
-        #popup {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.8);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-            display: none;
-            animation: fadeIn 0.5s ease-in-out;
-        }
-    
-        #popup .popup-content {
-            background-color: white;
-            color: #1a1a1a;
-            padding: 20px;
-            border-radius: 12px;
-            text-align: center;
-            width: 90%;
-            max-width: 400px;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-            animation: slideUp 0.4s ease-in-out;
-        }
-    
-        #popup .popup-content h2 {
-            margin-top: 0;
-            color: #800080;
-            font-size: 24px;
-            font-weight: bold;
-            animation: fadeIn 1s ease-in-out;
-        }
-    
-        #popup .popup-content p {
-            margin: 15px 0;
-            font-size: 16px;
-            line-height: 1.5;
-            color: #333;
-            animation: fadeIn 1s ease-in-out;
-        }
-    
-        #popup .popup-content a {
-            display: inline-block;
-            padding: 12px 24px;
-            background-color: #800080;
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
-            transition: background-color 0.3s, transform 0.2s;
-            font-size: 16px;
-            font-weight: bold;
-            animation: fadeIn 1s ease-in-out;
-        }
-    
-        #popup .popup-content a:hover {
-            background-color: #5a005a;
-            transform: scale(1.05);
-        }
-    
-        #popup .popup-content button {
-            margin-top: 15px;
-            background-color: transparent;
-            border: none;
-            color: #800080;
-            font-size: 16px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: color 0.3s;
-            animation: fadeIn 1s ease-in-out;
-        }
-    
-        #popup .popup-content button:hover {
-            color: #5a005a;
-            text-decoration: underline;
-        }
-    
-        /* Animações */
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-    
-        @keyframes slideUp {
-            from {
-                transform: translateY(20px);
-            }
-            to {
-                transform: translateY(0);
-            }
-        }
-    
-        /* Estilo do Conteúdo */
-        .content {
-            display: none;
-            padding: 20px;
-            text-align: center;
-        }
-    
-        .providers-grid {
-            text-align: center;
-        }
-    
-        .providers-grid h2 {
-            color: #ffcc0000;
-            margin-bottom: 20px;
-            animation: fadeIn 1s ease-in-out;
-        }
-    
-        
-        .provider {
+      }
+
+      /* Estilo do Conteúdo */
+      .content {
+        display: none;
+        padding: 20px;
+        text-align: center;
+      }
+
+      .providers-grid {
+        text-align: center;
+      }
+
+      .providers-grid h2 {
+        color: #ffcc0000;
+        margin-bottom: 20px;
+        animation: fadeIn 1s ease-in-out;
+      }
+
+      .provider {
         background-color: #ffffff;
         color: #000;
         text-decoration: none;
@@ -348,32 +368,32 @@
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         transition: transform 0.2s, box-shadow 0.2s;
         animation: fadeIn 1s ease-in-out;
-    }
+      }
 
-    .provider img {
+      .provider img {
         width: 100%;
         height: auto;
         margin-bottom: 10px;
         border-radius: 10px;
         animation: fadeIn 1s ease-in-out;
-    }
+      }
 
-    .provider:hover {
+      .provider:hover {
         transform: translateY(-5px);
         box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
         background-color: #800080;
         color: white;
-    }
+      }
 
-    /* Estilo da Barra de Pesquisa */
-    .search-container {
+      /* Estilo da Barra de Pesquisa */
+      .search-container {
         margin-top: 10px;
         padding: 0px;
         text-align: center;
         animation: fadeIn 1s ease-in-out;
-    }
+      }
 
-    .search-bar {
+      .search-bar {
         width: 800px;
         padding: 10px;
         border-radius: 8px;
@@ -382,26 +402,26 @@
         background-color: #3333337d;
         color: white;
         animation: fadeIn 1s ease-in-out;
-    }
+      }
 
-    .search-bar:focus {
+      .search-bar:focus {
         outline: none;
         border-color: #ffcc00;
-    }
+      }
 
-    .provider-list {
+      .provider-list {
         margin-top: 20px;
         text-align: center;
         animation: fadeIn 1s ease-in-out;
-    }
+      }
 
-    .provider-item {
+      .provider-item {
         font-size: 18px;
         margin: 10px 0;
         animation: fadeIn 1s ease-in-out;
-    }
+      }
 
-    .search-results {
+      .search-results {
         margin-top: 10px;
         background-color: #1a1a1a67;
         padding: 5px;
@@ -410,299 +430,342 @@
         max-height: 200px;
         overflow-y: auto;
         animation: fadeIn 1s ease-in-out;
-    }
+      }
 
-    .search-result-item {
+      .search-result-item {
         margin: 2px 10px;
         padding: 5px;
         font-size: 16px;
         animation: fadeIn 1s ease-in-out;
-    }
+      }
 
-    .search-result-item a {
+      .search-result-item a {
         color: #ffcc00;
         text-decoration: none;
-    }
+      }
 
-    .search-result-item a:hover {
+      .search-result-item a:hover {
         color: white;
-    }
+      }
+    </style>
+  </head>
 
-</style>
-</head>
-<body>
+  <body>
     <header id="topo">
-        <div class="logo">H2<span>BET</span></div>
-        <a href="https://h2grupo-my.sharepoint.com/:x:/r/personal/raul_bispo_h2grupo_com/_layouts/15/Doc.aspx?sourcedoc=%7B0B5319B4-5D21-42F6-8C12-2C018B4CBFF3%7D&file=Pasta%202.xlsx&action=editnew&mobileredirect=true&wdNewAndOpenCt=1737131120736&ct=1737131121132&wdOrigin=OFFICECOM-WEB.START.NEW&wdPreviousSessionSrc=HarmonyWeb&wdPreviousSession=9d87faa6-7e00-418e-bd83-c04aca1b53ca&cid=d085dbee-046d-4553-ad86-e4c4211a3ae3" class="notification-link">🔔 Verificar Pendências</a>
+      <div class="logo">H2<span>BET</span></div>
+      <a
+        href="https://h2grupo-my.sharepoint.com/:x:/r/personal/raul_bispo_h2grupo_com/_layouts/15/Doc.aspx?sourcedoc=%7B0B5319B4-5D21-42F6-8C12-2C018B4CBFF3%7D&file=Pasta%202.xlsx&action=editnew&mobileredirect=true&wdNewAndOpenCt=1737131120736&ct=1737131121132&wdOrigin=OFFICECOM-WEB.START.NEW&wdPreviousSessionSrc=HarmonyWeb&wdPreviousSession=9d87faa6-7e00-418e-bd83-c04aca1b53ca&cid=d085dbee-046d-4553-ad86-e4c4211a3ae3"
+        class="notification-link"
+        >🔔 Verificar Pendências</a
+      >
     </header>
 
     <!-- Contêiner para a Senha -->
     <div class="password-container" id="password-container">
-        <div class="password-wrapper">
-            <input type="password" id="password" placeholder="Digite sua senha" onkeydown="handleKeyDown(event)">
-            <span class="toggle-password" onclick="togglePassword()">👁️</span>
-        </div>
-        <button onclick="checkPassword()">Entrar</button>
-        <p class="error-message" id="error-message">Senha incorreta. Tente novamente.</p>
+      <div class="password-wrapper">
+        <input
+          type="password"
+          id="password"
+          placeholder="Digite sua senha"
+          onkeydown="handleKeyDown(event)"
+        />
+        <span class="toggle-password" onclick="togglePassword()">👁️</span>
+      </div>
+      <button onclick="checkPassword()">Entrar</button>
+      <p class="error-message" id="error-message">
+        Senha incorreta. Tente novamente.
+      </p>
     </div>
     <!-- Popup (se necessário) -->
     <div id="popup" onclick="closePopup(event)">
-        <div class="popup-content">
-            <h2>Atenção!</h2>
-            <p>Você possui pendências. Clique no botão abaixo para resolvê-las:</p>
-            <a href="https://h2grupo-my.sharepoint.com/:x:/r/personal/raul_bispo_h2grupo_com/_layouts/15/Doc.aspx?sourcedoc=%7B0B5319B4-5D21-42F6-8C12-2C018B4CBFF3%7D&file=Pasta%202.xlsx&action=editnew&mobileredirect=true&wdNewAndOpenCt=1737131120736&ct=1737131121132&wdOrigin=OFFICECOM-WEB.START.NEW&wdPreviousSessionSrc=HarmonyWeb&wdPreviousSession=9d87faa6-7e00-418e-bd83-c04aca1b53ca&cid=d085dbee-046d-4553-ad86-e4c4211a3ae3">Verificar Pendências</a>
-            <button onclick="closePopup()">Fechar</button>
-        </div>
+      <div class="popup-content">
+        <h2>Atenção!</h2>
+        <p>Você possui pendências. Clique no botão abaixo para resolvê-las:</p>
+        <a
+          href="https://h2grupo-my.sharepoint.com/:x:/r/personal/raul_bispo_h2grupo_com/_layouts/15/Doc.aspx?sourcedoc=%7B0B5319B4-5D21-42F6-8C12-2C018B4CBFF3%7D&file=Pasta%202.xlsx&action=editnew&mobileredirect=true&wdNewAndOpenCt=1737131120736&ct=1737131121132&wdOrigin=OFFICECOM-WEB.START.NEW&wdPreviousSessionSrc=HarmonyWeb&wdPreviousSession=9d87faa6-7e00-418e-bd83-c04aca1b53ca&cid=d085dbee-046d-4553-ad86-e4c4211a3ae3"
+          >Verificar Pendências</a
+        >
+        <button onclick="closePopup()">Fechar</button>
+      </div>
     </div>
 
     <!-- Conteúdo Principal -->
     <main class="content" id="main-content">
-        <section class="providers-grid">
-            <h2>.</h2>
-            <div class="search-container">
-                <input type="text" id="gameSearchBar" class="search-bar" placeholder="Pesquisar Jogo..." oninput="searchGames()">
-                <div id="searchResults" class="search-results"></div>
-            </div>
-            
-            <!-- Barra de Pesquisa -->
-<div class="search-container">
-    <input type="text" id="searchBar" class="search-bar" placeholder="Pesquisar Provedor..." oninput="searchProviders()">
-</div>
-            <div class="providers">
-                
-                <!-- Lista de provedores -->
-                <a href="pgsoft.html" class="provider" target="_blank">
-                    <img src="provedores/pg soft.jpg" alt="Logo PGSoft">
-                    PGSoft
-                </a>
-                <a href="spribe.html" class="provider" target="_blank">
-                    <img src="provedores/spribe.jpg" alt="Logo Spribe">
-                    Spribe
-                </a>
-                <a href="pragmaticplayslots.html" class="provider" target="_blank">
-                    <img src="provedores/pragmaticslots.png" alt="Logo Pragmatic Play Slots">
-                    Pragmatic Play Slots
-                </a>
-                <a href="pragmaticplaylive.html" class="provider" target="_blank">
-                    <img src="provedores/Pragmatic-Play-Logo-.jpeg" alt="Logo Pragmatic Play Live">
-                    Pragmatic Play Live
-                </a>
-                <a href="Pragmatic Play Bingo.html" class="provider" target="_blank">
-                    <img src="provedores/pragmaticplay.png" alt="Logo Pragmatic Play Bingo">
-                    Pragmatic Play Bingo
-                </a>
-                <a href="evolution.html" class="provider" target="_blank">
-                    <img src="provedores/Evolution.png" alt="Logo Evolution">
-                    Evolution
-                </a>
-                <a href="nolimitcity.html" class="provider" target="_blank">
-                    <img src="provedores/no limit.jpg" alt="Logo Limit City">
-                    No Limit City
-                </a>
-                <a href="redtiger.html" class="provider" target="_blank">
-                    <img src="provedores/red tiger.jpg" alt="Logo Red Tiger">
-                    Red Tiger
-                </a>
-                <a href="playtech.html" class="provider" target="_blank">
-                    <img src="provedores/playtech.png" alt="Logo PlayTech">
-                    PlayTech
-                </a>
-                <a href="playtechlive.html" class="provider" target="_blank">
-                    <img src="provedores/playtechlive.png" alt="Logo PlayTech Live">
-                    PlayTech Live
-                </a>
-                <a href="netent.html" class="provider" target="_blank">
-                    <img src="provedores/net ent.jpg" alt="Logo NET ENT">
-                    NET ENT
-                </a>
-                <a href="playson.html" class="provider" target="_blank">
-                    <img src="provedores/playson.png" alt="Logo Playson">
-                    Playson
-                </a>
-                <a href="Rubyplay.html" class="provider" target="_blank">
-                    <img src="provedores/rubyplay.webp" alt="Logo RubyPlay">
-                    RubyPlay
-                </a>
-                <a href="Endorphina.html" class="provider" target="_blank">
-                    <img src="provedores/endorphina.jpg" alt="Logo Endorphina">
-                    Endorphina
-                </a>
-                <a href="Boominggames.html" class="provider" target="_blank">
-                    <img src="provedores/boominggames.png" alt="Logo Boominggames">
-                    Booming games
-                </a>
-                <a href="BigTimeGaming.html" class="provider" target="_blank">
-                    <img src="provedores/bigtimegaming.webp" alt="Logo Big Time Gaming">
-                    Big Time Gaming
-                </a>
-                <a href="creedroomz.html" class="provider" target="_blank">
-                    <img src="provedores/Creed-logo-gold.png" alt="Logo creedroomz">
-                    Creedroomz
-                </a>
-                <a href="pascalgaming.html" class="provider" target="_blank">
-                    <img src="provedores/pascal.png" alt="Logo creedroomz">
-                    Pascal Gaming
-                </a>
-                <a href="hacksawgaming.html" class="provider" target="_blank">
-                    <img src="provedores/Hacksaw-Gaming-amplia-presenca-nos-EUA-com-parceria-em-Nova-Jersey.png" alt="Logo Hacksaw">
-                    hacksaw Gaming
-                </a>
-                <a href="Skywind.html" class="provider" target="_blank">
-                    <img src="provedores/skywind1.jpg" alt="Logo Skywind">
-                    Skywind 
-                </a>
-                <a href="Skywindlivecasino.html" class="provider" target="_blank">
-                    <img src="provedores/skywind1.jpg" alt="Logo Skywind">
-                    Skywind Live Casino 
-                </a>
-                <a href="Ezugi.html" class="provider" target="_blank">
-                    <img src="provedores/Ezugi-provider-review-canada-casino.png" alt="Logo Ezugi">
-                    Ezugi
-                </a>
-                <a href="popok.html" class="provider" target="_blank">
-                    <img src="provedores/popok.png" alt="Logo Popok">
-                    Popok gaming
-                </a>
-                <a href="Hacksaw.html" class="provider" target="_blank">
-                    <img src="provedores/hacksaw.png" alt="Logo Hacksaw">
-                    Hacksaw
-                </a>
-                <a href="Caleta.html" class="provider" target="_blank">
-                    <img src="provedores/caleta.png" alt="Logo Caleta">
-                    Caleta
-                </a>
-                <a href="Quickspin.html" class="provider" target="_blank">
-                    <img src="provedores/quickspin-logo.webp" alt="Logo Quickspin">
-                    Quickspin
-                </a>
-                <a href="SmartSoft.html" class="provider" target="_blank">
-                    <img src="provedores/smartsoft.webp" alt="Logo SmartSoft">
-                    SmartSoft
-                </a>
-                <a href="Synot.html" class="provider" target="_blank">
-                    <img src="provedores/synot.png" alt="Logo Synot">
-                    Synot
-                </a>
-                <a href="TaDaGaming.html" class="provider" target="_blank">
-                    <img src="provedores/tadagaming.webp" alt="Logo TaDa Gaming">
-                    TaDa Gaming
-                </a>
-                <a href="Gamesglobal.html" class="provider" target="_blank">
-                    <img src="provedores/gamesblobal.jpg" alt="Logo Games Global">
-                    Games Global
-                </a>
-                <a href="BGAMING.html" class="provider" target="_blank">
-                    <img src="provedores/bgaming.png" alt="Logo BGAMING">
-                    BGAMING
-                </a>
-            </div>
-        </section>
+      <section class="providers-grid">
+        <h2>.</h2>
+        <div class="search-container">
+          <input
+            type="text"
+            id="gameSearchBar"
+            class="search-bar"
+            placeholder="Pesquisar Jogo..."
+            oninput="searchGames()"
+          />
+          <div id="searchResults" class="search-results"></div>
+        </div>
+
+        <!-- Barra de Pesquisa -->
+        <div class="search-container">
+          <input
+            type="text"
+            id="searchBar"
+            class="search-bar"
+            placeholder="Pesquisar Provedor..."
+            oninput="searchProviders()"
+          />
+        </div>
+        <div class="providers">
+          <!-- Lista de provedores -->
+          <a href="pgsoft.html" class="provider" target="_blank">
+            <img src="provedores/pg soft.jpg" alt="Logo PGSoft" />
+            PGSoft
+          </a>
+          <a href="spribe.html" class="provider" target="_blank">
+            <img src="provedores/spribe.jpg" alt="Logo Spribe" />
+            Spribe
+          </a>
+          <a href="pragmaticplayslots.html" class="provider" target="_blank">
+            <img
+              src="provedores/pragmaticslots.png"
+              alt="Logo Pragmatic Play Slots"
+            />
+            Pragmatic Play Slots
+          </a>
+          <a href="pragmaticplaylive.html" class="provider" target="_blank">
+            <img
+              src="provedores/Pragmatic-Play-Logo-.jpeg"
+              alt="Logo Pragmatic Play Live"
+            />
+            Pragmatic Play Live
+          </a>
+          <a href="Pragmatic Play Bingo.html" class="provider" target="_blank">
+            <img
+              src="provedores/pragmaticplay.png"
+              alt="Logo Pragmatic Play Bingo"
+            />
+            Pragmatic Play Bingo
+          </a>
+          <a href="evolution.html" class="provider" target="_blank">
+            <img src="provedores/Evolution.png" alt="Logo Evolution" />
+            Evolution
+          </a>
+          <a href="nolimitcity.html" class="provider" target="_blank">
+            <img src="provedores/no limit.jpg" alt="Logo Limit City" />
+            No Limit City
+          </a>
+          <a href="redtiger.html" class="provider" target="_blank">
+            <img src="provedores/red tiger.jpg" alt="Logo Red Tiger" />
+            Red Tiger
+          </a>
+          <a href="playtech.html" class="provider" target="_blank">
+            <img src="provedores/playtech.png" alt="Logo PlayTech" />
+            PlayTech
+          </a>
+          <a href="playtechlive.html" class="provider" target="_blank">
+            <img src="provedores/playtechlive.png" alt="Logo PlayTech Live" />
+            PlayTech Live
+          </a>
+          <a href="netent.html" class="provider" target="_blank">
+            <img src="provedores/net ent.jpg" alt="Logo NET ENT" />
+            NET ENT
+          </a>
+          <a href="playson.html" class="provider" target="_blank">
+            <img src="provedores/playson.png" alt="Logo Playson" />
+            Playson
+          </a>
+          <a href="Rubyplay.html" class="provider" target="_blank">
+            <img src="provedores/rubyplay.webp" alt="Logo RubyPlay" />
+            RubyPlay
+          </a>
+          <a href="Endorphina.html" class="provider" target="_blank">
+            <img src="provedores/endorphina.jpg" alt="Logo Endorphina" />
+            Endorphina
+          </a>
+          <a href="Boominggames.html" class="provider" target="_blank">
+            <img src="provedores/boominggames.png" alt="Logo Boominggames" />
+            Booming games
+          </a>
+          <a href="BigTimeGaming.html" class="provider" target="_blank">
+            <img
+              src="provedores/bigtimegaming.webp"
+              alt="Logo Big Time Gaming"
+            />
+            Big Time Gaming
+          </a>
+          <a href="creedroomz.html" class="provider" target="_blank">
+            <img src="provedores/Creed-logo-gold.png" alt="Logo creedroomz" />
+            Creedroomz
+          </a>
+          <a href="pascalgaming.html" class="provider" target="_blank">
+            <img src="provedores/pascal.png" alt="Logo creedroomz" />
+            Pascal Gaming
+          </a>
+          <a href="hacksawgaming.html" class="provider" target="_blank">
+            <img
+              src="provedores/Hacksaw-Gaming-amplia-presenca-nos-EUA-com-parceria-em-Nova-Jersey.png"
+              alt="Logo Hacksaw"
+            />
+            hacksaw Gaming
+          </a>
+          <a href="Skywind.html" class="provider" target="_blank">
+            <img src="provedores/skywind1.jpg" alt="Logo Skywind" />
+            Skywind
+          </a>
+          <a href="Skywindlivecasino.html" class="provider" target="_blank">
+            <img src="provedores/skywind1.jpg" alt="Logo Skywind" />
+            Skywind Live Casino
+          </a>
+          <a href="Ezugi.html" class="provider" target="_blank">
+            <img
+              src="provedores/Ezugi-provider-review-canada-casino.png"
+              alt="Logo Ezugi"
+            />
+            Ezugi
+          </a>
+          <a href="popok.html" class="provider" target="_blank">
+            <img src="provedores/popok.png" alt="Logo Popok" />
+            Popok gaming
+          </a>
+          <a href="Hacksaw.html" class="provider" target="_blank">
+            <img src="provedores/hacksaw.png" alt="Logo Hacksaw" />
+            Hacksaw
+          </a>
+          <a href="Caleta.html" class="provider" target="_blank">
+            <img src="provedores/caleta.png" alt="Logo Caleta" />
+            Caleta
+          </a>
+          <a href="Quickspin.html" class="provider" target="_blank">
+            <img src="provedores/quickspin-logo.webp" alt="Logo Quickspin" />
+            Quickspin
+          </a>
+          <a href="SmartSoft.html" class="provider" target="_blank">
+            <img src="provedores/smartsoft.webp" alt="Logo SmartSoft" />
+            SmartSoft
+          </a>
+          <a href="Synot.html" class="provider" target="_blank">
+            <img src="provedores/synot.png" alt="Logo Synot" />
+            Synot
+          </a>
+          <a href="TaDaGaming.html" class="provider" target="_blank">
+            <img src="provedores/tadagaming.webp" alt="Logo TaDa Gaming" />
+            TaDa Gaming
+          </a>
+          <a href="Gamesglobal.html" class="provider" target="_blank">
+            <img src="provedores/gamesblobal.jpg" alt="Logo Games Global" />
+            Games Global
+          </a>
+          <a href="BGAMING.html" class="provider" target="_blank">
+            <img src="provedores/bgaming.png" alt="Logo BGAMING" />
+            BGAMING
+          </a>
+        </div>
+      </section>
     </main>
 
     <script>
+      function handleKeyDown(event) {
+        if (event.key === "Enter") {
+          checkPassword();
+        }
+      }
 
-function handleKeyDown(event) {
-    if (event.key === 'Enter') {
-      checkPassword();
-    }
-  }
+      async function searchGames() {
+        const query = document
+          .getElementById("gameSearchBar")
+          .value.toLowerCase();
+        const resultsContainer = document.getElementById("searchResults");
 
-async function searchGames() {
-    const query = document.getElementById("gameSearchBar").value.toLowerCase();
-    const resultsContainer = document.getElementById("searchResults");
+        // Limpa os resultados anteriores
+        resultsContainer.innerHTML = "";
 
-    // Limpa os resultados anteriores
-    resultsContainer.innerHTML = "";
+        if (query.trim() === "") return;
 
-    if (query.trim() === "") return;
+        // Faz o fetch do arquivo JSON
+        const response = await fetch("games.json");
+        const games = await response.json();
 
-    // Faz o fetch do arquivo JSON
-    const response = await fetch("games.json");
-    const games = await response.json();
+        // Filtra os jogos com base na pesquisa
+        const filteredGames = games.filter((game) =>
+          game.name.toLowerCase().includes(query)
+        );
 
-    // Filtra os jogos com base na pesquisa
-    const filteredGames = games.filter(game =>
-        game.name.toLowerCase().includes(query)
-    );
+        // Exibe os jogos encontrados
+        filteredGames.forEach((game) => {
+          const resultItem = document.createElement("div");
+          resultItem.className = "search-result-item";
+          resultItem.innerHTML = `<a href="${game.link}">${game.name} - <span>${game.provider}</span></a>`;
+          resultsContainer.appendChild(resultItem);
+        });
 
-    // Exibe os jogos encontrados
-    filteredGames.forEach(game => {
-        const resultItem = document.createElement("div");
-        resultItem.className = "search-result-item";
-        resultItem.innerHTML = `<a href="${game.link}">${game.name} - <span>${game.provider}</span></a>`;
-        resultsContainer.appendChild(resultItem);
-    });
+        if (filteredGames.length === 0) {
+          resultsContainer.innerHTML = "<p>Nenhum jogo encontrado.</p>";
+        }
+      }
 
-    if (filteredGames.length === 0) {
-        resultsContainer.innerHTML = "<p>Nenhum jogo encontrado.</p>";
-    }
-}
+      window.addEventListener("scroll", function () {
+        const header = document.querySelector("header");
+        header.classList.toggle("scrolled", window.scrollY > 50);
+      });
+      function searchProviders() {
+        const query = document.getElementById("searchBar").value.toLowerCase();
+        const providers = document.querySelectorAll(".provider");
 
+        providers.forEach(function (provider) {
+          // Verifica se o nome do provedor contém a pesquisa
+          const providerName = provider.textContent.toLowerCase();
 
-window.addEventListener('scroll', function() {
-    const header = document.querySelector('header');
-    header.classList.toggle('scrolled', window.scrollY > 50);
-});
-function searchProviders() {
-    const query = document.getElementById("searchBar").value.toLowerCase();
-    const providers = document.querySelectorAll(".provider");
+          // Se o nome do provedor contiver o que está na pesquisa, exibe, caso contrário, oculta
+          if (providerName.includes(query)) {
+            provider.style.display = "block"; // Exibe o provedor
+          } else {
+            provider.style.display = "none"; // Oculta o provedor
+          }
+        });
+      }
+      // Define a senha correta
+      const correctPassword = "EusouH2";
 
-    providers.forEach(function(provider) {
-        // Verifica se o nome do provedor contém a pesquisa
-        const providerName = provider.textContent.toLowerCase();
-        
-        // Se o nome do provedor contiver o que está na pesquisa, exibe, caso contrário, oculta
-        if (providerName.includes(query)) {
-            provider.style.display = "block";  // Exibe o provedor
+      function checkPassword() {
+        const input = document.getElementById("password").value;
+        const errorMessage = document.getElementById("error-message");
+        const passwordContainer = document.getElementById("password-container");
+        const mainContent = document.getElementById("main-content");
+
+        if (input === correctPassword) {
+          // Exibe o conteúdo e oculta o contêiner da senha
+          passwordContainer.style.display = "none";
+          mainContent.style.display = "block";
+
+          // Exibe o popup após 1 segundo
+          setTimeout(() => {
+            const popup = document.getElementById("popup");
+            popup.style.display = "flex";
+          }, 1000);
         } else {
-            provider.style.display = "none";  // Oculta o provedor
+          // Exibe mensagem de erro
+          errorMessage.style.display = "block";
         }
-    });
-}
-        // Define a senha correta
-        const correctPassword = "EusouH2";
+      }
 
-        function checkPassword() {
-            const input = document.getElementById("password").value;
-            const errorMessage = document.getElementById("error-message");
-            const passwordContainer = document.getElementById("password-container");
-            const mainContent = document.getElementById("main-content");
-
-            if (input === correctPassword) {
-                // Exibe o conteúdo e oculta o contêiner da senha
-                passwordContainer.style.display = "none";
-                mainContent.style.display = "block";
-
-                // Exibe o popup após 1 segundo
-                setTimeout(() => {
-                    const popup = document.getElementById('popup');
-                    popup.style.display = 'flex';
-                }, 1000);
-            } else {
-                // Exibe mensagem de erro
-                errorMessage.style.display = "block";
-            }
+      function togglePassword() {
+        const passwordField = document.getElementById("password");
+        const toggleIcon = document.querySelector(".toggle-password");
+        if (passwordField.type === "password") {
+          passwordField.type = "text";
+          toggleIcon.textContent = "🙈";
+        } else {
+          passwordField.type = "password";
+          toggleIcon.textContent = "👁️";
         }
+      }
 
-        function togglePassword() {
-            const passwordField = document.getElementById("password");
-            const toggleIcon = document.querySelector(".toggle-password");
-            if (passwordField.type === "password") {
-                passwordField.type = "text";
-                toggleIcon.textContent = "🙈";
-            } else {
-                passwordField.type = "password";
-                toggleIcon.textContent = "👁️";
-            }
+      // Fecha o popup
+      function closePopup(event) {
+        const popup = document.getElementById("popup");
+        if (event.target === popup || event.target.tagName === "BUTTON") {
+          popup.style.display = "none";
         }
-
-        // Fecha o popup
-        function closePopup(event) {
-            const popup = document.getElementById('popup');
-            if (event.target === popup || event.target.tagName === 'BUTTON') {
-                popup.style.display = 'none';
-            }
-        }
+      }
     </script>
-</body>
+  </body>
 </html>
