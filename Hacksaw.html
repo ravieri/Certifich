@@ -1,73 +1,236 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hacksaw - Jogos</title>
-    <link rel="stylesheet" href="styles2.css">
-</head>
-<body>
+    <link rel="stylesheet" href="styles2.css" />
+  </head>
+  <body>
     <header id="topo">
-        <div class="logo">
-            <a href="home.html" class="back-home">⬅ Voltar ao Home</a>
-            H2<span>BET</span>
-        </div>
+      <div class="logo">
+        <a href="home.html" class="back-home">⬅ Voltar ao Home</a>
+        H2<span>BET</span>
+      </div>
     </header>
     <main class="content">
-        <!-- Barra de Pesquisa -->
-        <div class="search-container">
-            <input type="text" id="searchBar" class="search-bar" placeholder="Pesquisar Jogo..." oninput="searchGames()">
+      <!-- Barra de Pesquisa -->
+      <div class="search-container">
+        <input
+          type="text"
+          id="searchBar"
+          class="search-bar"
+          placeholder="Pesquisar Jogo..."
+          oninput="searchGames()"
+        />
+      </div>
+      <div class="link-table">
+        <div class="rng-links">
+          <button
+            onclick="createPopup('RNG', ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Hacksaw/RNG/e2414672HCKBRA%20-%20HGMT%20Ltd%20BRA%20RNG%20Report%20Hacksaw%20Gaming%20Online%20Game%20Testing%20Certificate%20(ID%20550406).pdf?csf=1&web=1&e=2y6eSG', 'https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Hacksaw/RNG/e2414672HCKBRA_AR%20-%20HGMT%20Ltd%20BRA%20RNG%20Report%20Hacksaw%20Gaming%20Online%20Game%20Assessment%20Report%20(ID%20550403).pdf?csf=1&web=1&e=DhOYRU','https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Hacksaw/RNG/EN_e2414672HCKBRA%20-%20HGMT%20Ltd%20BRA%20RNG%20Report%20Hacksaw%20Gaming%20Online%20Testing%20Certificate%20(ID%20550412).pdf?csf=1&web=1&e=PCjngE','https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Hacksaw/RNG/EN_e2414672HCKBRA_AR%20-%20HGMT%20Ltd%20BRA%20RNG%20Report%20Hacksaw%20Gaming%20Online%20Game%20Assessment%20Report%20(ID%20550410).pdf?csf=1&web=1&e=unq1J0'])"
+          >
+            RNG
+          </button>
         </div>
-        <div class="link-table">
-            <div class="rng-links">
-              <button onclick="createPopup('RNG', ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Hacksaw/RNG/e2414672HCKBRA%20-%20HGMT%20Ltd%20BRA%20RNG%20Report%20Hacksaw%20Gaming%20Online%20Game%20Testing%20Certificate%20(ID%20550406).pdf?csf=1&web=1&e=2y6eSG', 'https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Hacksaw/RNG/e2414672HCKBRA_AR%20-%20HGMT%20Ltd%20BRA%20RNG%20Report%20Hacksaw%20Gaming%20Online%20Game%20Assessment%20Report%20(ID%20550403).pdf?csf=1&web=1&e=DhOYRU','https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Hacksaw/RNG/EN_e2414672HCKBRA%20-%20HGMT%20Ltd%20BRA%20RNG%20Report%20Hacksaw%20Gaming%20Online%20Testing%20Certificate%20(ID%20550412).pdf?csf=1&web=1&e=PCjngE','https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Hacksaw/RNG/EN_e2414672HCKBRA_AR%20-%20HGMT%20Ltd%20BRA%20RNG%20Report%20Hacksaw%20Gaming%20Online%20Game%20Assessment%20Report%20(ID%20550410).pdf?csf=1&web=1&e=unq1J0'])">RNG</button>
-            </div>
-            <div class="rgs-links">
-              <button onclick="createPopup('RGS', ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Hacksaw/RGS/EN_e2416782HCKBRABRA%20-%20HGMT%20Ltd%20BRA%20Betting%20System%20Certificate%20(Annex%20I).pdf?csf=1&web=1&e=2GxrgG', 'https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Hacksaw/RGS/EN_e2416782HCKBRABRA_AR%20-%20HGMT%20Ltd%20BRA%20Betting%20System%20Assessment%20Report.pdf?csf=1&web=1&e=4pt3ET','https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Hacksaw/RGS/EN_e2416784HCKBRABRA%20-%20HGMT%20Ltd%20BRA%20RGS%20Certificate%20(Annex%20III).pdf?csf=1&web=1&e=MGqu87','https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Hacksaw/RGS/EN_e2416784HCKBRABRA_AR%20-%20HGMT%20Ltd%20BRA%20RGS%20Assessment%20Report%20(Annex%20III).pdf?csf=1&web=1&e=mazSsH','https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Hacksaw/RGS/PT_e2416782HCKBRABRA%20-%20HGMT%20Ltd%20BRA%20Betting%20System%20Certificate%20(Annex%20I).pdf?csf=1&web=1&e=nDw1Ud','https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Hacksaw/RGS/PT_e2416782HCKBRABRA_AR%20-%20HGMT%20Ltd%20BRA%20Betting%20System%20Assessment%20Report%20(Annex%20I).pdf?csf=1&web=1&e=xoR1Ix','https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Hacksaw/RGS/PT_e2416784HCKBRABRA%20-%20HGMT%20Ltd%20BRA%20RGS%20Certificate%20(Annex%20III).pdf?csf=1&web=1&e=Jl2bQK','https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Hacksaw/RGS/PT_e2416784HCKBRABRA_AR%20-%20HGMT%20Ltd%20BRA%20RGS%20Assessment%20Report%20(Annex%20III).pdf?csf=1&web=1&e=a1uC94'])">RGS</button>
-            </div>
-          </div>
-        <h1>Jogos da Hacksaw</h1>
-        <button id="show-online" class="view-links-btn"><span class="neon-text">ON-LINE</span></button>
-        <button id="show-all" class="view-links-btn">TODOS</button>
-        <button id="show-off" class="view-links-btn"><span class="neon2-text">OFF</span></button>
-        
-        <ul id="game-list">
-            <!-- Jogos serão carregados dinamicamente -->
-        </ul>
+        <div class="rgs-links">
+          <button
+            onclick="createPopup('RGS', ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Hacksaw/RGS/EN_e2416782HCKBRABRA%20-%20HGMT%20Ltd%20BRA%20Betting%20System%20Certificate%20(Annex%20I).pdf?csf=1&web=1&e=2GxrgG', 'https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Hacksaw/RGS/EN_e2416782HCKBRABRA_AR%20-%20HGMT%20Ltd%20BRA%20Betting%20System%20Assessment%20Report.pdf?csf=1&web=1&e=4pt3ET','https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Hacksaw/RGS/EN_e2416784HCKBRABRA%20-%20HGMT%20Ltd%20BRA%20RGS%20Certificate%20(Annex%20III).pdf?csf=1&web=1&e=MGqu87','https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Hacksaw/RGS/EN_e2416784HCKBRABRA_AR%20-%20HGMT%20Ltd%20BRA%20RGS%20Assessment%20Report%20(Annex%20III).pdf?csf=1&web=1&e=mazSsH','https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Hacksaw/RGS/PT_e2416782HCKBRABRA%20-%20HGMT%20Ltd%20BRA%20Betting%20System%20Certificate%20(Annex%20I).pdf?csf=1&web=1&e=nDw1Ud','https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Hacksaw/RGS/PT_e2416782HCKBRABRA_AR%20-%20HGMT%20Ltd%20BRA%20Betting%20System%20Assessment%20Report%20(Annex%20I).pdf?csf=1&web=1&e=xoR1Ix','https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Hacksaw/RGS/PT_e2416784HCKBRABRA%20-%20HGMT%20Ltd%20BRA%20RGS%20Certificate%20(Annex%20III).pdf?csf=1&web=1&e=Jl2bQK','https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Hacksaw/RGS/PT_e2416784HCKBRABRA_AR%20-%20HGMT%20Ltd%20BRA%20RGS%20Assessment%20Report%20(Annex%20III).pdf?csf=1&web=1&e=a1uC94'])"
+          >
+            RGS
+          </button>
+        </div>
+      </div>
+      <h1>Jogos da Hacksaw</h1>
+      <button id="show-online" class="view-links-btn">
+        <span class="neon-text">ON-LINE</span>
+      </button>
+      <button id="show-all" class="view-links-btn">TODOS</button>
+      <button id="show-off" class="view-links-btn">
+        <span class="neon2-text">OFF</span>
+      </button>
+
+      <ul id="game-list">
+        <!-- Jogos serão carregados dinamicamente -->
+      </ul>
     </main>
     <div></div>
     <ul id="game-list"></ul>
 
     <script>
-        // Lista de jogos da Spribe
-        const games = [
-        { name: '<span class="neon-text">ON-LINE</span> 2 Wild 2Die', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Hacksaw/e2415497HCKBRAM%20-%20HGMT%20Ltd%20BRA%202%20Wild%202%20Die%20Online%20Game%20Testing%20Certificate%20(ID%20550425).pdf?csf=1&web=1&e=4Gsz5p','https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Hacksaw/e2415497HCKBRAM_AR%20-%20HGMT%20Ltd%20BRA%202%20Wild%202%20Die%20Online%20Game%20Assessment%20Report%20(ID%20550432).pdf?csf=1&web=1&e=snxBUc'] },
-{ name: '<span class="neon2-text">OFF</span> Baccarat', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Hacksaw/e2415522HCKBRAM%20-%20HGMT%20Ltd%20BRA%20Baccarat%20Online%20Game%20Testing%20Certificate%20(ID%20550623).pdf?csf=1&web=1&e=4jfTMa','https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Hacksaw/e2415522HCKBRAM_AR%20-%20HGMT%20Ltd%20BRA%20Baccarat%20Online%20Game%20Assessment%20Report%20(ID%20550638).pdf?csf=1&web=1&e=NeQPAP'] },
-{ name: '<span class="neon-text">ON-LINE</span> Beam Boys', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Hacksaw/e2415506HCKBRAM%20-%20HGMT%20Ltd%20BRA%20Beam%20Boys%20Online%20Game%20Testing%20Certificate%20(ID%20550535).pdf?csf=1&web=1&e=0MtfIP','https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Hacksaw/e2415506HCKBRAM_%20AR-%20HGMT%20Ltd%20BRA%20Beam%20Boys%20Online%20Game%20Assessment%20Report%20(ID%20550538).pdf?csf=1&web=1&e=XcKvsC'] },
-{ name: '<span class="neon2-text">OFF</span> Boxes', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Hacksaw/e2415525HCKBRAM%20-%20HGMT%20Ltd%20BRA%20Boxes%20Online%20Game%20Testing%20Certificate%20(ID%20550717).pdf?csf=1&web=1&e=hFeoW2','https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Hacksaw/e2415525HCKBRAM_AR%20-%20HGMT%20Ltd%20BRA%20Boxes%20Online%20Game%20Assessment%20Report%20(ID%20550655).pdf?csf=1&web=1&e=UBRzqs'] },
-{ name: '<span class="neon-text">ON-LINE</span> Cash Crew', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Hacksaw/e2415563HCKBRAM%20-%20HGMT%20Ltd%20BRA%20Cash%20Crew%20Online%20Game%20Testing%20Certificate%20(ID%20550864).pdf?csf=1&web=1&e=2zGgte','https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Hacksaw/e2415563HCKBRAM_AR%20-%20HGMT%20Ltd%20BRA%20Cash%20Crew%20Online%20Game%20Assessment%20Report%20(ID%20550859).pdf?csf=1&web=1&e=fnlzH1'] },
-{ name: '<span class="neon-text">ON-LINE</span> Chaos Crew 2', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Hacksaw/e2415570HCKBRAM%20-%20HGMT%20Ltd%20BRA%20Chaos%20Crew%202%20Online%20Game%20Testing%20Certificate%20(ID%20550903).pdf?csf=1&web=1&e=Bs575Q','https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Hacksaw/e2415570HCKBRAM_AR%20-%20HGMT%20Ltd%20BRA%20Chaos%20Crew%202%20Online%20Game%20Assessment%20Report%20(ID%20550901).pdf?csf=1&web=1&e=UseyvE'] },
-{ name: '<span class="neon-text">ON-LINE</span> Divine Drop', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Hacksaw/e2415537HCKBRAM%20-%20HGMT%20Ltd%20BRA%20Divine%20Drop%20%20Online%20Game%20Testing%20Certifcate%20(ID%20550697).pdf?csf=1&web=1&e=gdVx4U','https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Hacksaw/e2415537HCKBRAM_AR%20-%20HGMT%20Ltd%20BRA%20Divine%20Drop%20Online%20Game%20Assessment%20Report%20(ID%20550692).pdf?csf=1&web=1&e=bY44U6'] },
-{ name: '<span class="neon-text">ON-LINE</span> Dork Unit', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Hacksaw/e2415540HCKBRAM%20-%20HGMT%20Ltd%20BRA%20Dork%20Unit%20Online%20Game%20Testing%20Certificate%20(ID%20550707).pdf?csf=1&web=1&e=q1yaaK','https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Hacksaw/e2415540HCKBRAM_AR%20-%20HGMT%20Ltd%20BRA%20Dork%20Unit%20Online%20Game%20Assessment%20Report%20(ID%20550700).pdf?csf=1&web=1&e=HNg5HE'] },
-{ name: '<span class="neon-text">ON-LINE</span> Dragon s Domain™', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Hacksaw/e2415747HCKBRAM%20-%20HGMT%20Ltd%20BRA%20Dragon%27s%20Domain%20Online%20Game%20Testing%20Certificate%20(ID%20551782).pdf?csf=1&web=1&e=8M7V0t','https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Hacksaw/e2415747HCKBRAM_AR%20-%20HGMT%20Ltd%20BRA%20Dragon%E2%80%99s%20Domain%20Online%20Game%20Assessment%20Report%20(ID%20551784).pdf?csf=1&web=1&e=xg6Zbu'] },
-{ name: '<span class="neon-text">ON-LINE</span> Drop em', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Hacksaw/e2415565HCKBRAM%20-%20HGMT%20Ltd%20BRA%20Drop%27em%20Online%20Game%20Testing%20Certificate%20(ID%20550886).pdf?csf=1&web=1&e=ELk6XO','https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Hacksaw/e2415565HCKBRAM_AR%20-%20HGMT%20Ltd%20BRA%20Drop%27em%20Online%20Game%20Assessment%20Report%20(ID%20550935).pdf?csf=1&web=1&e=56gP4P'] },
-{ name: '<span class="neon-text">ON-LINE</span> Fist of Destruction', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Hacksaw/e2415507HCKBRAM%20-%20HGMT%20Ltd%20BRA%20Fist%20of%20Destruction%20Online%20Game%20Testing%20Certificate%20(ID%20550541).pdf?csf=1&web=1&e=xpi9ls','https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Hacksaw/e2415507HCKBRAM_AR%20-%20HGMT%20Ltd%20BRA%20Fist%20of%20Destruction%20Online%20Game%20Assessment%20Report%20(ID%20550543).pdf?csf=1&web=1&e=n3GJ6t'] },
-{ name: '<span class="neon-text">ON-LINE</span> Hand of Anubis', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Hacksaw/e2415558HCKBRAM%20-%20HGMT%20Ltd%20BRA%20Hand%20of%20Anubis%20Online%20Game%20Testing%20Certificate%20(ID%20550838).pdf?csf=1&web=1&e=6TCe97','https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Hacksaw/e2415558HCKBRAM_AR%20-%20HGMT%20Ltd%20BRA%20Hand%20of%20Anubis%20Online%20Game%20Assessment%20Report%20(ID%20550839).pdf?csf=1&web=1&e=iXhT7J'] },
-{ name: '<span class="neon2-text">OFF</span> Le Bandit', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Hacksaw/e2415534HCKBRAM%20-%20HGMT%20Ltd%20BRA%20Le%20Bandit%20Online%20Game%20Testing%20Certificate%20(ID%20550682).pdf?csf=1&web=1&e=ooi8Gw','https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Hacksaw/e2415534HCKBRAM_AR%20-%20HGMT%20Ltd%20BRA%20Le%20Bandit%20Online%20Game%20Assessment%20Report%20(ID%20550685).pdf?csf=1&web=1&e=PnXNN2'] },
-{ name: '<span class="neon-text">ON-LINE</span> Le Pharaoh™', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Hacksaw/e2415572HCKBRAM%20-%20HGMT%20Ltd%20BRA%20Le%20Pharaoh%20Online%20Game%20Testing%20Certificate%20(ID%20550907).pdf?csf=1&web=1&e=yB1mkO','https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Hacksaw/e2415572HCKBRAM_AR%20-%20HGMT%20Ltd%20BRA%20Le%20Pharaoh%20Online%20Game%20Assessment%20Report%20(ID%20550910).pdf?csf=1&web=1&e=hqsSe4'] },
-{ name: '<span class="neon2-text">OFF</span> Mines', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Hacksaw/e2415744HCKBRAM%20-%20HGMT%20Ltd%20BRA%20Mines%20Online%20Game%20Testing%20Certificate%20(ID%20551751).pdf?csf=1&web=1&e=IvugLd','https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Hacksaw/e2415744HCKBRAM_AR%20-%20HGMT%20Ltd%20BRA%20Mines%20Online%20Game%20Assessment%20Report%20(ID%20551752).pdf?csf=1&web=1&e=Fuqtjq'] },
-{ name: '<span class="neon2-text">OFF</span> Plinko', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Hacksaw/e2415769HCKBRAM%20-%20HGMT%20Ltd%20BRA%20Plinko%20Online%20Game%20Testing%20Certificate%20(ID%20551823).pdf?csf=1&web=1&e=UxuQnE','https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Hacksaw/e2415769HCKBRAM_AR%20-%20HGMT%20Ltd%20BRA%20Plinko%20Online%20Testing%20Game%20Assessment%20Report%20(ID%20551824).pdf?csf=1&web=1&e=Hizaup'] },
-{ name: '<span class="neon-text">ON-LINE</span> RIP City', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Hacksaw/e2415771HCKBRAM%20-%20HGMT%20Ltd%20BRA%20RIP%20City%20Online%20Game%20Testing%20Certificate%20(ID%20551846).pdf?csf=1&web=1&e=9APGeo','https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Hacksaw/e2415771HCKBRAM_AR%20-%20HGMT%20Ltd%20BRA%20%20RIP%20City%20Online%20Game%20Assessment%20Report%20(ID%20551845).pdf?csf=1&web=1&e=ye3rAp'] },
-{ name: '<span class="neon-text">ON-LINE</span> Rotten', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Hacksaw/e2415772HCKBRAM%20-%20HGMT%20Ltd%20BRA%20Rotten%20Online%20Game%20Testing%20Certificate%20(ID%20551847).pdf?csf=1&web=1&e=MIcxG8','https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Hacksaw/e2415772HCKBRAM_AR%20-%20HGMT%20Ltd%20BRA%20Rotten%20Online%20Game%20Assessment%20Report%20(ID%20551848).pdf?csf=1&web=1&e=3Ja1nT'] },
-{ name: '<span class="neon-text">ON-LINE</span> SixSixSix', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Hacksaw/e2415766HCKBRAM%20-%20HGMT%20Ltd%20BRA%20SixSixSix%20Online%20Game%20Testing%20Certificate%20(ID%20551819).pdf?csf=1&web=1&e=bM5HkI','https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Hacksaw/e2415766HCKBRAM_AR%20-%20HGMT%20Ltd%20BRA%20SixSixSix%20Online%20Game%20Assessment%20Report%20(ID%20551821).pdf?csf=1&web=1&e=7sArCN'] },
-{ name: '<span class="neon-text">ON-LINE</span> Slayers Inc', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Hacksaw/e2415760HCKBRAM%20-%20HGMT%20Ltd%20BRA%20Slayers%20Inc%20Online%20Game%20Testing%20Certificate%20(ID%20551808).pdf?csf=1&web=1&e=UenIIZ','https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Hacksaw/e2415760HCKBRAM_AR%20-%20HGMT%20Ltd%20BRA%20Slayers%20Inc%20Online%20Game%20Assessment%20Report%20(ID%20551810).pdf?csf=1&web=1&e=fMp78F'] },
-{ name: '<span class="neon2-text">OFF</span> Stack em Scratch', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Hacksaw/e2415774HCKBRAM%20-%20HGMT%20Ltd%20BRA%20Stack%27em%20Online%20Game%20Testing%20Certificate%20(ID%20551854).pdf?csf=1&web=1&e=9oUEYb','https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Hacksaw/e2415774HCKBRAM_AR%20-%20HGMT%20Ltd%20BRA%20Stack%27em%20Online%20Game%20Assessment%20Report%20(ID%20551855).pdf?csf=1&web=1&e=L0Yoed'] },
-{ name: '<span class="neon-text">ON-LINE</span> Stormforged', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Hacksaw/e2415745HCKBRAM%20-%20HGMT%20Ltd%20BRA%20Stormforged%20Online%20Game%20Testing%20Certificate%20(ID%20551762).pdf?csf=1&web=1&e=Vh6Bxv','https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Hacksaw/e2415745HCKBRAM_AR%20-%20HGMT%20Ltd%20BRA%20Stormforged%20Online%20Game%20Assessment%20Report%20(ID%20551758).pdf?csf=1&web=1&e=iKF8eo'] },
-{ name: '<span class="neon-text">ON-LINE</span> Wanted Dead or a Wild', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Hacksaw/e2415561HCKBRAM%20-%20HGMT%20Ltd%20BRA%20Wanted%20Dead%20or%20A%20Wild%20Online%20Game%20Testing%20Certificate%20(ID%20550881).pdf?csf=1&web=1&e=Ap6vGI','https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Hacksaw/e2415561HCKBRAM_AR%20-%20HGMT%20Ltd%20BRA%20Wanted%20Dead%20or%20A%20Wild%20Online%20Game%20Assessment%20Report%20(ID%20550934).pdf?csf=1&web=1&e=gSVjQw'] },
-{ name: '<span class="neon-text">ON-LINE</span> Ze Zeus', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Hacksaw/e2415578HCKBRAM%20-%20HGMT%20Ltd%20BRA%20Ze%20Zeus%20Online%20Game%20Testing%20Certificate%20(ID%20550944).pdf?csf=1&web=1&e=knoPcS','https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Hacksaw/e2415578HCKBRAM_AR%20-%20HGMT%20Ltd%20BRA%20Ze%20Zeus%20Online%20Game%20Assessment%20Report%20(ID%20550945).pdf?csf=1&web=1&e=bN8ktl'] }
-        ];
+      // Lista de jogos da Spribe
+      const games = [
+        {
+          name: '<span class="neon-text">ON-LINE</span> 2 Wild 2Die',
+          links: [
+            "https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Hacksaw/e2415497HCKBRAM%20-%20HGMT%20Ltd%20BRA%202%20Wild%202%20Die%20Online%20Game%20Testing%20Certificate%20(ID%20550425).pdf?csf=1&web=1&e=4Gsz5p",
+            "https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Hacksaw/e2415497HCKBRAM_AR%20-%20HGMT%20Ltd%20BRA%202%20Wild%202%20Die%20Online%20Game%20Assessment%20Report%20(ID%20550432).pdf?csf=1&web=1&e=snxBUc",
+          ],
+        },
+        {
+          name: '<span class="neon2-text">OFF</span> Baccarat',
+          links: [
+            "https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Hacksaw/e2415522HCKBRAM%20-%20HGMT%20Ltd%20BRA%20Baccarat%20Online%20Game%20Testing%20Certificate%20(ID%20550623).pdf?csf=1&web=1&e=4jfTMa",
+            "https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Hacksaw/e2415522HCKBRAM_AR%20-%20HGMT%20Ltd%20BRA%20Baccarat%20Online%20Game%20Assessment%20Report%20(ID%20550638).pdf?csf=1&web=1&e=NeQPAP",
+          ],
+        },
+        {
+          name: '<span class="neon-text">ON-LINE</span> Beam Boys',
+          links: [
+            "https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Hacksaw/e2415506HCKBRAM%20-%20HGMT%20Ltd%20BRA%20Beam%20Boys%20Online%20Game%20Testing%20Certificate%20(ID%20550535).pdf?csf=1&web=1&e=0MtfIP",
+            "https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Hacksaw/e2415506HCKBRAM_%20AR-%20HGMT%20Ltd%20BRA%20Beam%20Boys%20Online%20Game%20Assessment%20Report%20(ID%20550538).pdf?csf=1&web=1&e=XcKvsC",
+          ],
+        },
+        {
+          name: '<span class="neon2-text">OFF</span> Boxes',
+          links: [
+            "https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Hacksaw/e2415525HCKBRAM%20-%20HGMT%20Ltd%20BRA%20Boxes%20Online%20Game%20Testing%20Certificate%20(ID%20550717).pdf?csf=1&web=1&e=hFeoW2",
+            "https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Hacksaw/e2415525HCKBRAM_AR%20-%20HGMT%20Ltd%20BRA%20Boxes%20Online%20Game%20Assessment%20Report%20(ID%20550655).pdf?csf=1&web=1&e=UBRzqs",
+          ],
+        },
+        {
+          name: '<span class="neon2-text">OFF</span> Cash Crew',
+          links: [
+            "https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Hacksaw/e2415563HCKBRAM%20-%20HGMT%20Ltd%20BRA%20Cash%20Crew%20Online%20Game%20Testing%20Certificate%20(ID%20550864).pdf?csf=1&web=1&e=2zGgte",
+            "https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Hacksaw/e2415563HCKBRAM_AR%20-%20HGMT%20Ltd%20BRA%20Cash%20Crew%20Online%20Game%20Assessment%20Report%20(ID%20550859).pdf?csf=1&web=1&e=fnlzH1",
+          ],
+        },
+        {
+          name: '<span class="neon2-text">OFF</span> Chaos Crew 2',
+          links: [
+            "https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Hacksaw/e2415570HCKBRAM%20-%20HGMT%20Ltd%20BRA%20Chaos%20Crew%202%20Online%20Game%20Testing%20Certificate%20(ID%20550903).pdf?csf=1&web=1&e=Bs575Q",
+            "https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Hacksaw/e2415570HCKBRAM_AR%20-%20HGMT%20Ltd%20BRA%20Chaos%20Crew%202%20Online%20Game%20Assessment%20Report%20(ID%20550901).pdf?csf=1&web=1&e=UseyvE",
+          ],
+        },
+        {
+          name: '<span class="neon2-text">OFF</span> Divine Drop',
+          links: [
+            "https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Hacksaw/e2415537HCKBRAM%20-%20HGMT%20Ltd%20BRA%20Divine%20Drop%20%20Online%20Game%20Testing%20Certifcate%20(ID%20550697).pdf?csf=1&web=1&e=gdVx4U",
+            "https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Hacksaw/e2415537HCKBRAM_AR%20-%20HGMT%20Ltd%20BRA%20Divine%20Drop%20Online%20Game%20Assessment%20Report%20(ID%20550692).pdf?csf=1&web=1&e=bY44U6",
+          ],
+        },
+        {
+          name: '<span class="neon2-text">OFF</span> Dork Unit',
+          links: [
+            "https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Hacksaw/e2415540HCKBRAM%20-%20HGMT%20Ltd%20BRA%20Dork%20Unit%20Online%20Game%20Testing%20Certificate%20(ID%20550707).pdf?csf=1&web=1&e=q1yaaK",
+            "https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Hacksaw/e2415540HCKBRAM_AR%20-%20HGMT%20Ltd%20BRA%20Dork%20Unit%20Online%20Game%20Assessment%20Report%20(ID%20550700).pdf?csf=1&web=1&e=HNg5HE",
+          ],
+        },
+        {
+          name: '<span class="neon-text">ON-LINE</span> Dragon s Domain™',
+          links: [
+            "https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Hacksaw/e2415747HCKBRAM%20-%20HGMT%20Ltd%20BRA%20Dragon%27s%20Domain%20Online%20Game%20Testing%20Certificate%20(ID%20551782).pdf?csf=1&web=1&e=8M7V0t",
+            "https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Hacksaw/e2415747HCKBRAM_AR%20-%20HGMT%20Ltd%20BRA%20Dragon%E2%80%99s%20Domain%20Online%20Game%20Assessment%20Report%20(ID%20551784).pdf?csf=1&web=1&e=xg6Zbu",
+          ],
+        },
+        {
+          name: '<span class="neon2-text">OFF</span> Drop em',
+          links: [
+            "https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Hacksaw/e2415565HCKBRAM%20-%20HGMT%20Ltd%20BRA%20Drop%27em%20Online%20Game%20Testing%20Certificate%20(ID%20550886).pdf?csf=1&web=1&e=ELk6XO",
+            "https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Hacksaw/e2415565HCKBRAM_AR%20-%20HGMT%20Ltd%20BRA%20Drop%27em%20Online%20Game%20Assessment%20Report%20(ID%20550935).pdf?csf=1&web=1&e=56gP4P",
+          ],
+        },
+        {
+          name: '<span class="neon-text">ON-LINE</span> Fist of Destruction',
+          links: [
+            "https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Hacksaw/e2415507HCKBRAM%20-%20HGMT%20Ltd%20BRA%20Fist%20of%20Destruction%20Online%20Game%20Testing%20Certificate%20(ID%20550541).pdf?csf=1&web=1&e=xpi9ls",
+            "https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Hacksaw/e2415507HCKBRAM_AR%20-%20HGMT%20Ltd%20BRA%20Fist%20of%20Destruction%20Online%20Game%20Assessment%20Report%20(ID%20550543).pdf?csf=1&web=1&e=n3GJ6t",
+          ],
+        },
+        {
+          name: '<span class="neon-text">ON-LINE</span> Hand of Anubis',
+          links: [
+            "https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Hacksaw/e2415558HCKBRAM%20-%20HGMT%20Ltd%20BRA%20Hand%20of%20Anubis%20Online%20Game%20Testing%20Certificate%20(ID%20550838).pdf?csf=1&web=1&e=6TCe97",
+            "https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Hacksaw/e2415558HCKBRAM_AR%20-%20HGMT%20Ltd%20BRA%20Hand%20of%20Anubis%20Online%20Game%20Assessment%20Report%20(ID%20550839).pdf?csf=1&web=1&e=iXhT7J",
+          ],
+        },
+        {
+          name: '<span class="neon2-text">OFF</span> Le Bandit',
+          links: [
+            "https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Hacksaw/e2415534HCKBRAM%20-%20HGMT%20Ltd%20BRA%20Le%20Bandit%20Online%20Game%20Testing%20Certificate%20(ID%20550682).pdf?csf=1&web=1&e=ooi8Gw",
+            "https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Hacksaw/e2415534HCKBRAM_AR%20-%20HGMT%20Ltd%20BRA%20Le%20Bandit%20Online%20Game%20Assessment%20Report%20(ID%20550685).pdf?csf=1&web=1&e=PnXNN2",
+          ],
+        },
+        {
+          name: '<span class="neon-text">ON-LINE</span> Le Pharaoh™',
+          links: [
+            "https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Hacksaw/e2415572HCKBRAM%20-%20HGMT%20Ltd%20BRA%20Le%20Pharaoh%20Online%20Game%20Testing%20Certificate%20(ID%20550907).pdf?csf=1&web=1&e=yB1mkO",
+            "https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Hacksaw/e2415572HCKBRAM_AR%20-%20HGMT%20Ltd%20BRA%20Le%20Pharaoh%20Online%20Game%20Assessment%20Report%20(ID%20550910).pdf?csf=1&web=1&e=hqsSe4",
+          ],
+        },
+        {
+          name: '<span class="neon2-text">OFF</span> Mines',
+          links: [
+            "https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Hacksaw/e2415744HCKBRAM%20-%20HGMT%20Ltd%20BRA%20Mines%20Online%20Game%20Testing%20Certificate%20(ID%20551751).pdf?csf=1&web=1&e=IvugLd",
+            "https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Hacksaw/e2415744HCKBRAM_AR%20-%20HGMT%20Ltd%20BRA%20Mines%20Online%20Game%20Assessment%20Report%20(ID%20551752).pdf?csf=1&web=1&e=Fuqtjq",
+          ],
+        },
+        {
+          name: '<span class="neon2-text">OFF</span> Plinko',
+          links: [
+            "https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Hacksaw/e2415769HCKBRAM%20-%20HGMT%20Ltd%20BRA%20Plinko%20Online%20Game%20Testing%20Certificate%20(ID%20551823).pdf?csf=1&web=1&e=UxuQnE",
+            "https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Hacksaw/e2415769HCKBRAM_AR%20-%20HGMT%20Ltd%20BRA%20Plinko%20Online%20Testing%20Game%20Assessment%20Report%20(ID%20551824).pdf?csf=1&web=1&e=Hizaup",
+          ],
+        },
+        {
+          name: '<span class="neon-text">ON-LINE</span> RIP City',
+          links: [
+            "https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Hacksaw/e2415771HCKBRAM%20-%20HGMT%20Ltd%20BRA%20RIP%20City%20Online%20Game%20Testing%20Certificate%20(ID%20551846).pdf?csf=1&web=1&e=9APGeo",
+            "https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Hacksaw/e2415771HCKBRAM_AR%20-%20HGMT%20Ltd%20BRA%20%20RIP%20City%20Online%20Game%20Assessment%20Report%20(ID%20551845).pdf?csf=1&web=1&e=ye3rAp",
+          ],
+        },
+        {
+          name: '<span class="neon-text">ON-LINE</span> Rotten',
+          links: [
+            "https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Hacksaw/e2415772HCKBRAM%20-%20HGMT%20Ltd%20BRA%20Rotten%20Online%20Game%20Testing%20Certificate%20(ID%20551847).pdf?csf=1&web=1&e=MIcxG8",
+            "https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Hacksaw/e2415772HCKBRAM_AR%20-%20HGMT%20Ltd%20BRA%20Rotten%20Online%20Game%20Assessment%20Report%20(ID%20551848).pdf?csf=1&web=1&e=3Ja1nT",
+          ],
+        },
+        {
+          name: '<span class="neon-text">ON-LINE</span> SixSixSix',
+          links: [
+            "https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Hacksaw/e2415766HCKBRAM%20-%20HGMT%20Ltd%20BRA%20SixSixSix%20Online%20Game%20Testing%20Certificate%20(ID%20551819).pdf?csf=1&web=1&e=bM5HkI",
+            "https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Hacksaw/e2415766HCKBRAM_AR%20-%20HGMT%20Ltd%20BRA%20SixSixSix%20Online%20Game%20Assessment%20Report%20(ID%20551821).pdf?csf=1&web=1&e=7sArCN",
+          ],
+        },
+        {
+          name: '<span class="neon2-text">OFF</span> Slayers Inc',
+          links: [
+            "https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Hacksaw/e2415760HCKBRAM%20-%20HGMT%20Ltd%20BRA%20Slayers%20Inc%20Online%20Game%20Testing%20Certificate%20(ID%20551808).pdf?csf=1&web=1&e=UenIIZ",
+            "https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Hacksaw/e2415760HCKBRAM_AR%20-%20HGMT%20Ltd%20BRA%20Slayers%20Inc%20Online%20Game%20Assessment%20Report%20(ID%20551810).pdf?csf=1&web=1&e=fMp78F",
+          ],
+        },
+        {
+          name: '<span class="neon2-text">OFF</span> Stack em Scratch',
+          links: [
+            "https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Hacksaw/e2415774HCKBRAM%20-%20HGMT%20Ltd%20BRA%20Stack%27em%20Online%20Game%20Testing%20Certificate%20(ID%20551854).pdf?csf=1&web=1&e=9oUEYb",
+            "https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Hacksaw/e2415774HCKBRAM_AR%20-%20HGMT%20Ltd%20BRA%20Stack%27em%20Online%20Game%20Assessment%20Report%20(ID%20551855).pdf?csf=1&web=1&e=L0Yoed",
+          ],
+        },
+        {
+          name: '<span class="neon2-text">OFF</span> Stormforged',
+          links: [
+            "https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Hacksaw/e2415745HCKBRAM%20-%20HGMT%20Ltd%20BRA%20Stormforged%20Online%20Game%20Testing%20Certificate%20(ID%20551762).pdf?csf=1&web=1&e=Vh6Bxv",
+            "https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Hacksaw/e2415745HCKBRAM_AR%20-%20HGMT%20Ltd%20BRA%20Stormforged%20Online%20Game%20Assessment%20Report%20(ID%20551758).pdf?csf=1&web=1&e=iKF8eo",
+          ],
+        },
+        {
+          name: '<span class="neon2-text">OFF</span> Wanted Dead or a Wild',
+          links: [
+            "https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Hacksaw/e2415561HCKBRAM%20-%20HGMT%20Ltd%20BRA%20Wanted%20Dead%20or%20A%20Wild%20Online%20Game%20Testing%20Certificate%20(ID%20550881).pdf?csf=1&web=1&e=Ap6vGI",
+            "https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Hacksaw/e2415561HCKBRAM_AR%20-%20HGMT%20Ltd%20BRA%20Wanted%20Dead%20or%20A%20Wild%20Online%20Game%20Assessment%20Report%20(ID%20550934).pdf?csf=1&web=1&e=gSVjQw",
+          ],
+        },
+        {
+          name: '<span class="neon-text">ON-LINE</span> Ze Zeus',
+          links: [
+            "https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Hacksaw/e2415578HCKBRAM%20-%20HGMT%20Ltd%20BRA%20Ze%20Zeus%20Online%20Game%20Testing%20Certificate%20(ID%20550944).pdf?csf=1&web=1&e=knoPcS",
+            "https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Hacksaw/e2415578HCKBRAM_AR%20-%20HGMT%20Ltd%20BRA%20Ze%20Zeus%20Online%20Game%20Assessment%20Report%20(ID%20550945).pdf?csf=1&web=1&e=bN8ktl",
+          ],
+        },
+      ];
     </script>
 
-    <script src="scripts.js"></script> <!-- Inclui o arquivo JavaScript -->
-</body>
+    <script src="scripts.js"></script>
+    <!-- Inclui o arquivo JavaScript -->
+  </body>
 </html>
