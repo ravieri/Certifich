@@ -1,77 +1,240 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quickspin - Jogos</title>
-    <link rel="stylesheet" href="styles2.css">
-</head>
-<body>
-    <header id="topo">
-        <div class="logo">
-            <a href="home.html" class="back-home">⬅ Voltar ao Home</a>
-            H2<span>BET</span>
-        </div>
-    </header>
-    <main class="content">
-        <!-- Barra de Pesquisa -->
-        <div class="search-container">
-            <input type="text" id="searchBar" class="search-bar" placeholder="Pesquisar Jogo..." oninput="searchGames()">
-        </div>
-        <div class="link-table">
-            <div class="rng-links">
-              <button onclick="createPopup('RNG', ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Quickspin/RNG%20certificates/e2416857QSABRA%20-%20VS%20Technology%20Limited%20BRA%20RNG%20Report%20Quickspin%20RNG%201.0%20(11%202024)%20(ID%20556831).pdf?csf=1&web=1&e=A58tu8','https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Quickspin/RNG%20certificates/e2416860QSABRA%20-%20VS%20Technology%20Limited%20BRA%20RNG%20Report%20Quickspin%20RNG%202.0%20(11%202024)%20(ID%20556835).pdf?csf=1&web=1&e=OKTzCi','https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Quickspin/RNG%20certificates/e2416857QSABRA_AR%20%20-%20VS%20Technology%20Limited%20BRA%20RNG%20Report%20Quickspin%20RNG%201.0%20(11%202024)%20(ID%20556832).pdf?csf=1&web=1&e=KbMgnG','https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Quickspin/RNG%20certificates/e2416860QSABRA_AR%20-%20VS%20Technology%20Limited%20BRA%20RNG%20Report%20Quickspin%20RNG%202.0%20(11%202024)%20(ID%20556836).pdf?csf=1&web=1&e=3Wyq4X'])">RNG</button>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Quickspin - Jogos</title>
+        <link rel="stylesheet" href="styles2.css" />
+    </head>
+    <body>
+        <header id="topo">
+            <div class="logo">
+                <a href="home.html" class="back-home">⬅ Voltar ao Home</a>
+                H2<span>BET</span>
             </div>
-            <div class="rgs-links">
-              <button onclick="createPopup('RGS', ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Quickspin/Platform%20certificates/PT_e2415886QSABRABRA%20-%20VS%20Technology%20Limited%20BRA%20Platform%20Review%20Annex%20I%20Certificate%20(ID%20552386).pdf?csf=1&web=1&e=4RW78w','https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Quickspin/Platform%20certificates/PT_e2415886QSABRABRA_AR%20-%20VS%20Technology%20Limited%20BRA%20Betting%20System%20Platform%20Review%20Report(11%202024)%20(ID%20554882).pdf?csf=1&web=1&e=L35emW','https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Quickspin/Platform%20certificates/PT_e2415887QSABRABRA%20-%20VS%20Technology%20Limited%20BRA%20Platform%20Review%20Annex%20III%20Certificate%20(ID%20552388).pdf?csf=1&web=1&e=WPJmcf','https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Quickspin/Platform%20certificates/PT_e2415887QSABRABRA_AR%20-%20VS%20Technology%20BRA%20Remote%20Game%20Server%20(RGS)%20Platform%20Review%20Report(11%202024)%20(ID%20554887).pdf?csf=1&web=1&e=NcHTgT'])">RGS</button>
+        </header>
+        <main class="content">
+            <!-- Barra de Pesquisa -->
+            <div class="search-container">
+                <input
+                    type="text"
+                    id="searchBar"
+                    class="search-bar"
+                    placeholder="Pesquisar Jogo..."
+                    oninput="searchGames()"
+                />
             </div>
-          </div>
-        <h1>Jogos da Quickspin</h1>
-        <button id="show-online" class="view-links-btn"><span class="neon-text">ON-LINE</span></button>
-        <button id="show-all" class="view-links-btn">TODOS</button>
-        <button id="show-off" class="view-links-btn"><span class="neon2-text">OFF</span></button>
-        
-        <ul id="game-list">
-            <!-- Jogos serão carregados dinamicamente -->
-        </ul>
-    </main>
-    <div></div>
-    <ul id="game-list"></ul>
+            <div class="link-table">
+                <div class="rng-links">
+                    <button
+                        onclick="createPopup('RNG', ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Quickspin/RNG%20certificates/e2416857QSABRA%20-%20VS%20Technology%20Limited%20BRA%20RNG%20Report%20Quickspin%20RNG%201.0%20(11%202024)%20(ID%20556831).pdf?csf=1&web=1&e=A58tu8','https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Quickspin/RNG%20certificates/e2416860QSABRA%20-%20VS%20Technology%20Limited%20BRA%20RNG%20Report%20Quickspin%20RNG%202.0%20(11%202024)%20(ID%20556835).pdf?csf=1&web=1&e=OKTzCi','https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Quickspin/RNG%20certificates/e2416857QSABRA_AR%20%20-%20VS%20Technology%20Limited%20BRA%20RNG%20Report%20Quickspin%20RNG%201.0%20(11%202024)%20(ID%20556832).pdf?csf=1&web=1&e=KbMgnG','https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Quickspin/RNG%20certificates/e2416860QSABRA_AR%20-%20VS%20Technology%20Limited%20BRA%20RNG%20Report%20Quickspin%20RNG%202.0%20(11%202024)%20(ID%20556836).pdf?csf=1&web=1&e=3Wyq4X'])"
+                    >
+                        RNG
+                    </button>
+                </div>
+                <div class="rgs-links">
+                    <button
+                        onclick="createPopup('RGS', ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Quickspin/Platform%20certificates/PT_e2415886QSABRABRA%20-%20VS%20Technology%20Limited%20BRA%20Platform%20Review%20Annex%20I%20Certificate%20(ID%20552386).pdf?csf=1&web=1&e=4RW78w','https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Quickspin/Platform%20certificates/PT_e2415886QSABRABRA_AR%20-%20VS%20Technology%20Limited%20BRA%20Betting%20System%20Platform%20Review%20Report(11%202024)%20(ID%20554882).pdf?csf=1&web=1&e=L35emW','https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Quickspin/Platform%20certificates/PT_e2415887QSABRABRA%20-%20VS%20Technology%20Limited%20BRA%20Platform%20Review%20Annex%20III%20Certificate%20(ID%20552388).pdf?csf=1&web=1&e=WPJmcf','https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Quickspin/Platform%20certificates/PT_e2415887QSABRABRA_AR%20-%20VS%20Technology%20BRA%20Remote%20Game%20Server%20(RGS)%20Platform%20Review%20Report(11%202024)%20(ID%20554887).pdf?csf=1&web=1&e=NcHTgT'])"
+                    >
+                        RGS
+                    </button>
+                </div>
+            </div>
+            <h1>Jogos da Quickspin</h1>
+            <button id="show-online" class="view-links-btn">
+                <span class="neon-text">ON-LINE</span>
+            </button>
+            <button id="show-all" class="view-links-btn">TODOS</button>
+            <button id="show-off" class="view-links-btn">
+                <span class="neon2-text">OFF</span>
+            </button>
 
-    <script>
-        // Lista de jogos da Spribe
-        const games = [
-        { name: '<span class="neon2-text">OFF</span> Artemis vs Medusa', links: ['https://h2grupo-my.sharepoint.com/personal/diego_macedo_h2grupo_com/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fdiego%5Fmacedo%5Fh2grupo%5Fcom%2FDocuments%2F%C3%81rea%20de%20Trabalho%2Fprovedores%20certificados%2FAinda%20n%C3%A3o%20foram%20enviados%2FQuickspin%2FGame%20certificates%2FBatch%201%20part%201%2Fe2417102QSABRAM%20%2D%20VS%20Technology%20Limited%20BRA%20Sticky%20Bandits%20Online%20Game%20Testing%20Certificate%20%28ID%20558122%29%2Epdf&parent=%2Fpersonal%2Fdiego%5Fmacedo%5Fh2grupo%5Fcom%2FDocuments%2F%C3%81rea%20de%20Trabalho%2Fprovedores%20certificados%2FAinda%20n%C3%A3o%20foram%20enviados%2FQuickspin%2FGame%20certificates%2FBatch%201%20part%201','https://h2grupo-my.sharepoint.com/personal/diego_macedo_h2grupo_com/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fdiego%5Fmacedo%5Fh2grupo%5Fcom%2FDocuments%2F%C3%81rea%20de%20Trabalho%2Fprovedores%20certificados%2FAinda%20n%C3%A3o%20foram%20enviados%2FQuickspin%2FGame%20certificates%2FBatch%201%20part%201%2Fe2417102QSABRAM%5FAR%20%2D%20VS%20Technology%20Limited%20BRA%20Sticky%20Bandits%20Online%20Game%20Assessment%20Report%20%28ID%20558123%29%2Epdf&parent=%2Fpersonal%2Fdiego%5Fmacedo%5Fh2grupo%5Fcom%2FDocuments%2F%C3%81rea%20de%20Trabalho%2Fprovedores%20certificados%2FAinda%20n%C3%A3o%20foram%20enviados%2FQuickspin%2FGame%20certificates%2FBatch%201%20part%201'] },
-{ name: '<span class="neon2-text">OFF</span> Big Bad Wolf', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Quickspin/Game%20certificates/Batch%201%20part%201/e2417104QSABRAM%20-%20VS%20Technology%20Limited%20BRA%20Feasting%20Fox%20Online%20Game%20Testing%20Certificate%20(ID%20558132).pdf?csf=1&web=1&e=32Lv5v','https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Quickspin/Game%20certificates/Batch%201%20part%201/e2417104QSABRAM_AR%20-%20VS%20Technology%20Limited%20BRA%20Feasting%20Fox%20Online%20Game%20Assessment%20Report%20(ID%20558131).pdf?csf=1&web=1&e=jFMR6W'] },
-{ name: '<span class="neon2-text">OFF</span> Big Bad Wolf Megaways™', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Quickspin/Game%20certificates/Batch%201%20part%201/e2417108QSABRAM%20-%20VS%20Technology%20Limited%20BRA%20Big%20Bad%20Wolf%7B3%7D%20Pigs%20of%20steel%20Online%20Game%20Certificate%20(ID%20558145).pdf?csf=1&web=1&e=uKdc20','https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Quickspin/Game%20certificates/Batch%201%20part%201/e2417108QSABRAM_AR%20-%20VS%20Technology%20Limited%20BRA%20Big%20Bad%20Wolf%7B3%7D%20Pigs%20of%20steel%20Game%20Assessment%20Report%20(ID%20558147).pdf?csf=1&web=1&e=gjC1om'] },
-{ name: '<span class="neon2-text">OFF</span> Big Bad Wolf: Pigs of Steel', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Quickspin/Game%20certificates/Batch%201%20part%201/e2417110QSABRAM%20-%20VS%20Technology%20Limited%20BRA%20Artemis%20vs%20Medusa%20Online%20Game%20Testing%20Certificate%20(ID%20558152).pdf?csf=1&web=1&e=WQVYm9','https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Quickspin/Game%20certificates/Batch%201%20part%201/e2417110QSABRAM_AR%20-%20VS%20Technology%20Limited%20BRA%20Artemis%20vs%20Medusa%20Online%20Game%20Assessment%20Report%20(ID%20558154).pdf?csf=1&web=1&e=eHxToI'] },
-{ name: '<span class="neon2-text">OFF</span> Book of Inferno', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Quickspin/Game%20certificates/Batch%201%20part%201/e2417112QSABRAM%20-%20VS%20Technology%20Limited%20BRA%20Ghost%20Glyph%20Online%20Game%20Testing%20Certificate%20(ID%20558169).pdf?csf=1&web=1&e=EoKbsi','https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Quickspin/Game%20certificates/Batch%201%20part%201/e2417112QSABRAM_AR%20-%20VS%20Technology%20Limited%20BRA%20Ghost%20Glyph%20Online%20Game%20Assessment%20Report%20(ID%20558165).pdf?csf=1&web=1&e=IYoPKE'] },
-{ name: '<span class="neon2-text">OFF</span> Brawlers Bar Cash Collect™', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Quickspin/Game%20certificates/Batch%201%20part%201/e2417115QSABRAM%20-%20VS%20Technology%20Limited%20BRA%20Golden%20Glyph%203%20Online%20Game%20Testing%20Certificate%20(ID%20558166).pdf?csf=1&web=1&e=zDHTa3','https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Quickspin/Game%20certificates/Batch%201%20part%201/e2417115QSABRAM_AR%20-%20VS%20Technology%20Limited%20BRA%20Golden%20Glyph%203%20Online%20Game%20Assessment%20Report%20(ID%20558168).pdf?csf=1&web=1&e=VmwoWn'] },
-{ name: '<span class="neon2-text">OFF</span> Candy Glyph', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Quickspin/Game%20certificates/Batch%201%20part%201/e2417117QSABRAM%20-%20VS%20Technology%20Limited%20BRA%20Golden%20Glyph%20Online%20Game%20Testing%20Certificate%20(ID%20558174).pdf?csf=1&web=1&e=bUT7B3','https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Quickspin/Game%20certificates/Batch%201%20part%201/e2417117QSABRAM_AR%20-%20VS%20Technology%20Limited%20BRA%20Golden%20Glyph%20Online%20Game%20Assessment%20Report%20(ID%20558173).pdf?csf=1&web=1&e=Uon9HB'] },
-{ name: '<span class="neon2-text">OFF</span> Catrina s Coins', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Quickspin/Game%20certificates/Batch%201%20part%201/e2417119QSABRAM%20-%20VS%20Technology%20Limited%20BRA%20Sticky%20Bandits%203%7B3%7D%20Most%20Wanted%20Testing%20Certificate%20(ID%20558176).pdf?csf=1&web=1&e=HcS4A8','https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Quickspin/Game%20certificates/Batch%201%20part%201/e2417119QSABRAM_AR%20-%20VS%20Technology%20Limited%20BRA%20Sticky%20Bandits%203%7B3%7D%20Most%20Wanted%20Game%20Assessment%20Report%20(ID%20558178).pdf?csf=1&web=1&e=7fChVS'] },
-{ name: '<span class="neon2-text">OFF</span> Eastem Emeralds', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Quickspin/Game%20certificates/Batch%201%20part%201/e2417124QSABRAM%20-%20VS%20Technology%20Limited%20BRA%20Big%20Bad%20Wolf%20Online%20Game%20Testing%20Certificate%20(ID%20558185).pdf?csf=1&web=1&e=NCcrIb','https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Quickspin/Game%20certificates/Batch%201%20part%201/e2417124QSABRAM_AR%20-%20VS%20Technology%20Limited%20BRA%20Big%20Bad%20Wolf%20Online%20Game%20Assessment%20Report%20(ID%20558189).pdf?csf=1&web=1&e=TbvhJu'] },
-{ name: '<span class="neon2-text">OFF</span> Eastem Emeralds Megaways™', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Quickspin/Game%20certificates/Batch%201%20part%201/e2417128QSABRAM%20-%20VS%20Technology%20Limited%20BRA%20Loco%20the%20Monkey%20Online%20Game%20Testing%20Certificate%20(ID%20558195).pdf?csf=1&web=1&e=q2BrbS','https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Quickspin/Game%20certificates/Batch%201%20part%201/e2417128QSABRAM_AR%20-%20VS%20Technology%20Limited%20BRA%20Loco%20the%20Monkey%20Online%20Game%20Assessment%20Report%20(ID%20558197).pdf?csf=1&web=1&e=efmtym'] },
-{ name: '<span class="neon2-text">OFF</span> Epic Fish Adventure', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Quickspin/Game%20certificates/Batch%201%20part%201/e2417130QSABRAM%20-%20VS%20Technology%20Limited%20BRA%20Big%20Bad%20Wolf%20Megaways%20Online%20Game%20Testing%20Certificate%20(ID%20558199).pdf?csf=1&web=1&e=QjMbO8','https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Quickspin/Game%20certificates/Batch%201%20part%201/e2417130QSABRAM_AR%20-%20VS%20Technology%20Limited%20BRA%20Big%20Bad%20Wolf%20Megaways%20Game%20Assessment%20Report%20(ID%20558201).pdf?csf=1&web=1&e=EbaFMl'] },
-{ name: '<span class="neon2-text">OFF</span> Feasting Fox', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Quickspin/Game%20certificates/Batch%201%20part%201/e2417132QSABRAM%20-%20VS%20Technology%20Limited%20BRA%20Sakura%20Fortune%20Online%20Game%20Testing%20Certificate%20(ID%20558202).pdf?csf=1&web=1&e=eBxvCQ','https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Quickspin/Game%20certificates/Batch%201%20part%201/e2417132QSABRAM_AR%20-%20VS%20Technology%20Limited%20BRA%20Sakura%20Fortune%20Online%20Game%20Assessment%20Report%20(ID%20558205).pdf?csf=1&web=1&e=JE5NjR'] },
-{ name: '<span class="neon2-text">OFF</span> Ghost Glyph', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Quickspin/Game%20certificates/Batch%201%20part%201/e2417134QSABRAM%20-%20VS%20Technology%20Limited%20BRA%20Book%20of%20Inferno%20Online%20Game%20Testing%20Certificate%20(ID%20558207).pdf?csf=1&web=1&e=JMq4RA','https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Quickspin/Game%20certificates/Batch%201%20part%201/e2417134QSABRAM_AR%20-%20VS%20Technology%20Limited%20BRA%20Book%20of%20Inferno%20Online%20Game%20Assessment%20Report%20(ID%20558209).pdf?csf=1&web=1&e=nNElnD'] },
-{ name: '<span class="neon2-text">OFF</span> Golden Glyph', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Quickspin/Game%20certificates/Batch%201%20part%201/e2417136QSABRAM%20-%20VS%20Technology%20Limited%20BRA%20Tiger_s%20Glory%20Online%20Game%20Testing%20Certificate%20(ID%20558212).pdf?csf=1&web=1&e=SzLP5n','https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Quickspin/Game%20certificates/Batch%201%20part%201/e2417136QSABRAM_AR%20-%20VS%20Technology%20Limited%20BRA%20Tiger_s%20Glory%20Online%20Game%20Assessment%20Report%20(ID%20558214).pdf?csf=1&web=1&e=PnvW24'] },
-{ name: '<span class="neon2-text">OFF</span> Golden Glyph 3', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Quickspin/Game%20certificates/Batch%201%20part%201/e2417138QSABRAM%20-%20VS%20Technology%20Limited%20BRA%20Catrina_s%20Coins%20Online%20Game%20Testing%20Certificate%20(ID%20558216).pdf?csf=1&web=1&e=vij0Pd','https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Quickspin/Game%20certificates/Batch%201%20part%201/e2417138QSABRAM_AR%20-%20VS%20Technology%20Limited%20BRA%20Catrina_s%20Coins%20Online%20Game%20Assessment%20Report%20(ID%20558217).pdf?csf=1&web=1&e=rWcAGg'] },
-{ name: '<span class="neon2-text">OFF</span> Hall of the Mountain King', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Quickspin/Game%20certificates/Batch%201%20part%201/e2417140QSABRAM%20-%20VS%20Technology%20Limited%20BRA%20Sticky%20Bandits%20Unchained%20Game%20Testing%20Certificate%20(ID%20558220).pdf?csf=1&web=1&e=aqqFft','https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Quickspin/Game%20certificates/Batch%201%20part%201/e2417140QSABRAM_AR%20-%20VS%20Technology%20Limited%20BRA%20Sticky%20Bandits%20Unchained%20Game%20Assessment%20Report%20(ID%20558221).pdf?csf=1&web=1&e=msUscV'] },
-{ name: '<span class="neon2-text">OFF</span> Hidden Valley 2', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Quickspin/Game%20certificates/Batch%201%20part%201/e2417142QSABRAM%20-%20VS%20Technology%20Limited%20BRA%20Warp%20Wreckers%20POWER%20GLYPH%20Game%20Testing%20Certificate%20(ID%20558224).pdf?csf=1&web=1&e=lFfNPu','https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Quickspin/Game%20certificates/Batch%201%20part%201/e2417142QSABRAM_AR%20-%20VS%20Technology%20Limited%20BRA%20Warp%20Wreckers%20POWER%20GLYPH%20Game%20Assessment%20Report%20(ID%20558226).pdf?csf=1&web=1&e=ok2UZC'] },
-{ name: '<span class="neon2-text">OFF</span> Loco the Monkey', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Quickspin/Game%20certificates/Batch%201%20part%201/e2417144QSABRAM%20-%20VS%20Technology%20Limited%20BRA%20Candy%20Glyph%20Online%20Game%20Testing%20Certificate%20(ID%20558228).pdf?csf=1&web=1&e=AN5C9T','https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Quickspin/Game%20certificates/Batch%201%20part%201/e2417144QSABRAM_AR%20-%20VS%20Technology%20Limited%20BRA%20Candy%20Glyph%20Online%20Game%20Assessment%20Report%20(ID%20558230).pdf?csf=1&web=1&e=ScLe11'] },
-{ name: '<span class="neon2-text">OFF</span> Midas Coins', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Quickspin/Game%20certificates/Batch%201%20part%201/e2417146QSABRAM%20-%20VS%20Technology%20Limited%20BRA%20Eastern%20Emeralds%20Online%20Game%20Testing%20Certificate%20(ID%20558235).pdf?csf=1&web=1&e=kZ0514','https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Quickspin/Game%20certificates/Batch%201%20part%201/e2417146QSABRAM_AR%20-%20VS%20Technology%20Limited%20BRA%20Eastern%20Emeralds%20Online%20Game%20Assessment%20Report%20(ID%20558236).pdf?csf=1&web=1&e=egc6hO'] },
-{ name: '<span class="neon2-text">OFF</span> Pearl o  Plinko', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Quickspin/Game%20certificates/Batch%201%20part%201/e2417148QSABRAM%20-%20VS%20Technology%20Limited%20BRA%20Eastern%20Emeralds%20Megaways%20Online%20Game%20Testing%20Certificat%20(ID%20558239).pdf?csf=1&web=1&e=QkIseI','https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Quickspin/Game%20certificates/Batch%201%20part%201/e2417148QSABRAM_AR%20-%20VS%20Technology%20Limited%20BRA%20Eastern%20Emeralds%20Megaways%20Game%20Assessment%20Report%20(ID%20558240).pdf?csf=1&web=1&e=NtuDvP'] },
-{ name: '<span class="neon2-text">OFF</span> Pineapple Crush', links: [] },
-{ name: '<span class="neon2-text">OFF</span> Sakura Fortune', links: [] },
-{ name: '<span class="neon2-text">OFF</span> Sticky Bandits', links: [] },
-{ name: '<span class="neon2-text">OFF</span> Sticky Bandits 3 Most Wanted', links: [] },
-{ name: '<span class="neon2-text">OFF</span> Sticky Bandits Unchained', links: [] },
-{ name: '<span class="neon2-text">OFF</span> Sticky Bandits: Wild Returns', links: [] },
-{ name: '<span class="neon2-text">OFF</span> Tiger s Glory Ultra', links: [] },
-{ name: '<span class="neon2-text">OFF</span> Warp Wreckers Power Glyph™', links: []}
-        ];
-    </script>
+            <ul id="game-list">
+                <!-- Jogos serão carregados dinamicamente -->
+            </ul>
+        </main>
+        <div></div>
+        <ul id="game-list"></ul>
 
-    <script src="scripts.js"></script> <!-- Inclui o arquivo JavaScript -->
-</body>
+        <script>
+            // Lista de jogos da Spribe
+            const games = [
+                {
+                    name: '<span class="neon2-text">OFF</span> Artemis vs Medusa',
+                    links: [
+                        'https://h2grupo-my.sharepoint.com/personal/diego_macedo_h2grupo_com/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fdiego%5Fmacedo%5Fh2grupo%5Fcom%2FDocuments%2F%C3%81rea%20de%20Trabalho%2Fprovedores%20certificados%2FAinda%20n%C3%A3o%20foram%20enviados%2FQuickspin%2FGame%20certificates%2FBatch%201%20part%201%2Fe2417102QSABRAM%20%2D%20VS%20Technology%20Limited%20BRA%20Sticky%20Bandits%20Online%20Game%20Testing%20Certificate%20%28ID%20558122%29%2Epdf&parent=%2Fpersonal%2Fdiego%5Fmacedo%5Fh2grupo%5Fcom%2FDocuments%2F%C3%81rea%20de%20Trabalho%2Fprovedores%20certificados%2FAinda%20n%C3%A3o%20foram%20enviados%2FQuickspin%2FGame%20certificates%2FBatch%201%20part%201',
+                        'https://h2grupo-my.sharepoint.com/personal/diego_macedo_h2grupo_com/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fdiego%5Fmacedo%5Fh2grupo%5Fcom%2FDocuments%2F%C3%81rea%20de%20Trabalho%2Fprovedores%20certificados%2FAinda%20n%C3%A3o%20foram%20enviados%2FQuickspin%2FGame%20certificates%2FBatch%201%20part%201%2Fe2417102QSABRAM%5FAR%20%2D%20VS%20Technology%20Limited%20BRA%20Sticky%20Bandits%20Online%20Game%20Assessment%20Report%20%28ID%20558123%29%2Epdf&parent=%2Fpersonal%2Fdiego%5Fmacedo%5Fh2grupo%5Fcom%2FDocuments%2F%C3%81rea%20de%20Trabalho%2Fprovedores%20certificados%2FAinda%20n%C3%A3o%20foram%20enviados%2FQuickspin%2FGame%20certificates%2FBatch%201%20part%201',
+                    ],
+                },
+                {
+                    name: '<span class="neon2-text">OFF</span> Big Bad Wolf',
+                    links: [
+                        'https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Quickspin/Game%20certificates/Batch%201%20part%201/e2417104QSABRAM%20-%20VS%20Technology%20Limited%20BRA%20Feasting%20Fox%20Online%20Game%20Testing%20Certificate%20(ID%20558132).pdf?csf=1&web=1&e=32Lv5v',
+                        'https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Quickspin/Game%20certificates/Batch%201%20part%201/e2417104QSABRAM_AR%20-%20VS%20Technology%20Limited%20BRA%20Feasting%20Fox%20Online%20Game%20Assessment%20Report%20(ID%20558131).pdf?csf=1&web=1&e=jFMR6W',
+                    ],
+                },
+                {
+                    name: '<span class="neon2-text">OFF</span> Big Bad Wolf Megaways™',
+                    links: [
+                        'https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Quickspin/Game%20certificates/Batch%201%20part%201/e2417108QSABRAM%20-%20VS%20Technology%20Limited%20BRA%20Big%20Bad%20Wolf%7B3%7D%20Pigs%20of%20steel%20Online%20Game%20Certificate%20(ID%20558145).pdf?csf=1&web=1&e=uKdc20',
+                        'https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Quickspin/Game%20certificates/Batch%201%20part%201/e2417108QSABRAM_AR%20-%20VS%20Technology%20Limited%20BRA%20Big%20Bad%20Wolf%7B3%7D%20Pigs%20of%20steel%20Game%20Assessment%20Report%20(ID%20558147).pdf?csf=1&web=1&e=gjC1om',
+                    ],
+                },
+                {
+                    name: '<span class="neon2-text">OFF</span> Big Bad Wolf: Pigs of Steel',
+                    links: [
+                        'https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Quickspin/Game%20certificates/Batch%201%20part%201/e2417110QSABRAM%20-%20VS%20Technology%20Limited%20BRA%20Artemis%20vs%20Medusa%20Online%20Game%20Testing%20Certificate%20(ID%20558152).pdf?csf=1&web=1&e=WQVYm9',
+                        'https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Quickspin/Game%20certificates/Batch%201%20part%201/e2417110QSABRAM_AR%20-%20VS%20Technology%20Limited%20BRA%20Artemis%20vs%20Medusa%20Online%20Game%20Assessment%20Report%20(ID%20558154).pdf?csf=1&web=1&e=eHxToI',
+                    ],
+                },
+                {
+                    name: '<span class="neon2-text">OFF</span> Book of Inferno',
+                    links: [
+                        'https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Quickspin/Game%20certificates/Batch%201%20part%201/e2417112QSABRAM%20-%20VS%20Technology%20Limited%20BRA%20Ghost%20Glyph%20Online%20Game%20Testing%20Certificate%20(ID%20558169).pdf?csf=1&web=1&e=EoKbsi',
+                        'https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Quickspin/Game%20certificates/Batch%201%20part%201/e2417112QSABRAM_AR%20-%20VS%20Technology%20Limited%20BRA%20Ghost%20Glyph%20Online%20Game%20Assessment%20Report%20(ID%20558165).pdf?csf=1&web=1&e=IYoPKE',
+                    ],
+                },
+                {
+                    name: '<span class="neon2-text">OFF</span> Brawlers Bar Cash Collect™',
+                    links: [
+                        'https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Quickspin/Game%20certificates/Batch%201%20part%201/e2417115QSABRAM%20-%20VS%20Technology%20Limited%20BRA%20Golden%20Glyph%203%20Online%20Game%20Testing%20Certificate%20(ID%20558166).pdf?csf=1&web=1&e=zDHTa3',
+                        'https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Quickspin/Game%20certificates/Batch%201%20part%201/e2417115QSABRAM_AR%20-%20VS%20Technology%20Limited%20BRA%20Golden%20Glyph%203%20Online%20Game%20Assessment%20Report%20(ID%20558168).pdf?csf=1&web=1&e=VmwoWn',
+                    ],
+                },
+                {
+                    name: '<span class="neon2-text">OFF</span> Candy Glyph',
+                    links: [
+                        'https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Quickspin/Game%20certificates/Batch%201%20part%201/e2417117QSABRAM%20-%20VS%20Technology%20Limited%20BRA%20Golden%20Glyph%20Online%20Game%20Testing%20Certificate%20(ID%20558174).pdf?csf=1&web=1&e=bUT7B3',
+                        'https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Quickspin/Game%20certificates/Batch%201%20part%201/e2417117QSABRAM_AR%20-%20VS%20Technology%20Limited%20BRA%20Golden%20Glyph%20Online%20Game%20Assessment%20Report%20(ID%20558173).pdf?csf=1&web=1&e=Uon9HB',
+                    ],
+                },
+                {
+                    name: '<span class="neon2-text">OFF</span> Catrina s Coins',
+                    links: [
+                        'https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Quickspin/Game%20certificates/Batch%201%20part%201/e2417119QSABRAM%20-%20VS%20Technology%20Limited%20BRA%20Sticky%20Bandits%203%7B3%7D%20Most%20Wanted%20Testing%20Certificate%20(ID%20558176).pdf?csf=1&web=1&e=HcS4A8',
+                        'https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Quickspin/Game%20certificates/Batch%201%20part%201/e2417119QSABRAM_AR%20-%20VS%20Technology%20Limited%20BRA%20Sticky%20Bandits%203%7B3%7D%20Most%20Wanted%20Game%20Assessment%20Report%20(ID%20558178).pdf?csf=1&web=1&e=7fChVS',
+                    ],
+                },
+                {
+                    name: '<span class="neon2-text">OFF</span> Eastem Emeralds',
+                    links: [
+                        'https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Quickspin/Game%20certificates/Batch%201%20part%201/e2417124QSABRAM%20-%20VS%20Technology%20Limited%20BRA%20Big%20Bad%20Wolf%20Online%20Game%20Testing%20Certificate%20(ID%20558185).pdf?csf=1&web=1&e=NCcrIb',
+                        'https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Quickspin/Game%20certificates/Batch%201%20part%201/e2417124QSABRAM_AR%20-%20VS%20Technology%20Limited%20BRA%20Big%20Bad%20Wolf%20Online%20Game%20Assessment%20Report%20(ID%20558189).pdf?csf=1&web=1&e=TbvhJu',
+                    ],
+                },
+                {
+                    name: '<span class="neon2-text">OFF</span> Eastem Emeralds Megaways™',
+                    links: [
+                        'https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Quickspin/Game%20certificates/Batch%201%20part%201/e2417128QSABRAM%20-%20VS%20Technology%20Limited%20BRA%20Loco%20the%20Monkey%20Online%20Game%20Testing%20Certificate%20(ID%20558195).pdf?csf=1&web=1&e=q2BrbS',
+                        'https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Quickspin/Game%20certificates/Batch%201%20part%201/e2417128QSABRAM_AR%20-%20VS%20Technology%20Limited%20BRA%20Loco%20the%20Monkey%20Online%20Game%20Assessment%20Report%20(ID%20558197).pdf?csf=1&web=1&e=efmtym',
+                    ],
+                },
+                {
+                    name: '<span class="neon2-text">OFF</span> Epic Fish Adventure',
+                    links: [
+                        'https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Quickspin/Game%20certificates/Batch%201%20part%201/e2417130QSABRAM%20-%20VS%20Technology%20Limited%20BRA%20Big%20Bad%20Wolf%20Megaways%20Online%20Game%20Testing%20Certificate%20(ID%20558199).pdf?csf=1&web=1&e=QjMbO8',
+                        'https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Quickspin/Game%20certificates/Batch%201%20part%201/e2417130QSABRAM_AR%20-%20VS%20Technology%20Limited%20BRA%20Big%20Bad%20Wolf%20Megaways%20Game%20Assessment%20Report%20(ID%20558201).pdf?csf=1&web=1&e=EbaFMl',
+                    ],
+                },
+                {
+                    name: '<span class="neon2-text">OFF</span> Feasting Fox',
+                    links: [
+                        'https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Quickspin/Game%20certificates/Batch%201%20part%201/e2417132QSABRAM%20-%20VS%20Technology%20Limited%20BRA%20Sakura%20Fortune%20Online%20Game%20Testing%20Certificate%20(ID%20558202).pdf?csf=1&web=1&e=eBxvCQ',
+                        'https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Quickspin/Game%20certificates/Batch%201%20part%201/e2417132QSABRAM_AR%20-%20VS%20Technology%20Limited%20BRA%20Sakura%20Fortune%20Online%20Game%20Assessment%20Report%20(ID%20558205).pdf?csf=1&web=1&e=JE5NjR',
+                    ],
+                },
+                {
+                    name: '<span class="neon2-text">OFF</span> Ghost Glyph',
+                    links: [
+                        'https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Quickspin/Game%20certificates/Batch%201%20part%201/e2417134QSABRAM%20-%20VS%20Technology%20Limited%20BRA%20Book%20of%20Inferno%20Online%20Game%20Testing%20Certificate%20(ID%20558207).pdf?csf=1&web=1&e=JMq4RA',
+                        'https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Quickspin/Game%20certificates/Batch%201%20part%201/e2417134QSABRAM_AR%20-%20VS%20Technology%20Limited%20BRA%20Book%20of%20Inferno%20Online%20Game%20Assessment%20Report%20(ID%20558209).pdf?csf=1&web=1&e=nNElnD',
+                    ],
+                },
+                {
+                    name: '<span class="neon2-text">OFF</span> Golden Glyph',
+                    links: [
+                        'https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Quickspin/Game%20certificates/Batch%201%20part%201/e2417136QSABRAM%20-%20VS%20Technology%20Limited%20BRA%20Tiger_s%20Glory%20Online%20Game%20Testing%20Certificate%20(ID%20558212).pdf?csf=1&web=1&e=SzLP5n',
+                        'https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Quickspin/Game%20certificates/Batch%201%20part%201/e2417136QSABRAM_AR%20-%20VS%20Technology%20Limited%20BRA%20Tiger_s%20Glory%20Online%20Game%20Assessment%20Report%20(ID%20558214).pdf?csf=1&web=1&e=PnvW24',
+                    ],
+                },
+                {
+                    name: '<span class="neon2-text">OFF</span> Golden Glyph 3',
+                    links: [
+                        'https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Quickspin/Game%20certificates/Batch%201%20part%201/e2417138QSABRAM%20-%20VS%20Technology%20Limited%20BRA%20Catrina_s%20Coins%20Online%20Game%20Testing%20Certificate%20(ID%20558216).pdf?csf=1&web=1&e=vij0Pd',
+                        'https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Quickspin/Game%20certificates/Batch%201%20part%201/e2417138QSABRAM_AR%20-%20VS%20Technology%20Limited%20BRA%20Catrina_s%20Coins%20Online%20Game%20Assessment%20Report%20(ID%20558217).pdf?csf=1&web=1&e=rWcAGg',
+                    ],
+                },
+                {
+                    name: '<span class="neon2-text">OFF</span> Hall of the Mountain King',
+                    links: [
+                        'https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Quickspin/Game%20certificates/Batch%201%20part%201/e2417140QSABRAM%20-%20VS%20Technology%20Limited%20BRA%20Sticky%20Bandits%20Unchained%20Game%20Testing%20Certificate%20(ID%20558220).pdf?csf=1&web=1&e=aqqFft',
+                        'https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Quickspin/Game%20certificates/Batch%201%20part%201/e2417140QSABRAM_AR%20-%20VS%20Technology%20Limited%20BRA%20Sticky%20Bandits%20Unchained%20Game%20Assessment%20Report%20(ID%20558221).pdf?csf=1&web=1&e=msUscV',
+                    ],
+                },
+                {
+                    name: '<span class="neon2-text">OFF</span> Hidden Valley 2',
+                    links: [
+                        'https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Quickspin/Game%20certificates/Batch%201%20part%201/e2417142QSABRAM%20-%20VS%20Technology%20Limited%20BRA%20Warp%20Wreckers%20POWER%20GLYPH%20Game%20Testing%20Certificate%20(ID%20558224).pdf?csf=1&web=1&e=lFfNPu',
+                        'https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Quickspin/Game%20certificates/Batch%201%20part%201/e2417142QSABRAM_AR%20-%20VS%20Technology%20Limited%20BRA%20Warp%20Wreckers%20POWER%20GLYPH%20Game%20Assessment%20Report%20(ID%20558226).pdf?csf=1&web=1&e=ok2UZC',
+                    ],
+                },
+                {
+                    name: '<span class="neon2-text">OFF</span> Loco the Monkey',
+                    links: [
+                        'https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Quickspin/Game%20certificates/Batch%201%20part%201/e2417144QSABRAM%20-%20VS%20Technology%20Limited%20BRA%20Candy%20Glyph%20Online%20Game%20Testing%20Certificate%20(ID%20558228).pdf?csf=1&web=1&e=AN5C9T',
+                        'https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Quickspin/Game%20certificates/Batch%201%20part%201/e2417144QSABRAM_AR%20-%20VS%20Technology%20Limited%20BRA%20Candy%20Glyph%20Online%20Game%20Assessment%20Report%20(ID%20558230).pdf?csf=1&web=1&e=ScLe11',
+                    ],
+                },
+                {
+                    name: '<span class="neon2-text">OFF</span> Midas Coins',
+                    links: [
+                        'https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Quickspin/Game%20certificates/Batch%201%20part%201/e2417146QSABRAM%20-%20VS%20Technology%20Limited%20BRA%20Eastern%20Emeralds%20Online%20Game%20Testing%20Certificate%20(ID%20558235).pdf?csf=1&web=1&e=kZ0514',
+                        'https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Quickspin/Game%20certificates/Batch%201%20part%201/e2417146QSABRAM_AR%20-%20VS%20Technology%20Limited%20BRA%20Eastern%20Emeralds%20Online%20Game%20Assessment%20Report%20(ID%20558236).pdf?csf=1&web=1&e=egc6hO',
+                    ],
+                },
+                {
+                    name: '<span class="neon2-text">OFF</span> Pearl o  Plinko',
+                    links: [
+                        'https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Quickspin/Game%20certificates/Batch%201%20part%201/e2417148QSABRAM%20-%20VS%20Technology%20Limited%20BRA%20Eastern%20Emeralds%20Megaways%20Online%20Game%20Testing%20Certificat%20(ID%20558239).pdf?csf=1&web=1&e=QkIseI',
+                        'https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Quickspin/Game%20certificates/Batch%201%20part%201/e2417148QSABRAM_AR%20-%20VS%20Technology%20Limited%20BRA%20Eastern%20Emeralds%20Megaways%20Game%20Assessment%20Report%20(ID%20558240).pdf?csf=1&web=1&e=NtuDvP',
+                    ],
+                },
+                {
+                    name: '<span class="neon2-text">OFF</span> Pineapple Crush',
+                    links: [],
+                },
+                {
+                    name: '<span class="neon2-text">OFF</span> Sakura Fortune',
+                    links: [],
+                },
+                {
+                    name: '<span class="neon2-text">OFF</span> Sticky Bandits',
+                    links: [],
+                },
+                {
+                    name: '<span class="neon2-text">OFF</span> Sticky Bandits 3 Most Wanted',
+                    links: [],
+                },
+                {
+                    name: '<span class="neon2-text">OFF</span> Sticky Bandits Unchained',
+                    links: [],
+                },
+                {
+                    name: '<span class="neon2-text">OFF</span> Sticky Bandits: Wild Returns',
+                    links: [],
+                },
+                {
+                    name: '<span class="neon2-text">OFF</span> Tiger s Glory Ultra',
+                    links: [],
+                },
+                {
+                    name: '<span class="neon2-text">OFF</span> Warp Wreckers Power Glyph™',
+                    links: [],
+                },
+            ];
+        </script>
+
+        <script src="scripts.js"></script>
+        <!-- Inclui o arquivo JavaScript -->
+    </body>
 </html>

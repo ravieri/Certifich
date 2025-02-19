@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REDRAKE - Jogos</title>
+    <link rel="stylesheet" href="styles2.css">
+</head>
+<body>
+    <header id="topo">
+        <div class="logo">
+            <a href="home.html" class="back-home">⬅ Voltar ao Home</a>
+            H2<span>BET</span>
+        </div>
+    </header>
+
+    <main class="content">
+        <!-- Barra de Pesquisa -->
+<div class="search-container">
+    <input type="text" id="searchBar" class="search-bar" placeholder="Pesquisar Jogo..." oninput="searchGames()">
+</div>
+<div class="link-table">
+    <div class="rng-links">
+      <button onclick="createPopup('RNG', ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Desativado%20-%20Red%20Rake/RNG.BR.RAKE-OL.1004.01.01_eSigned.pdf?csf=1&web=1&e=hSiXf0','https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Desativado%20-%20Red%20Rake/RNG.BR.RAKE-OL.1004.01.01_eSigned.pdf?csf=1&web=1&e=LeaitX'])">RNG</button>
+    </div>
+    <div class="rgs-links">
+      <button onclick="createPopup('RGS', ['https://link3.com', 'https://link4.com'])">RGS</button>
+    </div>
+  </div>
+        <h1>Jogos da REDRAKE</h1>
+        <button id="show-online" class="view-links-btn"><span class="neon-text">ON-LINE</span> </button>
+        <button id="show-all" class="view-links-btn"> TODOS</button>
+        <button id="show-off" class="view-links-btn"><span class="neon2-text">OFF</span></button>
+        
+        <ul id="game-list">
+            
+            <!-- Jogos serão carregados dinamicamente -->
+        </ul>
+    </main>
+    <div>
+        
+        
+    </div>
+    <ul id="game-list"></ul>
+</div>
+<script>
+    
+            // Lista de jogos da NetEnt
+            const games = [
+            { name: '<span class="neon-text">ON-LINE</span> Super 50 Stars BR', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Desativado%20-%20Red%20Rake/PT_e2417318RRGBRAM_AR%20-%20Red%20Rake%20Tech%20SL%20BRA%20Online%20Game%20Assessment%20Report%20(ID%20560675).pdf?csf=1&web=1&e=MVtRRN'] },
+{ name: '<span class="neon-text">ON-LINE</span> Guardians of Luxor BR', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Desativado%20-%20Red%20Rake/PT_e2417318RRGBRAM_AR%20-%20Red%20Rake%20Tech%20SL%20BRA%20Online%20Game%20Assessment%20Report%20(ID%20560675).pdf?csf=1&web=1&e=MVtRRN'] },
+{ name: '<span class="neon-text">ON-LINE</span> Big Size Fishin\' BR', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Desativado%20-%20Red%20Rake/PT_e2417318RRGBRAM_AR%20-%20Red%20Rake%20Tech%20SL%20BRA%20Online%20Game%20Assessment%20Report%20(ID%20560675).pdf?csf=1&web=1&e=MVtRRN'] },
+{ name: '<span class="neon-text">ON-LINE</span> 20 000 Waves BR', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Desativado%20-%20Red%20Rake/PT_e2417318RRGBRAM_AR%20-%20Red%20Rake%20Tech%20SL%20BRA%20Online%20Game%20Assessment%20Report%20(ID%20560675).pdf?csf=1&web=1&e=MVtRRN'] }
+   
+   
+    
+   
+];
+
+
+</script>
+<script src="scripts.js"></script> <!-- Inclui o arquivo JavaScript -->
+</body>
+</html>
