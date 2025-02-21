@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1x2 Network - Jogos</title>
+    <link rel="stylesheet" href="styles2.css">
+    
+</head>
+<body>
+    <header id="topo">
+        <div class="logo">
+            <a href="home.html" class="back-home">⬅ Voltar ao Home</a>
+            H2<span>BET</span>
+        </div>
+    </header>
+
+    <main class="content">
+        <!-- Barra de Pesquisa -->
+<div class="search-container">
+    <input type="text" id="searchBar" class="search-bar" placeholder="Pesquisar Jogo..." oninput="searchGames()">
+</div>
+<div class="link-table">
+    <div class="rng-links">
+      <button onclick="createPopup('RNG', ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/1x2%20Network/RNG%20Brazil/1X2-BR-241123-01-RC-R1%20-%20RNG%20Certificate%20-%20Football%201X2%20Ltd.pdf?csf=1&web=1&e=lcDKPp','https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/1x2%20Network/RNG%20Brazil/1X2-BR-241123-01-RC-R1%20-%20Certificado%20RNG%20-%20Football%201X2%20Ltd.pdf?csf=1&web=1&e=9tcjIf'])">RNG</button>
+    </div>
+    <div class="rgs-links">
+      <button onclick="createPopup('RGS', ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/1x2%20Network/RGS%20platform/711SY-614-FTB-22-01-711.pdf?csf=1&web=1&e=hKlTd2','https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/1x2%20Network/RGS%20platform/711SY-614-FTB-22-01-711_Portuguese.pdf?csf=1&web=1&e=hSVi37'])">RGS</button>
+    </div>
+  </div>
+        <h1>Jogos da 1x2 Network</h1>
+        <button id="show-online" class="view-links-btn"><span class="neon-text">ON-LINE</span> </button>
+        <button id="show-all" class="view-links-btn"> TODOS</button>
+        <button id="show-off" class="view-links-btn"><span class="neon2-text">OFF</span></button>
+        
+        <ul id="game-list">
+            
+            <!-- Jogos serão carregados dinamicamente -->
+        </ul>
+    </main>
+    <div>
+        
+        
+    </div>
+    <ul id="game-list"></ul>
+</div>
+<script>
+    
+            // Lista de jogos da Boominggames
+            const games = [
+            { name: '<span class="neon2-text">OFF</span> APENAS GLI', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/1x2%20Network/Game%20Certificates/1X2-BR-241128-01-GC-R2%20(BR)%203%20Porky%20Banks%20Hold%20and%20Win.pdf?csf=1&web=1&e=dTFVAW','https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/1x2%20Network/Game%20Certificates/1X2-BR-241128-02-GC-R2%20(BR)%203%20Crazy%20Tikis.pdf?csf=1&web=1&e=4rGm5Y','https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/1x2%20Network/Game%20Certificates/1X2-BR-241128-03-GC-R2%20(BR)%20Minted%20Coins.pdf?csf=1&web=1&e=GGc0Sa'] },
+            
+    
+    ];
+
+
+</script>
+<script src="scripts.js"></script> <!-- Inclui o arquivo JavaScript -->
+</body>
+</html>

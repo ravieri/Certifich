@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wazdan - Jogos</title>
+    <link rel="stylesheet" href="styles2.css">
+    
+</head>
+<body>
+    <header id="topo">
+        <div class="logo">
+            <a href="home.html" class="back-home">⬅ Voltar ao Home</a>
+            H2<span>BET</span>
+        </div>
+    </header>
+
+    <main class="content">
+        <!-- Barra de Pesquisa -->
+<div class="search-container">
+    <input type="text" id="searchBar" class="search-bar" placeholder="Pesquisar Jogo..." oninput="searchGames()">
+</div>
+<div class="link-table">
+    <div class="rng-links">
+      <button onclick="createPopup('RNG', ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Desativado%20-%20Wazdan/Wazdan/Wazdan/WAZ-02-BR-241105-01-RC-R1%20-%20Certificado%20RNG%20-%20Wazdan%20Limited.pdf?csf=1&web=1&e=xBVZ9b'])">RNG</button>
+    </div>
+    <div class="rgs-links">
+      <button onclick="createPopup('RGS', [])">RGS</button>
+    </div>
+  </div>
+        <h1>Jogos da Wazdan</h1>
+        <button id="show-online" class="view-links-btn"><span class="neon-text">ON-LINE</span> </button>
+        <button id="show-all" class="view-links-btn"> TODOS</button>
+        <button id="show-off" class="view-links-btn"><span class="neon2-text">OFF</span></button>
+        
+        <ul id="game-list">
+            
+            <!-- Jogos serão carregados dinamicamente -->
+        </ul>
+    </main>
+    <div>
+        
+        
+    </div>
+    <ul id="game-list"></ul>
+</div>
+<script>
+    
+            // Lista de jogos da Boominggames
+            const games = [
+            
+            { name: '<span class="neon2-text">OFF</span> 12 Coins™ Halloween Edition', links: [] },
+    { name: '<span class="neon2-text">OFF</span> 12 Bells™', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Desativado%20-%20Wazdan/Wazdan/Wazdan/WAZ-02-BR-241114-13-GC-R1%20-12%20Bells%E2%84%A2%20(BR).pdf?csf=1&web=1&e=MOtj90'] },
+    { name: '<span class="neon2-text">OFF</span> 9 Coins™ Grand Platinum Edition Halloween Jackpots', links: [] },
+    { name: '<span class="neon2-text">OFF</span> 9 Lions\" Hold the Jackpot™ Halloween Jackpots', links: [] },
+    { name: '<span class="neon2-text">OFF</span> Hot Slot™: 777 Coins Halloween Edition', links: [] },
+    { name: '<span class="neon2-text">OFF</span> Mystery Kingdom™: Mystery Bells Halloween Edition', links: [] },
+    { name: '<span class="neon2-text">OFF</span> 9 Coins™ Grand Diamond Edition Halloween Jackpots', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Desativado%20-%20Wazdan/Wazdan/Wazdan/WAZ-02-BR-241114-04-GC-R1-9%20Coins%E2%84%A2%20Grand%20Diamond%20Edition%20(BR).pdf?csf=1&web=1&e=cW7tA3'] },
+    { name: '<span class="neon2-text">OFF</span> Mighty Wild™: Panther Grand Gold Edition Halloween Jackpots', links: [] },
+    { name: '<span class="neon2-text">OFF</span> Power of Gods™: Medusa Halloween Edition', links: [] },
+    { name: '<span class="neon2-text">OFF</span> Power of Sun\": Svarog Halloween Edition', links: [] },
+    { name: '<span class="neon2-text">OFF</span> 12 Coins™ Grand Gold Edition Halloween Jackpots', links: [] },
+    { name: '<span class="neon2-text">OFF</span> 15 Coins™ Grand Gold Edition Halloween Jackpots', links: [] },
+    { name: '<span class="neon2-text">OFF</span> Mighty Wild™: Panther Grand Platinum Edition Halloween Jackpots', links: [] },
+    { name: '<span class="neon2-text">OFF</span> Mighty Wild™: Panther Grand Diamond Edition Halloween Jackpots', links: [] },
+    { name: '<span class="neon2-text">OFF</span> 16 Coins™ Grand Gold Edition Halloween Jackpots', links: [] },
+    { name: '<span class="neon2-text">OFF</span> 20 Coins\" Halloween Jackpots', links: [] },
+    { name: '<span class="neon2-text">OFF</span> 24 Coins™ Halloween Jackpots', links: [] },
+    { name: '<span class="neon2-text">OFF</span> 25 Coins\" Halloween Jackpots', links: [] },
+    { name: '<span class="neon2-text">OFF</span> 30 Coins Halloween Jackpots', links: [] },
+    { name: '<span class="neon2-text">OFF</span> 36 Coins\" Halloween Jackpots', links: [] },
+    { name: '<span class="neon2-text">OFF</span> 9 Coins™ 1000 Edition', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Desativado%20-%20Wazdan/Wazdan/Wazdan/WAZ-02-BR-241114-01-GC-R1-9%20Coins%E2%84%A2%201000%20Edition%20(BR).pdf?csf=1&web=1&e=BayInj'] },
+    { name: '<span class="neon2-text">OFF</span> 15 Coins™ Grand Gold Edition', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Desativado%20-%20Wazdan/Wazdan/Wazdan/WAZ-02-BR-241114-02-GC-R1-15%20Coins%E2%84%A2%20Grand%20Gold%20Edition%20(BR).pdf?csf=1&web=1&e=wvty2E'] },
+    { name: '<span class="neon2-text">OFF</span> 9 Coins™ Grand Gold Edition', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Desativado%20-%20Wazdan/Wazdan/Wazdan/WAZ-02-BR-241114-03-GC-R1-9%20Coins%E2%84%A2%20Grand%20Gold%20Edition%20(BR).pdf?csf=1&web=1&e=JTZfxc'] },
+    { name: '<span class="neon2-text">OFF</span> Hot Slot™: 777 Crown', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Desativado%20-%20Wazdan/Wazdan/Wazdan/WAZ-02-BR-241114-05-GC-R1%20-Hot%20Slot%E2%84%A2%20777%20Crown%20(BR).pdf?csf=1&web=1&e=3xYtRH'] },
+    { name: '<span class="neon2-text">OFF</span> Mighty Wild™: Panther', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Desativado%20-%20Wazdan/Wazdan/Wazdan/WAZ-02-BR-241114-06-GC-R1-Mighty%20Wild%E2%84%A2%20Panther%20(BR).pdf?csf=1&web=1&e=oJawEu'] },
+    { name: '<span class="neon2-text">OFF</span> 25 Coins™', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Desativado%20-%20Wazdan/Wazdan/Wazdan/WAZ-02-BR-241114-07-GC-R1%20-25%20Coins%E2%84%A2(BR).pdf?csf=1&web=1&e=eYspAg'] },
+    { name: '<span class="neon2-text">OFF</span> 9 Coins™', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Desativado%20-%20Wazdan/Wazdan/Wazdan/WAZ-02-BR-241114-08-GC-R1%20-9%20Coins%E2%84%A2(BR).pdf?csf=1&web=1&e=v9BnO5'] },
+    { name: '<span class="neon2-text">OFF</span> 12 Coins™ Grand Platinum Edition', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Desativado%20-%20Wazdan/Wazdan/Wazdan/WAZ-02-BR-241114-09-GC-R1%20-12%20Coins%E2%84%A2%20Grand%20Platinum%20Edition%20(BR).pdf?csf=1&web=1&e=sBlqKn'] },
+    { name: '<span class="neon2-text">OFF</span> 9 Coins™ Grand Platinum Edition', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Desativado%20-%20Wazdan/Wazdan/Wazdan/WAZ-02-BR-241114-10-GC-R1%20-9%20Coins%E2%84%A2%20Grand%20Platinum%20Edition%20(BR).pdf?csf=1&web=1&e=soPkdo'] },
+    { name: '<span class="neon2-text">OFF</span> Mighty Wild™: Panther Grand Platinum Edition', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Desativado%20-%20Wazdan/Wazdan/Wazdan/WAZ-02-BR-241114-11-GC-R1%20-Mighty%20Wild%E2%84%A2%20Panther%20Grand%20Platinum%20Edition(BR).pdf?csf=1&web=1&e=yQ3esx'] },
+    { name: '<span class="neon2-text">OFF</span> 20 Coins™', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Desativado%20-%20Wazdan/Wazdan/Wazdan/WAZ-02-BR-241114-12-GC-R1%20-20%20Coins%E2%84%A2%20%20(BR).pdf?csf=1&web=1&e=J58Qw3'] },
+    { name: '<span class="neon2-text">OFF</span> Mighty Wild™: Panther Grand Gold Edition', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Desativado%20-%20Wazdan/Wazdan/Wazdan/WAZ-02-BR-241114-14-GC-R1%20-Mighty%20Wild%E2%84%A2%20Panther%20Grand%20Gold%20Edition%20%20(BR).pdf?csf=1&web=1&e=WFBpzB'] },
+    { name: '<span class="neon2-text">OFF</span> 12 Coins™ Grand Gold Edition', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Desativado%20-%20Wazdan/Wazdan/Wazdan/WAZ-02-BR-241114-15-GC-R1%20-12%20Coins%E2%84%A2%20Grand%20Gold%20Edition%20(BR).pdf?csf=1&web=1&e=vd4aRo'] },
+    { name: '<span class="neon2-text">OFF</span> Hot Slot™: 777 Cash Out', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Desativado%20-%20Wazdan/Wazdan/Wazdan/WAZ-02-BR-241114-16-GC-R1%20-Hot%20Slot%E2%84%A2%20777%20Cash%20Out%20(BR).pdf?csf=1&web=1&e=6HtwSq'] },
+    { name: '<span class="neon2-text">OFF</span> Hot Slot™: 777 Cash Out Grand Gold Edition', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Desativado%20-%20Wazdan/Wazdan/Wazdan/WAZ-02-BR-241114-17-GC-R1%20-Hot%20Slot%E2%84%A2%20777%20Cash%20Out%20Grand%20Gold%20Edition%20(BR).pdf?csf=1&web=1&e=xcue0a'] }
+
+            
+    
+    ];
+
+
+</script>
+<script src="scripts.js"></script> <!-- Inclui o arquivo JavaScript -->
+</body>
+</html>

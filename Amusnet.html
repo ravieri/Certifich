@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AMUSNET - Jogos</title>
+    <link rel="stylesheet" href="styles2.css">
+    
+</head>
+<body>
+    <header id="topo">
+        <div class="logo">
+            <a href="home.html" class="back-home">⬅ Voltar ao Home</a>
+            H2<span>BET</span>
+        </div>
+    </header>
+
+    <main class="content">
+        <!-- Barra de Pesquisa -->
+<div class="search-container">
+    <input type="text" id="searchBar" class="search-bar" placeholder="Pesquisar Jogo..." oninput="searchGames()">
+</div>
+<div class="link-table">
+    <div class="rng-links">
+      <button onclick="createPopup('RNG', ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Play%27n%20GO/RNG.BR.PGO-OL.1001.01.02_Translation_eSigned.pdf?csf=1&web=1&e=VqniYb','https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Play%27n%20GO/RNG.BR.PGO-OL.1001.01.02_eSigned.pdf?csf=1&web=1&e=lMIck8'])">RNG</button>
+    </div>
+    <div class="rgs-links">
+      <button onclick="createPopup('RGS', ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Play%27n%20GO/BR.PGO-OL.1201.02.01_Translation_eSigned.pdf?csf=1&web=1&e=Hs8F34','https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Play%27n%20GO/BR.PGO-OL.1201.02.01_Translation_eSigned.pdf?csf=1&web=1&e=Hs8F34'])">RGS</button>
+    </div>
+  </div>
+        <h1>Jogos da AMUSNET</h1>
+        <button id="show-online" class="view-links-btn"><span class="neon-text">ON-LINE</span> </button>
+        <button id="show-all" class="view-links-btn"> TODOS</button>
+        <button id="show-off" class="view-links-btn"><span class="neon2-text">OFF</span></button>
+        
+        <ul id="game-list">
+            
+            <!-- Jogos serão carregados dinamicamente -->
+        </ul>
+    </main>
+    <div>
+        
+        
+    </div>
+    <ul id="game-list"></ul>
+</div>
+<script>
+    
+            // Lista de jogos da Boominggames
+            const games = [
+            { name: '<span class="neon2-text">OFF</span> APENAS GLI', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Amusnet/Amusnet%20Interactive%20-%20MO-711-EGI-24-01-711%20-%20160%20Games%20-%20BR%20PT%20(GLI%20-%20Dec%202024).pdf?csf=1&web=1&e=bVXwjI','https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Amusnet/Amusnet%20Interactive%20-%20RN-120-EGI-18-01-711%20-%20ISAAC%20RNG%202.0%20-%20PT-BR%20(GLI%20-%20Nov%202024).pdf?csf=1&web=1&e=O0nYkU','https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Amusnet/Amusnet%20Interactive%20-%20SY-711-EGI-24-01-711%20-%20RGS%203.6.2%20-%20PT-BR%20(GLI%20-%20Dec%202024).pdf?csf=1&web=1&e=Gjog2F'] },
+    
+    ];
+
+
+</script>
+<script src="scripts.js"></script> <!-- Inclui o arquivo JavaScript -->
+</body>
+</html>

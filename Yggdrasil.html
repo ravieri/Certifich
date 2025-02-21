@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yggdrasil - Jogos</title>
+    <link rel="stylesheet" href="styles2.css">
+    
+</head>
+<body>
+    <header id="topo">
+        <div class="logo">
+            <a href="home.html" class="back-home">⬅ Voltar ao Home</a>
+            H2<span>BET</span>
+        </div>
+    </header>
+
+    <main class="content">
+        <!-- Barra de Pesquisa -->
+<div class="search-container">
+    <input type="text" id="searchBar" class="search-bar" placeholder="Pesquisar Jogo..." oninput="searchGames()">
+</div>
+<div class="link-table">
+    <div class="rng-links">
+      <button onclick="createPopup('RNG', [])">RNG</button>
+    </div>
+    <div class="rgs-links">
+      <button onclick="createPopup('RGS', ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Yggdrasil/RGS/SOB-BR-250124-01-CL-R1%20Compliance%20Certificate.pdf?csf=1&web=1&e=DGcUWO','https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Yggdrasil/RGS/SOB-BR-250124-01-CL-R1%20Certificado%20de%20conformidade.pdf?csf=1&web=1&e=XfbuZ2'])">RGS</button>
+    </div>
+  </div>
+        <h1>Jogos da Yggdrasil</h1>
+        <button id="show-online" class="view-links-btn"><span class="neon-text">ON-LINE</span> </button>
+        <button id="show-all" class="view-links-btn"> TODOS</button>
+        <button id="show-off" class="view-links-btn"><span class="neon2-text">OFF</span></button>
+        
+        <ul id="game-list">
+            
+            <!-- Jogos serão carregados dinamicamente -->
+        </ul>
+    </main>
+    <div>
+        
+        
+    </div>
+    <ul id="game-list"></ul>
+</div>
+<script>
+    
+            // Lista de jogos da Boominggames
+            const games = [
+            { name: '<span class="neon2-text">OFF</span> Ghost Father', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Yggdrasil/HLL-BR-250117-02-CL-R1%20(BR).pdf?csf=1&web=1&e=AeIQXT'] },
+    { name: '<span class="neon2-text">OFF</span> Barbarossa', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Yggdrasil/HLL-BR-250117-02-CL-R1%20(BR).pdf?csf=1&web=1&e=AeIQXT'] },
+    { name: '<span class="neon2-text">OFF</span> Atlantis Megaways', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Yggdrasil/10000%20Wonders%20Multimax/SOB-BR-250122-01-CL-R1%20(BR).pdf?csf=1&web=1&e=CYVvnx'] },
+    { name: '<span class="neon2-text">OFF</span> Lady Merlin Lightning Chase', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Yggdrasil/10000%20Wonders%20Multimax/SOB-BR-250122-01-CL-R1%20(BR).pdf?csf=1&web=1&e=CYVvnx'] },
+    { name: '<span class="neon2-text">OFF</span> 10000 Wonders Multimax', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Yggdrasil/10000%20Wonders%20Multimax/SOB-BR-250122-01-CL-R1%20(BR).pdf?csf=1&web=1&e=CYVvnx'] },
+    { name: '<span class="neon2-text">OFF</span> Nightmares Vs Gigablox', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Yggdrasil/10000%20Wonders%20Multimax/SOB-BR-250122-01-CL-R1%20(BR).pdf?csf=1&web=1&e=CYVvnx'] },
+    { name: '<span class="neon2-text">OFF</span> Big Bucks Buffalo Gigablox', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Yggdrasil/10000%20Wonders%20Multimax/SOB-BR-250122-01-CL-R1%20(BR).pdf?csf=1&web=1&e=CYVvnx'] },
+    { name: '<span class="neon2-text">OFF</span> Thor Infinity Reels', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Yggdrasil/10000%20Wonders%20Multimax/SOB-BR-250122-01-CL-R1%20(BR).pdf?csf=1&web=1&e=CYVvnx'] }
+    ];
+
+
+</script>
+<script src="scripts.js"></script> <!-- Inclui o arquivo JavaScript -->
+</body>
+</html>
