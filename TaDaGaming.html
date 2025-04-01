@@ -1,386 +1,381 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>TaDa Gaming - Jogos</title>
-        <link rel="stylesheet" href="styles2.css" />
-    </head>
-    <body>
-        <header id="topo">
-            <div class="logo">
-                <a href="home.html" class="back-home">⬅ Voltar ao Home</a>
-                H2<span>BET</span>
-            </div>
-        </header>
-        <main class="content">
-            <!-- Barra de Pesquisa -->
-            <div class="search-container">
-                <input
-                    type="text"
-                    id="searchBar"
-                    class="search-bar"
-                    placeholder="Pesquisar Jogo..."
-                    oninput="searchGames()"
-                />
-            </div>
-            <div class="link-table">
-                <div class="rng-links">
-                    <button
-                        onclick="createPopup('RNG', ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Spribe/SPR-BR-241125-01-RC-R1%20-%20RNG%20Certificate%20-%20Spribe%20N.V..pdf?csf=1&web=1&e=fDAAZY', 'https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Spribe/SPR-BR-241125-01-RC-R1%20-%20Certificado%20RNG%20-%20Spribe%20N.V..pdf?csf=1&web=1&e=QUbm8q','https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Spribe/SPR-BR-241129-01-GC-R1%20-%20Aviator%20(BR).pdf?csf=1&web=1&e=4E0y5s'])"
-                    >
-                        RNG
-                    </button>
-                </div>
-                <div class="rgs-links">
-                    <button
-                        onclick="createPopup('RGS', ['https://link3.com', 'https://link4.com'])"
-                    >
-                        RGS
-                    </button>
-                </div>
-            </div>
-            <h1>Jogos da TaDa Gaming</h1>
-            <button id="show-online" class="view-links-btn">
-                <span class="neon-text">ON-LINE</span>
-            </button>
-            <button id="show-all" class="view-links-btn">TODOS</button>
-            <button id="show-off" class="view-links-btn">
-                <span class="neon2-text">OFF</span>
-            </button>
 
-            <ul id="game-list">
-                <!-- Jogos serão carregados dinamicamente -->
-            </ul>
-        </main>
-        <div></div>
-        <ul id="game-list"></ul>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TaDa Gaming - Jogos</title>
+    <link rel="stylesheet" href="styles2.css" />
+</head>
 
-        <script>
-            // Lista de jogos da Spribe
-            const games = [
-            {
-                    name: '<span class="neon2-text">OFF</span> Ocean King Jackpot',
-                    links: [
-                        '',
-                    ],
-                },
-                {
-                    name: '<span class="neon2-text">OFF</span> Dinosaur Tycoon II',
-                    links: [
-                        '',
-                    ],
-                },
-                {
-                    name: '<span class="neon2-text">OFF</span> Crazy Hunter',
-                    links: [
-                        '',
-                    ],
-                },
-                {
-                    name: '<span class="neon2-text">OFF</span> Mega Fishing',
-                    links: [
-                        '',
-                    ],
-                },
-            {
-                    name: '<span class="neon-text">ON-LINE</span> Crazy 777',
-                    links: [
-                        'https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/TaDa/TDG-BR-241210-09-GC-R1-Crazy%20777.pdf?csf=1&web=1&e=ybpGyX',
-                    ],
-                },
-            {
-                    name: '<span class="neon-text">ON-LINE</span> Fortune Pig',
-                    links: [
-                        'https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/TaDa/TDG-BR-241213-01-GC-R1%20Fortune%20Pig.pdf?csf=1&web=1&e=e4PwhD',
-                    ],
-                },
-                {
-                    name: '<span class="neon-text">ON-LINE</span> Lucky Jaguar',
-                    links: [
-                        '',
-                    ],
-                },
-                {
-                    name: '<span class="neon-text">ON-LINE</span> Bounty Frenzy',
-                    links: [
-                        'https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/TaDa/TDG-BR-241208-10-GC-R1%20Bounty%20Frenzy.pdf?csf=1&web=1&e=fbKL9L',
-                    ],
-                },
-                {
-                    name: '<span class="neon-text">ON-LINE</span> Money Pot',
-                    links: [
-                        '',
-                    ],
-                },
-                {
-                    name: '<span class="neon-text">ON-LINE</span> Party Star',
-                    links: [
-                        'https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/TaDa/TDG-BR-241207-08-GC-R1-Party%20Star.pdf?csf=1&web=1&e=zBPVR5',
-                    ],
-                },
-                {
-                    name: '<span class="neon-text">ON-LINE</span> Fortune Gems',
-                    links: [
-                        'https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/TaDa/TDG-BR-241207-01-GC-R1-Fortune%20Gems.pdf?csf=1&web=1&e=hdoOzO',
-                    ],
-                },
-                {
-                    name: '<span class="neon-text">ON-LINE</span> Fortune Gems 2',
-                    links: [
-                        'https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/TaDa/TDG-BR-241207-02-GC-R1-Fortune%20Gems%202.pdf?csf=1&web=1&e=bN9fEf',
-                    ],
-                },
-                {
-                    name: '<span class="neon-text">ON-LINE</span> Money Coming',
-                    links: [
-                        'https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/TaDa/TDG-BR-241207-03-GC-R1-Money%20Coming.pdf?csf=1&web=1&e=4wrbky',
-                    ],
-                },
-                {
-                    name: '<span class="neon2-text">OFF</span> Charge Buffalo-ASCENT',
-                    links: [
-                        'https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/TaDa/TDG-BR-241207-04-GC-R1-Charge%20Buffalo%20Ascent.pdf?csf=1&web=1&e=9D9exQ',
-                    ],
-                },
-                {
-                    name: '<span class="neon2-text">OFF</span> Golden Empire',
-                    links: [
-                        'https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/TaDa/TDG-BR-241207-05-GC-R1-Golden%20Empire.pdf?csf=1&web=1&e=9YZd0q',
-                    ],
-                },
-                {
-                    name: '<span class="neon-text">ON-LINE</span> Jackpot Joker',
-                    links: [
-                        'https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/TaDa/TDG-BR-241207-06-GC-R1-Jackpot%20Joker.pdf?csf=1&web=1&e=PtSqqQ',
-                    ],
-                },
-                {
-                    name: '<span class="neon2-text">OFF</span> Mega Ace',
-                    links: [
-                        'https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/TaDa/TDG-BR-241207-07-GC-R1-Mega%20Ace.pdf?csf=1&web=1&e=MyQFLh',
-                    ],
-                },
-                {
-                    name: '<span class="neon2-text">OFF</span> Party Star',
-                    links: [
-                        'https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/TaDa/TDG-BR-241207-08-GC-R1-Party%20Star.pdf?csf=1&web=1&e=zBPVR5',
-                    ],
-                },
-                {
-                    name: '<span class="neon-text">ON-LINE</span> Fortune Gems 3',
-                    links: [
-                        'https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/TaDa/TDG-BR-241207-10-GC-R1-Fortune%20Gems%203.pdf?csf=1&web=1&e=UdjrT1',
-                    ],
-                },
-                {
-                    name: '<span class="neon2-text">OFF</span> Sin City',
-                    links: [
-                        'https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/TaDa/TDG-BR-241208-01-GC-R1%20-Sin%20City%20(BR).pdf?csf=1&web=1&e=dTtmkq',
-                    ],
-                },
-                {
-                    name: '<span class="neon2-text">OFF</span> Witches Night',
-                    links: [
-                        'https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/TaDa/TDG-BR-241208-02-GC-R1-Witches%27%20Night.pdf?csf=1&web=1&e=7fJwNZ',
-                    ],
-                },
-                {
-                    name: '<span class="neon2-text">OFF</span> Aztec Priestess',
-                    links: [
-                        'https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/TaDa/TDG-BR-241208-03-GC-R1%20Aztec%20Priestess.pdf?csf=1&web=1&e=fu5Ker',
-                    ],
-                },
-                {
-                    name: '<span class="neon2-text">OFF</span> Devil Fire',
-                    links: [
-                        'https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/TaDa/TDG-BR-241208-04-GC-R1%20Devil%20Fire.pdf?csf=1&web=1&e=XPLlr0',
-                    ],
-                },
-                {
-                    name: '<span class="neon2-text">OFF</span> Arena Fighter',
-                    links: [
-                        'https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/TaDa/TDG-BR-241208-05-GC-R1%20Arena%20Fighter.pdf?csf=1&web=1&e=jY0zyJ',
-                    ],
-                },
-                {
-                    name: '<span class="neon-text">ON-LINE</span> Devil Fire 2',
-                    links: [
-                        'https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/TaDa/TDG-BR-241208-06-GC-R1%20Devil%20Fire2.pdf?csf=1&web=1&e=3fYSiw',
-                    ],
-                },
-                {
-                    name: '<span class="neon2-text">OFF</span> Zeus',
-                    links: [
-                        'https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/TaDa/TDG-BR-241208-07-GC-R1%20Zeus.pdf?csf=1&web=1&e=6McLOe',
-                    ],
-                },
-                {
-                    name: '<span class="neon2-text">OFF</span> King Arthur',
-                    links: [
-                        'https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/TaDa/TDG-BR-241208-08-GC-R1%20King%20Arthur.pdf?csf=1&web=1&e=GgaYiT',
-                    ],
-                },
-                {
-                    name: '<span class="neon2-text">OFF</span> Super Ace',
-                    links: [
-                        'https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/TaDa/TDG-BR-241210-01-GC-R1%20Super%20Ace.pdf?csf=1&web=1&e=SKsO0Z',
-                    ],
-                },
-                {
-                    name: '<span class="neon2-text">OFF</span> Agent Ace',
-                    links: [
-                        'https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/TaDa/TDG-BR-241210-02-GC-R1-Agent%20Ace.pdf?csf=1&web=1&e=gDHuBw',
-                    ],
-                },
-                {
-                    name: '<span class="neon2-text">OFF</span> Trial of Phoenix',
-                    links: [
-                        'https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/TaDa/TDG-BR-241210-03-GC-R1%20Trial%20of%20Phoenix.pdf?csf=1&web=1&e=GmxJQv',
-                    ],
-                },
-                {
-                    name: '<span class="neon2-text">OFF</span> SHŌGUN',
-                    links: [
-                        'https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/TaDa/TDG-BR-241210-04-GC-R1%20Sh%C5%8Dgun.pdf?csf=1&web=1&e=4NzCiV',
-                    ],
-                },
-                {
-                    name: '<span class="neon2-text">OFF</span> Fortune Tree',
-                    links: [
-                        'https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/TaDa/TDG-BR-241210-06-GC-R1%20Fortune%20Tree.pdf?csf=1&web=1&e=2X1W8n',
-                    ],
-                },
-                {
-                    name: '<span class="neon2-text">OFF</span> Wild Ace',
-                    links: [
-                        'https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/TaDa/TDG-BR-241210-07-GC-R1%20Wild%20Ace.pdf?csf=1&web=1&e=o4Dwxz',
-                    ],
-                },
-                {
-                    name: '<span class="neon2-text">OFF</span> Boxing King',
-                    links: [
-                        'https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/TaDa/TDG-BR-241210-08-GC-R1%20Boxing%20King.pdf?csf=1&web=1&e=BMqXqs',
-                    ],
-                },
-                {
-                    name: '<span class="neon2-text">OFF</span> Ali Baba',
-                    links: [
-                        'https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/TaDa/TDG-BR-241212-01-GC-R1%20Ali%20Baba.pdf?csf=1&web=1&e=CTB3f0',
-                    ],
-                },
-                {
-                    name: '<span class="neon2-text">OFF</span> Golden Temple',
-                    links: [
-                        'https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/TaDa/TDG-BR-241212-02-GC-R1%20Golden%20Temple.pdf?csf=1&web=1&e=j5tuKz',
-                    ],
-                },
-                {
-                    name: '<span class="neon2-text">OFF</span> Potion Wizard',
-                    links: [
-                        'https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/TaDa/TDG-BR-241212-03-GC-R1%20Potion%20Wizard.pdf?csf=1&web=1&e=JuckMu',
-                    ],
-                },
-                {
-                    name: '<span class="neon2-text">OFF</span> Neko Neko',
-                    links: [
-                        'https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/TaDa/TDG-BR-241212-04-GC-R1%20Neko%20Neko.pdf?csf=1&web=1&e=vUZgMf',
-                    ],
-                },
-                {
-                    name: '<span class="neon2-text">OFF</span> Sweet Land',
-                    links: [
-                        'https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/TaDa/TDG-BR-241212-05-GC-R1%20Sweet%20Land.pdf?csf=1&web=1&e=qVe7yJ',
-                    ],
-                },
-                {
-                    name: '<span class="neon2-text">OFF</span> Mayan Empire',
-                    links: [
-                        'https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/TaDa/TDG-BR-241212-07-GC-R1%20Mayan%20Empire.pdf?csf=1&web=1&e=CeGaL7',
-                    ],
-                },
-                {
-                    name: '<span class="neon2-text">ON-LINE</span> Fortune Monkey',
-                    links: [
-                        'https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/TaDa/TDG-BR-241212-08-GC-R1%20Fortune%20Monkey.pdf?csf=1&web=1&e=n9jRg2',
-                    ],
-                },
-                {
-                    name: '<span class="neon2-text">OFF</span> Fa Fa Fa',
-                    links: [
-                        'https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/TaDa/TDG-BR-241212-09-GC-R1%20Fa%20Fa%20Fa.pdf?csf=1&web=1&e=JhSqAv',
-                    ],
-                },
-                {
-                    name: '<span class="neon2-text">OFF</span> Money Coming Expanded Bets',
-                    links: [
-                        'https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/TaDa/TDG-BR-241212-06-GC-R1%20Money%20Coming%20Expanded%20Bets.pdf?csf=1&web=1&e=eVpIbt',
-                    ],
-                },
-                {
-                    name: '<span class="neon2-text">OFF</span> Go Rush',
-                    links: [
-                        'https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/TaDa/TDG-BR-241212-10-GC-R1%20Go%20Rush.pdf?csf=1&web=1&e=BHsMT7',
-                    ],
-                },
-                {
-                    name: '<span class="neon2-text">OFF</span> Wheel',
-                    links: [
-                        'https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/TaDa/TDG-BR-241212-11-GC-R1%20Wheel.pdf?csf=1&web=1&e=R2Fzfr',
-                    ],
-                },
-                {
-                    name: '<span class="neon2-text">OFF</span> Tower',
-                    links: [
-                        'https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/TaDa/TDG-BR-241213-03-GC-R1%20Tower.pdf?csf=1&web=1&e=bhM8AS',
-                    ],
-                },
-                {
-                    name: '<span class="neon2-text">OFF</span> Crash Bonus',
-                    links: [
-                        'https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/TaDa/TDG-BR-241213-04-GC-R1%20Crash%20Bonus.pdf?csf=1&web=1&e=zmrclx',
-                    ],
-                },
-                {
-                    name: '<span class="neon2-text">OFF</span> Mines',
-                    links: [
-                        'https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/TaDa/TDG-BR-241213-05-GC-R1%20Mines.pdf?csf=1&web=1&e=1EGOv6',
-                    ],
-                },
-                {
-                    name: '<span class="neon2-text">OFF</span> Plinko',
-                    links: [
-                        'https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/TaDa/TDG-BR-241213-06-GC-R1%20Plinko.pdf?csf=1&web=1&e=fJSSSK',
-                    ],
-                },
-                {
-                    name: '<span class="neon2-text">OFF</span> Mines Gold',
-                    links: [
-                        'https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/TaDa/TDG-BR-241213-07-GC-R1%20Mines%20Gold.pdf?csf=1&web=1&e=0DF9qB',
-                    ],
-                },
-                {
-                    name: '<span class="neon2-text">OFF</span> SevenSevenSeven',
-                    links: [
-                        'https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/TaDa/TDG-BR-241213-02-GC-R1%20Seven%20Seven%20Seven.pdf?csf=1&web=1&e=El9IRI',
-                    ],
-                },
-                {
-                    name: '<span class="neon2-text">OFF</span> Fortune Roulette',
-                    links: [
-                        'https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/TaDa/TDG-BR-241212-12-GC-R1%20Fortune%20Roulette.pdf?csf=1&web=1&e=cEVpEF',
-                    ],
-                },
-                {
-                    name: '<span class="neon2-text">OFF</span> European Roulette',
-                    links: [
-                        'https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/TaDa/TDG-BR-241212-13-GC-R1%20European%20Roulette.pdf?csf=1&web=1&e=MYOBnU',
-                    ],
-                },
-            ];
-        </script>
+<body>
+    <header id="topo">
+        <div class="logo">
+            <a href="home.html" class="back-home">⬅ Voltar ao Home</a>
+            H2<span>BET</span>
+        </div>
+    </header>
+    <main class="content">
+        <!-- Barra de Pesquisa -->
+        <div class="search-container">
+            <input type="text" id="searchBar" class="search-bar" placeholder="Pesquisar Jogo..."
+                oninput="searchGames()" />
+        </div>
+        <div class="link-table">
+            <div class="rng-links">
+                <button
+                    onclick="createPopup('RNG', ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Spribe/SPR-BR-241125-01-RC-R1%20-%20RNG%20Certificate%20-%20Spribe%20N.V..pdf?csf=1&web=1&e=fDAAZY', 'https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Spribe/SPR-BR-241125-01-RC-R1%20-%20Certificado%20RNG%20-%20Spribe%20N.V..pdf?csf=1&web=1&e=QUbm8q','https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Spribe/SPR-BR-241129-01-GC-R1%20-%20Aviator%20(BR).pdf?csf=1&web=1&e=4E0y5s'])">
+                    RNG
+                </button>
+            </div>
+            <div class="rgs-links">
+                <button onclick="createPopup('RGS', ['https://link3.com', 'https://link4.com'])">
+                    RGS
+                </button>
+            </div>
+        </div>
+        <h1>Jogos da TaDa Gaming</h1>
+        <button id="show-online" class="view-links-btn">
+            <span class="neon-text">ON-LINE</span>
+        </button>
+        <button id="show-all" class="view-links-btn">TODOS</button>
+        <button id="show-off" class="view-links-btn">
+            <span class="neon-text">ON-LINE</span>
+        </button>
 
-        <script src="scripts.js"></script>
-        <!-- Inclui o arquivo JavaScript -->
-    </body>
+        <ul id="game-list">
+            <!-- Jogos serão carregados dinamicamente -->
+        </ul>
+    </main>
+    <div></div>
+    <ul id="game-list"></ul>
+
+    <script>
+        // Lista de jogos da Spribe
+        const games = [
+            {
+                name: '<span class="neon2-text">OFF</span> Ocean King Jackpot',
+                links: [
+                    '',
+                ],
+            },
+            {
+                name: '<span class="neon2-text">OFF</span> Dinosaur Tycoon II',
+                links: [
+                    '',
+                ],
+            },
+            {
+                name: '<span class="neon2-text">OFF</span> Crazy Hunter',
+                links: [
+                    '',
+                ],
+            },
+            {
+                name: '<span class="neon2-text">OFF</span> Mega Fishing',
+                links: [
+                    '',
+                ],
+            },
+            {
+                name: '<span class="neon-text">ON-LINE</span> Crazy 777',
+                links: [
+                    'https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/TaDa/TDG-BR-241210-09-GC-R1-Crazy%20777.pdf?csf=1&web=1&e=ybpGyX',
+                ],
+            },
+            {
+                name: '<span class="neon-text">ON-LINE</span> Fortune Pig',
+                links: [
+                    'https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/TaDa/TDG-BR-241213-01-GC-R1%20Fortune%20Pig.pdf?csf=1&web=1&e=e4PwhD',
+                ],
+            },
+            {
+                name: '<span class="neon-text">ON-LINE</span> Lucky Jaguar',
+                links: [
+                    '',
+                ],
+            },
+            {
+                name: '<span class="neon-text">ON-LINE</span> Bounty Frenzy',
+                links: [
+                    'https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/TaDa/TDG-BR-241208-10-GC-R1%20Bounty%20Frenzy.pdf?csf=1&web=1&e=fbKL9L',
+                ],
+            },
+            {
+                name: '<span class="neon-text">ON-LINE</span> Money Pot',
+                links: [
+                    '',
+                ],
+            },
+            {
+                name: '<span class="neon-text">ON-LINE</span> Party Star',
+                links: [
+                    'https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/TaDa/TDG-BR-241207-08-GC-R1-Party%20Star.pdf?csf=1&web=1&e=zBPVR5',
+                ],
+            },
+            {
+                name: '<span class="neon-text">ON-LINE</span> Fortune Gems',
+                links: [
+                    'https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/TaDa/TDG-BR-241207-01-GC-R1-Fortune%20Gems.pdf?csf=1&web=1&e=hdoOzO',
+                ],
+            },
+            {
+                name: '<span class="neon-text">ON-LINE</span> Fortune Gems 2',
+                links: [
+                    'https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/TaDa/TDG-BR-241207-02-GC-R1-Fortune%20Gems%202.pdf?csf=1&web=1&e=bN9fEf',
+                ],
+            },
+            {
+                name: '<span class="neon-text">ON-LINE</span> Money Coming',
+                links: [
+                    'https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/TaDa/TDG-BR-241207-03-GC-R1-Money%20Coming.pdf?csf=1&web=1&e=4wrbky',
+                ],
+            },
+            {
+                name: '<span class="neon-text">ON-LINE</span> Charge Buffalo-ASCENT',
+                links: [
+                    'https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/TaDa/TDG-BR-241207-04-GC-R1-Charge%20Buffalo%20Ascent.pdf?csf=1&web=1&e=9D9exQ',
+                ],
+            },
+            {
+                name: '<span class="neon-text">ON-LINE</span> Golden Empire',
+                links: [
+                    'https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/TaDa/TDG-BR-241207-05-GC-R1-Golden%20Empire.pdf?csf=1&web=1&e=9YZd0q',
+                ],
+            },
+            {
+                name: '<span class="neon-text">ON-LINE</span> Jackpot Joker',
+                links: [
+                    'https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/TaDa/TDG-BR-241207-06-GC-R1-Jackpot%20Joker.pdf?csf=1&web=1&e=PtSqqQ',
+                ],
+            },
+            {
+                name: '<span class="neon-text">ON-LINE</span> Mega Ace',
+                links: [
+                    'https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/TaDa/TDG-BR-241207-07-GC-R1-Mega%20Ace.pdf?csf=1&web=1&e=MyQFLh',
+                ],
+            },
+            {
+                name: '<span class="neon-text">ON-LINE</span> Party Star',
+                links: [
+                    'https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/TaDa/TDG-BR-241207-08-GC-R1-Party%20Star.pdf?csf=1&web=1&e=zBPVR5',
+                ],
+            },
+            {
+                name: '<span class="neon-text">ON-LINE</span> Fortune Gems 3',
+                links: [
+                    'https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/TaDa/TDG-BR-241207-10-GC-R1-Fortune%20Gems%203.pdf?csf=1&web=1&e=UdjrT1',
+                ],
+            },
+            {
+                name: '<span class="neon-text">ON-LINE</span> Sin City',
+                links: [
+                    'https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/TaDa/TDG-BR-241208-01-GC-R1%20-Sin%20City%20(BR).pdf?csf=1&web=1&e=dTtmkq',
+                ],
+            },
+            {
+                name: '<span class="neon-text">ON-LINE</span> Witches Night',
+                links: [
+                    'https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/TaDa/TDG-BR-241208-02-GC-R1-Witches%27%20Night.pdf?csf=1&web=1&e=7fJwNZ',
+                ],
+            },
+            {
+                name: '<span class="neon-text">ON-LINE</span> Aztec Priestess',
+                links: [
+                    'https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/TaDa/TDG-BR-241208-03-GC-R1%20Aztec%20Priestess.pdf?csf=1&web=1&e=fu5Ker',
+                ],
+            },
+            {
+                name: '<span class="neon-text">ON-LINE</span> Devil Fire',
+                links: [
+                    'https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/TaDa/TDG-BR-241208-04-GC-R1%20Devil%20Fire.pdf?csf=1&web=1&e=XPLlr0',
+                ],
+            },
+            {
+                name: '<span class="neon-text">ON-LINE</span> Arena Fighter',
+                links: [
+                    'https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/TaDa/TDG-BR-241208-05-GC-R1%20Arena%20Fighter.pdf?csf=1&web=1&e=jY0zyJ',
+                ],
+            },
+            {
+                name: '<span class="neon-text">ON-LINE</span> Devil Fire 2',
+                links: [
+                    'https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/TaDa/TDG-BR-241208-06-GC-R1%20Devil%20Fire2.pdf?csf=1&web=1&e=3fYSiw',
+                ],
+            },
+            {
+                name: '<span class="neon-text">ON-LINE</span> Zeus',
+                links: [
+                    'https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/TaDa/TDG-BR-241208-07-GC-R1%20Zeus.pdf?csf=1&web=1&e=6McLOe',
+                ],
+            },
+            {
+                name: '<span class="neon-text">ON-LINE</span> King Arthur',
+                links: [
+                    'https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/TaDa/TDG-BR-241208-08-GC-R1%20King%20Arthur.pdf?csf=1&web=1&e=GgaYiT',
+                ],
+            },
+            {
+                name: '<span class="neon-text">ON-LINE</span> Super Ace',
+                links: [
+                    'https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/TaDa/TDG-BR-241210-01-GC-R1%20Super%20Ace.pdf?csf=1&web=1&e=SKsO0Z',
+                ],
+            },
+            {
+                name: '<span class="neon-text">ON-LINE</span> Agent Ace',
+                links: [
+                    'https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/TaDa/TDG-BR-241210-02-GC-R1-Agent%20Ace.pdf?csf=1&web=1&e=gDHuBw',
+                ],
+            },
+            {
+                name: '<span class="neon-text">ON-LINE</span> Trial of Phoenix',
+                links: [
+                    'https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/TaDa/TDG-BR-241210-03-GC-R1%20Trial%20of%20Phoenix.pdf?csf=1&web=1&e=GmxJQv',
+                ],
+            },
+            {
+                name: '<span class="neon-text">ON-LINE</span> SHŌGUN',
+                links: [
+                    'https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/TaDa/TDG-BR-241210-04-GC-R1%20Sh%C5%8Dgun.pdf?csf=1&web=1&e=4NzCiV',
+                ],
+            },
+            {
+                name: '<span class="neon-text">ON-LINE</span> Fortune Tree',
+                links: [
+                    'https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/TaDa/TDG-BR-241210-06-GC-R1%20Fortune%20Tree.pdf?csf=1&web=1&e=2X1W8n',
+                ],
+            },
+            {
+                name: '<span class="neon-text">ON-LINE</span> Wild Ace',
+                links: [
+                    'https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/TaDa/TDG-BR-241210-07-GC-R1%20Wild%20Ace.pdf?csf=1&web=1&e=o4Dwxz',
+                ],
+            },
+            {
+                name: '<span class="neon-text">ON-LINE</span> Boxing King',
+                links: [
+                    'https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/TaDa/TDG-BR-241210-08-GC-R1%20Boxing%20King.pdf?csf=1&web=1&e=BMqXqs',
+                ],
+            },
+            {
+                name: '<span class="neon-text">ON-LINE</span> Ali Baba',
+                links: [
+                    'https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/TaDa/TDG-BR-241212-01-GC-R1%20Ali%20Baba.pdf?csf=1&web=1&e=CTB3f0',
+                ],
+            },
+            {
+                name: '<span class="neon-text">ON-LINE</span> Golden Temple',
+                links: [
+                    'https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/TaDa/TDG-BR-241212-02-GC-R1%20Golden%20Temple.pdf?csf=1&web=1&e=j5tuKz',
+                ],
+            },
+            {
+                name: '<span class="neon-text">ON-LINE</span> Potion Wizard',
+                links: [
+                    'https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/TaDa/TDG-BR-241212-03-GC-R1%20Potion%20Wizard.pdf?csf=1&web=1&e=JuckMu',
+                ],
+            },
+            {
+                name: '<span class="neon2-text">OFF</span> Neko Neko',
+                links: [
+                    'https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/TaDa/TDG-BR-241212-04-GC-R1%20Neko%20Neko.pdf?csf=1&web=1&e=vUZgMf',
+                ],
+            },
+            {
+                name: '<span class="neon-text">ON-LINE</span> Sweet Land',
+                links: [
+                    'https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/TaDa/TDG-BR-241212-05-GC-R1%20Sweet%20Land.pdf?csf=1&web=1&e=qVe7yJ',
+                ],
+            },
+            {
+                name: '<span class="neon-text">ON-LINE</span> Mayan Empire',
+                links: [
+                    'https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/TaDa/TDG-BR-241212-07-GC-R1%20Mayan%20Empire.pdf?csf=1&web=1&e=CeGaL7',
+                ],
+            },
+            {
+                name: '<span class="neon2-text">ON-LINE</span> Fortune Monkey',
+                links: [
+                    'https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/TaDa/TDG-BR-241212-08-GC-R1%20Fortune%20Monkey.pdf?csf=1&web=1&e=n9jRg2',
+                ],
+            },
+            {
+                name: '<span class="neon-text">ON-LINE</span> Fa Fa Fa',
+                links: [
+                    'https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/TaDa/TDG-BR-241212-09-GC-R1%20Fa%20Fa%20Fa.pdf?csf=1&web=1&e=JhSqAv',
+                ],
+            },
+            {
+                name: '<span class="neon-text">ON-LINE</span> Money Coming Expanded Bets',
+                links: [
+                    'https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/TaDa/TDG-BR-241212-06-GC-R1%20Money%20Coming%20Expanded%20Bets.pdf?csf=1&web=1&e=eVpIbt',
+                ],
+            },
+            {
+                name: '<span class="neon-text">ON-LINE</span> Go Rush',
+                links: [
+                    'https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/TaDa/TDG-BR-241212-10-GC-R1%20Go%20Rush.pdf?csf=1&web=1&e=BHsMT7',
+                ],
+            },
+            {
+                name: '<span class="neon-text">ON-LINE</span> Wheel',
+                links: [
+                    'https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/TaDa/TDG-BR-241212-11-GC-R1%20Wheel.pdf?csf=1&web=1&e=R2Fzfr',
+                ],
+            },
+            {
+                name: '<span class="neon-text">ON-LINE</span> Tower',
+                links: [
+                    'https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/TaDa/TDG-BR-241213-03-GC-R1%20Tower.pdf?csf=1&web=1&e=bhM8AS',
+                ],
+            },
+            {
+                name: '<span class="neon-text">ON-LINE</span> Crash Bonus',
+                links: [
+                    'https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/TaDa/TDG-BR-241213-04-GC-R1%20Crash%20Bonus.pdf?csf=1&web=1&e=zmrclx',
+                ],
+            },
+            {
+                name: '<span class="neon-text">ON-LINE</span> Mines',
+                links: [
+                    'https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/TaDa/TDG-BR-241213-05-GC-R1%20Mines.pdf?csf=1&web=1&e=1EGOv6',
+                ],
+            },
+            {
+                name: '<span class="neon-text">ON-LINE</span> Plinko',
+                links: [
+                    'https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/TaDa/TDG-BR-241213-06-GC-R1%20Plinko.pdf?csf=1&web=1&e=fJSSSK',
+                ],
+            },
+            {
+                name: '<span class="neon-text">ON-LINE</span> Mines Gold',
+                links: [
+                    'https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/TaDa/TDG-BR-241213-07-GC-R1%20Mines%20Gold.pdf?csf=1&web=1&e=0DF9qB',
+                ],
+            },
+            {
+                name: '<span class="neon-text">ON-LINE</span> SevenSevenSeven',
+                links: [
+                    'https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/TaDa/TDG-BR-241213-02-GC-R1%20Seven%20Seven%20Seven.pdf?csf=1&web=1&e=El9IRI',
+                ],
+            },
+            {
+                name: '<span class="neon2-text">OFF</span> Fortune Roulette',
+                links: [
+                    'https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/TaDa/TDG-BR-241212-12-GC-R1%20Fortune%20Roulette.pdf?csf=1&web=1&e=cEVpEF',
+                ],
+            },
+            {
+                name: '<span class="neon2-text">OFF</span> European Roulette',
+                links: [
+                    'https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/TaDa/TDG-BR-241212-13-GC-R1%20European%20Roulette.pdf?csf=1&web=1&e=MYOBnU',
+                ],
+            },
+        ];
+    </script>
+
+    <script src="scripts.js"></script>
+    <!-- Inclui o arquivo JavaScript -->
+</body>
+
 </html>
