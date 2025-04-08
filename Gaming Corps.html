@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gaming Corps - Jogos</title>
     <link rel="stylesheet" href="styles2.css">
-    
+
 </head>
+
 <body>
     <header id="topo">
         <div class="logo">
@@ -17,90 +19,104 @@
 
     <main class="content">
         <!-- Barra de Pesquisa -->
-<div class="search-container">
-    <input type="text" id="searchBar" class="search-bar" placeholder="Pesquisar Jogo..." oninput="searchGames()">
-</div>
-<div class="link-table">
-    <div class="rng-links">
-      <button onclick="createPopup('RNG', ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Platipus/RNG.BR.PLAT-OL.1002.01.01_Translation_eSigned.pdf?csf=1&web=1&e=9oRVpJ','https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Platipus/RNG.BR.PLAT-OL.1002.01.01_eSigned.pdf?csf=1&web=1&e=E2Vl8R'])">RNG</button>
-    </div>
-    <div class="rgs-links">
-      <button onclick="createPopup('RGS', ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Platipus/711SY-711-PL7-24-01-711_Portuguese.pdf?csf=1&web=1&e=3koxeB','https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Platipus/711SY-711-PL7-24-01-711.pdf?csf=1&web=1&e=MGKelE'])">RGS</button>
-    </div>
-  </div>
+        <div class="search-container">
+            <input type="text" id="searchBar" class="search-bar" placeholder="Pesquisar Jogo..."
+                oninput="searchGames()">
+        </div>
+        <div class="link-table">
+            <div class="rng-links">
+                <button
+                    onclick="createPopup('RNG', ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Platipus/RNG.BR.PLAT-OL.1002.01.01_Translation_eSigned.pdf?csf=1&web=1&e=9oRVpJ','https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Platipus/RNG.BR.PLAT-OL.1002.01.01_eSigned.pdf?csf=1&web=1&e=E2Vl8R'])">RNG</button>
+            </div>
+            <div class="rgs-links">
+                <button
+                    onclick="createPopup('RGS', ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Platipus/711SY-711-PL7-24-01-711_Portuguese.pdf?csf=1&web=1&e=3koxeB','https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/Platipus/711SY-711-PL7-24-01-711.pdf?csf=1&web=1&e=MGKelE'])">RGS</button>
+            </div>
+        </div>
         <h1>Jogos da Gaming Corps</h1>
         <button id="show-online" class="view-links-btn"><span class="neon-text">ON-LINE</span> </button>
         <button id="show-all" class="view-links-btn"> TODOS</button>
         <button id="show-off" class="view-links-btn"><span class="neon2-text">OFF</span></button>
-        
+
         <ul id="game-list">
-            
+
             <!-- Jogos serão carregados dinamicamente -->
         </ul>
     </main>
     <div>
-        
-        
+
+
     </div>
     <ul id="game-list"></ul>
-</div>
-<script>
-    
-            // Lista de jogos da Boominggames
-            const games = [
-            { name: '<span class="neon2-text">OFF</span> Xmas Unwrapped', links: [] },
-    { name: '<span class="neon2-text">OFF</span> Xmas Plinko', links: [] },
-    { name: '<span class="neon2-text">OFF</span> Wild Woof', links: [] },
-    { name: '<span class="neon2-text">OFF</span> UPlinko Fashion TV', links: [] },
-    { name: '<span class="neon2-text">OFF</span> To Mars and Beyond', links: [] },
-    { name: '<span class="neon2-text">OFF</span> Sweet Miner', links: [] },
-    { name: '<span class="neon2-text">OFF</span> Super Hot Stacks', links: [] },
-    { name: '<span class="neon2-text">OFF</span> Snoop\'s High Rollers', links: [] },
-    { name: '<span class="neon2-text">OFF</span> Samba Soccer', links: [] },
-    { name: '<span class="neon2-text">OFF</span> Rampage', links: [] },
-    { name: '<span class="neon2-text">OFF</span> Ramen Puzzle', links: [] },
-    { name: '<span class="neon2-text">OFF</span> Raging Zeus', links: [] },
-    { name: '<span class="neon2-text">OFF</span> Prospector\'s Plinko', links: [] },
-    { name: '<span class="neon2-text">OFF</span> Plinko', links: [] },
-    { name: '<span class="neon2-text">OFF</span> Plinkgoal', links: [] },
-    { name: '<span class="neon2-text">OFF</span> Piggy Smash', links: [] },
-    { name: '<span class="neon2-text">OFF</span> Penalty Champion', links: [] },
-    { name: '<span class="neon2-text">OFF</span> Mining Madness', links: [] },
-    { name: '<span class="neon2-text">OFF</span> Mighty Mammoth', links: [] },
-    { name: '<span class="neon2-text">OFF</span> Lucky O\'Miner', links: [] },
-    { name: '<span class="neon2-text">OFF</span> Lobster Hot Pot', links: [] },
-    { name: '<span class="neon2-text">OFF</span> Jet Lucky 2', links: [] },
-    { name: '<span class="neon2-text">OFF</span> Ho Ho HODL', links: [] },
-    { name: '<span class="neon2-text">OFF</span> Golden Dragon Wealth', links: [] },
-    { name: '<span class="neon2-text">OFF</span> Gems Rampage', links: [] },
-    { name: '<span class="neon2-text">OFF</span> Football Freestyler', links: [] },
-    { name: '<span class="neon2-text">OFF</span> Expanding Joker', links: [] },
-    { name: '<span class="neon2-text">OFF</span> Egypt Bonus Pot', links: [] },
-    { name: '<span class="neon2-text">OFF</span> Destino Das Almas', links: [] },
-    { name: '<span class="neon2-text">OFF</span> Coin Miner', links: [] },
-    { name: '<span class="neon2-text">OFF</span> Buffalo Bash', links: [] },
-    { name: '<span class="neon2-text">OFF</span> 777 Jackpot Diamond Hold and Win', links: [] },
-    { name: '<span class="neon2-text">OFF</span> 777 Jackpot Diamond Hold', links: [] },
-    { name: '<span class="neon2-text">OFF</span> Angry Elf Christmas Miner', links: [] },
-    { name: '<span class="neon2-text">OFF</span> Aztec Bonus Pot', links: [] },
-    { name: '<span class="neon2-text">OFF</span> Coin Miner 2', links: [] },
-    { name: '<span class="neon2-text">OFF</span> Luke E. Chance and the Book of Luck', links: [] },
-    { name: '<span class="neon2-text">OFF</span> Luke E. Chance and The Inca Sun God', links: [] },
-    { name: '<span class="neon2-text">OFF</span> Paddy\'s Payouts', links: [] },
-    { name: '<span class="neon2-text">OFF</span> Raging Zeus Mines', links: [] },
-    { name: '<span class="neon2-text">OFF</span> Wet and Wild Beavers', links: [] },
-    { name: '<span class="neon2-text">OFF</span> Skyliner', links: [] },
-    { name: '<span class="neon2-text">OFF</span> Blackjack Single Hand', links: [] },
-    { name: '<span class="neon2-text">OFF</span> Blackjack Multihand VIP', links: [] },
-    { name: '<span class="neon2-text">OFF</span> BlackJack Multi Hand', links: [] },
-    { name: '<span class="neon2-text">OFF</span> Blackjack Bonus Wheel 1000', links: [] }
+    </div>
+    <script>
 
-            
-    
-    ];
+        // Lista de jogos da Boominggames
+        const games = [
+            { name: '<span class="neon2-text">OFF</span> Xmas Unwrapped', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados%20-%20Abril/Gaming%20Corps%20-%20Brazilian/Gaming%20Corps%20-%20Brazilian%20Certs/XmasUnwrapped_RTP94_RTP97_BR(1).pdf?csf=1&web=1&e=Nx6GQX'] },
+            { name: '<span class="neon2-text">OFF</span> Xmas Plinko', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados%20-%20Abril/Gaming%20Corps%20-%20Brazilian/Gaming%20Corps%20-%20Brazilian%20Certs/XmasPlinko_RTP94_RTP97_BR.pdf?csf=1&web=1&e=jtCwRM'] },
+            { name: '<span class="neon2-text">OFF</span> Wild Woof', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados%20-%20Abril/Gaming%20Corps%20-%20Brazilian/Gaming%20Corps%20-%20Brazilian%20Certs/WildWoof_RTP94_RTP96_BR(1).pdf?csf=1&web=1&e=QsHpUN'] },
+            { name: '<span class="neon2-text">OFF</span> UPlinko Fashion TV', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados%20-%20Abril/Gaming%20Corps%20-%20Brazilian/Gaming%20Corps%20-%20Brazilian%20Certs/UplinkoFashionTV_RTP94_RTP97_BR(1).pdf?csf=1&web=1&e=ZYhmVd'] },
+            { name: '<span class="neon2-text">OFF</span> To Mars and Beyond', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados%20-%20Abril/Gaming%20Corps%20-%20Brazilian/Gaming%20Corps%20-%20Brazilian%20Certs/ToMarsandBeyond_RTP94_RTP97_BR(1).pdf?csf=1&web=1&e=0gMiYJ'] },
+            { name: '<span class="neon2-text">OFF</span> Sweet Miner', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados%20-%20Abril/Gaming%20Corps%20-%20Brazilian/Gaming%20Corps%20-%20Brazilian%20Certs/SweetMiner_RTP97_BR.pdf?csf=1&web=1&e=YKiACH'] },
+            { name: '<span class="neon2-text">OFF</span> Super Hot Stacks', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados%20-%20Abril/Gaming%20Corps%20-%20Brazilian/Gaming%20Corps%20-%20Brazilian%20Certs/SuperHotStacks_RTP94_RTP96_BR(1).pdf?csf=1&web=1&e=SEQOa8'] },
+            { name: '<span class="neon2-text">OFF</span> Snoop\'s High Rollers', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados%20-%20Abril/Gaming%20Corps%20-%20Brazilian/Gaming%20Corps%20-%20Brazilian%20Certs/SnoopsHighRollers_RTP94_RTP96_BR(1).pdf?csf=1&web=1&e=Dmc3iA'] },
+            { name: '<span class="neon2-text">OFF</span> Samba Soccer', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados%20-%20Abril/Gaming%20Corps%20-%20Brazilian/Gaming%20Corps%20-%20Brazilian%20Certs/SambaSoccer_RTP94_RTP97_BR(1).pdf?csf=1&web=1&e=sMcyVi'] },
+            { name: '<span class="neon2-text">OFF</span> Rampage', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados%20-%20Abril/Gaming%20Corps%20-%20Brazilian/Gaming%20Corps%20-%20Brazilian%20Certs/Rampage_RTP94_RTP97_BR(1).pdf?csf=1&web=1&e=myijGL'] },
+            { name: '<span class="neon2-text">OFF</span> Ramen Puzzle', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados%20-%20Abril/Gaming%20Corps%20-%20Brazilian/Gaming%20Corps%20-%20Brazilian%20Certs/RamenPuzzle_RTP94_RTP97_BR(1).pdf?csf=1&web=1&e=F0c585'] },
+            { name: '<span class="neon2-text">OFF</span> Raging Zeus', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados%20-%20Abril/Gaming%20Corps%20-%20Brazilian/Gaming%20Corps%20-%20Brazilian%20Certs/RagingZeus_RTP94_RTP96_BR(1).pdf?csf=1&web=1&e=P7f2g7'] },
+            { name: '<span class="neon2-text">OFF</span> Prospector\'s Plinko', links: [] },
+            { name: '<span class="neon2-text">OFF</span> Plinko', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados%20-%20Abril/Gaming%20Corps%20-%20Brazilian/Gaming%20Corps%20-%20Brazilian%20Certs/Plinko_RTP94_RTP97_BR(1).pdf?csf=1&web=1&e=hNJYeE'] },
+            { name: '<span class="neon2-text">OFF</span> Plinkgoal', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados%20-%20Abril/Gaming%20Corps%20-%20Brazilian/Gaming%20Corps%20-%20Brazilian%20Certs/Plinkgoal_RTP94_RTP97_BR(1).pdf?csf=1&web=1&e=VhkumL'] },
+            { name: '<span class="neon2-text">OFF</span> Piggy Smash', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados%20-%20Abril/Gaming%20Corps%20-%20Brazilian/Gaming%20Corps%20-%20Brazilian%20Certs/PiggySmash_RTP94_RTP97_BR(1).pdf?csf=1&web=1&e=HWoxof'] },
+            { name: '<span class="neon2-text">OFF</span> Penalty Champion', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados%20-%20Abril/Gaming%20Corps%20-%20Brazilian/Gaming%20Corps%20-%20Brazilian%20Certs/PenaltyChampion_RTP94_RTP97_BR(1).pdf?csf=1&web=1&e=SXHUlF'] },
+            { name: '<span class="neon2-text">OFF</span> Mining Madness', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados%20-%20Abril/Gaming%20Corps%20-%20Brazilian/Gaming%20Corps%20-%20Brazilian%20Certs/MiningMadness_RTP94_RTP97_BR(1).pdf?csf=1&web=1&e=WaluZs'] },
+            { name: '<span class="neon2-text">OFF</span> Mighty Mammoth', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados%20-%20Abril/Gaming%20Corps%20-%20Brazilian/Gaming%20Corps%20-%20Brazilian%20Certs/MightyMammoth_RTP94_RTP96_BR(1).pdf?csf=1&web=1&e=R2esNz'] },
+            { name: '<span class="neon2-text">OFF</span> Lucky O\'Miner', links: [] },
+            { name: '<span class="neon2-text">OFF</span> Lobster Hot Pot', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados%20-%20Abril/Gaming%20Corps%20-%20Brazilian/Gaming%20Corps%20-%20Brazilian%20Certs/Lobsterhotpot_RTP94_RTP96_BR(1).pdf?csf=1&web=1&e=GfR7Ms'] },
+            { name: '<span class="neon2-text">OFF</span> Jet Lucky 2', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados%20-%20Abril/Gaming%20Corps%20-%20Brazilian/Gaming%20Corps%20-%20Brazilian%20Certs/JetLucky2_RTP94_RTP97_BR(1).pdf?csf=1&web=1&e=1pLAiM'] },
+            { name: '<span class="neon2-text">OFF</span> Ho Ho HODL', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados%20-%20Abril/Gaming%20Corps%20-%20Brazilian/Gaming%20Corps%20-%20Brazilian%20Certs/HoHoHodl_RTP94_RTP97_BR.pdf?csf=1&web=1&e=WI7Pjh'] },
+            { name: '<span class="neon2-text">OFF</span> Golden Dragon Wealth', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados%20-%20Abril/Gaming%20Corps%20-%20Brazilian/Gaming%20Corps%20-%20Brazilian%20Certs/GoldenDragonWealth_RTP94_RTP96_BR(1).pdf?csf=1&web=1&e=LEETqe'] },
+            { name: '<span class="neon2-text">OFF</span> Gems Rampage', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados%20-%20Abril/Gaming%20Corps%20-%20Brazilian/Gaming%20Corps%20-%20Brazilian%20Certs/GemsRampage_RTP94_RTP97_BR(1).pdf?csf=1&web=1&e=vUwQVv'] },
+            { name: '<span class="neon2-text">OFF</span> Football Freestyler', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados%20-%20Abril/Gaming%20Corps%20-%20Brazilian/Gaming%20Corps%20-%20Brazilian%20Certs/FootballFreestyler_RTP94_RTP97_BR(1).pdf?csf=1&web=1&e=6B8dZd'] },
+            { name: '<span class="neon2-text">OFF</span> Expanding Joker', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados%20-%20Abril/Gaming%20Corps%20-%20Brazilian/Gaming%20Corps%20-%20Brazilian%20Certs/ExpandingJoker_RTP94_RTP96_BR(1).pdf?csf=1&web=1&e=I0NSmF'] },
+            { name: '<span class="neon2-text">OFF</span> Egypt Bonus Pot', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados%20-%20Abril/Gaming%20Corps%20-%20Brazilian/Gaming%20Corps%20-%20Brazilian%20Certs/EgyptBonusPot_RTP94_RTP96_BR(1).pdf?csf=1&web=1&e=aj3e5q'] },
+            { name: '<span class="neon2-text">OFF</span> Destino Das Almas', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados%20-%20Abril/Gaming%20Corps%20-%20Brazilian/Gaming%20Corps%20-%20Brazilian%20Certs/DestinoDasAlmas_RTP94_RTP96_BR(1).pdf?csf=1&web=1&e=79lskR'] },
+            { name: '<span class="neon2-text">OFF</span> Coin Miner', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados%20-%20Abril/Gaming%20Corps%20-%20Brazilian/Gaming%20Corps%20-%20Brazilian%20Certs/CoinMiner_RTP94_RTP97_BR(1).pdf?csf=1&web=1&e=wkTyJl'] },
+            { name: '<span class="neon2-text">OFF</span> Buffalo Bash', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados%20-%20Abril/Gaming%20Corps%20-%20Brazilian/Gaming%20Corps%20-%20Brazilian%20Certs/BuffaloBash_RTP94_RTP97_BR(1).pdf?csf=1&web=1&e=qoAose'] },
+            { name: '<span class="neon2-text">OFF</span> 777 Jackpot Diamond Hold and Win', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados%20-%20Abril/Gaming%20Corps%20-%20Brazilian/Gaming%20Corps%20-%20Brazilian%20Certs/777JackpotDiamondHoldandWin_RTP94_RTP96_BR(1).pdf?csf=1&web=1&e=uze0FN'] },
+            { name: '<span class="neon2-text">OFF</span> 777 Jackpot Diamond Hold', links: [] },
+            { name: '<span class="neon2-text">OFF</span> Angry Elf Christmas Miner', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados%20-%20Abril/Gaming%20Corps%20-%20Brazilian/Gaming%20Corps%20-%20Brazilian%20Certs/AngryElfChristmasMiner_RTP97_BR.pdf?csf=1&web=1&e=KRwQot'] },
+            { name: '<span class="neon2-text">OFF</span> Aztec Bonus Pot', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados%20-%20Abril/Gaming%20Corps%20-%20Brazilian/Gaming%20Corps%20-%20Brazilian%20Certs/AztecBonusPot_RTP94_RTP96_BR(1).pdf?csf=1&web=1&e=EOSLtl'] },
+            { name: '<span class="neon2-text">OFF</span> Coin Miner 2', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados%20-%20Abril/Gaming%20Corps%20-%20Brazilian/Gaming%20Corps%20-%20Brazilian%20Certs/CoinMiner2_RTP94_RTP97_BR(1).pdf?csf=1&web=1&e=JMuzDC'] },
+            { name: '<span class="neon2-text">OFF</span> Luke E. Chance and the Book of Luck', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados%20-%20Abril/Gaming%20Corps%20-%20Brazilian/Gaming%20Corps%20-%20Brazilian%20Certs/LukeE.ChanceandtheBookofLuck_RTP94_RTP96_BR(1).pdf?csf=1&web=1&e=1CG5RD'] },
+            { name: '<span class="neon2-text">OFF</span> Luke E. Chance and The Inca Sun God', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados%20-%20Abril/Gaming%20Corps%20-%20Brazilian/Gaming%20Corps%20-%20Brazilian%20Certs/LukeEChanceIncaSunGod_RTP94_RTP96_BR(1).pdf?csf=1&web=1&e=E34kkc'] },
+            { name: '<span class="neon2-text">OFF</span> Paddy\'s Payouts', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados%20-%20Abril/Gaming%20Corps%20-%20Brazilian/Gaming%20Corps%20-%20Brazilian%20Certs/PaddysPayouts_RTP94_RTP96_BR(1).pdf?csf=1&web=1&e=LOH96j'] },
+            { name: '<span class="neon2-text">OFF</span> Raging Zeus Mines', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados%20-%20Abril/Gaming%20Corps%20-%20Brazilian/Gaming%20Corps%20-%20Brazilian%20Certs/RagingZeusMines_RTP94_RTP97_BR(1).pdf?csf=1&web=1&e=E3zSHd'] },
+            { name: '<span class="neon2-text">OFF</span> Wet and Wild Beavers', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados%20-%20Abril/Gaming%20Corps%20-%20Brazilian/Gaming%20Corps%20-%20Brazilian%20Certs/WetandWildBeavers_RTP94_RTP96_BR(1).pdf?csf=1&web=1&e=DezbMC'] },
+            { name: '<span class="neon2-text">OFF</span> Skyliner', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados%20-%20Abril/Gaming%20Corps%20-%20Brazilian/Gaming%20Corps%20-%20Brazilian%20Certs/Skyliner_RTP94_RTP97_BR(1).pdf?csf=1&web=1&e=IKzfAe'] },
+            { name: '<span class="neon2-text">OFF</span> Blackjack Single Hand', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados%20-%20Abril/Gaming%20Corps%20-%20Brazilian/Gaming%20Corps%20-%20Brazilian%20Certs/BlackjackSinglehand_RTP99_BR.pdf?csf=1&web=1&e=3fC31j'] },
+            { name: '<span class="neon2-text">OFF</span> Blackjack Multihand VIP', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados%20-%20Abril/Gaming%20Corps%20-%20Brazilian/Gaming%20Corps%20-%20Brazilian%20Certs/BlackjackVIPMultihand_RTP99_BR.pdf?csf=1&web=1&e=DNgxN2'] },
+            { name: '<span class="neon2-text">OFF</span> BlackJack Multi Hand', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados%20-%20Abril/Gaming%20Corps%20-%20Brazilian/Gaming%20Corps%20-%20Brazilian%20Certs/BlackjackMultihand_RTP99_BR.pdf?csf=1&web=1&e=gIsD6L'] },
+            { name: '<span class="neon2-text">OFF</span> Blackjack Bonus Wheel 1000', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados%20-%20Abril/Gaming%20Corps%20-%20Brazilian/Gaming%20Corps%20-%20Brazilian%20Certs/BlackjackBonusWheel1000_RTP99_BR.pdf?csf=1&web=1&e=q5rSq7'] },
+            { name: '<span class="neon2-text">OFF</span> 9 Jokers Stick and Spin', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados%20-%20Abril/Gaming%20Corps%20-%20Brazilian/Gaming%20Corps%20-%20Brazilian%20Certs/9JokersStickandSpin_RTP94_RTP96_BR(1).pdf?csf=1&web=1&e=uuNYVh'] },
+            { name: '<span class="neon2-text">OFF</span> Fire and Freedom Rapid Hold and Win', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados%20-%20Abril/Gaming%20Corps%20-%20Brazilian/Gaming%20Corps%20-%20Brazilian%20Certs/FireandFreedomRapidHold%26Win_RTP94_RTP96_BR(1).pdf?csf=1&web=1&e=NUAtfN'] },
+            { name: '<span class="neon2-text">OFF</span> Gates of Hellfire', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados%20-%20Abril/Gaming%20Corps%20-%20Brazilian/Gaming%20Corps%20-%20Brazilian%20Certs/GatesOfHellfire_RTP94_RTP96_BR(1).pdf?csf=1&web=1&e=aT6bIl'] },
+            { name: '<span class="neon2-text">OFF</span> Lobster Hotpot 2', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados%20-%20Abril/Gaming%20Corps%20-%20Brazilian/Gaming%20Corps%20-%20Brazilian%20Certs/LobsterHotpot2_RTP94_RTP96_BR(1).pdf?csf=1&web=1&e=2gR33H'] },
+            { name: '<span class="neon2-text">OFF</span> Vegas Payouts Rapid Hold & Win', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados%20-%20Abril/Gaming%20Corps%20-%20Brazilian/Gaming%20Corps%20-%20Brazilian%20Certs/VegasPayoutsRapidHold%26Win_RTP94_RTP96_BR(1).pdf?csf=1&web=1&e=A1CYiQ'] },
+            { name: '<span class="neon2-text">OFF</span> Prospector s Plinko', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados%20-%20Abril/Gaming%20Corps%20-%20Brazilian/Gaming%20Corps%20-%20Brazilian%20Certs/ProspectorsPlinko_RTP94_RTP96_BR(1).pdf?csf=1&web=1&e=teSE3a'] },
+            { name: '<span class="neon2-text">OFF</span> 3 Pigs of Olympus Bonus Pot', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados%20-%20Abril/Gaming%20Corps%20-%20Brazilian/Gaming%20Corps%20-%20Brazilian%20Certs/3PigsOfOlympusBonusPot_RTP94_RTP96_BR(1).pdf?csf=1&web=1&e=cOYF43'] },
+            { name: '<span class="neon2-text">OFF</span> Hoop Champion', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados%20-%20Abril/Gaming%20Corps%20-%20Brazilian/Gaming%20Corps%20-%20Brazilian%20Certs/HoopChampion_RTP94_RTP97_BR(1).pdf?csf=1&web=1&e=rYoarG'] },
+            { name: '<span class="neon2-text">OFF</span> Lucky O Miner', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados%20-%20Abril/Gaming%20Corps%20-%20Brazilian/Gaming%20Corps%20-%20Brazilian%20Certs/LuckyOMiner_RTP97_BR.pdf?csf=1&web=1&e=d26fYP'] },
 
 
-</script>
-<script src="scripts.js"></script> <!-- Inclui o arquivo JavaScript -->
+
+
+        ];
+
+
+    </script>
+    <script src="scripts.js"></script> <!-- Inclui o arquivo JavaScript -->
 </body>
+
 </html>
