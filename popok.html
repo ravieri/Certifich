@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Popok - Jogos</title>
     <link rel="stylesheet" href="styles2.css">
-    
+
 </head>
+
 <body>
     <header id="topo">
         <div class="logo">
@@ -17,86 +19,88 @@
 
     <main class="content">
         <!-- Barra de Pesquisa -->
-<div class="search-container">
-    <input type="text" id="searchBar" class="search-bar" placeholder="Pesquisar Jogo..." oninput="searchGames()">
-</div>
-<div class="link-table">
-    <div class="rng-links">
-      <button onclick="createPopup('RNG', ['https://link1.com', 'https://link2.com'])">RNG</button>
-    </div>
-    <div class="rgs-links">
-      <button onclick="createPopup('RGS', ['https://link3.com', 'https://link4.com'])">RGS</button>
-    </div>
-  </div>
+        <div class="search-container">
+            <input type="text" id="searchBar" class="search-bar" placeholder="Pesquisar Jogo..."
+                oninput="searchGames()">
+        </div>
+        <div class="link-table">
+            <div class="rng-links">
+                <button onclick="createPopup('RNG', ['https://link1.com', 'https://link2.com'])">RNG</button>
+            </div>
+            <div class="rgs-links">
+                <button onclick="createPopup('RGS', ['https://link3.com', 'https://link4.com'])">RGS</button>
+            </div>
+        </div>
         <h1>Jogos da Popok</h1>
         <button id="show-online" class="view-links-btn"><span class="neon-text">ON</span> </button>
         <button id="show-all" class="view-links-btn"> TODOS</button>
         <button id="show-off" class="view-links-btn"><span class="neon2-text">OFF</span></button>
-        
+
         <ul id="game-list">
-            
+
             <!-- Jogos serão carregados dinamicamente -->
         </ul>
     </main>
     <div>
-        
-        
+
+
     </div>
     <ul id="game-list"></ul>
-</div>
-<script>
-    
-            // Lista de jogos da Big Time Gaming
-            const games = [
+    </div>
+    <script>
+
+        // Lista de jogos da Big Time Gaming
+        const games = [
             { "name": "<span class=\"neon-text\">ON-LINE</span> AVI", "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviado%20-%20Mar%C3%A7o/BR.SOF-OL.1001.01.01_Translation_eSigned.pdf?csf=1&web=1&e=L4ZNgl'] },
-            { "name": "<span class=\"neon-text\">ON-LINE</span> Rico Gorila", "links": [] },
-  { "name": "<span class=\"neon-text\">ON-LINE</span> Fortune Panda", "links": [ ] },
-  { "name": "<span class=\"neon-text\">ON-LINE</span> Papai Noel da Fortuna", "links": [ ] },
-  { "name": "<span class=\"neon-text\">ON-LINE</span> Sumo Baby", "links": [ ] },
-  { "name": "<span class=\"neon-text\">ON-LINE</span> YO Dragon", "links": [ ] },
-  { "name": "<span class=\"neon-text\">ON-LINE</span> Yummy", "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/POPOK/711MO-711-BCO-24-03-711_Portuguese%20POPOk.pdf?csf=1&web=1&e=sycOOG'] },
-  { "name": "<span class=\"neon-text\">ON-LINE</span> Ultra Hot", "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/POPOK/711MO-711-BCO-24-03-711_Portuguese%20POPOk.pdf?csf=1&web=1&e=sycOOG'] },
-  { "name": "<span class=\"neon-text\">ON-LINE</span> Sultan's Tale", "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/POPOK/711MO-711-BCO-24-03-711_Portuguese%20POPOk.pdf?csf=1&web=1&e=sycOOG'] },
-  { "name": "<span class=\"neon-text\">ON-LINE</span> Novel of Alexander", "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/POPOK/711MO-711-BCO-24-03-711_Portuguese%20POPOk.pdf?csf=1&web=1&e=sycOOG'] },
-  { "name": "<span class=\"neon-text\">ON-LINE</span> Magic treasures of Egypt", "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/POPOK/711MO-711-BCO-24-03-711_Portuguese%20POPOk.pdf?csf=1&web=1&e=sycOOG'] },
-  { "name": "<span class=\"neon-text\">ON-LINE</span> Lucky Jungle 1024 Ways", "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/POPOK/711MO-711-BCO-24-03-711_Portuguese%20POPOk.pdf?csf=1&web=1&e=sycOOG'] },
-  { "name": "<span class=\"neon-text\">ON-LINE</span> Lucky Jungle", "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/POPOK/711MO-711-BCO-24-03-711_Portuguese%20POPOk.pdf?csf=1&web=1&e=sycOOG'] },
-  { "name": "<span class=\"neon-text\">ON-LINE</span> Lost Treasure", "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/POPOK/711MO-711-BCO-24-03-711_Portuguese%20POPOk.pdf?csf=1&web=1&e=sycOOG'] },
-  { "name": "<span class=\"neon-text\">ON-LINE</span> Los Apaches", "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/POPOK/711MO-711-BCO-24-03-711_Portuguese%20POPOk.pdf?csf=1&web=1&e=sycOOG'] },
-  { "name": "<span class=\"neon-text\">ON-LINE</span> Hot Bar", "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/POPOK/711MO-711-BCO-24-03-711_Portuguese%20POPOk.pdf?csf=1&web=1&e=sycOOG'] },
-  { "name": "<span class=\"neon-text\">ON-LINE</span> Diamond Flash", "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/POPOK/711MO-711-BCO-24-03-711_Portuguese%20POPOk.pdf?csf=1&web=1&e=sycOOG'] },
-  { "name": "<span class=\"neon-text\">ON-LINE</span> Blazing Hot", "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/POPOK/711MO-711-BCO-24-03-711_Portuguese%20POPOk.pdf?csf=1&web=1&e=sycOOG'] },
-  { "name": "<span class=\"neon-text\">ON-LINE</span> 40 Lucky Bell", "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/POPOK/711MO-711-BCO-24-03-711_Portuguese%20POPOk.pdf?csf=1&web=1&e=sycOOG'] },
-  { "name": "<span class=\"neon-text\">ON-LINE</span> 40 Hot Bar Extra", "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/POPOK/711MO-711-BCO-24-03-711_Portuguese%20POPOk.pdf?csf=1&web=1&e=sycOOG'] },
-  { "name": "<span class=\"neon-text\">ON-LINE</span> 40 Hot Bar", "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/POPOK/711MO-711-BCO-24-03-711_Portuguese%20POPOk.pdf?csf=1&web=1&e=sycOOG'] },
-  { "name": "<span class=\"neon-text\">ON-LINE</span> 20 Lucky Bell", "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/POPOK/711MO-711-BCO-24-03-711_Portuguese%20POPOk.pdf?csf=1&web=1&e=sycOOG'] },
-  { "name": "<span class=\"neon-text\">ON-LINE</span> 20 Hot Bar", "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/POPOK/711MO-711-BCO-24-03-711_Portuguese%20POPOk.pdf?csf=1&web=1&e=sycOOG'] },
-  { "name": "<span class=\"neon-text\">ON-LINE</span> 100 Lucky Bell", "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/POPOK/711MO-711-BCO-24-03-711_Portuguese%20POPOk.pdf?csf=1&web=1&e=sycOOG'] },
-  { "name": "<span class=\"neon2-text\">OFF</span> Xmas Crash", "links": []},
-  { "name": "<span class=\"neon2-text\">OFF</span> Wild Shamrock", "links": []},
-  { "name": "<span class=\"neon2-text\">OFF</span> Richy Panda", "links": []},
-  { "name": "<span class=\"neon2-text\">OFF</span> Plinko", "links": []},
-  { "name": "<span class=\"neon2-text\">OFF</span> Pirate Fortune", "links": []},
-  { "name": "<span class=\"neon2-text\">OFF</span> Ninja Fruit Cubes", "links": []},
-  { "name": "<span class=\"neon2-text\">OFF</span> Mines", "links": []},
-  { "name": "<span class=\"neon2-text\">OFF</span> Mega Joker", "links": []},
-  { "name": "<span class=\"neon2-text\">OFF</span> Magic Idol", "links": []},
-  { "name": "<span class=\"neon2-text\">OFF</span> Lucky Spin", "links": []},
-  { "name": "<span class=\"neon2-text\">OFF</span> Los Toros", "links": []},
-  { "name": "<span class=\"neon2-text\">OFF</span> Hot Muchacho", "links": []},
-  { "name": "<span class=\"neon2-text\">OFF</span> Fiesta", "links": []},
-  { "name": "<span class=\"neon2-text\">OFF</span> Crazy Poki", "links": []},
-  { "name": "<span class=\"neon2-text\">OFF</span> Crash Infinity", "links": []},
-  { "name": "<span class=\"neon2-text\">OFF</span> Crash Extreme", "links": []},
-  { "name": "<span class=\"neon2-text\">OFF</span> Book of Sherlock", "links": []},
-  { "name": "<span class=\"neon2-text\">OFF</span> Mega Diamonds", "links": []},
-  { "name": "<span class=\"neon2-text\">OFF</span> Tiki Quest", "links": []}
-];
+            { "name": "<span class=\"neon-text\">ON-LINE</span> Rico Gorila", "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados%20-%20Abril/POPOK%20GAMING/BR.SOF-OL.1001.19.01_eSigned%20-%20POPOK%5D.pdf?csf=1&web=1&e=ASiHlv'] },
+            { "name": "<span class=\"neon-text\">ON-LINE</span> Fortune Panda", "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados%20-%20Abril/POPOK%20GAMING/BR.SOF-OL.1001.19.01_eSigned%20-%20POPOK%5D.pdf?csf=1&web=1&e=ASiHlv'] },
+            { "name": "<span class=\"neon-text\">ON-LINE</span> Papai Noel da Fortuna", "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados%20-%20Abril/POPOK%20GAMING/BR.SOF-OL.1001.19.01_eSigned%20-%20POPOK%5D.pdf?csf=1&web=1&e=ASiHlv'] },
+            { "name": "<span class=\"neon-text\">ON-LINE</span> Sumo Baby", "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados%20-%20Abril/POPOK%20GAMING/BR.SOF-OL.1001.19.01_eSigned%20-%20POPOK%5D.pdf?csf=1&web=1&e=ASiHlv'] },
+            { "name": "<span class=\"neon-text\">ON-LINE</span> YO Dragon", "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados%20-%20Abril/POPOK%20GAMING/BR.SOF-OL.1001.19.01_eSigned%20-%20POPOK%5D.pdf?csf=1&web=1&e=ASiHlv'] },
+            { "name": "<span class=\"neon-text\">ON-LINE</span> Yummy", "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/POPOK/711MO-711-BCO-24-03-711_Portuguese%20POPOk.pdf?csf=1&web=1&e=sycOOG'] },
+            { "name": "<span class=\"neon-text\">ON-LINE</span> Ultra Hot", "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/POPOK/711MO-711-BCO-24-03-711_Portuguese%20POPOk.pdf?csf=1&web=1&e=sycOOG'] },
+            { "name": "<span class=\"neon-text\">ON-LINE</span> Sultan's Tale", "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/POPOK/711MO-711-BCO-24-03-711_Portuguese%20POPOk.pdf?csf=1&web=1&e=sycOOG'] },
+            { "name": "<span class=\"neon-text\">ON-LINE</span> Novel of Alexander", "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/POPOK/711MO-711-BCO-24-03-711_Portuguese%20POPOk.pdf?csf=1&web=1&e=sycOOG'] },
+            { "name": "<span class=\"neon-text\">ON-LINE</span> Magic treasures of Egypt", "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/POPOK/711MO-711-BCO-24-03-711_Portuguese%20POPOk.pdf?csf=1&web=1&e=sycOOG'] },
+            { "name": "<span class=\"neon-text\">ON-LINE</span> Lucky Jungle 1024 Ways", "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/POPOK/711MO-711-BCO-24-03-711_Portuguese%20POPOk.pdf?csf=1&web=1&e=sycOOG'] },
+            { "name": "<span class=\"neon-text\">ON-LINE</span> Lucky Jungle", "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/POPOK/711MO-711-BCO-24-03-711_Portuguese%20POPOk.pdf?csf=1&web=1&e=sycOOG'] },
+            { "name": "<span class=\"neon-text\">ON-LINE</span> Lost Treasure", "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/POPOK/711MO-711-BCO-24-03-711_Portuguese%20POPOk.pdf?csf=1&web=1&e=sycOOG'] },
+            { "name": "<span class=\"neon-text\">ON-LINE</span> Los Apaches", "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/POPOK/711MO-711-BCO-24-03-711_Portuguese%20POPOk.pdf?csf=1&web=1&e=sycOOG'] },
+            { "name": "<span class=\"neon-text\">ON-LINE</span> Hot Bar", "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/POPOK/711MO-711-BCO-24-03-711_Portuguese%20POPOk.pdf?csf=1&web=1&e=sycOOG'] },
+            { "name": "<span class=\"neon-text\">ON-LINE</span> Diamond Flash", "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/POPOK/711MO-711-BCO-24-03-711_Portuguese%20POPOk.pdf?csf=1&web=1&e=sycOOG'] },
+            { "name": "<span class=\"neon-text\">ON-LINE</span> Blazing Hot", "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/POPOK/711MO-711-BCO-24-03-711_Portuguese%20POPOk.pdf?csf=1&web=1&e=sycOOG'] },
+            { "name": "<span class=\"neon-text\">ON-LINE</span> 40 Lucky Bell", "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/POPOK/711MO-711-BCO-24-03-711_Portuguese%20POPOk.pdf?csf=1&web=1&e=sycOOG'] },
+            { "name": "<span class=\"neon-text\">ON-LINE</span> 40 Hot Bar Extra", "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/POPOK/711MO-711-BCO-24-03-711_Portuguese%20POPOk.pdf?csf=1&web=1&e=sycOOG'] },
+            { "name": "<span class=\"neon-text\">ON-LINE</span> 40 Hot Bar", "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/POPOK/711MO-711-BCO-24-03-711_Portuguese%20POPOk.pdf?csf=1&web=1&e=sycOOG'] },
+            { "name": "<span class=\"neon-text\">ON-LINE</span> 20 Lucky Bell", "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/POPOK/711MO-711-BCO-24-03-711_Portuguese%20POPOk.pdf?csf=1&web=1&e=sycOOG'] },
+            { "name": "<span class=\"neon-text\">ON-LINE</span> 20 Hot Bar", "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/POPOK/711MO-711-BCO-24-03-711_Portuguese%20POPOk.pdf?csf=1&web=1&e=sycOOG'] },
+            { "name": "<span class=\"neon-text\">ON-LINE</span> 100 Lucky Bell", "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/POPOK/711MO-711-BCO-24-03-711_Portuguese%20POPOk.pdf?csf=1&web=1&e=sycOOG'] },
+            { "name": "<span class=\"neon2-text\">OFF</span> Xmas Crash", "links": [] },
+            { "name": "<span class=\"neon2-text\">OFF</span> Wild Shamrock", "links": [] },
+            { "name": "<span class=\"neon2-text\">OFF</span> Richy Panda", "links": [] },
+            { "name": "<span class=\"neon2-text\">OFF</span> Plinko", "links": [] },
+            { "name": "<span class=\"neon2-text\">OFF</span> Pirate Fortune", "links": [] },
+            { "name": "<span class=\"neon2-text\">OFF</span> Ninja Fruit Cubes", "links": [] },
+            { "name": "<span class=\"neon2-text\">OFF</span> Mines", "links": [] },
+            { "name": "<span class=\"neon2-text\">OFF</span> Mega Joker", "links": [] },
+            { "name": "<span class=\"neon2-text\">OFF</span> Magic Idol", "links": [] },
+            { "name": "<span class=\"neon2-text\">OFF</span> Lucky Spin", "links": [] },
+            { "name": "<span class=\"neon2-text\">OFF</span> Los Toros", "links": [] },
+            { "name": "<span class=\"neon2-text\">OFF</span> Hot Muchacho", "links": [] },
+            { "name": "<span class=\"neon2-text\">OFF</span> Fiesta", "links": [] },
+            { "name": "<span class=\"neon2-text\">OFF</span> Crazy Poki", "links": [] },
+            { "name": "<span class=\"neon2-text\">OFF</span> Crash Infinity", "links": [] },
+            { "name": "<span class=\"neon2-text\">OFF</span> Crash Extreme", "links": [] },
+            { "name": "<span class=\"neon2-text\">OFF</span> Book of Sherlock", "links": [] },
+            { "name": "<span class=\"neon2-text\">OFF</span> Mega Diamonds", "links": [] },
+            { "name": "<span class=\"neon2-text\">OFF</span> Tiki Quest", "links": [] }
+        ];
 
 
 
 
-</script>
-<script src="scripts.js"></script> <!-- Inclui o arquivo JavaScript -->
+    </script>
+    <script src="scripts.js"></script> <!-- Inclui o arquivo JavaScript -->
 </body>
+
 </html>
