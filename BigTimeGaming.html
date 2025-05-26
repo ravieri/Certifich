@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Big Time Gaming - Jogos</title>
     <link rel="stylesheet" href="styles2.css">
-    
+
 </head>
+
 <body>
     <header id="topo">
         <div class="logo">
@@ -17,88 +19,108 @@
 
     <main class="content">
         <!-- Barra de Pesquisa -->
-<div class="search-container">
-    <input type="text" id="searchBar" class="search-bar" placeholder="Pesquisar Jogo..." oninput="searchGames()">
-</div>
-<div class="link-table">
-    <div class="rng-links">
-      <button onclick="createPopup('RNG', ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Desativado%20-%20BigTime%20Gaming/BR_EVL001RNG.1_REV.1.pdf?csf=1&web=1&e=ThqI4b'])">RNG</button>
-    </div>
-    <div class="rgs-links">
-      <button onclick="createPopup('RGS', ['https://link3.com', 'https://link4.com'])">RGS</button>
-    </div>
-  </div>
+        <div class="search-container">
+            <input type="text" id="searchBar" class="search-bar" placeholder="Pesquisar Jogo..."
+                oninput="searchGames()">
+        </div>
+        <div class="link-table">
+            <div class="rng-links">
+                <button
+                    onclick="createPopup('RNG', ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Desativado%20-%20BigTime%20Gaming/BR_EVL001RNG.1_REV.1.pdf?csf=1&web=1&e=ThqI4b'])">RNG</button>
+            </div>
+            <div class="rgs-links">
+                <button onclick="createPopup('RGS', ['https://link3.com', 'https://link4.com'])">RGS</button>
+            </div>
+        </div>
         <h1>Jogos da Big Time Gaming</h1>
         <button id="show-online" class="view-links-btn"><span class="neon-text">ON-LINE</span> </button>
         <button id="show-all" class="view-links-btn"> TODOS</button>
         <button id="show-off" class="view-links-btn"><span class="neon-text">ON-LINE</span></button>
-        
+
         <ul id="game-list">
-            
+
             <!-- Jogos serão carregados dinamicamente -->
         </ul>
     </main>
     <div>
-        
-        
+
+
     </div>
     <ul id="game-list"></ul>
-</div>
-<script>
-    
-            // Lista de jogos da Big Time Gaming
-            const games = [
+    </div>
+    <script>
+
+        // Lista de jogos da Big Time Gaming
+        const games = [
             { "name": '<span class="neon-text">ON-LINE</span> Apollo Pays', "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Desativado%20-%20BigTime%20Gaming/BR_EVL005GAM.1_REV.1.pdf?csf=1&web=1&e=sdoWff'] },
-    { "name": '<span class="neon-text">ON-LINE</span> Big Bad Bison', "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Desativado%20-%20BigTime%20Gaming/BR_EVL005GAM.1_REV.1.pdf?csf=1&web=1&e=sdoWff'] },
-    { "name": '<span class="neon-text">ON-LINE</span> Bonanza', "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Desativado%20-%20BigTime%20Gaming/BR_EVL005GAM.1_REV.1.pdf?csf=1&web=1&e=sdoWff'] },
-    { "name": '<span class="neon-text">ON-LINE</span> Bonanza Falls', "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Desativado%20-%20BigTime%20Gaming/BR_EVL005GAM.1_REV.1.pdf?csf=1&web=1&e=sdoWff'] },
-    { "name": '<span class="neon-text">ON-LINE</span> Book of Gods', "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Desativado%20-%20BigTime%20Gaming/BR_EVL005GAM.1_REV.1.pdf?csf=1&web=1&e=sdoWff'] },
-    { "name": '<span class="neon-text">ON-LINE</span> Boo', "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Desativado%20-%20BigTime%20Gaming/BR_EVL005GAM.1_REV.1.pdf?csf=1&web=1&e=sdoWff'] },
-    { "name": '<span class="neon-text">ON-LINE</span> Castle of Terror', "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Desativado%20-%20BigTime%20Gaming/BR_EVL005GAM.1_REV.1.pdf?csf=1&web=1&e=sdoWff'] },
-    { "name": '<span class="neon-text">ON-LINE</span> Christmas Bonanza', "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Desativado%20-%20BigTime%20Gaming/BR_EVL005GAM.1_REV.1.pdf?csf=1&web=1&e=sdoWff'] },
-    { "name": '<span class="neon-text">ON-LINE</span> Christmas Catch', "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Desativado%20-%20BigTime%20Gaming/BR_EVL005GAM.1_REV.1.pdf?csf=1&web=1&e=sdoWff'] },
-    { "name": '<span class="neon-text">ON-LINE</span> Cyberslot Megaclusters', "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Desativado%20-%20BigTime%20Gaming/BR_EVL005GAM.1_REV.1.pdf?csf=1&web=1&e=sdoWff'] },
-    { "name": '<span class="neon-text">ON-LINE</span> Danger High Voltage 2', "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Desativado%20-%20BigTime%20Gaming/BR_EVL005GAM.1_REV.1.pdf?csf=1&web=1&e=sdoWff'] },
-    { "name": '<span class="neon-text">ON-LINE</span> Danger High Voltage™', "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Desativado%20-%20BigTime%20Gaming/BR_EVL005GAM.1_REV.1.pdf?csf=1&web=1&e=sdoWff'] },
-    { "name": '<span class="neon-text">ON-LINE</span> Diamond Fruits', "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Desativado%20-%20BigTime%20Gaming/BR_EVL005GAM.1_REV.1.pdf?csf=1&web=1&e=sdoWff'] },
-    { "name": '<span class="neon-text">ON-LINE</span> Donuts', "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Desativado%20-%20BigTime%20Gaming/BR_EVL005GAM.1_REV.1.pdf?csf=1&web=1&e=sdoWff'] },
-    { "name": '<span class="neon-text">ON-LINE</span> Fizzy Pennyslot™', "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Desativado%20-%20BigTime%20Gaming/BR_EVL005GAM.1_REV.1.pdf?csf=1&web=1&e=sdoWff'] },
-    { "name": '<span class="neon-text">ON-LINE</span> Fireworks Megaways™', "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Desativado%20-%20BigTime%20Gaming/BR_EVL005GAM.1_REV.1.pdf?csf=1&web=1&e=sdoWff'] },
-    { "name": '<span class="neon-text">ON-LINE</span> Gifts of Fortune™', "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Desativado%20-%20BigTime%20Gaming/BR_EVL005GAM.1_REV.1.pdf?csf=1&web=1&e=sdoWff'] },
-    { "name": '<span class="neon-text">ON-LINE</span> Gold Megaways', "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Desativado%20-%20BigTime%20Gaming/BR_EVL005GAM.1_REV.1.pdf?csf=1&web=1&e=sdoWff'] },
-    { "name": '<span class="neon-text">ON-LINE</span> Golden Catch™', "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Desativado%20-%20BigTime%20Gaming/BR_EVL005GAM.1_REV.1.pdf?csf=1&web=1&e=sdoWff'] },
-    { "name": '<span class="neon-text">ON-LINE</span> Holy Diver Megaways', "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Desativado%20-%20BigTime%20Gaming/BR_EVL005GAM.1_REV.1.pdf?csf=1&web=1&e=sdoWff'] },
-    { "name": '<span class="neon-text">ON-LINE</span> Lil Devil', "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Desativado%20-%20BigTime%20Gaming/BR_EVL005GAM.1_REV.1.pdf?csf=1&web=1&e=sdoWff'] },
-    { "name": '<span class="neon-text">ON-LINE</span> Lucky Streak Mk2', "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Desativado%20-%20BigTime%20Gaming/BR_EVL005GAM.1_REV.1.pdf?csf=1&web=1&e=sdoWff'] },
-    { "name": '<span class="neon-text">ON-LINE</span> Max Megaways ', "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Desativado%20-%20BigTime%20Gaming/BR_EVL005GAM.1_REV.1.pdf?csf=1&web=1&e=sdoWff'] },
-    { "name": '<span class="neon-text">ON-LINE</span> Max Megaways 2', "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Desativado%20-%20BigTime%20Gaming/BR_EVL005GAM.1_REV.1.pdf?csf=1&web=1&e=sdoWff'] },
-    { "name": '<span class="neon-text">ON-LINE</span> Millionaire Mystery Box', "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Desativado%20-%20BigTime%20Gaming/BR_EVL005GAM.1_REV.1.pdf?csf=1&web=1&e=sdoWff'] },
-    { "name": '<span class="neon-text">ON-LINE</span> More Turkey', "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Desativado%20-%20BigTime%20Gaming/BR_EVL005GAM.1_REV.1.pdf?csf=1&web=1&e=sdoWff'] },
-    { "name": '<span class="neon-text">ON-LINE</span> Opal Fruits', "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Desativado%20-%20BigTime%20Gaming/BR_EVL005GAM.1_REV.1.pdf?csf=1&web=1&e=sdoWff'] },
-    { "name": '<span class="neon-text">ON-LINE</span> Over The Moon', "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Desativado%20-%20BigTime%20Gaming/BR_EVL005GAM.1_REV.1.pdf?csf=1&web=1&e=sdoWff'] },
-    { "name": '<span class="neon-text">ON-LINE</span> Panda Money', "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Desativado%20-%20BigTime%20Gaming/BR_EVL005GAM.1_REV.1.pdf?csf=1&web=1&e=sdoWff'] },
-    { "name": '<span class="neon-text">ON-LINE</span> Pirate Pays', "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Desativado%20-%20BigTime%20Gaming/BR_EVL005GAM.1_REV.1.pdf?csf=1&web=1&e=sdoWff'] },
-    { "name": '<span class="neon-text">ON-LINE</span> Pop', "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Desativado%20-%20BigTime%20Gaming/BR_EVL005GAM.1_REV.1.pdf?csf=1&web=1&e=sdoWff'] },
-    { "name": '<span class="neon-text">ON-LINE</span> Rasputin Megaways', "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Desativado%20-%20BigTime%20Gaming/BR_EVL005GAM.1_REV.1.pdf?csf=1&web=1&e=sdoWff'] },
-    { "name": '<span class="neon-text">ON-LINE</span> Royal Mint', "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Desativado%20-%20BigTime%20Gaming/BR_EVL005GAM.1_REV.1.pdf?csf=1&web=1&e=sdoWff'] },
-    { "name": '<span class="neon-text">ON-LINE</span> Sanctuary', "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Desativado%20-%20BigTime%20Gaming/BR_EVL005GAM.1_REV.1.pdf?csf=1&web=1&e=sdoWff'] },
-    { "name": '<span class="neon-text">ON-LINE</span> Slots Vegas Fully Loaded', "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Desativado%20-%20BigTime%20Gaming/BR_EVL005GAM.1_REV.1.pdf?csf=1&web=1&e=sdoWff'] },
-    { "name": '<span class="neon-text">ON-LINE</span> Star Clusters', "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Desativado%20-%20BigTime%20Gaming/BR_EVL005GAM.1_REV.1.pdf?csf=1&web=1&e=sdoWff'] },
-    { "name": '<span class="neon-text">ON-LINE</span> The Race', "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Desativado%20-%20BigTime%20Gaming/BR_EVL005GAM.1_REV.1.pdf?csf=1&web=1&e=sdoWff'] },
-    { "name": '<span class="neon-text">ON-LINE</span> Trigger Happy', "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Desativado%20-%20BigTime%20Gaming/BR_EVL005GAM.1_REV.1.pdf?csf=1&web=1&e=sdoWff'] },
-    { "name": '<span class="neon-text">ON-LINE</span> Vegas Rush', "links": [] },
-    { "name": '<span class="neon-text">ON-LINE</span> White Rabbit', "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Desativado%20-%20BigTime%20Gaming/BR_EVL005GAM.1_REV.1.pdf?csf=1&web=1&e=sdoWff'] },
-    { "name": '<span class="neon2-text">OFF</span> Who wants to be a Millionaire™', "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Desativado%20-%20BigTime%20Gaming/BR_EVL005GAM.1_REV.1.pdf?csf=1&web=1&e=sdoWff'] },
-    { "name": '<span class="neon-text">ON-LINE</span> Wild Flower', "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Desativado%20-%20BigTime%20Gaming/BR_EVL005GAM.1_REV.1.pdf?csf=1&web=1&e=sdoWff'] },
-    { "name": '<span class="neon-text">ON-LINE</span> Wild Portals Megaways™', "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Desativado%20-%20BigTime%20Gaming/BR_EVL005GAM.1_REV.1.pdf?csf=1&web=1&e=sdoWff'] },
-    { "name": '<span class="neon-text">ON-LINE</span> Wild Unicorns', "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Desativado%20-%20BigTime%20Gaming/BR_EVL005GAM.1_REV.1.pdf?csf=1&web=1&e=sdoWff'] },
-    { "name": '<span class="neon-text">ON-LINE</span> Extra Chilli', "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Desativado%20-%20BigTime%20Gaming/BR_EVL005GAM.1_REV.1.pdf?csf=1&web=1&e=sdoWff'] }
-];
+            { "name": '<span class="neon-text">ON-LINE</span> Big Bad Bison', "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Desativado%20-%20BigTime%20Gaming/BR_EVL005GAM.1_REV.1.pdf?csf=1&web=1&e=sdoWff'] },
+            { "name": '<span class="neon-text">ON-LINE</span> Bonanza', "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Desativado%20-%20BigTime%20Gaming/BR_EVL005GAM.1_REV.1.pdf?csf=1&web=1&e=sdoWff'] },
+            { "name": '<span class="neon-text">ON-LINE</span> Bonanza Falls', "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Desativado%20-%20BigTime%20Gaming/BR_EVL005GAM.1_REV.1.pdf?csf=1&web=1&e=sdoWff'] },
+            { "name": '<span class="neon-text">ON-LINE</span> Book of Gods', "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Desativado%20-%20BigTime%20Gaming/BR_EVL005GAM.1_REV.1.pdf?csf=1&web=1&e=sdoWff'] },
+            { "name": '<span class="neon-text">ON-LINE</span> Boo', "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Desativado%20-%20BigTime%20Gaming/BR_EVL005GAM.1_REV.1.pdf?csf=1&web=1&e=sdoWff'] },
+            { "name": '<span class="neon-text">ON-LINE</span> Castle of Terror', "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Desativado%20-%20BigTime%20Gaming/BR_EVL005GAM.1_REV.1.pdf?csf=1&web=1&e=sdoWff'] },
+            { "name": '<span class="neon-text">ON-LINE</span> Christmas Bonanza', "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Desativado%20-%20BigTime%20Gaming/BR_EVL005GAM.1_REV.1.pdf?csf=1&web=1&e=sdoWff'] },
+            { "name": '<span class="neon-text">ON-LINE</span> Christmas Catch', "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Desativado%20-%20BigTime%20Gaming/BR_EVL005GAM.1_REV.1.pdf?csf=1&web=1&e=sdoWff'] },
+            { "name": '<span class="neon-text">ON-LINE</span> Cyberslot Megaclusters', "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Desativado%20-%20BigTime%20Gaming/BR_EVL005GAM.1_REV.1.pdf?csf=1&web=1&e=sdoWff'] },
+            { "name": '<span class="neon-text">ON-LINE</span> Danger High Voltage 2', "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Desativado%20-%20BigTime%20Gaming/BR_EVL005GAM.1_REV.1.pdf?csf=1&web=1&e=sdoWff'] },
+            { "name": '<span class="neon-text">ON-LINE</span> Danger High Voltage™', "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Desativado%20-%20BigTime%20Gaming/BR_EVL005GAM.1_REV.1.pdf?csf=1&web=1&e=sdoWff'] },
+            { "name": '<span class="neon-text">ON-LINE</span> Diamond Fruits', "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Desativado%20-%20BigTime%20Gaming/BR_EVL005GAM.1_REV.1.pdf?csf=1&web=1&e=sdoWff'] },
+            { "name": '<span class="neon-text">ON-LINE</span> Donuts', "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Desativado%20-%20BigTime%20Gaming/BR_EVL005GAM.1_REV.1.pdf?csf=1&web=1&e=sdoWff'] },
+            { "name": '<span class="neon-text">ON-LINE</span> Fizzy Pennyslot™', "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Desativado%20-%20BigTime%20Gaming/BR_EVL005GAM.1_REV.1.pdf?csf=1&web=1&e=sdoWff'] },
+            { "name": '<span class="neon-text">ON-LINE</span> Fireworks Megaways™', "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Desativado%20-%20BigTime%20Gaming/BR_EVL005GAM.1_REV.1.pdf?csf=1&web=1&e=sdoWff'] },
+            { "name": '<span class="neon-text">ON-LINE</span> Gifts of Fortune™', "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Desativado%20-%20BigTime%20Gaming/BR_EVL005GAM.1_REV.1.pdf?csf=1&web=1&e=sdoWff'] },
+            { "name": '<span class="neon-text">ON-LINE</span> Gold Megaways', "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Desativado%20-%20BigTime%20Gaming/BR_EVL005GAM.1_REV.1.pdf?csf=1&web=1&e=sdoWff'] },
+            { "name": '<span class="neon-text">ON-LINE</span> Golden Catch™', "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Desativado%20-%20BigTime%20Gaming/BR_EVL005GAM.1_REV.1.pdf?csf=1&web=1&e=sdoWff'] },
+            { "name": '<span class="neon-text">ON-LINE</span> Holy Diver Megaways', "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Desativado%20-%20BigTime%20Gaming/BR_EVL005GAM.1_REV.1.pdf?csf=1&web=1&e=sdoWff'] },
+            { "name": '<span class="neon-text">ON-LINE</span> Lil Devil', "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Desativado%20-%20BigTime%20Gaming/BR_EVL005GAM.1_REV.1.pdf?csf=1&web=1&e=sdoWff'] },
+            { "name": '<span class="neon-text">ON-LINE</span> Lucky Streak Mk2', "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Desativado%20-%20BigTime%20Gaming/BR_EVL005GAM.1_REV.1.pdf?csf=1&web=1&e=sdoWff'] },
+            { "name": '<span class="neon-text">ON-LINE</span> Max Megaways ', "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Desativado%20-%20BigTime%20Gaming/BR_EVL005GAM.1_REV.1.pdf?csf=1&web=1&e=sdoWff'] },
+            { "name": '<span class="neon-text">ON-LINE</span> Max Megaways 2', "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Desativado%20-%20BigTime%20Gaming/BR_EVL005GAM.1_REV.1.pdf?csf=1&web=1&e=sdoWff'] },
+            { "name": '<span class="neon-text">ON-LINE</span> Millionaire Mystery Box', "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Desativado%20-%20BigTime%20Gaming/BR_EVL005GAM.1_REV.1.pdf?csf=1&web=1&e=sdoWff'] },
+            { "name": '<span class="neon-text">ON-LINE</span> More Turkey', "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Desativado%20-%20BigTime%20Gaming/BR_EVL005GAM.1_REV.1.pdf?csf=1&web=1&e=sdoWff'] },
+            { "name": '<span class="neon-text">ON-LINE</span> Opal Fruits', "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Desativado%20-%20BigTime%20Gaming/BR_EVL005GAM.1_REV.1.pdf?csf=1&web=1&e=sdoWff'] },
+            { "name": '<span class="neon-text">ON-LINE</span> Over The Moon', "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Desativado%20-%20BigTime%20Gaming/BR_EVL005GAM.1_REV.1.pdf?csf=1&web=1&e=sdoWff'] },
+            { "name": '<span class="neon-text">ON-LINE</span> Panda Money', "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Desativado%20-%20BigTime%20Gaming/BR_EVL005GAM.1_REV.1.pdf?csf=1&web=1&e=sdoWff'] },
+            { "name": '<span class="neon-text">ON-LINE</span> Pirate Pays', "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Desativado%20-%20BigTime%20Gaming/BR_EVL005GAM.1_REV.1.pdf?csf=1&web=1&e=sdoWff'] },
+            { "name": '<span class="neon-text">ON-LINE</span> Pop', "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Desativado%20-%20BigTime%20Gaming/BR_EVL005GAM.1_REV.1.pdf?csf=1&web=1&e=sdoWff'] },
+            { "name": '<span class="neon-text">ON-LINE</span> Rasputin Megaways', "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Desativado%20-%20BigTime%20Gaming/BR_EVL005GAM.1_REV.1.pdf?csf=1&web=1&e=sdoWff'] },
+            { "name": '<span class="neon-text">ON-LINE</span> Royal Mint', "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Desativado%20-%20BigTime%20Gaming/BR_EVL005GAM.1_REV.1.pdf?csf=1&web=1&e=sdoWff'] },
+            { "name": '<span class="neon-text">ON-LINE</span> Sanctuary', "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Desativado%20-%20BigTime%20Gaming/BR_EVL005GAM.1_REV.1.pdf?csf=1&web=1&e=sdoWff'] },
+            { "name": '<span class="neon-text">ON-LINE</span> Slots Vegas Fully Loaded', "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Desativado%20-%20BigTime%20Gaming/BR_EVL005GAM.1_REV.1.pdf?csf=1&web=1&e=sdoWff'] },
+            { "name": '<span class="neon-text">ON-LINE</span> Star Clusters', "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Desativado%20-%20BigTime%20Gaming/BR_EVL005GAM.1_REV.1.pdf?csf=1&web=1&e=sdoWff'] },
+            { "name": '<span class="neon-text">ON-LINE</span> The Race', "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Desativado%20-%20BigTime%20Gaming/BR_EVL005GAM.1_REV.1.pdf?csf=1&web=1&e=sdoWff'] },
+            { "name": '<span class="neon-text">ON-LINE</span> Trigger Happy', "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Desativado%20-%20BigTime%20Gaming/BR_EVL005GAM.1_REV.1.pdf?csf=1&web=1&e=sdoWff'] },
+            { "name": '<span class="neon-text">ON-LINE</span> Vegas Rush', "links": [] },
+            { "name": '<span class="neon-text">ON-LINE</span> White Rabbit', "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Desativado%20-%20BigTime%20Gaming/BR_EVL005GAM.1_REV.1.pdf?csf=1&web=1&e=sdoWff'] },
+            { "name": '<span class="neon2-text">OFF</span> Who wants to be a Millionaire™', "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Desativado%20-%20BigTime%20Gaming/BR_EVL005GAM.1_REV.1.pdf?csf=1&web=1&e=sdoWff'] },
+            { "name": '<span class="neon-text">ON-LINE</span> Wild Flower', "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Desativado%20-%20BigTime%20Gaming/BR_EVL005GAM.1_REV.1.pdf?csf=1&web=1&e=sdoWff'] },
+            { "name": '<span class="neon-text">ON-LINE</span> Wild Portals Megaways™', "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Desativado%20-%20BigTime%20Gaming/BR_EVL005GAM.1_REV.1.pdf?csf=1&web=1&e=sdoWff'] },
+            { "name": '<span class="neon-text">ON-LINE</span> Wild Unicorns', "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Desativado%20-%20BigTime%20Gaming/BR_EVL005GAM.1_REV.1.pdf?csf=1&web=1&e=sdoWff'] },
+            { "name": '<span class="neon-text">ON-LINE</span> Extra Chilli', "links": ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Desativado%20-%20BigTime%20Gaming/BR_EVL005GAM.1_REV.1.pdf?csf=1&web=1&e=sdoWff'] },
+            { name: '<span class="neon2-text">OFF</span> Crystal Towers', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados%20-%20Maio/BTG/BR_EVL039GAM.1_REV.1.pdf?csf=1&web=1&e=MbCMl7'] },
+            { name: '<span class="neon2-text">OFF</span> Kingmaker Fully Loaded', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Desativado%20-%20BigTime%20Gaming/BR_EVL005GAM.1_REV.1.pdf?csf=1&web=1&e=sdoWff'] },
+            { name: '<span class="neon2-text">OFF</span> Millionaire', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Desativado%20-%20BigTime%20Gaming/BR_EVL005GAM.1_REV.1.pdf?csf=1&web=1&e=sdoWff'] },
+            { name: '<span class="neon2-text">OFF</span> Millionaire Rush', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Desativado%20-%20BigTime%20Gaming/BR_EVL005GAM.1_REV.1.pdf?csf=1&web=1&e=sdoWff'] },
+            { name: '<span class="neon2-text">OFF</span> Vegas Megaways', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Desativado%20-%20BigTime%20Gaming/BR_EVL005GAM.1_REV.1.pdf?csf=1&web=1&e=sdoWff'] },
+            { name: '<span class="neon2-text">OFF</span> Temple Quest Spinfinity', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Desativado%20-%20BigTime%20Gaming/BR_EVL005GAM.1_REV.1.pdf?csf=1&web=1&e=sdoWff'] },
+            { name: '<span class="neon2-text">OFF</span> Dragon Born', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Desativado%20-%20BigTime%20Gaming/BR_EVL005GAM.1_REV.1.pdf?csf=1&web=1&e=sdoWff'] },
+            { name: '<span class="neon2-text">OFF</span> Burgers', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Desativado%20-%20BigTime%20Gaming/BR_EVL005GAM.1_REV.1.pdf?csf=1&web=1&e=sdoWff'] },
+            { name: '<span class="neon2-text">OFF</span> Queen of Riches', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Desativado%20-%20BigTime%20Gaming/BR_EVL005GAM.1_REV.1.pdf?csf=1&web=1&e=sdoWff'] },
+            { name: '<span class="neon2-text">OFF</span> Golden Goose Megaways', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Desativado%20-%20BigTime%20Gaming/BR_EVL005GAM.1_REV.1.pdf?csf=1&web=1&e=sdoWff'] },
+            { name: '<span class="neon2-text">OFF</span> Spicy Meatballs', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Desativado%20-%20BigTime%20Gaming/BR_EVL005GAM.1_REV.1.pdf?csf=1&web=1&e=sdoWff'] },
+            { name: '<span class="neon2-text">OFF</span> Beef Lightning', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Desativado%20-%20BigTime%20Gaming/BR_EVL005GAM.1_REV.1.pdf?csf=1&web=1&e=sdoWff'] },
+            { name: '<span class="neon2-text">OFF</span> Chocolates', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Desativado%20-%20BigTime%20Gaming/BR_EVL005GAM.1_REV.1.pdf?csf=1&web=1&e=sdoWff'] },
+            { name: '<span class="neon2-text">OFF</span> King Of Cats', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Desativado%20-%20BigTime%20Gaming/BR_EVL005GAM.1_REV.1.pdf?csf=1&web=1&e=sdoWff'] },
+            { name: '<span class="neon2-text">OFF</span> Outlaw', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Desativado%20-%20BigTime%20Gaming/BR_EVL005GAM.1_REV.1.pdf?csf=1&web=1&e=sdoWff'] },
+
+
+        ];
 
 
 
 
-</script>
-<script src="scripts.js"></script> <!-- Inclui o arquivo JavaScript -->
+    </script>
+    <script src="scripts.js"></script> <!-- Inclui o arquivo JavaScript -->
 </body>
+
 </html>
