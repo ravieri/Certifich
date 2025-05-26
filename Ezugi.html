@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ezugi - Jogos</title>
     <link rel="stylesheet" href="styles2.css">
-    
+
 </head>
+
 <body>
     <header id="topo">
         <div class="logo">
@@ -17,77 +19,86 @@
 
     <main class="content">
         <!-- Barra de Pesquisa -->
-<div class="search-container">
-    <input type="text" id="searchBar" class="search-bar" placeholder="Pesquisar Jogo..." oninput="searchGames()">
-</div>
-<div class="link-table">
-    <div class="rng-links">
-      <button onclick="createPopup('RNG', ['https://link1.com', 'https://link2.com'])">RNG</button>
-    </div>
-    <div class="rgs-links">
-      <button onclick="createPopup('RGS', ['https://link3.com', 'https://link4.com'])">RGS</button>
-    </div>
-  </div>
+        <div class="search-container">
+            <input type="text" id="searchBar" class="search-bar" placeholder="Pesquisar Jogo..."
+                oninput="searchGames()">
+        </div>
+        <div class="link-table">
+            <div class="rng-links">
+                <button onclick="createPopup('RNG', ['https://link1.com', 'https://link2.com'])">RNG</button>
+            </div>
+            <div class="rgs-links">
+                <button onclick="createPopup('RGS', ['https://link3.com', 'https://link4.com'])">RGS</button>
+            </div>
+        </div>
         <h1>Jogos da Ezugi</h1>
         <button id="show-online" class="view-links-btn"><span class="neon-text">ON-LINE</span> </button>
         <button id="show-all" class="view-links-btn"> TODOS</button>
         <button id="show-off" class="view-links-btn"><span class="neon2-text">OFF</span></button>
-        
+
         <ul id="game-list">
-            
+
             <!-- Jogos serão carregados dinamicamente -->
         </ul>
     </main>
     <div>
-        
-        
+
+
     </div>
     <ul id="game-list"></ul>
-</div>
-<script>
-    
-            // Lista de jogos da Big Time Gaming
-            const games = [
-            { name: '<span class="neon2-text">OFF</span> 32 Cards', links: [] },
-  { name: '<span class="neon2-text">OFF</span> Andar Bahar', links: [] },
-  { name: '<span class="neon2-text">OFF</span> AUTOROULETTE', links: [] },
-  { name: '<span class="neon2-text">OFF</span> Baccarat', links: [] },
-  { name: '<span class="neon2-text">OFF</span> Blackjack', links: [] },
-  { name: '<span class="neon2-text">OFF</span> Brasiliera EZ Dealer Roleta', links: [] },
-  { name: '<span class="neon2-text">OFF</span> Casino Holdem', links: [] },
-  { name: '<span class="neon2-text">OFF</span> Cricket Auto Roulette', links: [] },
-  { name: '<span class="neon2-text">OFF</span> Cricket War', links: [] },
-  { name: '<span class="neon2-text">OFF</span> Diamond Roulette', links: [] },
-  { name: '<span class="neon2-text">OFF</span> Dragon Tiger', links: [] },
-  { name: '<span class="neon2-text">OFF</span> Ez Dealer Roulette English', links: [] },
-  { name: '<span class="neon2-text">OFF</span> EZ Dealer Roulette Thai', links: [] },
-  { name: '<span class="neon2-text">OFF</span> Football Auto Roulette', links: [] },
-  { name: '<span class="neon2-text">OFF</span> Gold Blackjack 1', links: [] },
-  { name: '<span class="neon2-text">OFF</span> Gold Blackjack 3', links: [] },
-  { name: '<span class="neon2-text">OFF</span> Knockout Baccarat', links: [] },
-  { name: '<span class="neon2-text">OFF</span> Lucky 7', links: [] },
-  { name: '<span class="neon2-text">OFF</span> Namaste Roulette', links: [] },
-  { name: '<span class="neon2-text">OFF</span> No Commission Baccarat', links: [] },
-  { name: '<span class="neon2-text">OFF</span> One Day Teen Patti', links: [] },
-  { name: '<span class="neon2-text">OFF</span> Revolution Roulette', links: [] },
-  { name: '<span class="neon2-text">OFF</span> Sic B', links: [] },
-  { name: '<span class="neon2-text">OFF</span> Skyline Roulette', links: [] },
-  { name: '<span class="neon2-text">OFF</span> Speed Auto Roulette', links: [] },
-  { name: '<span class="neon2-text">OFF</span> Speed Roulette', links: [] },
-  { name: '<span class="neon2-text">OFF</span> Teen Patti 3 Card', links: [] },
-  { name: '<span class="neon2-text">OFF</span> Turkish Roulette', links: [] },
-  { name: '<span class="neon2-text">OFF</span> Ultimate Andar Bahar', links: [] },
-  { name: '<span class="neon2-text">OFF</span> Ultimate Auto Roulette', links: [] },
-  { name: '<span class="neon2-text">OFF</span> Ultimate Roulette', links: [] },
-  { name: '<span class="neon2-text">OFF</span> Ultimate Sic Bo', links: [] },
-  { name: '<span class="neon2-text">OFF</span> Unlimited Blackjack', links: [] },
-  { name: '<span class="neon2-text">OFF</span> VIP Diamond Blackjack', links: [] }
-];
+    </div>
+    <script>
+
+        // Lista de jogos da Big Time Gaming
+        const games = [
+            { name: '<span class="neon2-text">OFF</span> 32 Cards', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviado%20-%20Fevereiro/Ezugi/BR.EZU-OL.1077.55.01_eSigned.pdf?csf=1&web=1&e=QHdkuB'] },
+            { name: '<span class="neon2-text">OFF</span> Andar Bahar', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviado%20-%20Fevereiro/Ezugi/BR.EZU-OL.1077.55.01_eSigned.pdf?csf=1&web=1&e=QHdkuB'] },
+            { name: '<span class="neon2-text">OFF</span> AUTOROULETTE', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviado%20-%20Fevereiro/Ezugi/BR.EZU-OL.1077.55.01_eSigned.pdf?csf=1&web=1&e=QHdkuB'] },
+            { name: '<span class="neon2-text">OFF</span> Baccarat', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviado%20-%20Fevereiro/Ezugi/BR.EZU-OL.1077.55.01_eSigned.pdf?csf=1&web=1&e=QHdkuB'] },
+            { name: '<span class="neon2-text">OFF</span> Blackjack', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviado%20-%20Fevereiro/Ezugi/BR.EZU-OL.1077.55.01_eSigned.pdf?csf=1&web=1&e=QHdkuB'] },
+            { name: '<span class="neon2-text">OFF</span> Brasiliera EZ Dealer Roleta', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviado%20-%20Fevereiro/Ezugi/BR.EZU-OL.1077.55.01_eSigned.pdf?csf=1&web=1&e=QHdkuB'] },
+            { name: '<span class="neon2-text">OFF</span> Casino Holdem', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviado%20-%20Fevereiro/Ezugi/BR.EZU-OL.1077.55.01_eSigned.pdf?csf=1&web=1&e=QHdkuB'] },
+            { name: '<span class="neon2-text">OFF</span> Cricket Auto Roulette', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviado%20-%20Fevereiro/Ezugi/BR.EZU-OL.1077.55.01_eSigned.pdf?csf=1&web=1&e=QHdkuB'] },
+            { name: '<span class="neon2-text">OFF</span> Cricket War', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviado%20-%20Fevereiro/Ezugi/BR.EZU-OL.1077.55.01_eSigned.pdf?csf=1&web=1&e=QHdkuB'] },
+            { name: '<span class="neon2-text">OFF</span> Diamond Roulette', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviado%20-%20Fevereiro/Ezugi/BR.EZU-OL.1077.55.01_eSigned.pdf?csf=1&web=1&e=QHdkuB'] },
+            { name: '<span class="neon2-text">OFF</span> Dragon Tiger', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviado%20-%20Fevereiro/Ezugi/BR.EZU-OL.1077.55.01_eSigned.pdf?csf=1&web=1&e=QHdkuB'] },
+            { name: '<span class="neon2-text">OFF</span> Ez Dealer Roulette English', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviado%20-%20Fevereiro/Ezugi/BR.EZU-OL.1077.55.01_eSigned.pdf?csf=1&web=1&e=QHdkuB'] },
+            { name: '<span class="neon2-text">OFF</span> EZ Dealer Roulette Thai', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviado%20-%20Fevereiro/Ezugi/BR.EZU-OL.1077.55.01_eSigned.pdf?csf=1&web=1&e=QHdkuB'] },
+            { name: '<span class="neon2-text">OFF</span> Football Auto Roulette', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviado%20-%20Fevereiro/Ezugi/BR.EZU-OL.1077.55.01_eSigned.pdf?csf=1&web=1&e=QHdkuB'] },
+            { name: '<span class="neon2-text">OFF</span> Gold Blackjack 1', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviado%20-%20Fevereiro/Ezugi/BR.EZU-OL.1077.55.01_eSigned.pdf?csf=1&web=1&e=QHdkuB'] },
+            { name: '<span class="neon2-text">OFF</span> Gold Blackjack 3', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviado%20-%20Fevereiro/Ezugi/BR.EZU-OL.1077.55.01_eSigned.pdf?csf=1&web=1&e=QHdkuB'] },
+            { name: '<span class="neon2-text">OFF</span> Knockout Baccarat', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviado%20-%20Fevereiro/Ezugi/BR.EZU-OL.1077.55.01_eSigned.pdf?csf=1&web=1&e=QHdkuB'] },
+            { name: '<span class="neon2-text">OFF</span> Lucky 7', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviado%20-%20Fevereiro/Ezugi/BR.EZU-OL.1077.55.01_eSigned.pdf?csf=1&web=1&e=QHdkuB'] },
+            { name: '<span class="neon2-text">OFF</span> Namaste Roulette', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviado%20-%20Fevereiro/Ezugi/BR.EZU-OL.1077.55.01_eSigned.pdf?csf=1&web=1&e=QHdkuB'] },
+            { name: '<span class="neon2-text">OFF</span> No Commission Baccarat', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviado%20-%20Fevereiro/Ezugi/BR.EZU-OL.1077.55.01_eSigned.pdf?csf=1&web=1&e=QHdkuB'] },
+            { name: '<span class="neon2-text">OFF</span> One Day Teen Patti', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviado%20-%20Fevereiro/Ezugi/BR.EZU-OL.1077.55.01_eSigned.pdf?csf=1&web=1&e=QHdkuB'] },
+            { name: '<span class="neon2-text">OFF</span> Revolution Roulette', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviado%20-%20Fevereiro/Ezugi/BR.EZU-OL.1077.55.01_eSigned.pdf?csf=1&web=1&e=QHdkuB'] },
+            { name: '<span class="neon2-text">OFF</span> Sic B', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviado%20-%20Fevereiro/Ezugi/BR.EZU-OL.1077.55.01_eSigned.pdf?csf=1&web=1&e=QHdkuB'] },
+            { name: '<span class="neon2-text">OFF</span> Skyline Roulette', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviado%20-%20Fevereiro/Ezugi/BR.EZU-OL.1077.55.01_eSigned.pdf?csf=1&web=1&e=QHdkuB'] },
+            { name: '<span class="neon2-text">OFF</span> Speed Auto Roulette', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviado%20-%20Fevereiro/Ezugi/BR.EZU-OL.1077.55.01_eSigned.pdf?csf=1&web=1&e=QHdkuB'] },
+            { name: '<span class="neon2-text">OFF</span> Speed Roulette', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviado%20-%20Fevereiro/Ezugi/BR.EZU-OL.1077.55.01_eSigned.pdf?csf=1&web=1&e=QHdkuB'] },
+            { name: '<span class="neon2-text">OFF</span> Teen Patti 3 Card', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviado%20-%20Fevereiro/Ezugi/BR.EZU-OL.1077.55.01_eSigned.pdf?csf=1&web=1&e=QHdkuB'] },
+            { name: '<span class="neon2-text">OFF</span> Turkish Roulette', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviado%20-%20Fevereiro/Ezugi/BR.EZU-OL.1077.55.01_eSigned.pdf?csf=1&web=1&e=QHdkuB'] },
+            { name: '<span class="neon2-text">OFF</span> Ultimate Andar Bahar', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviado%20-%20Fevereiro/Ezugi/BR.EZU-OL.1077.55.01_eSigned.pdf?csf=1&web=1&e=QHdkuB'] },
+            { name: '<span class="neon2-text">OFF</span> Ultimate Auto Roulette', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviado%20-%20Fevereiro/Ezugi/BR.EZU-OL.1077.55.01_eSigned.pdf?csf=1&web=1&e=QHdkuB'] },
+            { name: '<span class="neon2-text">OFF</span> Ultimate Roulette', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviado%20-%20Fevereiro/Ezugi/BR.EZU-OL.1077.55.01_eSigned.pdf?csf=1&web=1&e=QHdkuB'] },
+            { name: '<span class="neon2-text">OFF</span> Ultimate Sic Bo', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviado%20-%20Fevereiro/Ezugi/BR.EZU-OL.1077.55.01_eSigned.pdf?csf=1&web=1&e=QHdkuB'] },
+            { name: '<span class="neon2-text">OFF</span> Unlimited Blackjack', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviado%20-%20Fevereiro/Ezugi/BR.EZU-OL.1077.55.01_eSigned.pdf?csf=1&web=1&e=QHdkuB'] },
+            { name: '<span class="neon2-text">OFF</span> VIP Diamond Blackjack', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviado%20-%20Fevereiro/Ezugi/BR.EZU-OL.1077.55.01_eSigned.pdf?csf=1&web=1&e=QHdkuB'] },
+            { name: '<span class="neon2-text">OFF</span> Bet On Teen Patti', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviado%20-%20Fevereiro/Ezugi/BR.EZU-OL.1077.55.01_eSigned.pdf?csf=1&web=1&e=QHdkuB'] },
+            { name: '<span class="neon2-text">OFF</span> Super 6 Baccarat', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviado%20-%20Fevereiro/Ezugi/BR.EZU-OL.1077.55.01_eSigned.pdf?csf=1&web=1&e=QHdkuB'] },
+            { name: '<span class="neon2-text">OFF</span> Roulette', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados%20-%20Abril/EZUGI/2024.12.04%20-%20BR.EZU-OL.1073.01.01_eSigned.pdf?csf=1&web=1&e=hCC9bA'] },
+            { name: '<span class="neon2-text">OFF</span> Three Card Poker', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados%20-%20Abril/EZUGI/2024.12.04%20-%20BR.EZU-OL.1073.01.01_eSigned.pdf?csf=1&web=1&e=hCC9bA'] },
+            { name: '<span class="neon2-text">OFF</span> EZ Bingo 90', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados%20-%20Abril/EZUGI/2025.03.20%20-%20Bingo%20BR.EZU-OL.1081.01.01_Translation_eSigned.pdf?csf=1&web=1&e=n1dTev'] },
+            { name: '<span class="neon2-text">OFF</span> Prestige Auto Roulette', links: [''] },
+
+        ];
 
 
 
 
-</script>
-<script src="scripts.js"></script> <!-- Inclui o arquivo JavaScript -->
+    </script>
+    <script src="scripts.js"></script> <!-- Inclui o arquivo JavaScript -->
 </body>
+
 </html>
