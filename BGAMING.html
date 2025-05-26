@@ -1,106 +1,108 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>BGAMING - Jogos</title>
-    <link rel="stylesheet" href="styles2.css" />
-  </head>
-  <body>
-    <header id="topo">
-      <div class="logo">
-        <a href="home.html" class="back-home">⬅ Voltar ao Home</a>
-        H2<span>BET</span>
-      </div>
-    </header>
-    <main class="content">
-      <!-- Barra de Pesquisa -->
-      <div class="search-container">
-        <input
-          type="text"
-          id="searchBar"
-          class="search-bar"
-          placeholder="Pesquisar Jogo..."
-          oninput="searchGames()"
-        />
-      </div>
-      <div class="link-table">
-        <div class="rng-links">
-          <button
-            onclick="createPopup('RNG', ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Spribe/SPR-BR-241125-01-RC-R1%20-%20RNG%20Certificate%20-%20Spribe%20N.V..pdf?csf=1&web=1&e=fDAAZY', 'https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Spribe/SPR-BR-241125-01-RC-R1%20-%20Certificado%20RNG%20-%20Spribe%20N.V..pdf?csf=1&web=1&e=QUbm8q','https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Spribe/SPR-BR-241129-01-GC-R1%20-%20Aviator%20(BR).pdf?csf=1&web=1&e=4E0y5s'])"
-          >
-            RNG
-          </button>
-        </div>
-        <div class="rgs-links">
-          <button
-            onclick="createPopup('RGS', ['https://link3.com', 'https://link4.com'])"
-          >
-            RGS
-          </button>
-        </div>
-      </div>
-      <h1>Jogos da BGAMING</h1>
-      <button id="show-online" class="view-links-btn">
-        <span class="neon-text">ON-LINE</span>
-      </button>
-      <button id="show-all" class="view-links-btn">TODOS</button>
-      <button id="show-off" class="view-links-btn">
-        <span class="neon2-text">OFF</span>
-      </button>
 
-      <ul id="game-list">
-        <!-- Jogos serão carregados dinamicamente -->
-      </ul>
-    </main>
-    <div></div>
-    <ul id="game-list"></ul>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BGAMING - Jogos</title>
+  <link rel="stylesheet" href="styles2.css" />
+</head>
 
-    <script>
-      // Lista de jogos da Spribe
-      const games = [
-        {
-          name: '<span class="neon2-text">OFF</span> Bonanza Billion',
-          links: [],
-        },
-        {
-          name: '<span class="neon2-text">OFF</span> Wild West TRUEWAYS',
-          links: [
-            "https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/BGaming/Wild%20West%20Trueways/STG-BR-250121-03-GC-C1%20-%20Online%20Game%20Certificate%20-Wild%20West%20Trueways.pdf?csf=1&web=1&e=h0dgLW",
-            "https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/BGaming/Wild%20West%20Trueways/STG-BR-250121-03-GC-C1%20-Certificado%20de%20Jogo%20Online%20-Wild%20West%20Trueways.pdf?csf=1&web=1&e=SfTRGj",
-          ],
-        },
-        { name: '<span class="neon2-text">OFF</span> Luck & Magic', links: [] },
-        { name: '<span class="neon2-text">OFF</span> Wild Cash', links: [] },
-        { name: '<span class="neon2-text">OFF</span> Wild Tiger', links: [] },
-        { name: '<span class="neon2-text">OFF</span> Merge Up™', links: [] },
-        {
-          name: '<span class="neon2-text">OFF</span> Aztec Clusters',
-          links: [
-            "https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/BGaming/Aztec%20Clusters/STG-BR-250121-02-GC-C1%20-%20Certificado%20de%20Jogo%20Online%20-%20Aztec%20Clusters.pdf?csf=1&web=1&e=QXcUUu",
-            "https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/BGaming/Aztec%20Clusters/STG-BR-250121-02-GC-C1%20-%20Online%20Game%20Certificate%20-%20Aztec%20Clusters.pdf?csf=1&web=1&e=bqdPjY",
-          ],
-        },
-        { name: '<span class="neon2-text">OFF</span> Plinko 2', links: [] },
-        {
-          name: '<span class="neon2-text">OFF</span> Jacks or Better',
-          links: [],
-        },
-        { name: '<span class="neon2-text">OFF</span> Space XY', links: [] },
-        { name: '<span class="neon2-text">OFF</span> Wild Texas', links: [] },
-        {
-          name: '<span class="neon2-text">OFF</span> Burning Chilli X',
-          links: [],
-        },
-        {
-          name: '<span class="neon2-text">OFF</span> Fruit Million',
-          links: [],
-        },
-        { name: '<span class="neon2-text">OFF</span> Plinko', links: [] },
-      ];
-    </script>
+<body>
+  <header id="topo">
+    <div class="logo">
+      <a href="home.html" class="back-home">⬅ Voltar ao Home</a>
+      H2<span>BET</span>
+    </div>
+  </header>
+  <main class="content">
+    <!-- Barra de Pesquisa -->
+    <div class="search-container">
+      <input type="text" id="searchBar" class="search-bar" placeholder="Pesquisar Jogo..." oninput="searchGames()" />
+    </div>
+    <div class="link-table">
+      <div class="rng-links">
+        <button
+          onclick="createPopup('RNG', ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Spribe/SPR-BR-241125-01-RC-R1%20-%20RNG%20Certificate%20-%20Spribe%20N.V..pdf?csf=1&web=1&e=fDAAZY', 'https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Spribe/SPR-BR-241125-01-RC-R1%20-%20Certificado%20RNG%20-%20Spribe%20N.V..pdf?csf=1&web=1&e=QUbm8q','https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Foram%20enviados%20pra%20receita/Spribe/SPR-BR-241129-01-GC-R1%20-%20Aviator%20(BR).pdf?csf=1&web=1&e=4E0y5s'])">
+          RNG
+        </button>
+      </div>
+      <div class="rgs-links">
+        <button onclick="createPopup('RGS', ['https://link3.com', 'https://link4.com'])">
+          RGS
+        </button>
+      </div>
+    </div>
+    <h1>Jogos da BGAMING</h1>
+    <button id="show-online" class="view-links-btn">
+      <span class="neon-text">ON-LINE</span>
+    </button>
+    <button id="show-all" class="view-links-btn">TODOS</button>
+    <button id="show-off" class="view-links-btn">
+      <span class="neon2-text">OFF</span>
+    </button>
 
-    <script src="scripts.js"></script>
-    <!-- Inclui o arquivo JavaScript -->
-  </body>
+    <ul id="game-list">
+      <!-- Jogos serão carregados dinamicamente -->
+    </ul>
+  </main>
+  <div></div>
+  <ul id="game-list"></ul>
+
+  <script>
+    // Lista de jogos da Spribe
+    const games = [
+      {
+        name: '<span class="neon2-text">OFF</span> Bonanza Billion',
+        links: [],
+      },
+      {
+        name: '<span class="neon2-text">OFF</span> Wild West TRUEWAYS',
+        links: [
+          "https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/BGaming/Wild%20West%20Trueways/STG-BR-250121-03-GC-C1%20-%20Online%20Game%20Certificate%20-Wild%20West%20Trueways.pdf?csf=1&web=1&e=h0dgLW",
+          "https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/BGaming/Wild%20West%20Trueways/STG-BR-250121-03-GC-C1%20-Certificado%20de%20Jogo%20Online%20-Wild%20West%20Trueways.pdf?csf=1&web=1&e=SfTRGj",
+        ],
+      },
+      { name: '<span class="neon2-text">OFF</span> Luck & Magic', links: [] },
+      { name: '<span class="neon2-text">OFF</span> Wild Cash', links: [] },
+      { name: '<span class="neon2-text">OFF</span> Wild Tiger', links: [] },
+      { name: '<span class="neon2-text">OFF</span> Merge Up™', links: [] },
+      {
+        name: '<span class="neon2-text">OFF</span> Aztec Clusters',
+        links: [
+          "https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/BGaming/Aztec%20Clusters/STG-BR-250121-02-GC-C1%20-%20Certificado%20de%20Jogo%20Online%20-%20Aztec%20Clusters.pdf?csf=1&web=1&e=QXcUUu",
+          "https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/BGaming/Aztec%20Clusters/STG-BR-250121-02-GC-C1%20-%20Online%20Game%20Certificate%20-%20Aztec%20Clusters.pdf?csf=1&web=1&e=bqdPjY",
+        ],
+      },
+      { name: '<span class="neon2-text">OFF</span> Plinko 2', links: [] },
+      {
+        name: '<span class="neon2-text">OFF</span> Jacks or Better',
+        links: [],
+      },
+      { name: '<span class="neon2-text">OFF</span> Space XY', links: [] },
+      { name: '<span class="neon2-text">OFF</span> Wild Texas', links: [] },
+      {
+        name: '<span class="neon2-text">OFF</span> Burning Chilli X',
+        links: [],
+      },
+      {
+        name: '<span class="neon2-text">OFF</span> Fruit Million',
+        links: [],
+      },
+      { name: '<span class="neon2-text">OFF</span> Plinko', links: [] },
+      { name: '<span class="neon2-text">OFF</span> Aloha King Elvis', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/BGaming/Aloha%20King%20Elvis/STG-BR-250121-05-GC-C1%20-%20Certificado%20de%20Jogo%20Online%20-%20Aloha%20King%20Elvis.pdf?csf=1&web=1&e=cupjwe'] },
+      { name: '<span class="neon2-text">OFF</span> Chicken Rush', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/BGaming/Chicken%20Rush/STG-BR-250121-07-GC-C1%20-%20Certificado%20de%20Jogo%20Online%20-%20Chicken%20Rush.pdf?csf=1&web=1&e=TPb3RV'] },
+      { name: '<span class="neon2-text">OFF</span> Diamond of Jungle', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/BGaming/Diamond%20of%20Jungle/STG-BR-250121-08-GC-C1%20-%20Certificado%20de%20Jogo%20Online%20-%20Diamond%20of%20Jungle.pdf?csf=1&web=1&e=rhJkJQ'] },
+      { name: '<span class="neon2-text">OFF</span> Gold Rush with Jhonny Cash', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/BGaming/Gold%20Rush%20with%20Johnny%20Cash/STG-BR-250121-09-GC-C1%20-Certificado%20de%20Jogo%20Online%20-%20Gold%20Rush%20with%20Johnny%20Cash.pdf?csf=1&web=1&e=tvfTsM'] },
+      { name: '<span class="neon2-text">OFF</span> Panda Luck', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/BGaming/Panda%20Luck/STG-BR-250121-06-GC-C1%20-%20Certificado%20de%20Jogo%20Online%20-%20Panda%20Luck.pdf?csf=1&web=1&e=tYu6Lp'] },
+      { name: '<span class="neon2-text">OFF</span> Royal Fruit MultiLines', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/BGaming/Royal%20Fruit%20MultiLines/STG-BR-250121-04-GC-C1%20-%20Certificado%20de%20Jogo%20Online%20-%20Royal%20Fruits%20MultiLines.pdf?csf=1&web=1&e=5xiIaf'] },
+      { name: '<span class="neon2-text">OFF</span> Snoop Dogg Dollars', links: ['https://h2grupo-my.sharepoint.com/:b:/r/personal/diego_macedo_h2grupo_com/Documents/%C3%81rea%20de%20Trabalho/provedores%20certificados/Ainda%20n%C3%A3o%20foram%20enviados/BGaming/Snoop%20Dogg%20Dollars/STG-BR-250121-01-GC-C1%20-%20Certificado%20de%20Jogo%20Online%20-%20Snoop%20Dog%20Dollars.pdf?csf=1&web=1&e=XV7Mhe'] },
+
+    ];
+  </script>
+
+  <script src="scripts.js"></script>
+  <!-- Inclui o arquivo JavaScript -->
+</body>
+
 </html>
